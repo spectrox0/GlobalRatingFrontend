@@ -85,7 +85,6 @@ function IndexNavbar() {
             <Nav navbar>
               <NavItem>
                 <NavLink
-                  href="#pablo"
                   onClick={e => {
                     e.preventDefault();
                     document

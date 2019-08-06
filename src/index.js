@@ -27,12 +27,14 @@ import "assets/demo/nucleo-icons-page-styles.css";
 // pages for this kit
 import Index from "views/Index.js";
 import NucleoIcons from "views/NucleoIcons.js";
-
+import IndexNavbar from "components/Navbars/ExamplesNavbar.js";
 
 ReactDOM.render(
   <BrowserRouter>
+   <IndexNavbar />
     <Switch>
       <Switch>
+
         <Route path="/index" render={props => <Index {...props} />} />
       
         <Redirect to="/index" />

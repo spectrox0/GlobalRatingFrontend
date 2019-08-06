@@ -51,52 +51,21 @@ function ExamplesNavbar() {
       ) : null}
       <Navbar className={"fixed-top " + navbarColor} color="info" expand="lg">
         <Container>
-          <UncontrolledDropdown className="button-dropdown">
-            <DropdownToggle
-              caret
-              data-toggle="dropdown"
-              href="#pablo"
-              id="navbarDropdown"
-              tag="a"
-              onClick={e => e.preventDefault()}
-            >
-              <span className="button-bar"></span>
-              <span className="button-bar"></span>
-              <span className="button-bar"></span>
-            </DropdownToggle>
-            <DropdownMenu aria-labelledby="navbarDropdown">
-              <DropdownItem header tag="a">
-                Dropdown header
-              </DropdownItem>
-              <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
-                Action
-              </DropdownItem>
-              <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
-                Another action
-              </DropdownItem>
-              <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
-                Something else here
-              </DropdownItem>
-              <DropdownItem divider></DropdownItem>
-              <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
-                Separated link
-              </DropdownItem>
-              <DropdownItem divider></DropdownItem>
-              <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
-                One more separated link
-              </DropdownItem>
-            </DropdownMenu>
-          </UncontrolledDropdown>
+         
           <div className="navbar-translate">
             <NavbarBrand
               href="https://demos.creative-tim.com/now-ui-kit-react/index?ref=nukr-examples-navbar"
               target="_blank"
               id="navbar-brand"
             >
-              Now Ui Kit
+               <img className="GlobalRatingLogo" 
+              src={require("assets/img/globalrating_white.svg")}
+              style={{maxWidth:"100rem", width:"6rem"}}
+      alt=""
+     />
             </NavbarBrand>
             <UncontrolledTooltip target="#navbar-brand">
-              Designed by Invision. Coded by Creative Tim
+              Global Ratings
             </UncontrolledTooltip>
             <button
               className="navbar-toggler navbar-toggler"
@@ -120,12 +89,32 @@ function ExamplesNavbar() {
             <Nav navbar>
               <NavItem>
                 <NavLink to="/index" tag={Link}>
-                  Back to Kit
+                <i className="now-ui-icons business_badge"></i>
+                  <p>Nosotros </p>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/creativetimofficial/now-ui-kit-react/issues?ref=creativetim">
-                  Have an issue?
+                <NavLink to="/index" tag={Link}>
+                <i className="now-ui-icons business_globe"></i>
+                  <p> Productos y Servicios </p>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/index" tag={Link}>
+                <i className="now-ui-icons business_chart-bar-32"></i>
+                  <p> Calificacion de Riesgos </p>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/index" tag={Link}>
+                <i className="now-ui-icons files_paper"></i>
+                 <p> Leyes y Normativas </p>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/index" tag={Link}>
+                <i className="now-ui-icons business_money-coins"></i>
+                  <p>Mercado de capitales</p>
                 </NavLink>
               </NavItem>
               <NavItem>
