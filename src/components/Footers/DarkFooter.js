@@ -1,6 +1,7 @@
 /*eslint-disable*/
 import React from "react";
 import {NavLink} from "react-router-dom"; 
+import styled from "styled-components"; 
 // reactstrap components
 import { Button, Container, Row, Col, UncontrolledTooltip , FormGroup,
   Input, Form , InputGroup, InputGroupAddon, InputGroupText} from "reactstrap";
@@ -13,68 +14,21 @@ function DarkFooter() {
                 href="https://www.creative-tim.com?ref=nukr-dark-footer"
                 target="_blank"
               >
-                 <img className="finanzasDigitalLogo"
-      src={require("assets/img/pic_footerlogoFD_color.png")}
-      alt=""
-     />
+            <FinanzasDigitalLogo></FinanzasDigitalLogo>
               </a>
           
               <a
                 href="http://presentation.creative-tim.com?ref=nukr-dark-footer"
                 target="_blank"
               >
-        <img className="globalScopeLogo"
-      src={require("assets/img/pic_footerlogoGS_color.png")}
-      alt=""
-     />
+              <GlobalScopeLogo></GlobalScopeLogo>
+     
               </a>
-      
+            
             
           
-            <Col className="text-center" lg="3" md="6">
-            <h3 style= {{margin:0}}>Siguenos en... </h3>
-              <Button
-                className="btn-neutral btn-icon btn-round"
-                color="twitter"
-                href="https://www.twitter.com/creativetim?ref=creativetim"
-                id="tooltip86114138"
-                size="lg"
-                target="_blank"
-              >
-                <i className="fab fa-twitter"></i>
-              </Button>
-              <UncontrolledTooltip delay={0} target="tooltip86114138">
-                Follow us
-              </UncontrolledTooltip>
-              <Button
-                className="btn-neutral btn-icon btn-round"
-                color="facebook"
-                href="https://www.facebook.com/creativetim?ref=creativetim"
-                id="tooltip735272548"
-                size="lg"
-                target="_blank"
-              >
-                <i className="fab fa-facebook-square"></i>
-              </Button>
-              <UncontrolledTooltip delay={0} target="tooltip735272548">
-                Like us
-              </UncontrolledTooltip>
-              
-              <Button
-                className="btn-neutral btn-icon btn-round"
-                color="twitter"
-                href="https://github.com/creativetimofficial/now-ui-kit-react?ref=creativetim"
-                id="tooltip331904895"
-                size="lg"
-                target="_blank"
-              >
-                <i className="fab fa-instagram"></i>
-              </Button>
-              <UncontrolledTooltip delay={0} target="tooltip331904895">
-              Follow us
-              </UncontrolledTooltip>
-            </Col>
-             <Col lg="3" sm="4">
+          
+             <Col lg="3" sm="6">
              <h3 style= {{marginBottom:"0.7rem"}}> Suscribete </h3>
              <Form className="form-inline ml-auto" data-background-color="">
               <InputGroup>
@@ -119,5 +73,30 @@ function DarkFooter() {
     </footer>
   );
 }
-
+const FinanzasDigitalLogo = styled.div`
+display:inline-block; 
+background: url("${require("assets/img/pic_footerlogoFD_gris.png")}") no-repeat center; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+width:11rem;
+height:5rem; 
+transition: all 0.3s ease-out; 
+&:hover{
+  background-image: url("${require("assets/img/pic_footerlogoFD_color.png")}"); 
+}
+`
+const GlobalScopeLogo = styled.div`
+display:inline-block; 
+background: url("${require("assets/img/pic_footerlogoGS_gris.png")}") no-repeat center; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+width:20rem;
+height:5rem; 
+transition: all 0.3s ease-out; 
+&:hover{
+  background-image: url("${require("assets/img/pic_footerlogoGS_color.png")}"); 
+}
+`
 export default DarkFooter;

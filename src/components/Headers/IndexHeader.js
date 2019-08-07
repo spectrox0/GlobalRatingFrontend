@@ -4,7 +4,7 @@ import React from "react";
 // reactstrap components
 import { Container } from "reactstrap";
 // core components
-
+import Carousel from "./Carousel.js";
 function IndexHeader() {
   let pageHeader = React.createRef();
 
@@ -35,7 +35,9 @@ function IndexHeader() {
             backgroundImage: "url(" + require("assets/img/carr_img03.jpg") + ")"
           }}
           ref={pageHeader}
-        ></div>
+        >
+        </div>
+        
         <Container>
           <div className="content-center brand">
             <img

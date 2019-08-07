@@ -10,7 +10,7 @@ import DarkFooter from "components/Footers/DarkFooter.js";
 
 // sections for this page
 import Dictamenes from "views/home-sections/DictamenesDeCalificacion.js"
-
+import Noticias from "views/home-sections/NoticiasFinanzas.js"
 function Index() {
   React.useEffect(() => {
     document.body.classList.add("index-page");
@@ -27,8 +27,9 @@ function Index() {
     <>
       <div className="wrapper">
         <IndexHeader />
-        <div className="main" style={{height:"100vh"}}>
+        <div className="main" >
         <Dictamenes/>
+        <Noticias />
         </div>
         <DarkFooter style={{position:"absolute",bottom:"0"}} />
       </div>

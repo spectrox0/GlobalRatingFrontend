@@ -1,0 +1,42 @@
+.CardDic {
+    display: flex;
+    background: linear-gradient(180deg, #151F42 0%, #000000 250%); 
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+   border-radius: 10px; 
+   margin-bottom: 1rem; 
+   padding: 1rem; 
+   width:100%; 
+   opacity: 0.95; 
+   cursor: pointer;
+   margin-left:4rem; 
+   transition: all 0.3s ease-in; 
+}
+.CardDic img {
+   
+   margin: 0; 
+   object-fit: cover;
+   border-radius: 10px; 
+   width: 15rem; 
+  
+}
+.CardDic .TitleDictamen{
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    color:white; 
+}
+
+.CardDic .TitleDictamen h4{
+    text-align: center;
+    margin:0; 
+}
+
+.CardDic:hover  {
+  margin-left:1rem; 
+  opacity: 1;
+}
+@media only screen and (max-width: 768px) {
+    .CardDic {
+        flex-direction: column;
+    }
+  }
