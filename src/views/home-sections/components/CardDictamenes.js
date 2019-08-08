@@ -14,7 +14,7 @@ export default function CardDictamenes({
        <div className="CardDic">
         <Col xs="auto" style= {{display:"flex", alignItems:"center", justifyContent:"center"}} > 
         <img 
-        src={require("../../../assets/img/pic_ejemplo.jpg")}
+        src={imgUrl}
          alt="..."/> 
           </Col>
           <Col > 

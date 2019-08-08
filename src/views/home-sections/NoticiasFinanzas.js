@@ -50,7 +50,7 @@ export default function DictamenesDeCaificacion() {
             justifyContent:"center",
             alignItems:"center",
             width:"45%",
-            minWidth:"25rem",
+            minWidth:"20rem",
             height:"5rem",
             backgroundColor:"#151F42",
             padding:"1.2rem",
@@ -66,8 +66,9 @@ export default function DictamenesDeCaificacion() {
             TITULARES FINANZAS DIGITAL 
             </h4>
              <div style={{ 
+            
             backgroundColor:"#2CA8FF",
-             width:"18rem",
+            width:"50%",
             minWidth:"5rem",
             minHeight:"0.2rem",
             margin:"0",
@@ -81,7 +82,10 @@ export default function DictamenesDeCaificacion() {
          display:"flex",
          flexDirection:"column",
          justifyContent:"center" ,
-         background:"linear-gradient(180deg, #151F42 0%, #000000 100%)"}}>
+         background:"linear-gradient(180deg, #151F42 0%, #000000 100%)",
+         borderRadius:"10px"
+
+         }}>
 
            <Row style={{ margin:"1rem 2rem 2rem 0",
          display:"flex",

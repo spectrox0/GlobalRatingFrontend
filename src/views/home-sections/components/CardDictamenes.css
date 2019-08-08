@@ -2,14 +2,19 @@
     display: flex;
     background: linear-gradient(180deg, #151F42 0%, #000000 250%); 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
-   border-radius: 10px; 
+   border-radius: 10px 0 0 10px; 
+   margin:0; 
    margin-bottom: 1rem; 
    padding: 1rem; 
    width:100%; 
-   opacity: 0.95; 
+   opacity: 0.90; 
    cursor: pointer;
-   margin-left:4rem; 
-   transition: all 0.3s ease-in; 
+   margin-left:15%; 
+   -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+
 }
 .CardDic img {
    
@@ -32,9 +37,14 @@
 }
 
 .CardDic:hover  {
-  margin-left:1rem; 
+    -webkit-transform: scale(1.05);
+    -moz-transform:  scale(1.05);
+    -o-transform:  scale(1.05);
+    -ms-transform:  scale(1.05);
+    transform: scale(1.05);
   opacity: 1;
 }
+
 @media only screen and (max-width: 768px) {
     .CardDic {
         flex-direction: column;

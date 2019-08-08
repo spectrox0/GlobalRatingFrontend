@@ -27,7 +27,7 @@ function IndexHeader() {
       <div 
       style={{
         minHeight: "10rem",
-        height: "30rem"
+        height: "25rem"
       }}className="page-header clear-filter" filter-color="blue">
         <div
           className="page-header-image"
@@ -44,7 +44,7 @@ function IndexHeader() {
               alt="..."
               className="n-logo"
               src={require("assets/img/pic_logoGR.svg")}
-              style={{maxWidth:"100rem", width:"25rem", transform:"translateY(4rem)"}}
+              style={{ width:"30rem", maxWidth:"60%" ,transform:"translateY(4rem)"}}
             ></img>
           
           </div>

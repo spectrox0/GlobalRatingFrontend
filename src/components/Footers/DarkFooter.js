@@ -11,14 +11,14 @@ function DarkFooter() {
       <Container>
       <Row> 
               <a
-                href="https://www.creative-tim.com?ref=nukr-dark-footer"
+                href=""
                 target="_blank"
               >
             <FinanzasDigitalLogo></FinanzasDigitalLogo>
               </a>
           
               <a
-                href="http://presentation.creative-tim.com?ref=nukr-dark-footer"
+                href=""
                 target="_blank"
               >
               <GlobalScopeLogo></GlobalScopeLogo>
@@ -60,12 +60,12 @@ function DarkFooter() {
   </Col>
          </Row>
           
-            <div className="copyright" id="copyright">
+            <Copyright id="copyright">
         <p>
           GlobalRatings, C.A. RIF: J-123456789-0.
           Todos los derechos reservados © {new Date().getFullYear()}.</p>
         
-        </div>
+        </Copyright>
         
 
       
@@ -97,6 +97,16 @@ height:5rem;
 transition: all 0.3s ease-out; 
 &:hover{
   background-image: url("${require("assets/img/pic_footerlogoGS_color.png")}"); 
+}
+`
+const Copyright = styled.div`
+display:flex; 
+flex-direction:column; 
+justify-content:center; 
+align-items:center; 
+p {
+  font-size:0.8rem; 
+  text-align:center;
 }
 `
 export default DarkFooter;

@@ -7,7 +7,7 @@ import React from "react";
 // core components
 import IndexHeader from "components/Headers/IndexHeader.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
-
+import {Container} from "reactstrap";
 // sections for this page
 import Dictamenes from "views/home-sections/DictamenesDeCalificacion.js"
 import Noticias from "views/home-sections/NoticiasFinanzas.js"
@@ -28,8 +28,10 @@ function Index() {
       <div className="wrapper">
         <IndexHeader />
         <div className="main" >
+        <Container style={{margin:0, minWidth:"100%" }}> 
         <Dictamenes/>
-        <Noticias />
+        <Noticias/>
+        </Container>
         </div>
         <DarkFooter style={{position:"absolute",bottom:"0"}} />
       </div>
