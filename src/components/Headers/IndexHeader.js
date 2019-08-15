@@ -43,11 +43,20 @@ function IndexHeader() {
               alt="..."
               className="n-logo"
               src={require("assets/img/pic_logoGR.svg")}
-              style={{ width:"30rem", maxWidth:"30%" ,transform:"translateY(4rem)"}}
+              style={{ width:"30rem", maxWidth:"50%" ,transform:"translateY(4rem)"}}
             ></img>
           
           </div>
-          <div style= {{position:"absolute" ,bottom:"0" , left:"0", background:"rgba(0,0,0,0.5)"}}>
+          <div style= 
+          {{
+          position:"absolute" ,
+          bottom:"0" ,
+          left:"0",
+          width:"50%",
+          background:"rgba(44, 167, 255, 0.5)",
+          borderTopRightRadius:"10px",
+          borderTopLeftRadius:"10px"
+           }}>
         <MiniCarousel/> </div>
         </Container>
         
