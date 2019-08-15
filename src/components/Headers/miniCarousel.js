@@ -9,18 +9,15 @@ const CarouselPage = () => {
       length={3}
       showControls={false}
       showIndicators={false}
-      className="z-depth-1"
+      className="z-depth-2"
+      slide
     >
       <MDBCarouselInner>
         <MDBCarouselItem itemId="1">
           <MDBView>
-            <img
-              className="d-block w-100"
-              src={require("assets/img/carr_img03.jpg")}
-              alt="First slide"
-              style={{height:"25rem"}}
-            />
-          <MDBMask overlay="black-light" />
+          <div style={{width:"100%",padding:"0.7rem", margin:"0"}}>
+		  <h6 className="h6-responsive">Evaluacion de Riesgo</h6>
+		  </div>
           </MDBView>
           <MDBCarouselCaption>
            
@@ -28,12 +25,9 @@ const CarouselPage = () => {
         </MDBCarouselItem>
         <MDBCarouselItem itemId="2">
           <MDBView>
-            <img
-              className="d-block w-100"
-              src={require("assets/img/carr_img02.jpg")}
-              alt="Second slide"
-              style={{height:"25rem"}}
-            />
+          <div style={{width:"100%",padding:"0.7rem", margin:"0"}}>
+		  <h6 className="h6-responsive">Riesgo bancario y Aseguradoras</h6>
+		  </div>
           <MDBMask overlay="black-strong" />
           </MDBView>
           <MDBCarouselCaption>
@@ -42,12 +36,9 @@ const CarouselPage = () => {
         </MDBCarouselItem>
         <MDBCarouselItem itemId="3">
           <MDBView>
-            <img
-              className="d-block w-100"
-              src={require("assets/img/carr_img01.jpg")}
-              alt="Third slide"
-              style={{height:"25rem"}}
-            />
+          <div style={{width:"100%",padding:"0.7rem", margin:"0"}}>
+		  <h6 className="h6-responsive">Obligaciones y titularizaciones</h6>
+		  </div>
           <MDBMask overlay="black-slight" />
           </MDBView>
           <MDBCarouselCaption>

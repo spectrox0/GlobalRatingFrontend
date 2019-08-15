@@ -11,6 +11,9 @@ import {Container} from "reactstrap";
 // sections for this page
 import Dictamenes from "views/home-sections/DictamenesDeCalificacion.js"
 import Noticias from "views/home-sections/NoticiasFinanzas.js"
+
+
+
 function Index() {
   React.useEffect(() => {
     document.body.classList.add("index-page");

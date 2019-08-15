@@ -5,6 +5,7 @@ import React from "react";
 import { Container } from "reactstrap";
 // core components
 import Carousel from "./Carousel.js";
+import MiniCarousel from "./miniCarousel.js"; 
 function IndexHeader() {
   let pageHeader = React.createRef();
 
@@ -26,16 +27,14 @@ function IndexHeader() {
     <>
       <div 
       style={{
-        minHeight: "10rem",
+        minHeight: "0",
         height: "25rem"
       }}className="page-header clear-filter" filter-color="blue">
         <div
           className="page-header-image"
-          style={{
-            backgroundImage: "url(" + require("assets/img/carr_img03.jpg") + ")"
-          }}
           ref={pageHeader}
         >
+          <Carousel/>
         </div>
         
         <Container>
@@ -44,12 +43,14 @@ function IndexHeader() {
               alt="..."
               className="n-logo"
               src={require("assets/img/pic_logoGR.svg")}
-              style={{ width:"30rem", maxWidth:"60%" ,transform:"translateY(4rem)"}}
+              style={{ width:"30rem", maxWidth:"30%" ,transform:"translateY(4rem)"}}
             ></img>
           
           </div>
-          
+          <div style= {{position:"absolute" ,bottom:"0" , left:"0", background:"rgba(0,0,0,0.5)"}}>
+        <MiniCarousel/> </div>
         </Container>
+        
       </div>
     </>
   );

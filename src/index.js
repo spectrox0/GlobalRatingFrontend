@@ -25,7 +25,7 @@ import "assets/scss/now-ui-kit.scss";
 import "assets/demo/demo.css";
 import "assets/demo/nucleo-icons-page-styles.css";
 // pages for this kit
-import Index from "views/Index.js";
+import Home from "views/home.js";
 import IndexNavbar from "components/Navbars/ExamplesNavbar.js";
 
 ReactDOM.render(
@@ -34,7 +34,7 @@ ReactDOM.render(
     <Switch>
       <Switch>
 
-        <Route path="/index" render={props => <Index {...props} />} />
+        <Route path="/index" render={props => <Home {...props} />} />
       
         <Redirect to="/index" />
         <Redirect from="/" to="/index" />
