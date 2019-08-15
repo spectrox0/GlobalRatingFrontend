@@ -72,14 +72,14 @@ function DarkFooter() {
                  {"  "}  Region
         </DropdownToggle>
         <DropdownMenu aria-labelledby="dropdownMenuButton">
-          <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+          <DropdownItem href="#" onClick={e => e.preventDefault()}>
           <img
               src={require("assets/img/iconVenezuela.ico")}
               alt="Venezuela"
               style={{height:"1rem"}}
                   /> {" "}  -Venezuela
           </DropdownItem>
-          <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+          <DropdownItem href="#" onClick={e => e.preventDefault()}>
           <img
               src={require("assets/img/iconPanama.ico")}
               alt="Venezuela"

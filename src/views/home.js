@@ -11,7 +11,7 @@ import {Container} from "reactstrap";
 // sections for this page
 import Dictamenes from "views/home-sections/DictamenesDeCalificacion.js"
 import Noticias from "views/home-sections/NoticiasFinanzas.js"
-
+import CountryName from "views/HomeCountry.js"; 
 
 
 function Index() {
@@ -26,6 +26,7 @@ function Index() {
       document.body.classList.remove("sidebar-collapse");
     };
   });
+
   return (
     <>
       <div className="wrapper">
@@ -35,6 +36,7 @@ function Index() {
         <Dictamenes/>
         <Noticias/>
         </Container>
+        <CountryName/>
         </div>
         <DarkFooter style={{position:"absolute",bottom:"0"}} />
       </div>

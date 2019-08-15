@@ -27,18 +27,16 @@ import "assets/demo/nucleo-icons-page-styles.css";
 // pages for this kit
 import Home from "views/home.js";
 import IndexNavbar from "components/Navbars/ExamplesNavbar.js";
+import axios from 'axios'
 
 ReactDOM.render(
   <BrowserRouter>
    <IndexNavbar />
     <Switch>
-      <Switch>
-
         <Route path="/index" render={props => <Home {...props} />} />
-      
         <Redirect to="/index" />
         <Redirect from="/" to="/index" />
-      </Switch>
+
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")
