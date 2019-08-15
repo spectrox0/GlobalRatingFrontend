@@ -3,8 +3,24 @@ import React from "react";
 import {NavLink} from "react-router-dom"; 
 import styled from "styled-components"; 
 // reactstrap components
-import { Button, Container, Row, Col, UncontrolledTooltip , FormGroup,
-  Input, Form , InputGroup, InputGroupAddon, InputGroupText} from "reactstrap";
+import { 
+  Button, 
+  Container,
+   Row,
+    Col,
+   UncontrolledTooltip , 
+   FormGroup,
+  Input, 
+  Form , 
+  InputGroup,
+   InputGroupAddon, 
+   InputGroupText,
+  ButtonGroup,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  UncontrolledDropdown
+  } from "reactstrap";
 function DarkFooter() {
   return (
     <footer className="footer" data-background-color="black">
@@ -41,7 +57,39 @@ function DarkFooter() {
               </InputGroup>
             </Form>
              </Col> 
-            <Col className="text-center">
+            
+  <Col>     <UncontrolledDropdown>
+        <DropdownToggle
+          aria-expanded={false}
+          aria-haspopup={true}
+          caret
+          color="secondary"
+          data-toggle="dropdown"
+          id="dropdownMenuButton"
+          type="button"
+        >
+          <i className="now-ui-icons location_world"></i>
+                 {"  "}  Region
+        </DropdownToggle>
+        <DropdownMenu aria-labelledby="dropdownMenuButton">
+          <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+          <img
+              src={require("assets/img/iconVenezuela.ico")}
+              alt="Venezuela"
+              style={{height:"1rem"}}
+                  /> {" "}  -Venezuela
+          </DropdownItem>
+          <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+          <img
+              src={require("assets/img/iconPanama.ico")}
+              alt="Venezuela"
+              style={{height:"1rem"}}
+                  /> {" "}   -Panama
+          </DropdownItem>
+        </DropdownMenu>
+      </UncontrolledDropdown></Col>
+         </Row>
+       <Row> <Col className="text-center">
   <ul className="nav-links">
            <li>
             <NavLink to="/about"> Nosotros </NavLink>
@@ -57,9 +105,7 @@ function DarkFooter() {
            <li>  <NavLink to="/contact"> Contacto </NavLink>
            </li>
        </ul>
-  </Col>
-         </Row>
-          
+  </Col></Row>
             <Copyright id="copyright">
         <p>
           GlobalRatings, C.A. RIF: J-123456789-0.
