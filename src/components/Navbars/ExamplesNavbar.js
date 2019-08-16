@@ -62,6 +62,7 @@ function ExamplesNavbar() {
             <UncontrolledTooltip target="#navbar-brand">
               Global Ratings
             </UncontrolledTooltip>
+            
             <button
               className="navbar-toggler navbar-toggler"
               onClick={() => {
@@ -80,8 +81,9 @@ function ExamplesNavbar() {
             className="justify-content-end"
             isOpen={collapseOpen}
             navbar
-          >
+          > 
             <Nav navbar>
+              
               <NavItem>
                 <NavLink to="/index" tag={Link}>
                 <i className="now-ui-icons business_badge"></i>

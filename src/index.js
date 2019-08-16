@@ -32,13 +32,10 @@ ReactDOM.render(
   <BrowserRouter>
    <IndexNavbar />
     <Switch>
-      <Switch>
-
         <Route path="/index" render={props => <Home {...props} />} />
-      
         <Redirect to="/index" />
         <Redirect from="/" to="/index" />
-      </Switch>
+
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")
