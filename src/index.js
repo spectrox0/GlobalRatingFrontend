@@ -25,18 +25,20 @@ import "assets/scss/now-ui-kit.scss";
 import "assets/demo/demo.css";
 import "assets/demo/nucleo-icons-page-styles.css";
 // pages for this kit
-import Home from "views/home.js";
+import Home from "views/Home.js";
 import IndexNavbar from "components/Navbars/ExamplesNavbar.js";
-
+import Auth from "views/AuthPage.js"; 
+import DarkFooter from "components/Footers/DarkFooter.js";
 ReactDOM.render(
   <BrowserRouter>
    <IndexNavbar />
     <Switch>
-        <Route path="/index" render={props => <Home {...props} />} />
-        <Redirect to="/index" />
-        <Redirect from="/" to="/index" />
+      <Route path="/index" component={Home} />
+      <Route path="/auth" component={Auth}/>
+      <Redirect from="/" to="/index" />
 
     </Switch>
+    <DarkFooter style={{position:"absolute",bottom:"0"}} />
   </BrowserRouter>,
   document.getElementById("root")
 );
