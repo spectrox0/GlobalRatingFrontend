@@ -2,7 +2,7 @@ import React from "react";
 import {useState} from "react"; 
 import Noticias from "./components/CardNoticias.js"
 // reactstrap components
-import { Button, Container, Row, Col, UncontrolledTooltip } from "reactstrap";
+import { Button, Row } from "reactstrap";
 
 export default function DictamenesDeCaificacion() {
    const [noticias, setNoticias] = useState(

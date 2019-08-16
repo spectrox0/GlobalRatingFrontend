@@ -24,6 +24,9 @@
    width: 15rem; 
   
 }
+.ContentDictamen p {
+    font-family: 'Ovo', serif;
+}
 .CardDic .TitleDictamen{
     display: flex; 
     flex-direction: column;

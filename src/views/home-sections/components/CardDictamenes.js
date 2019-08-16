@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container, Row, Col, UncontrolledTooltip } from "reactstrap";
+import { Row, Col } from "reactstrap";
 import "./CardDictamenes.css";
 export default function CardDictamenes({
     id,

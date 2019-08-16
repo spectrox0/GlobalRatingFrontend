@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
 "mdbreact";
 
@@ -15,9 +16,9 @@ const CarouselPage = () => {
       <MDBCarouselInner>
         <MDBCarouselItem itemId="1">
           <MDBView>
-          <div style={{width:"100%",padding:"0.7rem", margin:"0"}}>
-		  <h6 className="h6-responsive">Evaluacion de Riesgo</h6>
-		  </div>
+          <ContainerCarousel>
+		  <h6 className="h6-responsive">Obligaciones y titularizaciones</h6>
+		  </ContainerCarousel>
           </MDBView>
           <MDBCarouselCaption>
            
@@ -25,9 +26,9 @@ const CarouselPage = () => {
         </MDBCarouselItem>
         <MDBCarouselItem itemId="2">
           <MDBView>
-          <div style={{width:"100%",padding:"0.7rem", margin:"0"}}>
-		  <h6 className="h6-responsive">Riesgo bancario y Aseguradoras</h6>
-		  </div>
+          <ContainerCarousel>
+		  <h6 className="h6-responsive">Obligaciones y titularizaciones</h6>
+		  </ContainerCarousel>
           <MDBMask overlay="black-strong" />
           </MDBView>
           <MDBCarouselCaption>
@@ -36,9 +37,9 @@ const CarouselPage = () => {
         </MDBCarouselItem>
         <MDBCarouselItem itemId="3">
           <MDBView>
-          <div style={{width:"100%",padding:"0.7rem", margin:"0"}}>
+          <ContainerCarousel>
 		  <h6 className="h6-responsive">Obligaciones y titularizaciones</h6>
-		  </div>
+		  </ContainerCarousel>
           <MDBMask overlay="black-slight" />
           </MDBView>
           <MDBCarouselCaption>
@@ -51,3 +52,16 @@ const CarouselPage = () => {
 }
 
 export default CarouselPage;
+
+const ContainerCarousel = styled.div`
+   width:100%; 
+   padding: 0.7rem; 
+   margin: 0 ; 
+   font-family: 'Ovo', serif;
+    
+   h6{ 
+    font-family: 'Ovo', serif;
+    font-size: 1.2rem; 
+    }
+
+`

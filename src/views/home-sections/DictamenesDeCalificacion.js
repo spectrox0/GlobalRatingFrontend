@@ -1,8 +1,7 @@
-import React from "react";
-import {useState} from "react"; 
+import React, {useState} from "react";
 import Dictamenes from "./components/CardDictamenes.js"
 // reactstrap components
-import { Button, Container, Row, Col, UncontrolledTooltip } from "reactstrap";
+import { Button,Row } from "reactstrap";
 
 export default function DictamenesDeCaificacion() {
    const [dictamenes, setDictamenes] = useState(
@@ -59,6 +58,7 @@ export default function DictamenesDeCaificacion() {
           }}>
              <h4 style={{
             margin:"0",
+            fontFamily:"'Ovo', serif",
             textAlign:"center",
             color:"white",
             textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"
