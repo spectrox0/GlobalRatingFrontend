@@ -2,11 +2,11 @@ import React , {useState,useEffect } from 'react';
 import axios from 'axios'
 export default function HomeCountry() {
 
-const [countryName,setCountryName] = useState(null); 
+const [countryName, setCountryName] = useState(null); 
 const [countryCode, setCountryCode] = useState(null); 
 const [countryCity, setCountryCity] = useState(null); 
 
-const getGeoInfo = async () => {
+const getGeoInfo = () => {
   axios.get('https://ipapi.co/json/').then((response) => {
       let data = response.data;
       setCountryName(data.country_name); 
