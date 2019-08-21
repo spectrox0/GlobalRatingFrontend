@@ -14,7 +14,7 @@ import Noticias from "views/home-sections/NoticiasFinanzas.js"
 import CountryName from "views/HomeCountry.js"; 
 
 
-function Index() {
+export default function Index() {
   React.useEffect(() => {
     document.body.classList.add("index-page");
     document.body.classList.add("sidebar-collapse");
@@ -36,12 +36,10 @@ function Index() {
         <Dictamenes/>
         <Noticias/>
         </Container>
-        <CountryName/>
         </div>
-        <DarkFooter style={{position:"absolute",bottom:"0"}} />
       </div>
     </>
   );
 }
 
-export default Index;
+
