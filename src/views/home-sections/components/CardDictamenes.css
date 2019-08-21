@@ -1,12 +1,13 @@
 .CardDic {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     background: linear-gradient(180deg, #151F42 0%, #000000 250%); 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
-   border-radius: 10px 0 0 10px; 
-   margin:0; 
-   margin-bottom: 1rem; 
+   border-radius: 10px 0 10px 0; 
+   margin:1rem;
    padding: 1rem; 
-   width:100%; 
+    width: 90%;
    opacity: 0.90; 
    cursor: pointer;
    margin-left:15%; 
@@ -21,17 +22,19 @@
    margin: 0; 
    object-fit: cover;
    border-radius: 10px; 
-   width: 15rem; 
+   width: 10rem; 
   
 }
 .ContentDictamen p {
     font-family: 'Ovo', serif;
+    font-size: 0.8rem;
 }
 .CardDic .TitleDictamen{
     display: flex; 
     flex-direction: column;
     align-items: center; 
     color:white; 
+    font-size: 0.6rem;
 }
 
 .CardDic .TitleDictamen h4{
@@ -47,9 +50,3 @@
     transform: scale(1.05);
   opacity: 1;
 }
-
-@media only screen and (max-width: 768px) {
-    .CardDic {
-        flex-direction: column;
-    }
-  }

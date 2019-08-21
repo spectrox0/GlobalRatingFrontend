@@ -1,5 +1,4 @@
 import React from 'react';
-import { Row, Col } from "reactstrap";
 import "./CardDictamenes.css";
 export default function CardDictamenes({
     id,
@@ -10,15 +9,13 @@ export default function CardDictamenes({
    
   }) { 
       return (
-      <Row>
+      
        <div className="CardDic">
-        <Col xs="auto" style= {{display:"flex", alignItems:"center", justifyContent:"center"}} > 
+        
         <img 
         src={imgUrl}
          alt="..."/> 
-          </Col>
-          <Col > 
-           
+         
            <div className="TitleDictamen">
            <h4> {title} </h4>
             <div className="overlineTitle" 
@@ -40,9 +37,7 @@ export default function CardDictamenes({
            </div>
                 </div>
         
-         </Col>
-       </div>
-      </Row>); 
+       </div>); 
    
 
   }

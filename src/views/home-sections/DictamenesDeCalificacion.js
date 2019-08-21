@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import Dictamenes from "./components/CardDictamenes.js"
 // reactstrap components
 import { Button,Row } from "reactstrap";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 export default function DictamenesDeCaificacion() {
    const [dictamenes, setDictamenes] = useState(
@@ -37,7 +39,27 @@ export default function DictamenesDeCaificacion() {
        }); 
        return innerJSX; 
    }
-
+   const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 6,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 4,
+     
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1
+    },
+  };
+    
     return( <> 
      <Row className="" >
          <div
@@ -49,16 +71,17 @@ export default function DictamenesDeCaificacion() {
             alignItems:"center",
             width:"45%",
             minWidth:"20rem",
-            height:"5rem",
+            height:"3rem",
             backgroundColor:"#2CA8FF",
-            padding:"1.2rem",
-            margin:"2rem 0 2rem 0",
+            padding:"1rem",
+            margin:"1rem 0 1rem 0",
             borderTopRightRadius:"500px",
             borderBottomRightRadius:"500px"
           }}>
              <h4 style={{
             margin:"0",
             fontFamily:"'Ovo', serif",
+            fontSize: "1rem",
             textAlign:"center",
             color:"white",
             textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"
@@ -77,12 +100,28 @@ export default function DictamenesDeCaificacion() {
            }}> </div>
          </div>
          </Row> 
-         <Row style={{ margin:"0",
-         display:"flex",
-         flexDirection:"column",
-         justifyContent:"center" }}>
-                <DCard/>
-         </Row>
+         <Carousel 
+  swipeable={false}
+  draggable={true}
+  centerMode={true} 
+  showDots={true}
+  responsive={responsive}
+  ssr={true} // means to render carousel on server-side.
+  infinite={true}
+  keyBoardControl={true}
+  customTransition="all 1s"
+  transitionDuration={500}
+  containerClass="carousel-container"
+  removeArrowOnDeviceType={["tablet", "mobile"]}
+  dotListClass="custom-dot-list-style"
+  itemClass="carousel-item-padding-40-px" 
+  >
+    <Dictamenes {...dictamenes[0]} /> 
+    <Dictamenes {...dictamenes[1]} /> 
+    <Dictamenes {...dictamenes[2]} /> 
+    <Dictamenes {...dictamenes[3]} /> 
+    <Dictamenes {...dictamenes[2]} /> 
+</Carousel>
          <Row style={{ margin:"0 2rem 0 0",
          display:"flex",
          justifyContent:"flex-end" }}> 
