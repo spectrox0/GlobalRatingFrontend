@@ -8,7 +8,7 @@ import $ from "jquery";
 
 export default function DictamenesDeCaificacion() {
    const [dictamenes, setDictamenes] = useState([]); 
-   const [isLoading, setLoading] = useState(true); 
+
  
    useEffect(()=> {
     getJson(); 
@@ -23,7 +23,6 @@ export default function DictamenesDeCaificacion() {
   .then(
     function(data) {
       setDictamenes(data); 
-      setLoading(false); 
   }
   ).catch( err => { 
     throw new Error("error"); 
