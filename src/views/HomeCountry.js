@@ -1,11 +1,11 @@
 import React , {useState,useEffect } from 'react'; 
 import axios from 'axios'
-export default function HomeCountry() {
+import $ from "jquery"; 
 
+export default function HomeCountry() {
 const [countryName, setCountryName] = useState(null); 
 const [countryCode, setCountryCode] = useState(null); 
 const [countryCity, setCountryCity] = useState(null); 
-
 const getGeoInfo = () => {
   axios.get('https://ipapi.co/json/').then((response) => {
       let data = response.data;
@@ -19,7 +19,7 @@ const getGeoInfo = () => {
 
 useEffect(()=> {
   getGeoInfo(); 
-})
+},[]); 
  return(
      <div> 
          <p> {countryName} </p> 

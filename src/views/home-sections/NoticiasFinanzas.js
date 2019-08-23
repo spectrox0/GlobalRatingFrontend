@@ -1,36 +1,29 @@
 import React from "react";
-import {useState} from "react"; 
+import {useState,useEffect} from "react"; 
 import Noticias from "./components/CardNoticias.js"
 // reactstrap components
 import { Button, Row } from "reactstrap";
-
+import $ from "jquery";
 export default function DictamenesDeCaificacion() {
-   const [noticias, setNoticias] = useState(
-    [  {id:1, 
-      title: "En Subasta Dicom SMC-051-18 se adjudicaron USD 4.530.460,00 a 110 empresas y 378 personas naturales",
-      imgUrl:"hola",
-      date: new Date().getFullYear(),
-      content:"15/8/2014. F.V.I. FONDO DE VALORES INMOBILIARIO, S.A.C.A. se define como una empresa especializada en el negocio inmobiliario y financiero, dedicada a invertir, promover y gerenciar el alquiler de espacios de ce...      "
-       }, 
-       {id:2, 
-        title: "En Subasta Dicom SMC-051-18 se adjudicaron USD 4.530.460,00 a 110 empresas y 378 personas naturales",
-        imgUrl:"hola",
-        date: new Date().getFullYear(),
-        content:"15/8/2014. F.V.I. FONDO DE VALORES INMOBILIARIO, S.A.C.A. se define como una empresa especializada en el negocio inmobiliario y financiero, dedicada a invertir, promover y gerenciar el alquiler de espacios de ce... "
-        },
-        {id:3, 
-            title: "En Subasta Dicom SMC-051-18 se adjudicaron USD 4.530.460,00 a 110 empresas y 378 personas naturales",
-            imgUrl:"hola",
-            date: new Date().getFullYear(),
-            content:"15/8/2014. F.V.I. FONDO DE VALORES INMOBILIARIO, S.A.C.A. se define como una empresa especializada en el negocio inmobiliario y financiero, dedicada a invertir, promover y gerenciar el alquiler de espacios de ce..."
-            }, 
-            {id:4, 
-                title: "En Subasta Dicom SMC-051-18 se adjudicaron USD 4.530.460,00 a 110 empresas y 378 personas naturales",
-                imgUrl:"hola",
-                date: new Date().getFullYear(),
-                content:"15/8/2014. F.V.I. FONDO DE VALORES INMOBILIARIO, S.A.C.A. se define como una empresa especializada en el negocio inmobiliario y financiero, dedicada a invertir, promover y gerenciar el alquiler de espacios de ce...      "
-                 }, ]
-   ); 
+   const [noticias, setNoticias] = useState([]); 
+   useEffect(()=> {
+    getJson(); 
+    
+  },[])
+   const getJson= () => {
+    $.ajax({
+      dataType: 'json',
+      type: "GET",
+      url : "https://www.finanzasdigital.com/traeposts.php?token=aHcT639@/$muzk56&pagina=0&numNoticias=4&categoriaIncluir=-7667,-41,-1574,-7014"
+  })
+  .then(
+    function(data) {
+      setNoticias(data); 
+  }
+  ).catch( err => { 
+    throw new Error("error"); 
+  });
+   }
    const NCard =()=> {
        const innerJSX = noticias.map( args => {
            return <Noticias {...args} /> 
@@ -82,8 +75,8 @@ export default function DictamenesDeCaificacion() {
          display:"flex",
          flexDirection:"column",
          justifyContent:"center" ,
-         background:"linear-gradient(180deg, #151F42 0%, #000000 100%)",
-         borderRadius:"10px"
+         borderRadius:"6px",
+         background:"linear-gradient(180deg, #151F42 0%, #000000 100%)"
 
          }}>
 

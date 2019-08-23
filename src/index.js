@@ -26,8 +26,9 @@ import "assets/demo/demo.css";
 import "assets/demo/nucleo-icons-page-styles.css";
 // pages for this kit
 import Home from "views/Home.js";
-import IndexNavbar from "components/Navbars/ExamplesNavbar.js";
+import IndexNavbar from "components/Navbars/Navbar.js";
 import Auth from "views/AuthPage.js"; 
+import Dictamen from "views/Dictamen.js"; 
 import DarkFooter from "components/Footers/DarkFooter.js";
 ReactDOM.render(
   <BrowserRouter>
@@ -35,8 +36,9 @@ ReactDOM.render(
     <Switch>
       <Route path="/index" component={Home} />
       <Route path="/auth" component={Auth}/>
-      <Redirect from="/" to="/index" />
-
+      <Route path="/dictamen" render={ (props) =>  <Dictamen {...props}/> }/>
+      <Redirect from="/" to="/index" />>
+       
     </Switch>
     <DarkFooter style={{position:"absolute",bottom:"0"}} />
   </BrowserRouter>,

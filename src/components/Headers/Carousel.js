@@ -18,7 +18,7 @@ const CarouselPage = () => {
               className="d-block w-100"
               src={require("assets/img/carr_img03.jpg")}
               alt="First slide"
-              style={{height:"25rem"}}
+              style={{height:"22rem"}}
             />
           <MDBMask overlay="black-light" />
           </MDBView>
@@ -32,7 +32,7 @@ const CarouselPage = () => {
               className="d-block w-100"
               src={require("assets/img/carr_img02.jpg")}
               alt="Second slide"
-              style={{height:"25rem"}}
+              style={{height:"22rem"}}
             />
           <MDBMask overlay="black-strong" />
           </MDBView>
@@ -46,7 +46,7 @@ const CarouselPage = () => {
               className="d-block w-100"
               src={require("assets/img/carr_img01.jpg")}
               alt="Third slide"
-              style={{height:"25rem"}}
+              style={{height:"22rem"}}
             />
           <MDBMask overlay="black-slight" />
           </MDBView>

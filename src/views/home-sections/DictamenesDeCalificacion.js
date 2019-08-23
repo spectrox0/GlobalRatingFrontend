@@ -1,62 +1,56 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Dictamenes from "./components/CardDictamenes.js"
 // reactstrap components
 import { Button,Row } from "reactstrap";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import $ from "jquery";
 
 export default function DictamenesDeCaificacion() {
-   const [dictamenes, setDictamenes] = useState(
-    [  {id:1, 
-      title: "REVISION F.V.I. FONDO DE VALORES INMOBILIARIOS",
-      imgUrl: require("../../assets/img/pic_ejemplo.jpg"),
-      date: new Date().getFullYear(),
-      content:"15/8/2014. F.V.I. FONDO DE VALORES INMOBILIARIO, S.A.C.A. se define como una empresa especializada en el negocio inmobiliario y financiero, dedicada a invertir, promover y gerenciar el alquiler de espacios de ce...      "
-       }, 
-       {id:1, 
-        title: "REVISIÓN INELECTRA, S.A.C.A.",
-        imgUrl:require("../../assets/img/Logo-Inelectra.jpg"),
-        date: new Date().getFullYear(),
-        content:"15/8/2014. F.V.I. FONDO DE VALORES INMOBILIARIO, S.A.C.A. se define como una empresa especializada en el negocio inmobiliario y financiero, dedicada a invertir, promover y gerenciar el alquiler de espacios de ce... "
-        },
-        {id:1, 
-            title: "TOYOTA SERVICES DE VENEZUELA, C.A.",
-            imgUrl: require("./../../assets/img/Logo-TSV.jpg"),
-            date: new Date().getFullYear(),
-            content:"15/8/2014. TOYOTA SERVICES DE VENEZUELA, C.A. es una compañía creada en octubre de 2001 con el objeto de otorgar préstamos a concesionarios, personas naturales y jurídicas para facilitar la adquisición de automó..."
-            },
-            {id:1, 
-                title: "REVISION F.V.I. FONDO DE VALORES INMOBILIARIOS",
-                imgUrl:require("../../assets/img/pic_ejemplo.jpg"),
-                date: new Date().getFullYear(),
-                content:"15/8/2014. F.V.I. FONDO DE VALORES INMOBILIARIO, S.A.C.A. se define como una empresa especializada en el negocio inmobiliario y financiero, dedicada a invertir, promover y gerenciar el alquiler de espacios de ce...      "
-                 }, ]
-   ); 
-   const DCard =()=> {
-       const innerJSX = dictamenes.map( args => {
-           return <Dictamenes {...args} /> 
-
-       }); 
-       return innerJSX; 
+   const [dictamenes, setDictamenes] = useState([]); 
+   const [isLoading, setLoading] = useState(true); 
+ 
+   useEffect(()=> {
+    getJson(); 
+    
+  },[])
+   const getJson= () => {
+    $.ajax({
+      dataType: 'json',
+      type: "GET",
+      url : "https://www.finanzasdigital.com/traeposts.php?token=aHcT639@/$muzk56&pagina=0&numNoticias=6&categoriaIncluir=7667,-7014"
+  })
+  .then(
+    function(data) {
+      setDictamenes(data); 
+      setLoading(false); 
+  }
+  ).catch( err => { 
+    throw new Error("error"); 
+  });
    }
    const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
-      items: 6,
+      items: 5,
+      partialVisibilityGutter: 40
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
       items: 4,
+      partialVisibilityGutter: 40
      
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
       items: 2,
+      partialVisibilityGutter: 30
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 1
+      items: 1 ,
+      partialVisibilityGutter: 30
     },
   };
     
@@ -71,7 +65,7 @@ export default function DictamenesDeCaificacion() {
             alignItems:"center",
             width:"45%",
             minWidth:"20rem",
-            height:"3rem",
+            height:"4rem",
             backgroundColor:"#2CA8FF",
             padding:"1rem",
             margin:"1rem 0 1rem 0",
@@ -81,7 +75,7 @@ export default function DictamenesDeCaificacion() {
              <h4 style={{
             margin:"0",
             fontFamily:"'Ovo', serif",
-            fontSize: "1rem",
+            fontSize: "1.2rem",
             textAlign:"center",
             color:"white",
             textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"
@@ -96,20 +90,20 @@ export default function DictamenesDeCaificacion() {
             margin:"0",
             boxShadow: "0px 4px 4px rgba(50, 121, 151, 0.44)",
            transform: "matrix(1, 0, 0, -1, 0, 0)"
-           
            }}> </div>
          </div>
          </Row> 
+         
          <Carousel 
-  swipeable={false}
-  draggable={true}
-  centerMode={true} 
-  showDots={true}
+  swipeable={true}
+  draggable={true} 
+  showDots={false}
+  centerMode={true}
   responsive={responsive}
   ssr={true} // means to render carousel on server-side.
   infinite={true}
   keyBoardControl={true}
-  customTransition="all 1s"
+  customTransition="all .5s"
   transitionDuration={500}
   containerClass="carousel-container"
   removeArrowOnDeviceType={["tablet", "mobile"]}
@@ -120,8 +114,10 @@ export default function DictamenesDeCaificacion() {
     <Dictamenes {...dictamenes[1]} /> 
     <Dictamenes {...dictamenes[2]} /> 
     <Dictamenes {...dictamenes[3]} /> 
-    <Dictamenes {...dictamenes[2]} /> 
+    <Dictamenes {...dictamenes[4]} /> 
+    <Dictamenes {...dictamenes[5]} /> 
 </Carousel>
+
          <Row style={{ margin:"0 2rem 0 0",
          display:"flex",
          justifyContent:"flex-end" }}> 

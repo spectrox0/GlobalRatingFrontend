@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
+import "./Navbar.css"; 
 // reactstrap components
 import {
   Collapse,
@@ -9,24 +10,34 @@ import {
   NavLink,
   Nav,
   Container,
-  UncontrolledTooltip
+  UncontrolledTooltip,
+  UncontrolledDropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle
 } from "reactstrap";
 
 function ExamplesNavbar() {
-  const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
-  const [collapseOpen, setCollapseOpen] = React.useState(false);
-  React.useEffect(() => {
+   // Variables useState
+  const [navbarColor, setNavbarColor] = useState("navbar-transparent");
+  const [navbarLogo, setNavbarLogo] = useState("navbar-logoHidden"); 
+  const [collapseOpen, setCollapseOpen] = useState(false);
+   // Use effect se carga al iniciar el componente
+
+   useEffect(() => {
     const updateNavbarColor = () => {
       if (
-        document.documentElement.scrollTop > 299 ||
-        document.body.scrollTop > 299
+        document.documentElement.scrollTop > 280 ||
+        document.body.scrollTop > 280
       ) {
         setNavbarColor("");
+        setNavbarLogo(""); 
       } else if (
-        document.documentElement.scrollTop < 300 ||
-        document.body.scrollTop < 300
+        document.documentElement.scrollTop < 281 ||
+        document.body.scrollTop < 281
       ) {
         setNavbarColor("navbar-transparent");
+        setNavbarLogo("navbar-logoHidden"); 
       }
     };
     window.addEventListener("scroll", updateNavbarColor);
@@ -52,6 +63,7 @@ function ExamplesNavbar() {
             <NavbarBrand
               target="_blank"
               id="navbar-brand"
+              className={navbarLogo}
             >
                <img className="GlobalRatingLogo" 
               src={require("assets/img/globalrating_white.svg")}
@@ -84,12 +96,40 @@ function ExamplesNavbar() {
           > 
             <Nav navbar>
               
-              <NavItem>
-                <NavLink to="/index" tag={Link}>
-                <i className="now-ui-icons business_badge"></i>
-                  <p>Nosotros </p>
-                </NavLink>
-              </NavItem>
+            <UncontrolledDropdown nav>
+                <DropdownToggle
+                  aria-haspopup={true}
+                  caret
+                  color="default"
+                  data-toggle="dropdown"
+                  id="navbarDropdownMenuLink"
+                  nav
+                  onClick={e => e.preventDefault()}
+                >
+                   <i className="now-ui-icons business_chart-bar-32"></i>
+                  <p> Nosotros </p>
+                </DropdownToggle>
+                <DropdownMenu aria-labelledby="navbarDropdownMenuLink">
+                  <DropdownItem
+                    href="#pablo"
+                    onClick={e => e.preventDefault()}
+                  >
+                    Quienes Somos
+                  </DropdownItem>
+                  <DropdownItem
+                    href="#pablo"
+                    onClick={e => e.preventDefault()}
+                  >
+                    Como lo hacemos
+                  </DropdownItem>
+                  <DropdownItem
+                    href="#pablo"
+                    onClick={e => e.preventDefault()}
+                  >
+                   Principios y valores
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
               <NavItem>
                 <NavLink to="/index" tag={Link}>
                 <i className="now-ui-icons business_globe"></i>

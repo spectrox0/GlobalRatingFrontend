@@ -1,19 +1,29 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import "./CardDictamenes.css";
+
 export default function CardDictamenes({
     id,
-    imgUrl,
     date,
-    title,
-    content,
+    imageUrl,
+    postUrl,
+    title
    
   }) { 
+    const [isLoading, setLoading] = useState(true); 
+     useEffect(()=> {
+       if(imageUrl){
+           setLoading(false); 
+       }
+   }); 
       return (
       
-       <div className="CardDic">
+       <div className="CardDic" to= {{
+        pathname: '/dictamen',
+        search: `?id=${id}`
+       }}>
         
         <img 
-        src={imgUrl}
+        src={ isLoading? require("../../../assets/img/blockLoad.svg"): imageUrl}
          alt="..."/> 
          
            <div className="TitleDictamen">
@@ -26,14 +36,12 @@ export default function CardDictamenes({
             minHeight:"0.2rem",
             margin:"0",
             boxShadow: " 0px 4px 4px rgba(50, 121, 151, 0.44)",
-           transform: "matrix(1, 0, 0, -1, 0, 0)"
+           transform: "matrix(1, 0, 0, -1, 0, 0)",
+            marginBottom:"0.6rem"
            
            }}> </div>
            <div className="ContentDictamen">
-               <p>
-                   {content}
-                   
-               </p>
+              <span> {date} </span>
            </div>
                 </div>
         

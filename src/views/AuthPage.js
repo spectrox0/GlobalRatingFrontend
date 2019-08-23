@@ -13,8 +13,7 @@ export default function AuthPage(){
      if(email.trim().length===0 || password.trim().length===0) {
          return; 
      }
-     console.log(email, password);
-     const requestBody = {
+     let requestBody = {
          query:`
          mutation { 
              createUser(userInput: {email:"${email}", password:"${password}"}) {
@@ -22,6 +21,19 @@ export default function AuthPage(){
                  email
              }
           }`
+     }
+     if(isLogin) {
+       requestBody= { query:`
+        query {
+            login(email:"${email}", password:"${password}") {
+                userId
+                token
+                tokenExpiration
+            }
+        }
+        `
+       }
+
      }
      fetch('http://localhost:3000/graphql', {
          method:'POST',
