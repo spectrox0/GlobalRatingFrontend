@@ -1,4 +1,5 @@
 import React,{useState, useEffect} from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import "./CardDictamenes.css";
 
 export default function CardDictamenes({
@@ -14,10 +15,10 @@ export default function CardDictamenes({
        if(imageUrl){
            setLoading(false); 
        }
-   }); 
+   },[imageUrl]); 
       return (
       
-       <div className="CardDic" to= {{
+       <Link className="CardDic" to={{
         pathname: '/dictamen',
         search: `?id=${id}`
        }}>
@@ -45,7 +46,7 @@ export default function CardDictamenes({
            </div>
                 </div>
         
-       </div>); 
+       </Link>); 
    
 
   }

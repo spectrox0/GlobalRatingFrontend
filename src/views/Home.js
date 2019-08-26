@@ -6,13 +6,10 @@ import React from "react";
 
 // core components
 import IndexHeader from "components/Headers/IndexHeader.js";
-import DarkFooter from "components/Footers/DarkFooter.js";
 import {Container} from "reactstrap";
 // sections for this page
 import Dictamenes from "views/home-sections/DictamenesDeCalificacion.js"
 import Noticias from "views/home-sections/NoticiasFinanzas.js"
-import CountryName from "views/HomeCountry.js"; 
-
 
 export default function Index() {
   React.useEffect(() => {
@@ -28,7 +25,7 @@ export default function Index() {
   });
 
   return (
-    <>
+    <>  
       <div className="wrapper">
         <IndexHeader />
         <div className="main" >

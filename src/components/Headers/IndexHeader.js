@@ -29,7 +29,9 @@ function IndexHeader() {
       style={{
         minHeight: "0",
         height: "22rem"
-      }}className="page-header clear-filter" filter-color="blue">
+      }}
+      className="page-header clear-filter" filter-color="blue" 
+     >
         <div
           className="page-header-image"
           ref={pageHeader}
