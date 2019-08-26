@@ -10,7 +10,7 @@ import {Container} from "reactstrap";
 // sections for this page
 import Dictamenes from "views/home-sections/DictamenesDeCalificacion.js"
 import Noticias from "views/home-sections/NoticiasFinanzas.js"
-
+import styled from 'styled-components'; 
 export default function Index() {
   React.useEffect(() => {
     document.body.classList.add("index-page");
@@ -25,18 +25,28 @@ export default function Index() {
   });
 
   return (
-    <>  
+    <HomeContainer>  
       <div className="wrapper">
         <IndexHeader />
         <div className="main" >
-        <Container style={{margin:0, minWidth:"100%" }}> 
-        <Dictamenes/>
+         <Dictamenes/>
         <Noticias/>
-        </Container>
+
         </div>
       </div>
-    </>
+    </HomeContainer>
   );
 }
 
+const HomeContainer = styled.div`
+.main {
+  display: flex; 
+  flex-direction: column; 
+  align-items:center; 
+  padding:0; 
+  margin:0; 
+ 
+}
+
+`
 

@@ -5,7 +5,7 @@ import { Button,Row } from "reactstrap";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import $ from "jquery";
-
+import styled from "styled-components"; 
 export default function DictamenesDeCaificacion() {
    const [dictamenes, setDictamenes] = useState([]); 
 
@@ -53,47 +53,16 @@ export default function DictamenesDeCaificacion() {
     },
   };
     
-    return( <> 
-     <Row className="" >
-         <div
-          style= {{display:"flex",
-           flexDirection:"column",
-           position:"relative",
-           left:"0",
-            justifyContent:"center",
-            alignItems:"center",
-            width:"45%",
-            minWidth:"20rem",
-            height:"4rem",
-            backgroundColor:"#2CA8FF",
-            padding:"1rem",
-            margin:"1rem 0 1rem 0",
-            borderTopRightRadius:"500px",
-            borderBottomRightRadius:"500px"
-          }}>
-             <h4 style={{
-            margin:"0",
-            fontFamily:"'Ovo', serif",
-            fontSize: "1.2rem",
-            textAlign:"center",
-            color:"white",
-            textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"
-            }}> 
+    return( <DictamenesContainer> 
+         <div className="title-dictamenes"
+         >
+             <h4 > 
             DICTAMENES DE CALIFICACION 
             </h4>
-             <div style={{ 
-            backgroundColor:"#151F42",
-             width:"45%",
-            minWidth:"5rem",
-            minHeight:"0.2rem",
-            margin:"0",
-            boxShadow: "0px 4px 4px rgba(50, 121, 151, 0.44)",
-           transform: "matrix(1, 0, 0, -1, 0, 0)"
-           }}> </div>
+             <div className="underline"></div>
          </div>
-         </Row> 
          
-         <Carousel 
+    <Carousel 
   swipeable={true}
   draggable={true} 
   showDots={false}
@@ -117,12 +86,56 @@ export default function DictamenesDeCaificacion() {
     <Dictamenes {...dictamenes[5]} /> 
 </Carousel>
 
-         <Row style={{ margin:"0 2rem 0 0",
-         display:"flex",
-         justifyContent:"flex-end" }}> 
+         < div className="row" > 
              <Button className="btn-round" color="info"
              style={{width:"10rem", fontSize:"1.2rem"}}
              > Ver más </Button>
-         </Row>
-    </>); 
+         </div>
+    </DictamenesContainer>); 
 }
+
+const DictamenesContainer = styled.div`
+margin:0; 
+padding:0; 
+ width:100%; 
+.title-dictamenes {
+  display: flex ; 
+  flex-direction:column; 
+  position: relative; 
+  left:0; 
+  justify-content:center; 
+  align-items: center; 
+  width: 45%; 
+  min-width:20rem; 
+  height: 4rem; 
+  background-color: #2CA8FF; 
+  padding: 1rem; 
+  margin: 1rem 0 1rem 0; 
+  border-top-right-radius: 500px; 
+  border-bottom-right-radius: 500px; 
+
+  h4 {
+    margin:0; 
+    fontFamily: 'Ovo', serif; 
+    font-size: 1.2rem; 
+    text-align: center; 
+    color: #FFFFFF; 
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+  }
+  .underline {
+    background-color: #151F42; 
+    width: 45%; 
+    min-width: 5rem; 
+    min-height: 0.2rem; 
+    margin: 0; 
+    box-shadow: 0px 4px 4px rgba(50, 121, 151, 0.44); 
+    transform: "matrix(1, 0, 0, -1, 0, 0)"
+  }
+}
+.row {
+  margin: 0 2rem 0 0; 
+  display: flex; 
+  justify-content: flex-end; 
+}
+
+`

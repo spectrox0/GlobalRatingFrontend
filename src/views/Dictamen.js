@@ -11,6 +11,7 @@ import $ from 'jquery';
 export default function Dictamen( {location} ) { 
     const [dictamen,setDictamen] = useState([]); 
     const [isLoading, setLoading] = useState(true);
+    const [date, setDate] = useState("Cargando... por favor espere"); 
     const id = new URLSearchParams(location.search).get('id');
 
     const getJson = (id) => {
@@ -22,10 +23,13 @@ export default function Dictamen( {location} ) {
         .then(
           function(data) {
             let dataa =  (data).replace(/(?:\\[rn])+/g, "<br><br>");
-             dataa =  (dataa).replace("<p>" || "</p>" , "");
+             dataa =  (dataa).replace("</p>" , "");
+             dataa =  (dataa).replace('<p style="text-align: justify;">' , "");
 
          let datajson= JSON.parse(dataa); 
          setDictamen(datajson); 
+           
+       
          setLoading(false); 
         }
         ).catch( err => { 
@@ -46,9 +50,15 @@ export default function Dictamen( {location} ) {
             return function cleanup() {
               document.body.classList.remove("index-page");
               document.body.classList.remove("sidebar-collapse");
-            };
-          });
-
+            };   });
+    
+             useEffect ( ()=> {
+                 if(dictamen.date){
+                var date = new Date(dictamen.date)
+                var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};
+                 setDate(date.toLocaleDateString("es-ES", options)); 
+                      }
+             },[dictamen.date])
    const DictamenContent = styled.div`
    .main {
        display: flex; 
@@ -77,12 +87,13 @@ box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
         padding:1rem;
         text-align:center; 
     position: relative; 
+    border-radius:10px; 
        left:10%; 
         top: -2.5rem;  
         width: 70% ; 
         z-index:2; 
         background: #151F42;
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
     }
     h2 {
         font-size: 1.5rem; 
@@ -91,7 +102,6 @@ box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
     .imgContainer{
         width:100%; 
-        height:20rem; 
         display: flex; 
         padding:0; 
         margin:0; 
@@ -110,7 +120,6 @@ box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
    padding:0; 
      img {
         margin:0; 
-        height:20rem; 
         width : ${ isLoading? "20rem" : "100%" }; 
         object-fit:cover; 
         border-radius: 10px; 
@@ -154,12 +163,11 @@ box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
               <img 
               src={ isLoading? require("../assets/img/blockLoad2.svg") : dictamen.imageUrl} 
               alt="..."
-              width= {isLoading? "50px" : "100%"}
                ></img>
              </div>
          </div>
           <div className ="contentDictamen">
-              <span> Fecha: {" "+dictamen.date} </span>
+              <span>  {" "+date} </span>
               <div dangerouslySetInnerHTML={{ __html: dictamen.content }} />
           </div>
         </div>

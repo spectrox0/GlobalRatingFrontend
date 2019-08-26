@@ -1,5 +1,7 @@
 import React, {useState,useEffect} from 'react';
-import "./CardNoticias.css";
+import styled from 'styled-components';
+import {device} from './../../helpers/devices'; 
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 export default function CardDictamenes({
     id,
     imageUrl,
@@ -8,30 +10,193 @@ export default function CardDictamenes({
    
   }) { 
     const [isLoading, setLoading] = useState(true); 
+    const [datee,setDate] = useState(""); 
     useEffect(()=> {
       if(imageUrl){
           setLoading(false); 
+          var date_ = new Date(date)
+          var options = { year: "numeric", month: "long", day: "numeric"};
+          setDate(date_.toLocaleDateString("es-ES", options));
       }
   }); 
       return (
-      <>
-       <div className="CardNoticias">
-        
+       <CardNoticias>
+        <div className="imgContainer"> 
         <img 
-        src={isLoading? require("../../../assets/img/blockLoad.svg"): imageUrl}
+        src={isLoading? require("../../../assets/img/blockLoad2.svg"): imageUrl}
          alt="..."/> 
-           
+           </div>
            <div className="TitleDictamen">
            <h4> {title} </h4>
-           <span> {date} </span>
+           <span className="date"> {datee}  </span>
            <div className="LinkLeer">
            
              <a href="#"> Leer más</a>
            </div>
                 </div>
         
-       </div>
-      </>); 
+       </CardNoticias>); 
    
 
   }
+  const CardNoticias = styled(Link)`
+  display: flex;
+    flex-direction: column;
+    justify-content: center; ; 
+    align-items: center; 
+    background: rgba(44, 168, 255, 0.8);
+   box-shadow: 0px 0px 4px rgba(44, 168, 255, 0.64);
+   border-radius: 10px; 
+   padding: 1rem; 
+   width: 15rem; 
+   height: 20rem;
+   opacity: 0.8; 
+   cursor: pointer;
+   margin: 1rem; 
+   transition: all 0.3s ease-out; 
+   @media ${device.mobileS} {  
+    width:8rem; 
+    height:14rem;  
+   h4 {
+     font-size: 0.7rem; 
+   } 
+   .date {
+    font-size: 0.6rem; 
+  } 
+  .imgContainer {
+    width:6rem; 
+    height:6rem; 
+ 
+  }
+  .LinkLeer a{
+    font-size: .6rem; 
+  }
+  
+  }
+   @media ${device.mobileM} {  
+     width:9rem; 
+     height:15rem;  
+     h4 {
+      font-size: 0.7rem; 
+    } 
+    .date {
+     font-size: 0.6rem; 
+   } 
+   .imgContainer {
+    width:8rem; 
+    height:8rem; 
+ 
+  }.LinkLeer a{
+    font-size: .6rem; 
+  } }
+   @media ${device.mobileL} {  
+    width:11rem; 
+     height:16rem;  
+     h4 {
+      font-size: 0.8rem; 
+    } 
+    .date {
+     font-size: 0.7rem; 
+   } 
+   .imgContainer {
+    width:9rem; 
+    height:9rem; 
+  }
+  .LinkLeer a{
+    font-size: .7rem; 
+  }
+    }
+   @media ${device.tablet} {  
+    width:11rem; 
+    height:17rem;  
+    h4 {
+      font-size: 0.9rem; 
+    } 
+    .date {
+     font-size: 0.8rem; 
+   } 
+   .imgContainer {
+    width:9rem; 
+    height:9rem; 
+  }
+  .LinkLeer a{
+    font-size: .8rem; 
+  }
+    }
+ @media ${device.laptop} {  
+  width:13rem; 
+  height:20rem;  
+  h4 {
+    font-size: 1rem; 
+  } 
+  .date {
+   font-size: 0.9rem; 
+ } 
+ .imgContainer {
+   width:11rem; 
+   height:11rem; 
+
+ }
+ .LinkLeer a{
+  font-size: 0.9rem; 
+}
+ }
+
+ @media ${device.laptopL} {
+  width:14rem; 
+  height:20rem;  
+  h4 {
+    font-size: 1.1rem; 
+  } 
+  .date {
+   font-size: 1rem; 
+ } 
+ .imgContainer {
+  width:12rem; 
+  height:12rem; 
+}
+.LinkLeer a{
+  font-size: 1rem; 
+}
+ }
+     
+   &:hover  {
+    text-decoration: none; 
+    transform: translate(-1rem,-2rem) scale(1.08);
+    opacity: 1;
+  } 
+    img {
+    margin: 0; 
+    width:100%; 
+    height:100%; 
+    border-radius: 10px; 
+    transition: all 0.3s ease-out; 
+    object-fit:cover; 
+ } 
+  &:hover img {
+  transform: scale(1.1);
+  
+}
+h4{
+  color:#FFFFFF;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+} 
+span {
+  color:rgb(221, 220, 220);
+  font-size: 0.8rem; 
+ }
+ .LinkLeer{
+  display: flex; 
+  justify-content: flex-end; 
+  color: #151F42;
+}  
+.LinkLeer a{
+  display: flex; 
+  justify-content: flex-end; 
+  color: #151F42;
+}
+  `
