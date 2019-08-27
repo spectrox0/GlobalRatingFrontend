@@ -23,7 +23,9 @@ export default function CardDictamenes({
          <ContainerLoad> 
          <img 
       src={require("../../../assets/img/blockLoad.svg")}
-       alt="..."/>  <span> Loading...</span> </ContainerLoad>
+       alt="..."/> 
+        <span> Loading...</span>
+        </ContainerLoad>
       
        ) : (
       

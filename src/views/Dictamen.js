@@ -1,8 +1,6 @@
 import React , {useState , useEffect} from "react"; 
 import IndexHeader from "./../components/Headers/IndexHeader";
 import styled from "styled-components"; 
-import { Container
-} from 'reactstrap'; 
 import $ from 'jquery'; 
  
 
@@ -40,7 +38,7 @@ export default function Dictamen( {location} ) {
      }
         useEffect( () => {
        getJson(id); 
-        },[]);
+        },[id]);
         useEffect(() => {
             document.body.classList.add("index-page");
             document.body.classList.add("sidebar-collapse");

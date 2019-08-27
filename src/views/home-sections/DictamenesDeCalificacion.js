@@ -7,9 +7,8 @@ import 'react-multi-carousel/lib/styles.css';
 import $ from "jquery";
 import styled from "styled-components"; 
 export default function DictamenesDeCaificacion() {
-   const [dictamenes, setDictamenes] = useState([]); 
-
- 
+   
+  const [dictamenes, setDictamenes] = useState([]); 
    useEffect(()=> {
     getJson(); 
     
