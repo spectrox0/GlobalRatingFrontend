@@ -93,7 +93,7 @@ export default function DictamenesDeCaificacion() {
            @media ${device.mobileM} {  
             grid-template-columns: 1fr 1fr; }
            @media ${device.mobileL} {  
-            grid-template-columns: 1fr 1fr;}
+            grid-template-columns: 1fr 1fr ;}
            @media ${device.tablet} {  
             grid-template-columns: 1fr 1fr 1fr;
             }

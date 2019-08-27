@@ -18,9 +18,12 @@ export default function CardDictamenes({
           var options = { year: "numeric", month: "long", day: "numeric"};
           setDate(date_.toLocaleDateString("es-ES", options));
       }
-  }); 
+  }, [imageUrl, date]); 
       return (
-       <CardNoticias>
+       <CardNoticias to={{
+        pathname: '/noticia',
+        search: `?id=${id}`
+       }}>
         <div className="imgContainer"> 
         <img 
         src={isLoading? require("../../../assets/img/blockLoad2.svg"): imageUrl}
@@ -52,30 +55,31 @@ export default function CardDictamenes({
    height: 20rem;
    opacity: 0.8; 
    cursor: pointer;
-   margin: 1rem; 
    transition: all 0.3s ease-out; 
    @media ${device.mobileS} {  
-    width:8rem; 
-    height:14rem;  
+    width:8.8rem; 
+    height:14rem; 
+    margin: 0.6rem;  
    h4 {
-     font-size: 0.7rem; 
+     font-size: 0.8rem; 
    } 
    .date {
-    font-size: 0.6rem; 
+    font-size: 0.7rem; 
   } 
   .imgContainer {
-    width:6rem; 
-    height:6rem; 
+    width:7rem; 
+    height:7rem; 
  
   }
   .LinkLeer a{
-    font-size: .6rem; 
+    font-size: .7rem; 
   }
   
   }
    @media ${device.mobileM} {  
-     width:9rem; 
+     width:10rem; 
      height:15rem;  
+     margin: 0.8rem;  
      h4 {
       font-size: 0.7rem; 
     } 
@@ -90,8 +94,9 @@ export default function CardDictamenes({
     font-size: .6rem; 
   } }
    @media ${device.mobileL} {  
-    width:11rem; 
+    width:11.5rem; 
      height:16rem;  
+     margin: 0.8rem;  
      h4 {
       font-size: 0.8rem; 
     } 
@@ -107,25 +112,27 @@ export default function CardDictamenes({
   }
     }
    @media ${device.tablet} {  
-    width:11rem; 
+    width:13.5rem; 
     height:17rem;  
+    margin: 0.9rem;  
     h4 {
-      font-size: 0.9rem; 
+      font-size: 1rem; 
     } 
     .date {
-     font-size: 0.8rem; 
+     font-size: 0.9rem; 
    } 
    .imgContainer {
-    width:9rem; 
-    height:9rem; 
+    width:10rem; 
+    height:10rem; 
   }
   .LinkLeer a{
-    font-size: .8rem; 
+    font-size: .9rem; 
   }
     }
  @media ${device.laptop} {  
   width:13rem; 
   height:20rem;  
+  margin: 1rem;  
   h4 {
     font-size: 1rem; 
   } 
@@ -145,6 +152,7 @@ export default function CardDictamenes({
  @media ${device.laptopL} {
   width:14rem; 
   height:20rem;  
+  margin:1rem;
   h4 {
     font-size: 1.1rem; 
   } 
@@ -162,7 +170,7 @@ export default function CardDictamenes({
      
    &:hover  {
     text-decoration: none; 
-    transform: translate(-1rem,-2rem) scale(1.08);
+    transform: translate(-.5rem,-.5rem) scale(1.03);
     opacity: 1;
   } 
     img {
@@ -174,7 +182,7 @@ export default function CardDictamenes({
     object-fit:cover; 
  } 
   &:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
   
 }
 h4{
