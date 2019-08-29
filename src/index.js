@@ -28,6 +28,7 @@ import "assets/demo/nucleo-icons-page-styles.css";
 import DarkFooter from "components/Footers/DarkFooter.js";
 import IndexNavbar from "components/Navbars/Navbar.js";
 
+
 ReactDOM.render(
   <BrowserRouter>
     <IndexNavbar/>

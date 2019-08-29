@@ -1,6 +1,6 @@
 import React,{useRef,useState} from 'react'; 
 import styled from 'styled-components'; 
-
+import AuthContext from "./../context/context-auth.js"; 
 export default function AuthPage(){
   const inputR = useRef(null); 
   const inputP = useRef(null); 
@@ -35,7 +35,7 @@ export default function AuthPage(){
        }
 
      }
-     fetch('http://localhost:3000/graphql', {
+     fetch('http://localhost:3006/graphql', {
          method:'POST',
          body: JSON.stringify(requestBody),
          headers: {
