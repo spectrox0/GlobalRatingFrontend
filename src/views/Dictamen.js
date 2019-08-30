@@ -4,8 +4,6 @@ import styled from "styled-components";
 import $ from 'jquery'; 
  
 
-
-
 export default function Dictamen( {location} ) { 
     const [dictamen,setDictamen] = useState([]); 
     const [isLoading, setLoading] = useState(true);
