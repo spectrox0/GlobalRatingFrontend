@@ -29,18 +29,11 @@ import Dictamen from "views/Dictamen.js";
 import Noticia from "views/Noticia.js"
 import DarkFooter from "components/Footers/DarkFooter.js";
 import IndexNavbar from "components/Navbars/Navbar.js";
-
+import Routes from './views/helpers/Routes'; 
 ReactDOM.render(
   <BrowserRouter>
     <IndexNavbar/>
-    <Switch>
-      <Route path="/index" render={ (props) =>  <Home {...props}/> }/>
-      <Route path="/auth" component={Auth}/>
-      <Route path="/dictamen" render={ (props) =>  <Dictamen {...props}/> }/>
-      <Route path="/noticia" render={ (props) =>  <Noticia {...props}/> }/>
-      <Redirect from="/" to="/index" />>
-       
-    </Switch>
+     <Routes/>
     <DarkFooter style={{position:"absolute",bottom:"0"}} />
   </BrowserRouter>,
   document.getElementById("root")
