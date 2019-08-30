@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css"; 
+import styled from 'styled-components';
 // reactstrap components
 import {
   Collapse,
@@ -17,13 +17,13 @@ import {
   DropdownToggle
 } from "reactstrap";
 
-function ExamplesNavbar() {
+export default function NavbarGlobal() {
    // Variables useState
   const [navbarColor, setNavbarColor] = useState("navbar-transparent");
   const [navbarLogo, setNavbarLogo] = useState("navbar-logoHidden"); 
   const [collapseOpen, setCollapseOpen] = useState(false);
-   // Use effect se carga al iniciar el componente
 
+   // Use effect se carga al iniciar el componente , efectuado cada vez que se renderice el componente 
    useEffect(() => {
     const updateNavbarColor = () => {
       if (
@@ -46,7 +46,7 @@ function ExamplesNavbar() {
     };
   });
   return (
-    <>
+    <NavbarContainer>
       {collapseOpen ? (
         <div
           id="bodyClick"
@@ -165,8 +165,12 @@ function ExamplesNavbar() {
           </Collapse>
         </Container>
       </Navbar>
-    </>
+    </NavbarContainer>
   );
 }
 
-export default ExamplesNavbar;
+const NavbarContainer = styled.div`
+.navbar-logoHidden {
+  visibility: hidden; 
+}
+`

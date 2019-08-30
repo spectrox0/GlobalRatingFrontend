@@ -4,18 +4,14 @@ import {NavLink} from "react-router-dom";
 import styled from "styled-components"; 
 // reactstrap components
 import { 
-  Button, 
   Container,
    Row,
     Col,
-   UncontrolledTooltip , 
-   FormGroup,
   Input, 
   Form , 
   InputGroup,
    InputGroupAddon, 
    InputGroupText,
-  ButtonGroup,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
@@ -42,8 +38,6 @@ function DarkFooter() {
               </a>
             
             
-          
-          
              <Col lg="3" sm="6">
              <h3 style= {{marginBottom:"0.7rem"}}> Suscribete </h3>
              <Form className="form-inline ml-auto" data-background-color="">
