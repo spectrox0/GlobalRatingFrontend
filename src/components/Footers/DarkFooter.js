@@ -68,14 +68,14 @@ function DarkFooter() {
         <DropdownMenu aria-labelledby="dropdownMenuButton">
           <DropdownItem href="#" onClick={e => e.preventDefault()}>
           <img
-              src={require("assets/img/iconVenezuela.ico")}
+              src={require("assets/img/flags/VE.png")}
               alt="Venezuela"
               style={{height:"1rem"}}
                   /> {" "}  -Venezuela
           </DropdownItem>
           <DropdownItem href="#" onClick={e => e.preventDefault()}>
           <img
-              src={require("assets/img/iconPanama.ico")}
+              src={require("assets/img/flags/PA.png")}
               alt="Venezuela"
               style={{height:"1rem"}}
                   /> {" "}   -Panama

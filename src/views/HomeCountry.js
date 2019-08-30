@@ -7,7 +7,8 @@ const [countryName, setCountryName] = useState(null);
 const [countryCode, setCountryCode] = useState(null); 
 const [countryCity, setCountryCity] = useState(null); 
 const getGeoInfo = () => {
-  axios.get('https://ipapi.co/json/').then((response) => {
+  axios.get('https://ipapi.co/json/').then((
+    response) => {
       let data = response.data;
       setCountryName(data.country_name); 
       setCountryCode(data.country_calling_code); 
