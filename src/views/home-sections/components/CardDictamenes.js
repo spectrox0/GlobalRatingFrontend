@@ -91,9 +91,10 @@ export default function CardDictamenes({
 
    img {
     margin: 0; 
-    object-fit: cover;
+    object-fit:fill; 
     border-radius: 10px; 
     width: 10rem; 
+    height:6rem; 
     margin-bottom: 1rem; 
    
  }import "./CardDictamenes.css";

@@ -88,7 +88,7 @@ export default function Noticias( {location} ) {
         justify-content:center;
         align-items:center;
     position: relative; 
-    clip-path: polygon(0 0, 95% 0, 99% 100%, 4% 100%);
+    clip-path: polygon(0 0, 99% 0, 100% 100%, 1% 100%);
    
        left:10%; 
         top: -2.5rem;  
@@ -98,12 +98,13 @@ export default function Noticias( {location} ) {
         box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
     h2 {
-        font-size: 1.5rem; 
+        font-size: 1.3rem; 
         color: white ;
 
     }
     .imgContainer{
         width:100%; 
+        max-width:66rem; 
         display: flex; 
         padding:0; 
         margin:0; 
@@ -113,19 +114,21 @@ export default function Noticias( {location} ) {
    .blockTree { 
     background: #151F42;
    display:flex ;
+   padding:1rem; 
    justify-content:center; 
    align-items:center; 
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
    border-radius: 10px; 
    margin:0;  
    width: 80%; 
-   padding:0; 
+
      img {
-        margin:0; 
+        margin:0;
+        max-height:24rem;  
         width : ${ isLoading? "20rem" : "100%" }; 
-        object-fit:cover; 
         border-radius: 10px; 
-        ${ isLoading?""  : "box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); transform: translate(1rem,1rem);" }
+        object-fit:fill; 
+        ${ isLoading?""  : "box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); transform: translate(2rem,1.4rem) scale(1.05);" }
        
      }
     }

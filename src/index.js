@@ -17,30 +17,21 @@
 */
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-
+import { BrowserRouter} from "react-router-dom";
+import Routes from "./views/helpers/Routes"; 
 // styles 
 import "assets/css/bootstrap.min.css";
 import "assets/scss/now-ui-kit.scss";
-// pages 
-import Home from "views/Home.js";
-import Auth from "views/AuthPage.js"; 
-import Dictamen from "views/Dictamen.js"; 
-import Noticia from "views/Noticia.js"
+
+
 import DarkFooter from "components/Footers/DarkFooter.js";
 import IndexNavbar from "components/Navbars/Navbar.js";
+
 
 ReactDOM.render(
   <BrowserRouter>
     <IndexNavbar/>
-    <Switch>
-      <Route path="/index" render={ (props) =>  <Home {...props}/> }/>
-      <Route path="/auth" component={Auth}/>
-      <Route path="/dictamen" render={ (props) =>  <Dictamen {...props}/> }/>
-      <Route path="/noticia" render={ (props) =>  <Noticia {...props}/> }/>
-      <Redirect from="/" to="/index" />>
-       
-    </Switch>
+    <Routes/>
     <DarkFooter style={{position:"absolute",bottom:"0"}} />
   </BrowserRouter>,
   document.getElementById("root")

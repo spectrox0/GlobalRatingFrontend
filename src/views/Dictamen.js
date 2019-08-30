@@ -100,6 +100,7 @@ box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
     }
     .imgContainer{
         width:100%; 
+        max-width:66rem; 
         display: flex; 
         padding:0; 
         margin:0; 
@@ -119,9 +120,10 @@ box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
      img {
         margin:0; 
         width : ${ isLoading? "20rem" : "100%" }; 
-        object-fit:cover; 
+        max-height:24rem; 
+        object-fit:fill; 
         border-radius: 10px; 
-        ${ isLoading?""  : "box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); transform: translate(1rem,1rem);" }
+        ${ isLoading?""  : "box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); transform: translate(2rem,1.4rem) scale(1.02);" }
        
      }
     }
