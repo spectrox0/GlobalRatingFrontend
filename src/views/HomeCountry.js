@@ -1,6 +1,5 @@
 import React , {useState,useEffect } from 'react'; 
 import axios from 'axios'
-import $ from "jquery"; 
 
 export default function HomeCountry() {
 const [countryName, setCountryName] = useState(null); 
