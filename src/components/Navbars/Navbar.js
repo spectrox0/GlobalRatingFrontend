@@ -155,7 +155,7 @@ export default function NavbarGlobal() {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/index" tag={Link}>
+                <NavLink to="/contactanos" tag={Link}>
                 <i className="now-ui-icons travel_info"></i>
                   <p>Contactanos</p>
                 </NavLink>
