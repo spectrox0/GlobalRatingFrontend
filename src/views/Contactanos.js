@@ -1,7 +1,17 @@
 import React , {useState , useEffect} from "react"; 
 import IndexHeader from "./../components/Headers/IndexHeader";
 import styled from "styled-components"; 
- 
+ import {
+       Row
+     , Col ,
+     Input, 
+    Form , 
+  InputGroup,
+   InputGroupAddon, 
+   InputGroupText, 
+   Label,
+   FormGroup, 
+  Container } from 'reactstrap'
 
 export default function () { 
    
@@ -24,6 +34,8 @@ export default function () {
        display: flex; 
        flex-direction: column; 
        align-items:center; 
+       justify-content:center; 
+       height:100vh; 
       
    }
 `
@@ -33,10 +45,11 @@ export default function () {
         <div className="wrapper">
        
         <div className="main" >
-         <div className="ContainerContact" >
-         <div className="ContainerCoordenadas">
+         <Container >
+             <Row> 
+         <Col>
              <h3>Nuestras Coordenadas </h3> 
-             </div>
+             
              <div className="elementCoordenadas" >
                  <span> 
                  Av. Ppal. de la Castellana, Centro Letonia, Piso 12, Oficina 126.
@@ -53,10 +66,66 @@ export default function () {
                  info@globalratings.com
                  </span>
              </div>
-         <form> 
-
-         </form>
-        </div>
+             </Col>
+             <Col> 
+         <Form> 
+          <Row> 
+              <Col> 
+              <Label for="nombre" > Nombre</Label>
+              <InputGroup>
+                <InputGroupAddon addonType="prepend">
+                  <InputGroupText>
+                    <i className="now-ui-icons ui-1_email-85"></i>
+                  </InputGroupText>
+                </InputGroupAddon>
+                <Input id="nombre" placeholder="Escribe tu nombre" type="text"></Input>
+              </InputGroup>
+              </Col>
+              <Col> 
+              <Label for="apellido" > Apellido</Label>
+              <InputGroup>
+                <InputGroupAddon addonType="prepend">
+                  <InputGroupText>
+                    <i className="now-ui-icons ui-1_email-85"></i>
+                  </InputGroupText>
+                </InputGroupAddon>
+                <Input id="apellido" placeholder="Escribe tu nombre" type="text"></Input>
+              </InputGroup></Col>
+          </Row>
+          <Row> 
+              <Col> 
+              <InputGroup>
+                <InputGroupAddon addonType="prepend">
+                  <InputGroupText>
+                    <i className="now-ui-icons ui-1_email-85"></i>
+                  </InputGroupText>
+                </InputGroupAddon>
+                <Input placeholder="Escribe tu correo" type="text"></Input>
+              </InputGroup></Col>
+          </Row>
+          <Row> 
+              <Col> 
+              <InputGroup>
+                <InputGroupAddon addonType="prepend">
+                  <InputGroupText>
+                    <i className="now-ui-icons ui-1_email-85"></i>
+                  </InputGroupText>
+                </InputGroupAddon>
+                <Input placeholder="Escribe tu correo" type="text"></Input>
+              </InputGroup></Col>
+          </Row>
+          <Row> 
+              <Col> 
+              <FormGroup>
+              <Label for="textArea" > Apellido</Label>
+                <Input id="textArea" placeholder="Escribe tu correo" type="textarea"></Input>
+                </FormGroup>
+          </Col>
+          </Row>
+         </Form>
+         </Col>
+         </Row>
+        </Container>
         </div>
         </div> 
         </DictamenContent>
@@ -65,14 +134,4 @@ export default function () {
 
 }
 
-const Row = styled.div`
- display:flex; 
- flex-wrap:wrap; 
- justify-content:center; 
- align-items:center;
 
-`
-const Col = styled.div`
- display:flex; 
- flex-direction:column; 
-`
