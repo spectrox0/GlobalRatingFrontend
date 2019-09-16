@@ -175,6 +175,7 @@ const verifyCallback =(response) => {
     sitekey="6LeFsrgUAAAAAJmjoOiqeDR2Kkv4jcJOWe4njhOt"
     render="explicit"
     onloadCallback={RecaptchaLoad}
+    type="audio"
     verifyCallback={verifyCallback}
   />
 
@@ -200,7 +201,7 @@ const DictamenContent = styled.div`
     flex-direction: column; 
     align-items:center; 
     justify-content:center; 
-    height:100vh; 
+    min-height:100vh; 
    
 } 
 
