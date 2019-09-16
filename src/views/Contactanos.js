@@ -1,12 +1,19 @@
 import React , {useState , useEffect} from "react"; 
 import IndexHeader from "./../components/Headers/IndexHeader";
 import styled from "styled-components"; 
-import $ from 'jquery'; 
- 
+ import {
+       Row
+     , Col ,
+     Input, 
+    Form , 
+  InputGroup,
+   InputGroupAddon, 
+   InputGroupText, 
+   Label,
+   FormGroup, 
+  Container } from 'reactstrap'
 
-
-
-export default function Dictamen(  ) { 
+export default function () { 
    
 
 
@@ -27,86 +34,10 @@ export default function Dictamen(  ) {
        display: flex; 
        flex-direction: column; 
        align-items:center; 
+       justify-content:center; 
+       height:100vh; 
       
    }
-
-   .title {
-       height: auto; 
-       width:100%; 
-   }
-    .blockOne {
-     display: block-inline; 
-     position: relative; 
-     left:0; 
-     top: 1rem; 
-     height:2rem; 
-     width: 100% ; 
-     z-index:1; 
-     background: rgba(44, 168, 255, 0.7);
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
-    .blockTwo {
-        display: flex; 
-        padding:1rem;
-        text-align:center; 
-    position: relative; 
-    border-radius:10px; 
-       left:10%; 
-        top: -2.5rem;  
-        width: 70% ; 
-        z-index:2; 
-        background: #151F42;
-box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
-    h2 {
-        font-size: 1.5rem; 
-        color: white ;
-
-    }
-    .imgContainer{
-        width:100%; 
-        display: flex; 
-        padding:0; 
-        margin:0; 
-        margin-bottom:2rem; 
-        justify-content:center; 
-    }
-   .blockTree { 
-   background: #2CA8FF;
-   display:flex ;
-   justify-content:center; 
-   align-items:center; 
-   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-   border-radius: 10px; 
-   margin:0;  
-   width: 80%; 
-   padding:0; 
-     img {
-        margin:0; 
-        width : ${ isLoading? "20rem" : "100%" }; 
-        object-fit:cover; 
-        border-radius: 10px; 
-        ${ isLoading?""  : "box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); transform: translate(1rem,1rem);" }
-       
-     }
-    }
-    .contentDictamen {
-        display: flex; 
-        flex-direction: column; 
-        justify-content:center ;
-        align-items:center; 
-        margin:2rem; 
-        span{
-            width: 100%; 
-            display: flex; 
-            align-items: flex-start; 
-            font-size:1rem; 
-            color: black; 
-        }
-        p {
-            font-size:1.3rem; 
-        }
-    }
 `
         return (
            
@@ -114,13 +45,93 @@ box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
         <div className="wrapper">
        
         <div className="main" >
-           <span> carga </span>
+         <Container >
+             <Row> 
+         <Col>
+             <h3>Nuestras Coordenadas </h3> 
+             
+             <div className="elementCoordenadas" >
+                 <span> 
+                 Av. Ppal. de la Castellana, Centro Letonia, Piso 12, Oficina 126.
+                 Caracas - Venezuela
+                 </span>
+             </div>
+             <div className="elementCoordenadas" >
+                 <span> 
+                 Master +58 (212) 263.4393
+                 </span>
+             </div>
+             <div className="elementCoordenadas" >
+                 <span> 
+                 info@globalratings.com
+                 </span>
+             </div>
+             </Col>
+             <Col> 
+         <Form> 
+          <Row> 
+              <Col> 
+              <Label for="nombre" > Nombre</Label>
+              <InputGroup>
+                <InputGroupAddon addonType="prepend">
+                  <InputGroupText>
+                    <i className="now-ui-icons ui-1_email-85"></i>
+                  </InputGroupText>
+                </InputGroupAddon>
+                <Input id="nombre" placeholder="Escribe tu nombre" type="text"></Input>
+              </InputGroup>
+              </Col>
+              <Col> 
+              <Label for="apellido" > Apellido</Label>
+              <InputGroup>
+                <InputGroupAddon addonType="prepend">
+                  <InputGroupText>
+                    <i className="now-ui-icons ui-1_email-85"></i>
+                  </InputGroupText>
+                </InputGroupAddon>
+                <Input id="apellido" placeholder="Escribe tu nombre" type="text"></Input>
+              </InputGroup></Col>
+          </Row>
+          <Row> 
+              <Col> 
+              <InputGroup>
+                <InputGroupAddon addonType="prepend">
+                  <InputGroupText>
+                    <i className="now-ui-icons ui-1_email-85"></i>
+                  </InputGroupText>
+                </InputGroupAddon>
+                <Input placeholder="Escribe tu correo" type="text"></Input>
+              </InputGroup></Col>
+          </Row>
+          <Row> 
+              <Col> 
+              <InputGroup>
+                <InputGroupAddon addonType="prepend">
+                  <InputGroupText>
+                    <i className="now-ui-icons ui-1_email-85"></i>
+                  </InputGroupText>
+                </InputGroupAddon>
+                <Input placeholder="Escribe tu correo" type="text"></Input>
+              </InputGroup></Col>
+          </Row>
+          <Row> 
+              <Col> 
+              <FormGroup>
+              <Label for="textArea" > Apellido</Label>
+                <Input id="textArea" placeholder="Escribe tu correo" type="textarea"></Input>
+                </FormGroup>
+          </Col>
+          </Row>
+         </Form>
+         </Col>
+         </Row>
+        </Container>
         </div>
-
         </div> 
         </DictamenContent>
        ) ; 
 
 
 }
+
 

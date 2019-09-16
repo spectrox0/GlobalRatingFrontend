@@ -8,12 +8,11 @@ import Productos from "views/Productos.js"
 import Calificacion from "views/Calificacion.js"
 import LeyesNormativas from "views/LeyesNormativas.js"
 import Mercado from "views/Mercado.js"
-import Contactanos from "views/LeyesNormativas.js"
+import Contactanos from "views/Contactanos.js"
 
 export default function () {
 
  return(
-     <>
 
  <Switch>
  <Route path="/index" render={ (props) =>  <Home {...props}/> }/>
@@ -26,5 +25,5 @@ export default function () {
  <Route path="/contactanos" render={ (props) =>  <Contactanos {...props}/> }/>
  
  <Redirect from="/" to="/index" />>
- </Switch> </> ) ; } 
+ </Switch> ) ; } 
 

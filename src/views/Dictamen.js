@@ -16,11 +16,11 @@ export default function Dictamen( {location} ) {
         $.ajax({
             dataType: 'text',
             type: "GET",
-            url : `https://www.finanzasdigital.com/traepost.php?token=aHcT639@/$muzk56&pagina=0&idNoticia=${id}`
+            url : `https://www.finanzasdigital.com/traepost.php?token=aHcT639@/$muzk56&idNoticia=${id}`
         })
         .then(
           function(data) {
-            let dataa =  (data).replace(/(?:\\[rn])+/g, "<br><br>");
+            let dataa =  (data).replace(/(?:\\[rn])+/g, "<br/>");
              dataa =  (dataa).replace("</p>" , "");
              dataa =  (dataa).replace('<p style="text-align: justify;">' , "");
 
@@ -54,7 +54,7 @@ export default function Dictamen( {location} ) {
                  if(dictamen.date){
                 var date = new Date(dictamen.date)
                 var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};
-                 setDate(date.toLocaleDateString("es-ES", options)); 
+                 setDate(date.toLocaleDateString("es-VE", options)); 
                       }
              },[dictamen.date])
    const DictamenContent = styled.div`
@@ -85,7 +85,8 @@ box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
         padding:1rem;
         text-align:center; 
     position: relative; 
-    border-radius:10px; 
+    border-radius:10px;
+    padding:1rem;  
        left:10%; 
         top: -2.5rem;  
         width: 70% ; 
@@ -96,10 +97,10 @@ box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
     h2 {
         font-size: 1.5rem; 
         color: white ;
+        margin:0;
 
     }
-    .imgContainer{
-        width:100%; 
+    .imgContainer{ 
         display: flex; 
         padding:0; 
         margin:0; 
@@ -119,7 +120,8 @@ box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
      img {
         margin:0; 
         width : ${ isLoading? "20rem" : "100%" }; 
-        object-fit:cover; 
+        max-height: 70vh; 
+        object-fit:fill; 
         border-radius: 10px; 
         ${ isLoading?""  : "box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); transform: translate(1rem,1rem);" }
        
@@ -139,8 +141,20 @@ box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
             color: black; 
         }
         p {
-            font-size:1.3rem; 
+            font-size:1.2rem; 
         }
+    }
+    .contentHtml{
+        font-size:1.2rem; 
+        img {
+            border-radius:10px; 
+            float: left;
+            margin:1rem;
+        }
+        br {
+            display: block;
+            margin: .4rem 0;
+         }
     }
 `
         return (
@@ -166,7 +180,7 @@ box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
          </div>
           <div className ="contentDictamen">
               <span>  {" "+date} </span>
-              <div dangerouslySetInnerHTML={{ __html: dictamen.content }} />
+              <div className="contentHtml" dangerouslySetInnerHTML={{ __html: dictamen.content }} />
           </div>
         </div>
 
