@@ -24,17 +24,18 @@ import "assets/css/bootstrap.min.css";
 import "assets/scss/now-ui-kit.scss";
 // pages 
 import Home from "views/Home.js";
-import Auth from "views/AuthPage.js"; 
-import Dictamen from "views/Dictamen.js"; 
+import Auth from "views/AuthPage.js";
+import Dictamen from "views/Dictamen.js";
 import Noticia from "views/Noticia.js"
 import DarkFooter from "components/Footers/DarkFooter.js";
 import IndexNavbar from "components/Navbars/Navbar.js";
-import Routes from './views/helpers/Routes'; 
+import Routes from './views/helpers/Routes';
+
 ReactDOM.render(
   <BrowserRouter>
-    <IndexNavbar/>
-     <Routes/>
-    <DarkFooter style={{position:"absolute",bottom:"0"}} />
+    <IndexNavbar />
+    <Routes />
+    <DarkFooter style={{ position: "absolute", bottom: "0" }} />
   </BrowserRouter>,
   document.getElementById("root")
 );
