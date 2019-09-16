@@ -208,6 +208,7 @@ h3{
   color:#4169E1;
   text-transform:uppercase; 
 }
+
 .elementCoordenadas{
   span {
     font-size:1.2rem; 
@@ -221,7 +222,7 @@ h3{
     
   }
   label {
-    color:#191970;
+    
   }
 `
 
