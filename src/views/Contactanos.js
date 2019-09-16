@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import IndexHeader from "./../components/Headers/IndexHeader";
+import Recaptcha from "react-recaptcha"; 
 import styled from "styled-components";
 import {
   Row
   , Col,
+  Alert,
   Input,
   Form,
   InputGroup,
@@ -16,8 +18,9 @@ import {
 } from 'reactstrap'
 
 export default function () {
-
-
+   
+  const [isVerified,setVerified] = useState(false); 
+  const [message, setMessage] = useState(); 
 
   /* useEffect(() => {
        document.body.classList.add("index-page");
@@ -31,6 +34,22 @@ export default function () {
        };   });
  
 */
+const RecaptchaLoad = ()=> {
+
+}
+const handlingOnsubmit = (e) => {
+  e.preventDefault(); 
+  if(!isVerified)  {
+     setMessage({message:"Verifique no ser un robot", isError:true}); 
+    return; }
+    setMessage({message:"Se envio el correo exitosamente", isError:false}); 
+  } 
+
+const verifyCallback =(response) => {
+   if(response) {
+     setVerified(true); 
+   }
+}
   return (
 
     <DictamenContent>
@@ -68,8 +87,13 @@ export default function () {
                 </div>
                 </Row>
               </Col>
-              <Col>
-                <Form>
+              <Col> 
+            {message && (
+              <Alert color={message.isError? "danger" : "info"}>
+               {message.message}
+          </Alert>
+            )}
+                <Form onSubmit={handlingOnsubmit}>
                   <Row>
                     <Col>
                     <FormGroup>
@@ -78,17 +102,19 @@ export default function () {
                          id="nombre" 
                          placeholder="Escribe tu nombre" 
                          type="text"
+                         required
                          className="textInput"
                          ></Input>
                         </FormGroup>
                     </Col>
                     <Col>
                     <FormGroup>
-                      <Label htmlFor="apellido" > Nombre</Label>
+                      <Label htmlFor="apellido" > Apellido </Label>
                         <Input 
                         id="apellido" 
                         placeholder="Escribe tu apellido" 
                         type="text"
+                        required
                         className="textInput"
                         ></Input>
                         </FormGroup></Col>
@@ -106,7 +132,8 @@ export default function () {
                         <Input 
                         id="email"
                          placeholder="Escribe tu correo" 
-                         type="text"
+                         type="email"
+                         required
                          className="textInput"
                         ></Input>
                       </InputGroup>
@@ -121,6 +148,7 @@ export default function () {
                         id="asunto" 
                         placeholder="Escribe tu asunto"
                          type="text"
+                         required
                          className="textInput"
                          ></Input>
                         </FormGroup>
@@ -135,11 +163,21 @@ export default function () {
                         id="textArea" 
                         placeholder="Escribe tu mensaje" 
                         type="textarea"
+                        required
                         className="textAreaMensaje"
                         rows="3"
                         ></Input>
                       </FormGroup>
                     </Col>
+                  </Row>
+                  <Row> 
+                  <Recaptcha
+    sitekey="6LeFsrgUAAAAAJmjoOiqeDR2Kkv4jcJOWe4njhOt"
+    render="explicit"
+    onloadCallback={RecaptchaLoad}
+    verifyCallback={verifyCallback}
+  />
+
                   </Row>
                   <Button className="btn-round" size="lg" color="info" type="submit">
                    ENVIAR MENSAJE 
