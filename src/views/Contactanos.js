@@ -76,7 +76,7 @@ export default function () {
                       <InputGroup>
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>
-                            {/* <i className="now-ui-icons ui-1_email-85"></i> */}
+                            <i className="now-ui-icons ui-1_email-85"></i>
                           </InputGroupText>
                         </InputGroupAddon>
                         <Input id="nombre" placeholder="Escribe tu nombre" type="text"></Input>
@@ -87,7 +87,7 @@ export default function () {
                       <InputGroup>
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>
-                            {/* <i className="now-ui-icons ui-1_email-85"></i> */}
+                            <i className="now-ui-icons ui-1_email-85"></i>
                           </InputGroupText>
                         </InputGroupAddon>
                         <Input id="apellido" placeholder="Escribe tu apellido" type="text"></Input>
