@@ -22,20 +22,21 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 // styles 
 import "assets/css/bootstrap.min.css";
 import "assets/scss/now-ui-kit.scss";
-// pages 
-import Home from "views/Home.js";
-import Auth from "views/AuthPage.js";
-import Dictamen from "views/Dictamen.js";
-import Noticia from "views/Noticia.js"
+// pages
+
 import DarkFooter from "components/Footers/DarkFooter.js";
 import IndexNavbar from "components/Navbars/Navbar.js";
 import Routes from './views/helpers/Routes';
+import client from './views/helpers/graphqlEndpoint'
+import { ApolloProvider } from '@apollo/react-hooks';
 
 ReactDOM.render(
   <BrowserRouter>
+  <ApolloProvider client={client}>
     <IndexNavbar />
     <Routes />
     <DarkFooter style={{ position: "absolute", bottom: "0" }} />
+    </ApolloProvider>
   </BrowserRouter>,
   document.getElementById("root")
 );

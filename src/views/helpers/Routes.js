@@ -10,7 +10,7 @@ import Calificacion from "views/Calificacion.js";
 import LeyesNormativas from "views/LeyesNormativas.js";
 import Mercado from "views/Mercado.js";
 import Contactanos from "views/Contactanos.js";
-
+import Clientes from "views/Clientes.js"; 
 export default function () {
 
  return(
@@ -25,6 +25,7 @@ export default function () {
  <Route path="/leyesnormativas" render={ (props) =>  <LeyesNormativas {...props}/> }/>
  <Route path="/mercado" render={ (props) =>  <Mercado {...props}/> }/>
  <Route path="/contactanos" render={ (props) =>  <Contactanos {...props}/> }/>
+ <Route path="/clientes" render = { (props)=> <Clientes {...props} /> } />
  
  <Redirect from="/" to="/index" />>
  </Switch> ) ; } 
