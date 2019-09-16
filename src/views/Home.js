@@ -12,6 +12,7 @@ import Dictamenes from "views/home-sections/DictamenesDeCalificacion.js"
 import Noticias from "views/home-sections/NoticiasFinanzas.js"
 import styled from 'styled-components'; 
 export default function Index() {
+  
   React.useEffect(() => {
     document.body.classList.add("index-page");
     document.body.classList.add("sidebar-collapse");

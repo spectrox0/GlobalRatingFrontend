@@ -92,6 +92,7 @@ export default function NavbarGlobal() {
           <Collapse
             className="justify-content-end"
             isOpen={collapseOpen}
+            style={{background:"none"}}
             navbar
           > 
             <Nav navbar>
@@ -131,25 +132,25 @@ export default function NavbarGlobal() {
                 </DropdownMenu>
               </UncontrolledDropdown>
               <NavItem>
-                <NavLink to="/index" tag={Link}>
+                <NavLink to="/productos" tag={Link}>
                 <i className="now-ui-icons business_globe"></i>
                   <p> Productos y Servicios </p>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/index" tag={Link}>
+                <NavLink to="/calificacion" tag={Link}>
                 <i className="now-ui-icons business_chart-bar-32"></i>
                   <p> Calificacion de Riesgos </p>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/index" tag={Link}>
+                <NavLink to="/leyesnormativas" tag={Link}>
                 <i className="now-ui-icons files_paper"></i>
                  <p> Leyes y Normativas </p>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/index" tag={Link}>
+                <NavLink to="/mercado" tag={Link}>
                 <i className="now-ui-icons business_money-coins"></i>
                   <p>Mercado de capitales</p>
                 </NavLink>
