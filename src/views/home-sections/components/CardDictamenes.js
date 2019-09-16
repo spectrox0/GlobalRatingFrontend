@@ -97,7 +97,7 @@ export default function CardDictamenes({
     width: 10rem; 
     margin-bottom: 1rem; 
    
- }import "./CardDictamenes.css";
+ }
  .TitleDictamen{
   display: flex; 
   flex-direction: column;

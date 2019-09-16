@@ -10,6 +10,7 @@ export const QUERY_EMISORES = gql`
     logo
     pais {
       nombre
+      bandera
     }
     }
    }

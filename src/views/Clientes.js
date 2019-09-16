@@ -14,7 +14,7 @@ import {
     CardText, 
     CardColumns,
     CardSubtitle,
-    CardGroup,
+    CardDeck,
      CardBody 
 } from 'reactstrap'; 
 export default function Clientes () {
@@ -23,15 +23,15 @@ export default function Clientes () {
 
     const Clientes = () => { 
        const innerJSX = data.emisores.map( emisor => 
-        <Card style={{ width: "20rem" }} key={emisor._id}> 
-        <CardImg top width="100%" src={emisor.logo} alt="Card image cap" />
-        <CardBody>
-          <CardTitle>{emisor.nombre}</CardTitle>
-          <CardSubtitle>Card subtitle</CardSubtitle>
-          <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
-          <Button>Button</Button>
+        <Col key={emisor._id} sm="3">  
+        <Card className="cardClientes text-center"> 
+        <CardImg top className="cardImg" src={emisor.logo} alt="Card image cap" />
+        <CardBody className="cardBody">
+          <CardTitle className="cardTitle">{emisor.nombre}</CardTitle>
+          <Button color="info" size="lg"> Ver perfil </Button>
         </CardBody>
-        </Card>) 
+        </Card>
+        </Col>) 
         return innerJSX; 
     } 
     return (!data && loading)?
@@ -39,8 +39,8 @@ export default function Clientes () {
       : 
     <ContainerClientes> 
     <div className="main"> 
-    <Container> 
-        <CardGroup> <Clientes/> <Clientes/>  <Clientes/>  <Clientes/>   </CardGroup>
+    <Container fluid="true"> 
+        <CardDeck> <Clientes/>    </CardDeck>
     </Container>
      
     </div>
@@ -59,5 +59,35 @@ const ContainerClientes = styled.div`
     min-height:100vh; 
    
 } 
+.cardClientes {
+    border-radius:10px; 
+    background: linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.4) ); 
+    box-shadow: inset 2px 2px 3px rgba(0,0,0,0.3) ;
+    opacity: 0.9; 
+    transition: all .5s ease-in-out; 
+    &:hover {
+        opacity:1;
+         transform: scale(1.02); 
+    }
+    .cardImg {
+        padding: 1rem 1rem 0 1rem; 
+        object-fit: fill; 
+        width:20rem; 
+    }
+    .cardBody{ 
+        color:white; 
+    }
+    .cardTitle {
+        font-size:1.6rem; 
+        background:linear-gradient(180deg, #151F42 0%, #000000 250%);
+        border-radius:10px;
+        box-shadows: 2px 3px 2px rgba(0,0,0,0.5); 
+        font-weight:600; 
+        text-transform:uppercase; 
+    }
+    .cardText {
+        text-transform:capitalize; 
+    }
+}
 
 `
