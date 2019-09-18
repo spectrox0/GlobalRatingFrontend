@@ -40,18 +40,17 @@ export default function () {
         width: 100%;
         margin-bottom:1rem; 
         justify-content:center; 
+        font-size: 1rem;
     }
 
     li{
-        display: inline-block;
-        width: 100%;
-        margin-left: 1 rem;
         
+        width: 100%;
         margin-bottom:1rem; 
+        font-size: 1rem;
     }
-   ul {
-    list-style-type: circle;
-   }
+
+
     .sangria{
         margin-left: 1 rem;
         text-indent: 1%;
@@ -94,8 +93,8 @@ export default function () {
 
                             <h4> Misión </h4>
                             <div>
-                            <p className="sangria">
-                                Nuestra misión es dar nuestra opinión independiente sobre las posibilidades de repagar de forma oportuna una deuda u obligación en particular, a través de la recopilación, organización y análisis de toda la información disponible en el mercado y aquella obtenida del propio emisor.
+                                <p className="sangria">
+                                    Nuestra misión es dar nuestra opinión independiente sobre las posibilidades de repagar de forma oportuna una deuda u obligación en particular, a través de la recopilación, organización y análisis de toda la información disponible en el mercado y aquella obtenida del propio emisor.
                                     </p>
                             </div>
                         </Row>
@@ -109,42 +108,42 @@ export default function () {
                         </Row>
                         <Row>
                             <h4> Principios</h4>
-                                <ul>
-                                    <li>
-                                        <p>
-                                        <b>Calidad e integridad del proceso de calificación:</b> Nos esforzamos para que nuestras opiniones ayuden a reducir las asimetrías de información de los participantes en el mercado de capitales. Para ello, hemos implementado procedimientos y metodologías que aseguren que nuestras opiniones estén basadas en criterios justos y análisis cuidadosos de la información relevante disponible en el mercado y de la suministrada por la empresa calificada. Nuestra metodología es rigurosa, sistemática y es validada continuamente con base a nuestra experiencia histórica.
-                                    </p></li>
-                                    <li><p>
-                                        <b>Independencia:</b> Nuestras calificaciones son independientes de presiones políticas y económicas y de conflictos de interés de sus propietarios, o de intereses financieros de sus empleados, evitándose compromisos o relaciones que expongan la independencia y objetividad en nuestros procesos de calificación.
-                                    </p></li>
-                                    <li><p>
-                                        <b>Transparencia y puntualidad en la calificación:</b> Partimos de la idea de hacer accesible la información por parte de los interesados, tanto del procedimiento de calificación, como de los criterios de análisis básicos que se utilizan. Asimismo, nuestro proceso de calificación es puntual y oportuno de acuerdo a los requerimientos del emisor, de tal forma que no se convierta en un obstáculo para el proceso de autorización ante la Comisión Nacional de Valores.
-                                    </p></li>
-                                    <li><p>
-                                        <b>Información Confidencial:</b> Mantenemos bajo confidencialidad la información no pública suministrada por el emisor, bajo los términos de un acuerdo que la proteja. En ese sentido, sólo es utilizada para el proceso de calificación.
-                                    </p></li>
-                                </ul>
+                            <ul>
+                                <li type="disc">
+
+                                    <b>Calidad e integridad del proceso de calificación:</b> Nos esforzamos para que nuestras opiniones ayuden a reducir las asimetrías de información de los participantes en el mercado de capitales. Para ello, hemos implementado procedimientos y metodologías que aseguren que nuestras opiniones estén basadas en criterios justos y análisis cuidadosos de la información relevante disponible en el mercado y de la suministrada por la empresa calificada. Nuestra metodología es rigurosa, sistemática y es validada continuamente con base a nuestra experiencia histórica.
+                                    </li>
+                                <li type="disc">
+                                    <b>Independencia:</b> Nuestras calificaciones son independientes de presiones políticas y económicas y de conflictos de interés de sus propietarios, o de intereses financieros de sus empleados, evitándose compromisos o relaciones que expongan la independencia y objetividad en nuestros procesos de calificación.
+                                    </li>
+                                <li type="disc">
+                                    <b>Transparencia y puntualidad en la calificación:</b> Partimos de la idea de hacer accesible la información por parte de los interesados, tanto del procedimiento de calificación, como de los criterios de análisis básicos que se utilizan. Asimismo, nuestro proceso de calificación es puntual y oportuno de acuerdo a los requerimientos del emisor, de tal forma que no se convierta en un obstáculo para el proceso de autorización ante la Comisión Nacional de Valores.
+                                    </li>
+                                <li type="disc">
+                                    <b>Información Confidencial:</b> Mantenemos bajo confidencialidad la información no pública suministrada por el emisor, bajo los términos de un acuerdo que la proteja. En ese sentido, sólo es utilizada para el proceso de calificación.
+                                    </li>
+                            </ul>
 
                         </Row>
                         <Row>
                             <h4> Junta Calificadora </h4>
-                                <ul>
-                                    <li><p>
-                                        Eduardo Grasso Vecchio
-                                    </p></li>
-                                    <li><p>
-                                        María Antonieta Magaldi
-                                    </p></li>
-                                    <li><p>
-                                        Beatriz Fernández R.s
-                                    </p></li>
-                                    <li><p>
-                                        Elvis Zavatti
-                                    </p></li>
-                                    <li><p>
-                                        Juan Andrés Rodríguez B.
-                                    </p></li>
-                                </ul>
+                            <ul>
+                                <li type="disc">
+                                    Eduardo Grasso Vecchio
+                                    </li>
+                                <li type="disc">
+                                    María Antonieta Magaldi
+                                    </li>
+                                <li type="disc">
+                                    Beatriz Fernández R.s
+                                    </li>
+                                <li type="disc">
+                                    Elvis Zavatti
+                                    </li>
+                                <li type="disc">
+                                    Juan Andrés Rodríguez B.
+                                    </li>
+                            </ul>
                         </Row>
                     </Container>
                 </div>
