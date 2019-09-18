@@ -1,11 +1,71 @@
 import React, { useState, useEffect } from "react";
 import IndexHeader from "./../components/Headers/IndexHeader";
 import styled from "styled-components";
+import {QUERY_LEYESNORMATIVAS} from './helpers/graphql/querys'
+import { useQuery} from '@apollo/react-hooks';
 import {
     Row
     , Col,
     Container
 } from 'reactstrap'
+
+
+export default function LeyesNormativas () {
+ 
+    const { data , loading , error , refetch} = useQuery(QUERY_LEYESNORMATIVAS); 
+
+    const Clientes = () => { 
+       const innerJSX = data.leyesNormativas.map( leyesNormativas => 
+        <Col key={leyesNormativas._id} sm="3">  
+       
+        </Col>) 
+        return innerJSX; 
+    } 
+    return (!data && loading)?
+     <div> <span> cargando </span> </div>
+      : 
+    <ContainerClientes> 
+    <div className="main"> 
+    <Container fluid="true"> 
+        <CardDeck> <Clientes/>    </CardDeck>
+    </Container>
+     
+    </div>
+    </ContainerClientes>
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export default function () {
 
@@ -69,30 +129,28 @@ export default function () {
     }
 
 `
-    return (
+return (
 
-        <LeyesNormativasContent>
-            <div className="wrapper">
-                <div>
-                    <Container >
-                        <Row>
-                            <h3> Leyes y Normativas </h3>
-                        </Row>
-                        <Row>
-                            <li><h4>Fecha</h4>
-                            <div>
-                                <h5>Ley o Normativa</h5>
-                                <p>
-                                    Descripción
-                                </p>
-                            </div>
-                            </li>
-                        </Row>
-                    </Container>
-                </div>
+    <LeyesNormativasContent>
+        <div className="wrapper">
+            <div>
+                <Container >
+                    <Row>
+                        <h3> Leyes y Normativas </h3>
+                    </Row>
+                    <Row>
+                        <li><h4>Fecha</h4>
+                        <div>
+                            <h5>Ley o Normativa</h5>
+                            <p>
+                                Descripción
+                            </p>
+                        </div>
+                        </li>
+                    </Row>
+                </Container>
             </div>
-        </LeyesNormativasContent >
-    );
-
-
+        </div>
+    </LeyesNormativasContent >
+);
 }

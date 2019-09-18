@@ -12,14 +12,21 @@ export const QUERY_EMISORES = gql`
       nombre
       bandera
     }
-    }
-
-    leyesNormativas{
-      _id
-      
-    }
-
-
+  }
 
    }
+`
+
+export const QUERY_LEYESNORMATIVAS = gql`
+  {
+ leyesNormativas {
+   _id
+   titulo
+   descripcion
+   htmlScribd
+   pais {
+     nombre
+   }
+ }
+}
 `
