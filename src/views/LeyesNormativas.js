@@ -26,11 +26,20 @@ export default function () {
 
     h4{
         display: inline-block;
-        color:#191970;
         font-size: 21px;
         margin-right: 1rem;
         margin-bottom: 5px;
         color: #0099cc;
+        font-weight: 300;
+        width: 100%;
+    }
+
+    h5{
+        display: inline-block;
+        color:#0e1d63;
+        font-size: 21px;
+        margin-right: 1rem;
+        margin-bottom: 5px;
         font-weight: 300;
         width: 100%;
     }
@@ -49,16 +58,16 @@ export default function () {
         
         margin-bottom:1rem; 
     }
+
    ul {
     list-style-type: circle;
    }
+
     .sangria{
         margin-left: 1 rem;
         text-indent: 1%;
     }
 
-
-   
 `
     return (
 
@@ -70,12 +79,14 @@ export default function () {
                             <h3> Leyes y Normativas </h3>
                         </Row>
                         <Row>
-                            <h4>Fecha</h4>
+                            <li><h4>Fecha</h4>
                             <div>
+                                <h5>Ley o Normativa</h5>
                                 <p>
-                                    
+                                    Descripción
                                 </p>
                             </div>
+                            </li>
                         </Row>
                     </Container>
                 </div>

@@ -13,5 +13,13 @@ export const QUERY_EMISORES = gql`
       bandera
     }
     }
+
+    leyesNormativas{
+      _id
+      
+    }
+
+
+
    }
 `
