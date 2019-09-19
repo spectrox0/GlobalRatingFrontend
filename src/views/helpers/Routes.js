@@ -55,7 +55,7 @@ export default function () {
  <Route path="/productos/:countryName" render={ (props) =>  <Productos {...props}/> }/>
  <Route path="/calificacion/:countryName" render={ (props) =>  <Calificacion {...props}/> }/>
  <Route path="/leyesnormativas/:countryName" render={ (props) =>  <LeyesNormativas {...props}/> }/>
- <Route path="/mercad/:countryName" render={ (props) =>  <Mercado {...props}/> }/>
+ <Route path="/mercado/:countryName" render={ (props) =>  <Mercado {...props}/> }/>
  <Route path="/contactanos/:countryName" render={ (props) =>  <Contactanos {...props}/> }/>
  <Route path="/clientes/:countryName" render = { (props)=> <Clientes {...props} /> } />
  <Route path="*" render = { props=> <Error404 {...props} />} />

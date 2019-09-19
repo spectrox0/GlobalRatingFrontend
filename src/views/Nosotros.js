@@ -3,8 +3,8 @@ import IndexHeader from "./../components/Headers/IndexHeader";
 import styled from "styled-components";
 import {
     Row
-    , Col,
-    Container
+    , Col
+    ,Container
 } from 'reactstrap'
 
 export default function () {
@@ -26,7 +26,6 @@ export default function () {
 
     h4{
         display: inline-block;
-        color:#191970;
         font-size: 21px;
         margin-right: 1rem;
         margin-bottom: 5px;
