@@ -9,7 +9,7 @@ import {
     Container
 } from 'reactstrap'
 
-
+/*
 export default function LeyesNormativas () {
  
     const { data , loading , error , refetch} = useQuery(QUERY_LEYESNORMATIVAS); 
@@ -35,16 +35,7 @@ export default function LeyesNormativas () {
 
 
 }
-
-
-
-
-
-
-
-
-
-
+*/
 
 
 

@@ -17,7 +17,7 @@ import {
   Button
 } from 'reactstrap'
 
-export default function () {
+export default function Contactanos () {
    
   const [isVerified,setVerified] = useState(false); 
   const [message, setMessage] = useState(); 

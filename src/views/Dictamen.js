@@ -26,8 +26,6 @@ export default function Dictamen( {location} ) {
 
          let datajson= JSON.parse(dataa); 
          setDictamen(datajson); 
-           
-       
          setLoading(false); 
         }
         ).catch( err => { 
