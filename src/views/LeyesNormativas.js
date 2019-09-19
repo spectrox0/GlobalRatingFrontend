@@ -33,7 +33,6 @@ export default function LeyesNormativas() {
             <div className="wrapper">
                 <div>
                     <Container>
-                      
                             <LeyesNormativas/>
                     </Container>
                 </div>
