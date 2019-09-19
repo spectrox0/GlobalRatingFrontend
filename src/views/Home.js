@@ -10,6 +10,7 @@ import {Container} from "reactstrap";
 // sections for this page
 import Dictamenes from "views/home-sections/DictamenesDeCalificacion.js"
 import Noticias from "views/home-sections/NoticiasFinanzas.js"
+import HomeCountry from "views/HomeCountry"
 import styled from 'styled-components'; 
 export default function Index() {
   
@@ -32,7 +33,6 @@ export default function Index() {
         <div className="main" >
          <Dictamenes/>
         <Noticias/>
-
         </div>
       </div>
     </HomeContainer>

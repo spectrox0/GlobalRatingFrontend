@@ -22,7 +22,7 @@ export default function NavbarGlobal() {
   const [navbarColor, setNavbarColor] = useState("navbar-transparent");
   const [navbarLogo, setNavbarLogo] = useState("navbar-logoHidden");
   const [collapseOpen, setCollapseOpen] = useState(false);
-
+  const [region, setRegion] = useState("VE"); 
   // Use effect se carga al iniciar el componente , efectuado cada vez que se renderice el componente 
   useEffect(() => {
     const updateNavbarColor = () => {
@@ -45,6 +45,12 @@ export default function NavbarGlobal() {
       window.removeEventListener("scroll", updateNavbarColor);
     };
   });
+   useEffect (()=>{
+      const country = localStorage.getItem("country"); 
+      if(country!=="VE") {
+        setRegion(country);
+      }
+   } ,[] )
   return (
     <NavbarContainer>
       {collapseOpen ? (
@@ -97,7 +103,9 @@ export default function NavbarGlobal() {
           >
             <Nav navbar>
               <NavItem>
-                <NavLink to="/nosotros" tag={Link}>
+                <NavLink to= {{
+               pathname:`/nosotros/${region}` }
+                }   tag={Link}>
                   <i className="now-ui-icons business_chart-bar-32"></i>
                   <p> Nosotros </p>
                 </NavLink>
@@ -115,7 +123,9 @@ export default function NavbarGlobal() {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/leyesnormativas" tag={Link}>
+                <NavLink to={ {
+               pathname:`/leyesNormativas/${region}` }
+                }  tag={Link}>
                   <i className="now-ui-icons files_paper"></i>
                   <p> Leyes y Normativas </p>
                 </NavLink>
@@ -127,7 +137,9 @@ export default function NavbarGlobal() {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/contactanos" tag={Link}>
+                <NavLink to={ {
+               pathname:`/contactanos/${region}` }
+                } tag={Link}>
                   <i className="now-ui-icons travel_info"></i>
                   <p>Contactanos</p>
                 </NavLink>
