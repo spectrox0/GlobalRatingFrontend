@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React, { useContext } from 'react'; 
 import {Route, Switch, Redirect  } from 'react-router-dom';
 //pages 
 import Home from "views/Home.js";
@@ -13,10 +13,10 @@ import Mercado from "views/Mercado.js";
 import Contactanos from "views/Contactanos.js";
 import Clientes from "views/Clientes.js"; 
 import Error404 from "views/Error404.js";
-
+import CountryContext from "../../context/region"
 export default function () {
    
- 
+  const {country} = useContext(CountryContext); 
  return(
 
  <Switch>
