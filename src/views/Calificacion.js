@@ -126,7 +126,7 @@ export default function () {
                               color="info"
                            style={{width:"20rem", fontSize:"1.2rem"}} 
                            tag={Link} to={{
-                                 pathname: "/views/otorgada/VE"
+                                 pathname: "/otorgada/VE"
                              }}> Ver calificaciones otorgadas </Button>
                         </Row>
                         <Row>
