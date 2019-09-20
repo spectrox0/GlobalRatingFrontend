@@ -60,9 +60,10 @@ export default function NavbarGlobal() {
 
           <div className="navbar-translate">
             <NavbarBrand
-              target="_blank"
               id="navbar-brand"
               className={navbarLogo}
+              tag= {Link}
+              to = {{pathname:`/index/${country}`}}
             >
               <img className="GlobalRatingLogo"
                 src={require("assets/img/globalrating_white.svg")}
@@ -129,7 +130,7 @@ export default function NavbarGlobal() {
               </NavItem>
               <NavItem>
                 <NavLink to={ {
-               pathname:`/mercado/${country}` }
+               pathname:`/estadisticas/${country}` }
                 }  tag={Link}>
                   <i className="now-ui-icons business_money-coins"></i>
                   <p>Estadisticas de Mercado</p>

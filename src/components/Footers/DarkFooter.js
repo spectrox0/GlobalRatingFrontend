@@ -25,8 +25,8 @@ export default function DarkFooter() {
   const context = useContext(CountryContext); 
   return (
     <footer className="footer" data-background-color="black">
-      <Container>
-      <Row> 
+      <Container >
+      <Row >
               <a
                 href=""
                 target="_blank"
@@ -101,21 +101,28 @@ export default function DarkFooter() {
           </DropdownItem>
         </DropdownMenu>
       </UncontrolledDropdown></Col>
-         </Row>
+      </Row>
        <Row> <Col className="text-center">
   <ul className="nav-links">
            <li>
-            <NavLink to="/about"> Nosotros </NavLink>
+            <NavLink to="/nosotros/VE"> Nosotros </NavLink>
            </li>
-           <li>  <NavLink to="/productsAndServices"> Productos y Servicios </NavLink>
+           <li>  <NavLink to="/clientes/VE"> Clientes </NavLink>
            </li>
-           <li> <NavLink to="/rateRisk"> Calificacion de Riesgos </NavLink>
+           <li> <NavLink to="/calificacion/VE"> Calificacion de Riesgos </NavLink>
            </li>
-           <li>  <NavLink to="/laws"> Leyes y Normativas </NavLink>
+           <li>  <NavLink to="/leyesnormativas/VE"> Leyes y Normativas </NavLink>
            </li>
-           <li>  <NavLink to="/capitalMarket"> Mercado de Capitales</NavLink>
+           <li>  <NavLink to="/estadisticas/VE"> Estadísticas de Mercado </NavLink>
            </li>
-           <li>  <NavLink to="/contact"> Contacto </NavLink>
+           <li>  <NavLink to="/contactanos/VE"> Contacto </NavLink>
+           </li>           
+           <li>
+             |
+           </li>
+           <li>  <NavLink to="/terminos/VE"> Términos y Condiciones </NavLink>
+           </li>
+           <li>  <NavLink to="/mapa/VE"> Mapa del Site </NavLink>
            </li>
        </ul>
   </Col></Row>
@@ -132,6 +139,7 @@ export default function DarkFooter() {
     </footer>
   );
 }
+
 const FinanzasDigitalLogo = styled.div`
 display:inline-block; 
 background: url("${require("assets/img/pic_footerlogoFD_gris.png")}") no-repeat center; 
