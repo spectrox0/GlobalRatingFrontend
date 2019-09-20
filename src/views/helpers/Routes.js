@@ -35,7 +35,7 @@ export default function () {
    {country && (  <>
    <Redirect exact from="/" to={ {
     pathname:`/index/${country}` }
-   }  /> 
+   } /> 
     <Route path="*" render = { props=> <Error404 {...props} />} /> 
    </> )}
      

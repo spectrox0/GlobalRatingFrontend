@@ -1,13 +1,15 @@
 /*eslint-disable*/
 import React , {useContext} from "react";
-import {NavLink, Link} from "react-router-dom"; 
+import { Link} from "react-router-dom"; 
 import CountryContext from "./../../context/region.js"
 import styled from "styled-components"; 
+import { animateScroll as scroll} from  'react-scroll'; 
 // reactstrap components
 import { 
   Container,
    Row,
   Col,
+  NavLink,
   Input, 
   Form , 
   InputGroup,
@@ -120,7 +122,14 @@ export default function DarkFooter() {
        </ul>
   </Col></Row>
        <Row> 
-        
+         <NavLink onClick = { e => {
+           document.onscroll.apply(0); 
+         }} tag={Link} to={{
+         pathname:`/terminos/${context.country}`
+         }
+         }
+    
+         > Terminos </NavLink>
        </Row>
             <Copyright id="copyright">
         <p>

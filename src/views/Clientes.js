@@ -41,7 +41,7 @@ export default function Clientes () {
         </Col>) 
         return innerJSX; 
     } 
-    return (!data && loading)?
+    return (loading)?
      <div> <span> cargando </span> </div>
       : 
     <ContainerClientes> 
