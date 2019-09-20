@@ -20,8 +20,6 @@ export default function LeyesNormativas() {
              <h4>{leyesNormativas.titulo}</h4>
                             <div>
                                 <p>{leyesNormativas.descripcion}</p>
-                                <p>{leyesNormativas.htmlScribd}</p>
-                                <p>{leyesNormativas.pais.nombre}</p>
                             </div>
             </Row>)
         return innerJSX;
@@ -43,7 +41,7 @@ export default function LeyesNormativas() {
 }
 
 const LeyesNormativasContent = styled.div`
-
+min-height:100vh; 
 div{
     text-align: justify;
     text-justify: inter-word;

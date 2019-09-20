@@ -5,7 +5,6 @@ import Home from "views/Home.js";
 import Dictamen from "views/Dictamen.js"; 
 import Noticia from "views/Noticia.js";
 import Nosotros from "views/Nosotros.js";
-import Productos from "views/Productos.js";
 import Calificacion from "views/Calificacion.js";
 import Otorgada from "views/Otorgada.js";
 import LeyesNormativas from "views/LeyesNormativas.js";
@@ -13,6 +12,7 @@ import Mercado from "views/Mercado.js";
 import Contactanos from "views/Contactanos.js";
 import Clientes from "views/Clientes.js"; 
 import Error404 from "views/Error404.js";
+import PerfilCliente from "views/PerfilCliente.js"
 import CountryContext from "../../context/region"
 export default function () {
    
@@ -22,10 +22,10 @@ export default function () {
  <Switch>
   
  <Route path="/index/:countryName" render={ (props) =>  <Home {...props}/> }/>
- <Route path="/dictamen/:countryName" render={ (props) =>  <Dictamen {...props}/> }/>
- <Route path="/noticia/:countryName" render={ (props) =>  <Noticia {...props}/> }/>
+ <Route path="/dictamen" render={ (props) =>  <Dictamen {...props}/> }/>
+ <Route path="/noticia" render={ (props) =>  <Noticia {...props}/> }/>
+ <Route path="/perfilCliente" render = {(props)=> <PerfilCliente {...props} />} />
  <Route path="/nosotros/:countryName" render={ (props) =>  <Nosotros {...props}/> }/>
- <Route path="/productos/:countryName" render={ (props) =>  <Productos {...props}/> }/>
  <Route path="/calificacion/:countryName" render={ (props) =>  <Calificacion {...props}/> }/>
  <Route path="/otorgada/:countryName" render={ (props) =>  <Otorgada {...props}/> }/>
  <Route path="/leyesnormativas/:countryName" render={ (props) =>  <LeyesNormativas {...props}/> }/>

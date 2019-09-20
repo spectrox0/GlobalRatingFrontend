@@ -1,5 +1,6 @@
 import React from 'react'; 
 import styled from 'styled-components'; 
+import {Link} from 'react-router-dom'; 
 import {QUERY_EMISORES} from './helpers/graphql/querys'
 import { useQuery} from '@apollo/react-hooks';
 
@@ -11,9 +12,6 @@ import {
     Button, 
     CardImg, 
     CardTitle, 
-    CardText, 
-    CardColumns,
-    CardSubtitle,
     CardDeck,
      CardBody 
 } from 'reactstrap'; 
@@ -28,7 +26,16 @@ export default function Clientes () {
         <CardImg top className="cardImg" src={emisor.logo} alt="Card image cap" />
         <CardBody className="cardBody">
           <CardTitle className="cardTitle">{emisor.nombre}</CardTitle>
-          <Button color="info" size="lg"> Ver perfil </Button>
+          <Button 
+          color="info"
+           size="lg"
+            tag={Link}
+             to={{
+                pathname: '/perfilCliente',
+                search: `?id=${emisor._id}`
+             }}
+            > Ver perfil
+             </Button>
         </CardBody>
         </Card>
         </Col>) 
@@ -38,12 +45,12 @@ export default function Clientes () {
      <div> <span> cargando </span> </div>
       : 
     <ContainerClientes> 
-    <div className="main"> 
+
     <Container fluid="true"> 
         <CardDeck> <Clientes/>    </CardDeck>
     </Container>
      
-    </div>
+
     </ContainerClientes>
 
 
@@ -51,14 +58,12 @@ export default function Clientes () {
 
 const ContainerClientes = styled.div`
 
-.main {
+
     display: flex; 
     flex-direction: column; 
     align-items:center; 
     justify-content:center; 
     min-height:100vh; 
-   
-} 
 .cardClientes {
     border-radius:10px; 
     background: linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.4) ); 

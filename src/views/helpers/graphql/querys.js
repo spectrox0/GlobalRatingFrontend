@@ -30,3 +30,27 @@ export const QUERY_LEYESNORMATIVAS = gql`
  }
 }
 `
+
+export const QUERY_EMISORES_ID = gql`
+query emisorID($_id: String!) {
+  emisorID(_id:$_id) {
+      _id 
+      nombre
+      logo
+      pais {
+        nombre
+        _id
+      }
+      twitter 
+      instagram
+      urlWeb
+      emisiones {
+        idDictamen
+        idProspecto
+        idProvidencia
+        fechaAprovacion
+      }
+
+  }
+}
+`

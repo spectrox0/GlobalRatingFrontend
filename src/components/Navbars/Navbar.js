@@ -20,7 +20,7 @@ export default function NavbarGlobal() {
   const [navbarColor, setNavbarColor] = useState("navbar-transparent");
   const [navbarLogo, setNavbarLogo] = useState("navbar-logoHidden");
   const [collapseOpen, setCollapseOpen] = useState(false);
-  const context = useContext(CountryContext); 
+  const  {country} = useContext(CountryContext); 
   
   // Use effect se carga al iniciar el componente , efectuado cada vez que se renderice el componente 
   useEffect(() => {
@@ -97,7 +97,7 @@ export default function NavbarGlobal() {
             <Nav navbar>
               <NavItem>
                 <NavLink to= {{
-               pathname:`/nosotros/${context.country}` }
+               pathname:`/nosotros/${country}` }
                 }   tag={Link}>
                   <i className="now-ui-icons business_chart-bar-32"></i>
                   <p> Nosotros </p>
@@ -105,23 +105,23 @@ export default function NavbarGlobal() {
               </NavItem>
               <NavItem>
                 <NavLink to={ {
-               pathname:`/productos/${context.country}` }
+               pathname:`/clientes/${country}` }
                 }  tag={Link}>
                   <i className="now-ui-icons business_globe"></i>
-                  <p> Productos y Servicios </p>
+                  <p> Clientes </p>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink to={ {
-               pathname:`/calificacion/${context.country}` }
+               pathname:`/calificacion/${country}` }
                 } tag={Link}>
                   <i className="now-ui-icons business_chart-bar-32"></i>
-                  <p> Calificacion de Riesgos </p>
+                  <p> Calificaciones de Riesgos </p>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink to={ {
-               pathname:`/leyesNormativas/${context.country}` }
+               pathname:`/leyesNormativas/${country}` }
                 }  tag={Link}>
                   <i className="now-ui-icons files_paper"></i>
                   <p> Leyes y Normativas </p>
@@ -129,15 +129,15 @@ export default function NavbarGlobal() {
               </NavItem>
               <NavItem>
                 <NavLink to={ {
-               pathname:`/mercado/${context.country}` }
+               pathname:`/mercado/${country}` }
                 }  tag={Link}>
                   <i className="now-ui-icons business_money-coins"></i>
-                  <p>Mercado de capitales</p>
+                  <p>Estadisticas de Mercado</p>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink to={ {
-               pathname:`/contactanos/${context.country}` }
+               pathname:`/contactanos/${country}` }
                 } tag={Link}>
                   <i className="now-ui-icons travel_info"></i>
                   <p>Contactanos</p>

@@ -11,7 +11,7 @@ export default function () {
 
 
     const MercadoContent = styled.div`
-
+    min-height:100vh; 
     div{
         text-align: justify;
         text-justify: inter-word;
