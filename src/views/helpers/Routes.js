@@ -8,7 +8,7 @@ import Nosotros from "views/Nosotros.js";
 import Calificacion from "views/Calificacion.js";
 import Otorgada from "views/Otorgada.js";
 import LeyesNormativas from "views/LeyesNormativas.js";
-import Mercado from "views/Mercado.js";
+import Terminos from "views/Terminos.js";
 import Contactanos from "views/Contactanos.js";
 import Clientes from "views/Clientes.js"; 
 import Error404 from "views/Error404.js";
@@ -29,7 +29,7 @@ export default function () {
  <Route path="/calificacion/:countryName" render={ (props) =>  <Calificacion {...props}/> }/>
  <Route path="/otorgada/:countryName" render={ (props) =>  <Otorgada {...props}/> }/>
  <Route path="/leyesnormativas/:countryName" render={ (props) =>  <LeyesNormativas {...props}/> }/>
- <Route path="/mercado/:countryName" render={ (props) =>  <Mercado {...props}/> }/>
+ <Route path="/terminos/:countryName" render={ (props) =>  <Terminos {...props}/> }/>
  <Route path="/contactanos/:countryName" render={ (props) =>  <Contactanos {...props}/> }/>
  <Route path="/clientes/:countryName" render = { (props)=> <Clientes {...props} /> } />
    {country && (  <>

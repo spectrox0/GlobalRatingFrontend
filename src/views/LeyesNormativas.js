@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import { QUERY_LEYESNORMATIVAS } from './helpers/graphql/querys'
 import { useQuery } from '@apollo/react-hooks';
 
@@ -7,7 +8,6 @@ import {
     Container,
     Row,
     Col,
-    Button,
 } from 'reactstrap';
 
 export default function LeyesNormativas() {
@@ -31,7 +31,49 @@ export default function LeyesNormativas() {
             <div className="wrapper">
                 <div>
                     <Container>
-                            <LeyesNormativas/>
+                        <Row>
+                    <h3> Leyes Normativas </h3>
+                        <LeyesNormativas />
+                        </Row>
+                        <Pagination aria-label="Page navigation example">
+                            <PaginationItem disabled>
+                                <PaginationLink first href="#" />
+                            </PaginationItem>
+                            <PaginationItem disabled>
+                                <PaginationLink previous href="#" />
+                            </PaginationItem>
+                            <PaginationItem active>
+                                <PaginationLink href="#">
+                                    1
+                            </PaginationLink>
+                            </PaginationItem>
+                            <PaginationItem>
+                                <PaginationLink href="#">
+                                    2
+                            </PaginationLink>
+                            </PaginationItem>
+                            <PaginationItem>
+                                <PaginationLink href="#">
+                                    3
+                            </PaginationLink>
+                            </PaginationItem>
+                            <PaginationItem>
+                                <PaginationLink href="#">
+                                    4
+                            </PaginationLink>
+                            </PaginationItem>
+                            <PaginationItem>
+                                <PaginationLink href="#">
+                                    5
+                            </PaginationLink>
+                            </PaginationItem>
+                            <PaginationItem>
+                                <PaginationLink next href="#" />
+                            </PaginationItem>
+                            <PaginationItem>
+                                <PaginationLink last href="#" />
+                            </PaginationItem>
+                        </Pagination>
                     </Container>
                 </div>
             </div>
@@ -57,7 +99,6 @@ h3{
 
 h4{
     display: inline-block;
-    color:#191970;
     font-size: 21px;
     margin-right: 1rem;
     margin-bottom: 5px;
@@ -86,5 +127,37 @@ li{
     margin-left: 1 rem;
     text-indent: 1%;
 }
+
+Pagination.propTypes = {
+    children: PropTypes.node,
+    className: PropTypes.string,
+    listClassName: PropTypes.string,
+    cssModule: PropTypes.object,
+    size: PropTypes.string,
+    tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+    listTag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+    'aria-label': PropTypes.string
+  };
+  
+  PaginationItem.propTypes = {
+    active: PropTypes.bool,
+    children: PropTypes.node,
+    className: PropTypes.string,
+    cssModule: PropTypes.object,
+    disabled: PropTypes.bool,
+    tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+  };
+  
+  PaginationLink.propTypes = {
+    children: PropTypes.node,
+    className: PropTypes.string,
+    cssModule: PropTypes.object,
+    next: PropTypes.bool,
+    previous: PropTypes.bool,
+    first: PropTypes.bool,
+    last: PropTypes.bool,
+    tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+    'aria-label': PropTypes.string
+  };
 
 `
