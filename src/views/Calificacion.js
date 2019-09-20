@@ -124,7 +124,7 @@ export default function () {
                                     En caso de existir garantías calificadas o calificables, atadas a la emisión, la Categoría de Riesgo asignada puede ser la de la garantía, en función de su calidad y grado de liquidez.
                                 </p>
                             </div>
-                            <button>Ver Calificaciones Otorgadas</button>
+                            <button src="/views/otorgada/VE">Ver Calificaciones Otorgadas</button>
                         </Row>
                         <Row>
                             <h4 className="especial">Categorías de Riesgo</h4>

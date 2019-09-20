@@ -4,7 +4,7 @@ import styled from "styled-components";
 import {
     Row
     , Col
-    ,Container
+    , Container
 } from 'reactstrap'
 
 export default function () {
