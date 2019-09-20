@@ -107,15 +107,15 @@ export default function DarkFooter() {
        <Row> <Col className="text-center">
   <ul className="nav-links">
            <li>
-            <NavLink to="/nosotros" > Nosotros </NavLink>
+            <NavLink to="/nosotros/VE"> Nosotros </NavLink>
            </li>
-           <li>  <NavLink tag={Link} to="/clientes"> Clientes </NavLink>
+           <li>  <NavLink to="/clientes/VE"> Clientes </NavLink>
            </li>
-           <li> <NavLink tag={Link} to="/rateRisk"> Calificaciones de Riesgos </NavLink>
+           <li> <NavLink to="/calificacion/VE"> Calificacion de Riesgos </NavLink>
            </li>
            <li>  <NavLink to="/leyesnormativas/VE"> Leyes y Normativas </NavLink>
            </li>
-           <li>  <NavLink to="/capitalMarket"> Estadistica de mercado </NavLink>
+           <li>  <NavLink to="/estadisticas/VE"> Estadísticas de Mercado </NavLink>
            </li>
            <li>  <NavLink to="/contactanos/VE"> Contacto </NavLink>
            </li>           
