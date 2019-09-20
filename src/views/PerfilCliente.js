@@ -17,7 +17,7 @@ export default function PerfilCliente({location})  {
 
    const Emisiones = ( {emisiones} )=> {
       const innerJSX = emisiones.map(emision => {
-
+      
      return (
          <Row className="rowEmision" key= {emision.id}> 
              <Col> 
