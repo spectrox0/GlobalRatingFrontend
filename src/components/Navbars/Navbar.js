@@ -22,7 +22,7 @@ export default function NavbarGlobal() {
   const [navbarColor, setNavbarColor] = useState("navbar-transparent");
   const [navbarLogo, setNavbarLogo] = useState("navbar-logoHidden");
   const [collapseOpen, setCollapseOpen] = useState(false);
-  const [region, setRegion] = useState("VE"); 
+  const [region, setRegion] = useState("VE");
   // Use effect se carga al iniciar el componente , efectuado cada vez que se renderice el componente 
   useEffect(() => {
     const updateNavbarColor = () => {
@@ -45,12 +45,12 @@ export default function NavbarGlobal() {
       window.removeEventListener("scroll", updateNavbarColor);
     };
   });
-   useEffect (()=>{
-      const country = localStorage.getItem("country"); 
-      if(country!=="VE") {
-        setRegion(country);
-      }
-   } ,[] )
+  useEffect(() => {
+    const country = localStorage.getItem("country");
+    if (country !== "VE") {
+      setRegion(country);
+    }
+  }, [])
   return (
     <NavbarContainer>
       {collapseOpen ? (
@@ -103,48 +103,54 @@ export default function NavbarGlobal() {
           >
             <Nav navbar>
               <NavItem>
-                <NavLink to= {{
-               pathname:`/nosotros/${region}` }
-                }   tag={Link}>
+                <NavLink to={{
+                  pathname: `/nosotros/${region}`
+                }
+                } tag={Link}>
                   <i className="now-ui-icons business_chart-bar-32"></i>
                   <p> Nosotros </p>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to={ {
-               pathname:`/productos/${region}` }
-                }  tag={Link}>
+                <NavLink to={{
+                  pathname: `/productos/${region}`
+                }
+                } tag={Link}>
                   <i className="now-ui-icons business_globe"></i>
                   <p> Productos y Servicios </p>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to={ {
-               pathname:`/calificacion/${region}` }
+                <NavLink to={{
+                  pathname: `/calificacion/${region}`
+                }
                 } tag={Link}>
                   <i className="now-ui-icons business_chart-bar-32"></i>
                   <p> Calificacion de Riesgos </p>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to={ {
-               pathname:`/leyesNormativas/${region}` }
-                }  tag={Link}>
+                <NavLink to={{
+                  pathname: `/leyesNormativas/${region}`
+                }
+                } tag={Link}>
                   <i className="now-ui-icons files_paper"></i>
                   <p> Leyes y Normativas </p>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to={ {
-               pathname:`/mercado/${region}` }
-                }  tag={Link}>
+                <NavLink to={{
+                  pathname: `/mercado/${region}`
+                }
+                } tag={Link}>
                   <i className="now-ui-icons business_money-coins"></i>
                   <p>Mercado de capitales</p>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to={ {
-               pathname:`/contactanos/${region}` }
+                <NavLink to={{
+                  pathname: `/contactanos/${region}`
+                }
                 } tag={Link}>
                   <i className="now-ui-icons travel_info"></i>
                   <p>Contactanos</p>
