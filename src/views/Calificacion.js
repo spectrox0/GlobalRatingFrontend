@@ -13,6 +13,14 @@ export default function () {
 
     const CalificacionContent = styled.div`
 
+    .centrado{
+        text-align: center;
+        text-transform: uppercase;
+        width: 50%;
+        margin: auto; 
+        display: block;
+    }
+
     .especial{
         color: #0e1d63;
         text-transform: uppercase;
@@ -114,7 +122,7 @@ export default function () {
                                 </p>
                             </div>
                              <Button
-                              className="btn-round"
+                              className="btn-round centrado"
                               color="info"
                            style={{width:"20rem", fontSize:"1.2rem"}} 
                            tag={Link} to={{
