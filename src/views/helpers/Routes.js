@@ -60,12 +60,13 @@ export default function () {
  <Route path="/mercado/:countryName" render={ (props) =>  <Mercado {...props}/> }/>
  <Route path="/contactanos/:countryName" render={ (props) =>  <Contactanos {...props}/> }/>
  <Route path="/clientes/:countryName" render = { (props)=> <Clientes {...props} /> } />
- <Route path="*" render = { props=> <Error404 {...props} />} />
-
-   {country &&   
+   {country && (  <>
    <Redirect exact from="/" to={ {
     pathname:`/index/${country}` }
-     }  /> }
+   }  /> 
+    <Route path="*" render = { props=> <Error404 {...props} />} /> 
+   </> )}
+     
      
  
  

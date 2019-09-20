@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import IndexHeader from "./../components/Headers/IndexHeader";
 import styled from "styled-components";
+import {Link} from "react-router-dom"
 import {
     Row
     , Col
-    , Container
+    , Container,
+    Button
 } from 'reactstrap'
 
 export default function () {
@@ -16,20 +18,7 @@ export default function () {
         text-transform: uppercase;
     }
 
-    button{
-        display:block;
-        width: 50%;
-        background-color: #2CA8FF;
-        color: white;
-        padding: 1rem;
-        border-radius: 500px;
-        float:none;
-        font-size: 1rem;
-        margin-left: auto;
-        margin-right: auto;
-        text-transform: uppercase;
-    }
-
+  
     div{
         text-align: justify;
         text-justify: inter-word;
@@ -53,7 +42,7 @@ export default function () {
         width: 100%;
     }
 
-    a{
+    li a{
         color: #0099cc;
     }
 
@@ -124,7 +113,13 @@ export default function () {
                                     En caso de existir garantías calificadas o calificables, atadas a la emisión, la Categoría de Riesgo asignada puede ser la de la garantía, en función de su calidad y grado de liquidez.
                                 </p>
                             </div>
-                            <button src="/views/otorgada/VE">Ver Calificaciones Otorgadas</button>
+                             <Button
+                              className="btn-round"
+                              color="info"
+                           style={{width:"20rem", fontSize:"1.2rem"}} 
+                           tag={Link} to={{
+                                 pathname: "/views/otorgada/VE"
+                             }}> Ver calificaciones otorgadas </Button>
                         </Row>
                         <Row>
                             <h4 className="especial">Categorías de Riesgo</h4>
