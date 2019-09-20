@@ -1,6 +1,7 @@
 /*eslint-disable*/
-import React from "react";
-import {NavLink} from "react-router-dom"; 
+import React , {useContext} from "react";
+import {NavLink, Link} from "react-router-dom"; 
+import CountryContext from "./../../context/region.js"
 import styled from "styled-components"; 
 // reactstrap components
 import { 
@@ -17,7 +18,11 @@ import {
   DropdownItem,
   UncontrolledDropdown
   } from "reactstrap";
-function DarkFooter() {
+
+
+
+export default function DarkFooter() {
+  const context = useContext(CountryContext); 
   return (
     <footer className="footer" data-background-color="black">
       <Container>
@@ -66,14 +71,28 @@ function DarkFooter() {
                  {"  "}  Region
         </DropdownToggle>
         <DropdownMenu aria-labelledby="dropdownMenuButton">
-          <DropdownItem href="#" onClick={e => e.preventDefault()}>
+          <DropdownItem onClick={ e => {
+             context.changeCountry("VE"); 
+             localStorage.setItem("country","VE")
+            }}
+          tag = {Link} 
+          to= {{ 
+            pathname:"/index/VE"}}
+          > 
           <img
               src={require("assets/img/flags/VE.png")}
               alt="Venezuela"
               style={{height:"1rem"}}
                   /> {" "}  -Venezuela
           </DropdownItem>
-          <DropdownItem href="#" onClick={e => e.preventDefault()}>
+          <DropdownItem
+          onClick={e => {
+            context.changeCountry("PA"); 
+           localStorage.setItem("country", "PA")
+          } } tag = {Link} 
+          to= {{ 
+            pathname:"/index/PA"}}
+          > 
           <img
               src={require("assets/img/flags/PA.png")}
               alt="Venezuela"
@@ -149,4 +168,3 @@ p {
   text-align:center;
 }
 `
-export default DarkFooter;
