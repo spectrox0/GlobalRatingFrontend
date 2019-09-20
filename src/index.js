@@ -1,42 +1,15 @@
-/*
 
-=========================================================
-* Now UI Kit React - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/now-ui-kit-react
-* Copyright 2019 Creative Tim (http://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/now-ui-kit-react/blob/master/LICENSE.md)
-
-* Designed by www.invisionapp.com Coded by www.creative-tim.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 // styles 
 import "assets/css/bootstrap.min.css";
 import "assets/scss/now-ui-kit.scss";
 // pages
 
-import DarkFooter from "components/Footers/DarkFooter.js";
-import IndexNavbar from "components/Navbars/Navbar.js";
-import Routes from './views/helpers/Routes';
-import client from './views/helpers/graphqlEndpoint'
-import { ApolloProvider } from '@apollo/react-hooks';
 
-ReactDOM.render(
-  <BrowserRouter>
-  <ApolloProvider client={client}>
-    <IndexNavbar />
-    <Routes />
-    <DarkFooter style={{ position: "absolute", bottom: "0" }} />
-    </ApolloProvider>
-  </BrowserRouter>,
-  document.getElementById("root")
+import App from './App.js'
+;
+
+ReactDOM.render(<App/>, document.getElementById("root")
 );
