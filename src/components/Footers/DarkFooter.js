@@ -27,8 +27,8 @@ export default function DarkFooter() {
   const context = useContext(CountryContext); 
   return (
     <footer className="footer" data-background-color="black">
-      <Container>
-      <Row> 
+      <Container >
+      <Row >
               <a
                 href=""
                 target="_blank"
@@ -103,21 +103,40 @@ export default function DarkFooter() {
           </DropdownItem>
         </DropdownMenu>
       </UncontrolledDropdown></Col>
-         </Row>
+      </Row>
        <Row> <Col className="text-center">
   <ul className="nav-links">
            <li>
+<<<<<<< HEAD
+            <NavLink to="/nosotros/VE"> Nosotros </NavLink>
+           </li>
+           <li>  <NavLink to="/clientes/VE"> Clientes </NavLink>
+           </li>
+           <li> <NavLink to="/calificacion/VE"> Calificacion de Riesgos </NavLink>
+=======
             <NavLink to="/nosotros" > Nosotros </NavLink>
            </li>
            <li>  <NavLink to="/clientes"> Clientes </NavLink>
            </li>
            <li> <NavLink to="/rateRisk"> Calificaciones de Riesgos </NavLink>
+>>>>>>> 7e54aadc3ec88aa46884aff2b72a03cb154dc1bc
            </li>
-           <li>  <NavLink to="/laws"> Leyes y Normativas </NavLink>
+           <li>  <NavLink to="/leyesnormativas/VE"> Leyes y Normativas </NavLink>
            </li>
+<<<<<<< HEAD
+           <li>  <NavLink to="/estadisticas/VE"> Estadísticas de Mercado </NavLink>
+=======
            <li>  <NavLink to="/capitalMarket"> Estadistica de mercado </NavLink>
+>>>>>>> 7e54aadc3ec88aa46884aff2b72a03cb154dc1bc
            </li>
-           <li>  <NavLink to="/contact"> Contacto </NavLink>
+           <li>  <NavLink to="/contactanos/VE"> Contacto </NavLink>
+           </li>           
+           <li>
+             |
+           </li>
+           <li>  <NavLink to="/terminos/VE"> Términos y Condiciones </NavLink>
+           </li>
+           <li>  <NavLink to="/mapa/VE"> Mapa del Site </NavLink>
            </li>
        </ul>
   </Col></Row>
@@ -144,6 +163,7 @@ export default function DarkFooter() {
     </footer>
   );
 }
+
 const FinanzasDigitalLogo = styled.div`
 display:inline-block; 
 background: url("${require("assets/img/pic_footerlogoFD_gris.png")}") no-repeat center; 
