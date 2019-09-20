@@ -48,16 +48,6 @@ export default function NavbarGlobal() {
       window.removeEventListener("scroll", updateNavbarColor);
     };
   });
-<<<<<<< HEAD
-  useEffect(() => {
-    const country = localStorage.getItem("country");
-    if (country !== "VE") {
-      setRegion(country);
-    }
-  }, [])
-=======
-
->>>>>>> 2d5b00b0bbcde9001db56c05b6c99c800052cbd3
   return (
     <NavbarContainer>
       {collapseOpen ? (
