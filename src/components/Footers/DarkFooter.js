@@ -105,20 +105,23 @@ export default function DarkFooter() {
        <Row> <Col className="text-center">
   <ul className="nav-links">
            <li>
-            <NavLink to="/about"> Nosotros </NavLink>
+            <NavLink to="/nosotros" > Nosotros </NavLink>
            </li>
-           <li>  <NavLink to="/productsAndServices"> Productos y Servicios </NavLink>
+           <li>  <NavLink to="/clientes"> Clientes </NavLink>
            </li>
-           <li> <NavLink to="/rateRisk"> Calificacion de Riesgos </NavLink>
+           <li> <NavLink to="/rateRisk"> Calificaciones de Riesgos </NavLink>
            </li>
            <li>  <NavLink to="/laws"> Leyes y Normativas </NavLink>
            </li>
-           <li>  <NavLink to="/capitalMarket"> Mercado de Capitales</NavLink>
+           <li>  <NavLink to="/capitalMarket"> Estadistica de mercado </NavLink>
            </li>
            <li>  <NavLink to="/contact"> Contacto </NavLink>
            </li>
        </ul>
   </Col></Row>
+       <Row> 
+        
+       </Row>
             <Copyright id="copyright">
         <p>
           GlobalRatings, C.A. RIF: J-123456789-0.
