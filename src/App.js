@@ -1,8 +1,6 @@
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import React,{useState , useEffect} from "react";
-// styles 
-import "assets/css/bootstrap.min.css";
-import "assets/scss/now-ui-kit.scss";
+
 // pages
 
 import DarkFooter from "components/Footers/DarkFooter.js";

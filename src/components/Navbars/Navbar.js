@@ -95,12 +95,11 @@ export default function NavbarGlobal() {
             </button>
           </div>
           <Collapse
-            className="justify-content-end"
+            className="justify-content-end collapseNavbar"
             isOpen={collapseOpen}
-            style={{ background: "none" }}
             navbar
           >
-            <Nav navbar>
+            <Nav className="navBar" navbar>
               <NavItem>
                 <NavLink to= {{
                pathname:`/nosotros/${context.country}` }
@@ -205,4 +204,7 @@ const NavbarContainer = styled.div`
 .navbar-logoHidden {
   visibility: hidden; 
 }
+.collapseNavbar {
+} 
+.navBar
 `

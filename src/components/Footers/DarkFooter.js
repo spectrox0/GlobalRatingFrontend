@@ -21,7 +21,7 @@ export default function DarkFooter() {
       <Container >
       <Row >
     
-        <Col  xs="6" sm="6"> 
+        <Col sm="6"> 
         <Row> 
               <a
                 href=""
@@ -41,7 +41,7 @@ export default function DarkFooter() {
               </Col>
             
   
-      <Col xs="6" sm="6" className="text-center">
+      <Col sm="4" className="text-center">
         <ul className="nav-links">
            <li>
             <NavLink 
@@ -86,22 +86,28 @@ export default function DarkFooter() {
               pathname:`/contactanos/${country}`
             }} > Contacto </NavLink>
            </li>           
-           <li>
-             |
-           </li>
-           <li>  <NavLink 
+        
+       </ul>
+       </Col>
+       <Col sm="2" className="text-center"> 
+       <ul className="nav-links" >
+         <li> 
+       <NavLink 
            onClick={ e=> {scroll.scrollToTop()}}
            tag= {Link}to= {{
               pathname:`/terminos/${country}`
             }}> Términos y Condiciones </NavLink>
-           </li>
-           <li>  <NavLink tag= {Link} to= {{
+         </li>
+         <li> 
+            <NavLink tag= {Link} to= {{
               pathname:`/mapa/${country}`
             }}> Mapa del Site </NavLink>
-           </li>
-       </ul>
-  </Col>
+              </li>
+          </ul>
+       </Col>
+ 
   </Row>
+
             <Copyright id="copyright">
         <p>
           GlobalRatings, C.A. RIF: J-123456789-0.
