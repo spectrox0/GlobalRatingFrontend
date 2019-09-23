@@ -16,32 +16,42 @@ import Clientes from "views/Clientes.js";
 import Error404 from "views/Error404.js";
 import PerfilCliente from "views/PerfilCliente.js"
 import CountryContext from "../../context/region"
-export default function () {
+
+export default function Routes() {
    
   const {country} = useContext(CountryContext); 
+
+  const handlingRender = ( props, Component) => {
+   if(props.match.params.countryName!=="pa" &&
+      props.match.params.countryName!=="ve"
+    ) return <Redirect to="ve" />
+   return (<Component {...props}/>)
+  }
  return(
 
  <Switch>
   
- <Route path="/index/:countryName" render={ (props) =>  <Home {...props}/> }/>
- <Route path="/dictamen" render={ (props) =>  <Dictamen {...props}/> }/>
- <Route path="/noticia" render={ (props) =>  <Noticia {...props}/> }/>
- <Route path="/perfilCliente" render = {(props)=> <PerfilCliente {...props} />} />
- <Route path="/nosotros/:countryName" render={ (props) =>  <Nosotros {...props}/> }/>
- <Route path="/calificacion/:countryName" render={ (props) =>  <Calificacion {...props}/> }/>
- <Route path="/otorgada/:countryName" render={ (props) =>  <Otorgada {...props}/> }/>
- <Route path="/leyesnormativas/:countryName" render={ (props) =>  <LeyesNormativas {...props}/> }/>
- <Route path="/estadisticas/:countryName" render={ (props) =>  <Estadisticas {...props}/> }/>
- <Route path="/terminos/:countryName" render={ (props) =>  <Terminos {...props}/> }/>
+ <Route path="/index/:countryName" render={(props)=> handlingRender(props,Home) }/>
+ <Route path="/dictamen" render={ (props) => <Dictamen {...props} /> } />
+ <Route path="/noticia" render={ (props) =>  <Noticia {...props} /> }/>
+ <Route path="/perfilCliente" render = {(props)=>  <PerfilCliente {...props} /> }/>
+ <Route path="/nosotros/:countryName" render={ (props) =>   handlingRender(props,Nosotros) } />
+ <Route path="/calificacion/:countryName" render={ (props) =>   handlingRender(props,Calificacion) } />
+ <Route path="/otorgada/:countryName" render={ (props) =>   handlingRender(props,Otorgada) } />
+ <Route path="/leyesnormativas/:countryName" render={ (props) =>   handlingRender(props,LeyesNormativas) }/>
+ <Route path="/estadisticas/:countryName" render={ (props) =>   handlingRender(props,Estadisticas)  }/>
+ <Route path="/terminos/:countryName" render={ (props) =>   handlingRender(props,Terminos) } />
  <Route path="/mapa/:countryName" render={ (props) =>  <Mapa {...props}/> }/>
- <Route path="/contactanos/:countryName" render={ (props) =>  <Contactanos {...props}/> }/>
- <Route path="/clientes/:countryName" render = { (props)=> <Clientes {...props} /> } />
+ <Route path="/contactanos/:countryName" render={ (props) =>   handlingRender(props,Contactanos) } />
+ <Route path="/clientes/:countryName" render = { (props)=>  handlingRender(props,Clientes)  } />
+ 
    {country && (  <>
    <Redirect exact from="/" to={ {
     pathname:`/index/${country}` }
    } /> 
-    <Route path="*" render = { props=> <Error404 {...props} />} /> 
+   } /> 
    </> )}
+   <Route path="*" render = { props=> <Error404 {...props} /> }/>
      
      
  

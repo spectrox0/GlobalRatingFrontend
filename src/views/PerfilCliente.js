@@ -101,11 +101,13 @@ const ContainerPerfil = styled.div`
 }
 .profileImage { 
     width:20rem; 
-    max-width:70% ; 
+    max-width:70% ;
+
     img {
-        border-radius:50%; 
+        width:100%; 
         box-shadow: 3px 3px 3px rgba(0,0,0,0.5); 
         transform: translate(20%, 30%); 
+        object-fit:cover; 
     }
     
 

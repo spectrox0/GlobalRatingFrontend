@@ -6,11 +6,10 @@ import React from "react";
 
 // core components
 import IndexHeader from "components/Headers/IndexHeader.js";
-import {Container} from "reactstrap";
 // sections for this page
 import Dictamenes from "views/home-sections/DictamenesDeCalificacion.js"
 import Noticias from "views/home-sections/NoticiasFinanzas.js"
-import HomeCountry from "views/HomeCountry"
+
 import styled from 'styled-components'; 
 export default function Index() {
   

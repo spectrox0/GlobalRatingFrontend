@@ -23,13 +23,13 @@ export default function App () {
   const getGeoInfo = () => {
     axios.get('https://ipapi.co/json/').then((response) => {
         let data = response.data;
-        if(data.country ==="VE"  ||
-           data.country ==="PA") { 
-              localStorage.setItem("country",data.country); 
-              setCountry(data.country);
+        data = data.country.toLowerCase();
+        if(data.country ==="pa") { 
+              localStorage.setItem("country",data); 
+              setCountry(data);
            } else {
-              setCountry("VE");
-              localStorage.setItem("country","VE"); 
+              setCountry("ve");
+              localStorage.setItem("country","ve"); 
            }
          
     }).catch((error) => {

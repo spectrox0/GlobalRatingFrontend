@@ -4,8 +4,8 @@ import Dictamenes from "./components/CardDictamenes.js"
 import { Button,Row } from "reactstrap";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import $ from "jquery";
 import styled from "styled-components"; 
+import axios from 'axios'
 export default function DictamenesDeCaificacion() {
    
   const [dictamenes, setDictamenes] = useState([]); 
@@ -13,19 +13,11 @@ export default function DictamenesDeCaificacion() {
     getJson(); 
     
   },[])
-   const getJson= () => {
-    $.ajax({
-      dataType: 'json',
-      type: "GET",
-      url : "https://www.finanzasdigital.com/traeposts.php?token=aHcT639@/$muzk56&pagina=0&numNoticias=6&categoriaIncluir=7667,-7014"
-  })
-  .then(
-    function(data) {
-      setDictamenes(data); 
-  }
-  ).catch( err => { 
-    throw new Error("error"); 
-  });
+   const getJson= async () => {
+   const {data}= await axios.get("https://www.finanzasdigital.com/traeposts.php?token=aHcT639@/$muzk56&pagina=0&numNoticias=6&categoriaIncluir=7667,-7014");
+    setDictamenes(data)
+  
+ 
    }
    const responsive = {
     superLargeDesktop: {

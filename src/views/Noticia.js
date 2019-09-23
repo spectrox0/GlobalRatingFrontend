@@ -1,7 +1,7 @@
 import React , {useState , useEffect} from "react"; 
 import IndexHeader from "./../components/Headers/IndexHeader";
 import styled from "styled-components"; 
-import $ from 'jquery'; 
+import axios from 'axios'; 
  
 
 
@@ -12,31 +12,19 @@ export default function Noticias( {location} ) {
     const [date, setDate] = useState("Cargando... por favor espere"); 
     const id = new URLSearchParams(location.search).get('id');
     const [hasPostThumbnail,setHasPostThumbnail] = useState(true); 
+    const [content, setContent] = useState("");
 
-    const getJson = (id) => {
-        $.ajax({
-            dataType: 'text',
-            type: "GET",
-            url : `https://www.finanzasdigital.com/traepost.php?token=aHcT639@/$muzk56&pagina=0&idNoticia=${id}`
-        })
-        .then(
-          function(data) {
-            let dataa =  (data).replace(/(?:\\[rn])+/g, "<br/>");
-            // dataa =  (dataa).replace("</p>" , "");
-            //dataa =  (dataa).replace('<p style="text-align: justify;">' , "");
-
-         let datajson= JSON.parse(dataa); 
-         setNoticia(datajson); 
-         setHasPostThumbnail(datajson.hasPostThumbnail);
+       const getJson = async (id) => {
+        const {data} = await axios.get(`https://www.finanzasdigital.com/traepost.php?token=aHcT639@/$muzk56&pagina=0&idNoticia=${id}`);
+        let dataa ; 
+        dataa =  await data.content.replace(/(?:\r\n|\r|\n)/g, '<br>');
+         setNoticia(data); 
+         setContent(dataa)
+        setHasPostThumbnail(data.hasPostThumbnail);
        
          setLoading(false); 
         }
-        ).catch( err => { 
-            console.log(err); 
-          throw new Error("error"); 
-         
-        });
-     }
+      
         useEffect( () => {
        getJson(id); 
         },[id]);
@@ -186,7 +174,7 @@ export default function Noticias( {location} ) {
          </div>}
           <div className ="contentNoticia">
               <span>  {" "+date} </span>
-              <div className="contentHtml" dangerouslySetInnerHTML={{ __html: Noticia.content }} />
+              <div className="contentHtml" dangerouslySetInnerHTML={{ __html: content }} />
           </div>
         </div>
 

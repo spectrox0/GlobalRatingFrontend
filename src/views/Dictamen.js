@@ -1,8 +1,7 @@
 import React , {useState , useEffect} from "react"; 
 import IndexHeader from "./../components/Headers/IndexHeader";
 import styled from "styled-components"; 
-import $ from 'jquery'; 
- 
+import axios from 'axios'
 
 
 
@@ -10,30 +9,18 @@ export default function Dictamen( {location} ) {
     const [dictamen,setDictamen] = useState([]); 
     const [isLoading, setLoading] = useState(true);
     const [date, setDate] = useState("Cargando... por favor espere"); 
+    const [content, setContent] = useState();
     const id = new URLSearchParams(location.search).get('id');
 
-    const getJson = (id) => {
-        $.ajax({
-            dataType: 'text',
-            type: "GET",
-            url : `https://www.finanzasdigital.com/traepost.php?token=aHcT639@/$muzk56&idNoticia=${id}`
-        })
-        .then(
-          function(data) {
-            let dataa =  (data).replace(/(?:\\[rn])+/g, "<br/>");
-             dataa =  (dataa).replace("</p>" , "");
-             dataa =  (dataa).replace('<p style="text-align: justify;">' , "");
-
-         let datajson= JSON.parse(dataa); 
-         setDictamen(datajson); 
+    const getJson = async (id) => {
+       const {data} =  await axios.get(`https://www.finanzasdigital.com/traepost.php?token=aHcT639@/$muzk56&idNoticia=${id}`);
+        let dataa ; 
+        dataa =  await data.content.replace(/(?:\r\n|\r|\n)/g, '<br>');
+       setContent(dataa);
+         setDictamen(data); 
          setLoading(false); 
         }
-        ).catch( err => { 
-            console.log(err); 
-          throw new Error("error"); 
-         
-        });
-     }
+     
         useEffect( () => {
        getJson(id); 
         },[id]);
@@ -178,7 +165,7 @@ box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
          </div>
           <div className ="contentDictamen">
               <span>  {" "+date} </span>
-              <div className="contentHtml" dangerouslySetInnerHTML={{ __html: dictamen.content }} />
+              <div className="contentHtml" dangerouslySetInnerHTML={{ __html: content }} />
           </div>
         </div>
 

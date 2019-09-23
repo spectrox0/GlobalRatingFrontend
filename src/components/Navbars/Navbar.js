@@ -1,9 +1,14 @@
 import React, { useState, useEffect , useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
-import CountryContext from './../../context/region.js'
+import country from './../../context/region.js'
 // reactstrap components
 import {
+  UncontrolledCollapse,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  UncontrolledDropdown,
   Collapse,
   NavbarBrand,
   Navbar,
@@ -20,7 +25,7 @@ export default function NavbarGlobal() {
   const [navbarColor, setNavbarColor] = useState("navbar-transparent");
   const [navbarLogo, setNavbarLogo] = useState("navbar-logoHidden");
   const [collapseOpen, setCollapseOpen] = useState(false);
-  const  {country} = useContext(CountryContext); 
+  const  context = useContext(country); 
   
   // Use effect se carga al iniciar el componente , efectuado cada vez que se renderice el componente 
   useEffect(() => {
@@ -63,7 +68,7 @@ export default function NavbarGlobal() {
               id="navbar-brand"
               className={navbarLogo}
               tag= {Link}
-              to = {{pathname:`/index/${country}`}}
+              to = {{pathname:`/index/${context.country}`}}
             >
               <img className="GlobalRatingLogo"
                 src={require("assets/img/globalrating_white.svg")}
@@ -98,7 +103,7 @@ export default function NavbarGlobal() {
             <Nav navbar>
               <NavItem>
                 <NavLink to= {{
-               pathname:`/nosotros/${country}` }
+               pathname:`/nosotros/${context.country}` }
                 }   tag={Link}>
                   <i className="now-ui-icons business_chart-bar-32"></i>
                   <p> Nosotros </p>
@@ -106,7 +111,7 @@ export default function NavbarGlobal() {
               </NavItem>
               <NavItem>
                 <NavLink to={ {
-               pathname:`/clientes/${country}` }
+               pathname:`/clientes/${context.country}` }
                 }  tag={Link}>
                   <i className="now-ui-icons business_globe"></i>
                   <p> Clientes </p>
@@ -114,7 +119,7 @@ export default function NavbarGlobal() {
               </NavItem>
               <NavItem>
                 <NavLink to={ {
-               pathname:`/calificacion/${country}` }
+               pathname:`/calificacion/${context.country}` }
                 } tag={Link}>
                   <i className="now-ui-icons business_chart-bar-32"></i>
                   <p> Calificaciones de Riesgos </p>
@@ -122,7 +127,7 @@ export default function NavbarGlobal() {
               </NavItem>
               <NavItem>
                 <NavLink to={ {
-               pathname:`/leyesNormativas/${country}` }
+               pathname:`/leyesNormativas/${context.country}` }
                 }  tag={Link}>
                   <i className="now-ui-icons files_paper"></i>
                   <p> Leyes y Normativas </p>
@@ -130,7 +135,7 @@ export default function NavbarGlobal() {
               </NavItem>
               <NavItem>
                 <NavLink to={ {
-               pathname:`/estadisticas/${country}` }
+               pathname:`/estadisticas/${context.country}` }
                 }  tag={Link}>
                   <i className="now-ui-icons business_money-coins"></i>
                   <p>Estadisticas de Mercado</p>
@@ -138,13 +143,56 @@ export default function NavbarGlobal() {
               </NavItem>
               <NavItem>
                 <NavLink to={ {
-               pathname:`/contactanos/${country}` }
+               pathname:`/contactanos/${context.country}` }
                 } tag={Link}>
                   <i className="now-ui-icons travel_info"></i>
                   <p>Contactanos</p>
                 </NavLink>
               </NavItem>
-
+              <UncontrolledDropdown nav >
+        <DropdownToggle
+         aria-haspopup={true}
+         caret
+         color="default"
+         data-toggle="dropdown"
+         id="navbarDropdownMenuLink"
+         nav
+         onClick={e => e.preventDefault()}
+        >
+          <i className="now-ui-icons location_world"></i>
+                 {"  "}  Region
+        </DropdownToggle>
+        <DropdownMenu aria-labelledby="navbarDropdownMenuLink">
+          <DropdownItem onClick={ e => {
+             context.changeCountry("ve"); 
+             localStorage.setItem("country","ve")
+            }}
+          tag = {Link} 
+          to= {{ 
+            pathname:"/index/ve"}}
+          > 
+          <img
+              src={require("assets/img/flags/VE.png")}
+              alt="Venezuela"
+              style={{height:"1rem"}}
+                  /> {" "}  -Venezuela
+          </DropdownItem>
+          <DropdownItem
+          onClick={e => {
+            context.changeCountry("pa"); 
+           localStorage.setItem("country", "pa")
+          } } tag = {Link} 
+          to= {{ 
+            pathname:"/index/pa"}}
+          > 
+          <img
+              src={require("assets/img/flags/PA.png")}
+              alt="Venezuela"
+              style={{height:"1rem"}}
+                  /> {" "}   -Panama
+          </DropdownItem>
+        </DropdownMenu>
+      </UncontrolledDropdown>
             </Nav>
           </Collapse>
         </Container>
