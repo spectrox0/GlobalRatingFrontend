@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import IndexHeader from "./../components/Headers/IndexHeader";
 import Recaptcha from "react-recaptcha"; 
 import styled from "styled-components";
+import {initGA} from './helpers/initGA.js';
 import {
   Row
   , Col,
@@ -21,7 +22,10 @@ export default function Contactanos () {
    
   const [isVerified,setVerified] = useState(false); 
   const [message, setMessage] = useState(); 
-
+  React.useEffect(()=> {
+    initGA();
+  },[]);
+  
   /* useEffect(() => {
        document.body.classList.add("index-page");
        document.body.classList.add("sidebar-collapse");

@@ -2,12 +2,16 @@ import React , {useEffect} from "react";
 import styled from 'styled-components'; 
 import { useQuery } from '@apollo/react-hooks';
 import {QUERY_EMISORES_ID} from './helpers/graphql/querys'; 
+import {initGA} from './helpers/initGA.js';
 import {
     Row , 
     Col, 
     Container
 }  from 'reactstrap'; 
 export default function PerfilCliente({location})  {
+    React.useEffect(()=> {
+        initGA();
+      },[]);
     const id = new URLSearchParams(location.search).get('id');
     const {data, loading, error} = useQuery(QUERY_EMISORES_ID, {variables: {
         _id:id

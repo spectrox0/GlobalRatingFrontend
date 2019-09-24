@@ -11,6 +11,8 @@ import Dictamenes from "views/home-sections/DictamenesDeCalificacion.js"
 import Noticias from "views/home-sections/NoticiasFinanzas.js"
 
 import styled from 'styled-components'; 
+
+import {initGA} from './helpers/initGA.js';
 export default function Index() {
   
   React.useEffect(() => {
@@ -24,7 +26,9 @@ export default function Index() {
       document.body.classList.remove("sidebar-collapse");
     };
   });
-
+  React.useEffect(()=> {
+    initGA();
+  },[]);
   return (
     <HomeContainer>  
       <div className="wrapper">

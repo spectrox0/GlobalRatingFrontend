@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import IndexHeader from "./../components/Headers/IndexHeader";
 import styled from "styled-components";
+import {initGA} from './helpers/initGA.js';
 import {
     Row
     , Col
@@ -8,7 +9,9 @@ import {
 } from 'reactstrap'
 
 export default function () {
-
+    React.useEffect(()=> {
+        initGA();
+      },[]);
     const TerminosContent = styled.div`
 
     div{

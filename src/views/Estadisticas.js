@@ -1,8 +1,10 @@
 import React from 'react'; 
 import styled from 'styled-components'; 
-
+import {initGA} from './helpers/initGA.js';
 export default function Estadisticas() {
-
+    React.useEffect(()=> {
+        initGA();
+      },[]);
     return (
         <ContainerEstadisticas>
       

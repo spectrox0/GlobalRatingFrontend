@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import IndexHeader from "./../components/Headers/IndexHeader";
+import {initGA} from './helpers/initGA.js';
 import styled from "styled-components";
 import {Link} from "react-router-dom"
 import {
@@ -10,7 +11,9 @@ import {
 } from 'reactstrap'
 
 export default function () {
-
+    React.useEffect(()=> {
+        initGA();
+      },[]);
     const CalificacionContent = styled.div`
 
     .centrado{

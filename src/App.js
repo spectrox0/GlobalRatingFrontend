@@ -8,12 +8,13 @@ import IndexNavbar from "components/Navbars/Navbar.js";
 import Routes from './views/helpers/Routes';
 import client from './views/helpers/graphqlEndpoint'
 import CountryContext from './context/region.js'
+
 import { ApolloProvider } from '@apollo/react-hooks'; 
 import axios from 'axios'
 
-export default function App () {
-    const [country, setCountry] = useState(null); 
+export default function App () { 
 
+    const [country, setCountry] = useState(null); 
   const changeCountry =(region)=> {
     setCountry(region);
   } 
@@ -34,9 +35,9 @@ export default function App () {
         console.log(error);
     });
   };
-  
+
   useEffect(()=> {
-      const country = localStorage.getItem("country");
+
      if(country) {
          setCountry(country)
          return; 
@@ -45,6 +46,7 @@ export default function App () {
 
   },[]); 
 
+ 
     return ( 
     <BrowserRouter>
         <ApolloProvider client={client}>

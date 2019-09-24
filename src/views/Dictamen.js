@@ -2,7 +2,7 @@ import React , {useState , useEffect} from "react";
 import IndexHeader from "./../components/Headers/IndexHeader";
 import styled from "styled-components"; 
 import axios from 'axios'
-
+import {initGA} from './helpers/initGA.js';
 
 
 export default function Dictamen( {location} ) { 
@@ -24,6 +24,10 @@ export default function Dictamen( {location} ) {
         useEffect( () => {
        getJson(id); 
         },[id]);
+
+        React.useEffect(()=> {
+            initGA();
+          },[]);
         useEffect(() => {
             document.body.classList.add("index-page");
             document.body.classList.add("sidebar-collapse");

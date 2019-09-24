@@ -1,6 +1,7 @@
 import React from 'react'; 
 import styled from 'styled-components'; 
 import {Link} from 'react-router-dom'; 
+import {initGA} from './helpers/initGA.js';
 import {QUERY_EMISORES} from './helpers/graphql/querys'
 import { useQuery} from '@apollo/react-hooks';
 
@@ -16,7 +17,9 @@ import {
      CardBody 
 } from 'reactstrap'; 
 export default function Clientes () {
- 
+    React.useEffect(()=> {
+        initGA();
+      },[]);
     const { data , loading , error , refetch} = useQuery(QUERY_EMISORES); 
 
     const Clientes = () => { 
@@ -46,7 +49,7 @@ export default function Clientes () {
       : 
     <ContainerClientes> 
 
-    <Container fluid="true"> 
+    <Container> 
         <CardDeck> <Clientes/>    </CardDeck>
     </Container>
      

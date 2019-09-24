@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import { QUERY_LEYESNORMATIVAS } from './helpers/graphql/querys'
 import { useQuery } from '@apollo/react-hooks';
-
+import {initGA} from './helpers/initGA.js';
 import {
     Container,
     Row,
@@ -11,7 +11,9 @@ import {
 } from 'reactstrap';
 
 export default function LeyesNormativas() {
-
+    React.useEffect(()=> {
+        initGA();
+      },[]);
     const { data, loading, error, refetch } = useQuery(QUERY_LEYESNORMATIVAS);
 
     const LeyesNormativas = () => {

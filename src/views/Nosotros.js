@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import IndexHeader from "./../components/Headers/IndexHeader";
+import {initGA} from './helpers/initGA.js';
 import styled from "styled-components";
 import {
     Row
@@ -8,7 +9,9 @@ import {
 } from 'reactstrap'
 
 export default function () {
-
+    React.useEffect(()=> {
+        initGA();
+      },[]);
     const NosotrosContent = styled.div`
 
     div{

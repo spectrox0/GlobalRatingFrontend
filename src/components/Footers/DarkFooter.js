@@ -41,7 +41,7 @@ export default function DarkFooter() {
               </Col>
             
   
-      <Col sm="4" className="text-center">
+      <Col className="text-center">
         <ul className="nav-links">
            <li>
             <NavLink 
@@ -89,7 +89,8 @@ export default function DarkFooter() {
         
        </ul>
        </Col>
-       <Col sm="2" className="text-center"> 
+  </Row>
+  <Row> <Col className="text-center"> 
        <ul className="nav-links" >
          <li> 
        <NavLink 
@@ -104,9 +105,7 @@ export default function DarkFooter() {
             }}> Mapa del Site </NavLink>
               </li>
           </ul>
-       </Col>
- 
-  </Row>
+       </Col></Row>
 
             <Copyright id="copyright">
         <p>

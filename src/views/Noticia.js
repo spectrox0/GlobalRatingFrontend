@@ -2,7 +2,7 @@ import React , {useState , useEffect} from "react";
 import IndexHeader from "./../components/Headers/IndexHeader";
 import styled from "styled-components"; 
 import axios from 'axios'; 
- 
+import {initGA} from './helpers/initGA.js';
 
 
 
@@ -38,14 +38,18 @@ export default function Noticias( {location} ) {
               document.body.classList.remove("index-page");
               document.body.classList.remove("sidebar-collapse");
             };   });
-    
+     
              useEffect ( ()=> {
                  if(Noticia.date){
                 var date = new Date(Noticia.date)
                 var options = {weekday: "long", year: "numeric", month: "long", day: "numeric", hour:"numeric", minute:"numeric"};
                  setDate(date.toLocaleDateString("es-VE", options)); 
                       }
-             },[Noticia.date])
+             },[Noticia.date]) ;
+
+             useEffect(()=> {
+                initGA();
+              },[]);
    const NoticiaContent = styled.div`
    .main {
        display: flex; 
