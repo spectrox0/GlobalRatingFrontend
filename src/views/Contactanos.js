@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import IndexHeader from "./../components/Headers/IndexHeader";
 import Recaptcha from "react-recaptcha"; 
 import styled from "styled-components";
+import axios from "axios";
 import {initGA} from './helpers/initGA.js';
+import sendEmail from './helpers/sendEmail.js'
+
 import {
   Row
   , Col,
@@ -21,11 +24,20 @@ import {
 export default function Contactanos () {
    
   const [isVerified,setVerified] = useState(false); 
+
   const [message, setMessage] = useState(); 
-  React.useEffect(()=> {
+  
+  const  [nombre,setNombre] = useState("");
+  const [apellido, setApellido] = useState("");
+  const [asunto, setAsunto] = useState("");
+  const [email ,setEmail] = useState("");
+  const [texto,setTexto] = useState("");
+
+
+  useEffect(()=> {
     initGA();
   },[]);
-  
+
   /* useEffect(() => {
        document.body.classList.add("index-page");
        document.body.classList.add("sidebar-collapse");
@@ -41,12 +53,24 @@ export default function Contactanos () {
 const RecaptchaLoad = ()=> {
 
 }
+
+
 const handlingOnsubmit = (e) => {
   e.preventDefault(); 
   if(!isVerified)  {
      setMessage({message:"Verifique no ser un robot", isError:true}); 
     return; }
-    setMessage({message:"Se envio el correo exitosamente", isError:false}); 
+    
+    console.log(nombre)
+    if(nombre.trim().length===0 || 
+       apellido.trim().length===0 ||
+       asunto.trim().length===0 || 
+        email.trim().length===0 || 
+        texto.trim().length===0 )
+        return;
+      const nombreCompleto = (nombre + " " + apellido);
+      sendEmail(email , "alejanvelazco2008@hotmail.com",asunto,texto);
+      setMessage({message:"Se envio el correo exitosamente", isError:false}); 
   } 
 
 const verifyCallback =(response) => {
@@ -108,6 +132,8 @@ const verifyCallback =(response) => {
                          type="text"
                          required
                          className="textInput"
+                         value={nombre}
+                         onChange={ e=> setNombre(e.target.value)}
                          ></Input>
                         </FormGroup>
                     </Col>
@@ -120,6 +146,9 @@ const verifyCallback =(response) => {
                         type="text"
                         required
                         className="textInput"
+                        value={apellido}
+                        onChange= {e=> setApellido(e.target.value)}
+                       
                         ></Input>
                         </FormGroup></Col>
                   </Row>
@@ -138,7 +167,10 @@ const verifyCallback =(response) => {
                          placeholder="Escribe tu correo" 
                          type="email"
                          required
+                         value={email}
+                         onChange={e=> setEmail(e.target.value)}
                          className="textInput"
+                      
                         ></Input>
                       </InputGroup>
                       </FormGroup>
@@ -153,7 +185,10 @@ const verifyCallback =(response) => {
                         placeholder="Escribe tu asunto"
                          type="text"
                          required
+                         value={asunto}
+                         onChange={e=> setAsunto(e.target.value)}
                          className="textInput"
+                       
                          ></Input>
                         </FormGroup>
                       </Col>
@@ -168,8 +203,11 @@ const verifyCallback =(response) => {
                         placeholder="Escribe tu mensaje" 
                         type="textarea"
                         required
+                        value={texto}
+                        onChange={e=> setTexto(e.target.value)}
                         className="textAreaMensaje"
                         rows="3"
+                        
                         ></Input>
                       </FormGroup>
                     </Col>
