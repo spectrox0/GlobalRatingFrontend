@@ -4,18 +4,50 @@ import { Link} from "react-router-dom";
 import CountryContext from "./../../context/region.js"
 import styled from "styled-components"; 
 import {animateScroll as scroll} from  'react-scroll'; 
+import {useMutation} from '@apollo/react-hooks';
+import {MUTATION_SEND_FRIEND} from '../../views/helpers/graphql/mutation'
 // reactstrap components
+
 import { 
   Container,
    Row,
   Col,
-  NavLink
+  NavLink,
+  Button,
+   Modal,
+   Input,
+   InputGroup,
+   InputGroupAddon,
+   InputGroupText,
+   Label,
+   Form,
+   
   } from "reactstrap";
 
 
 
 export default function DarkFooter() {
   const {country} = useContext(CountryContext); 
+  const [modalLive, setModalLive] = React.useState(false);
+  const [email ,setEmail] = React.useState("");
+  const [sendFriend, {data, loading, error, called}] = useMutation(MUTATION_SEND_FRIEND); 
+   React.useEffect(()=>{
+ if(called & !loading && data.sendFriend) {
+   
+  setModalLive(false); 
+ }
+   }, [called, data, loading])
+  const handlingForm = e => {   
+    e.preventDefault(); 
+    if(email.trim().length===0) return ; 
+    sendFriend({
+      variables: {
+        to: email,
+        url: window.location.href
+      }
+    }); 
+
+  }
   return (
     <footer className="footer" data-background-color="black">
       <Container >
@@ -39,7 +71,68 @@ export default function DarkFooter() {
               </a>
             </Row>
               </Col>
-            
+            <Col sm="2"> 
+            <Button
+        color="info"
+        type="button"
+        onClick={() => setModalLive(true)}
+      >
+       Compartir Pagina
+      </Button>
+      <Modal toggle={() => setModalLive(false)} isOpen={modalLive}>
+        <Form onSubmit= {handlingForm}> 
+        <div className="modal-header" >
+          <h5 className="modal-title" id="exampleModalLiveLabel">
+            Compartir Pagina
+          </h5>
+          <button
+            aria-label="Close"
+            className="close info"
+            style={{color:"blue"}}
+            type="button"
+            onClick={() => setModalLive(false)}
+          >
+            <span aria-hidden={true}>×</span>
+          </button>
+        </div>
+        <div className="modal-body">
+       
+                    <Label htmlFor="email" > Email </Label>
+                      <InputGroup>
+                        <InputGroupAddon addonType="prepend">
+                          <InputGroupText>
+                            <i className="now-ui-icons ui-1_email-85"></i>
+                          </InputGroupText>
+                        </InputGroupAddon>
+                        <Input 
+                        id="email"
+                         placeholder="Escribe el correo de un amigo" 
+                         type="email"
+                         required
+                         value={email}
+                         onChange={e=> setEmail(e.target.value)}
+                         className="textInput"
+                      
+                        ></Input>
+                      </InputGroup>
+                     
+        </div>
+        <div className="modal-footer">
+        
+          <Button
+            color="info"
+            type="button"
+            className="btn-round"
+             size="lg"
+            type="submit"
+           
+          >
+            Enviar
+          </Button>
+        </div>
+        </Form>
+      </Modal>
+            </Col>
   
       <Col className="text-center">
         <ul className="nav-links">

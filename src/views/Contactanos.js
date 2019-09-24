@@ -2,9 +2,10 @@ import React, { useState, useEffect} from "react";
 import IndexHeader from "./../components/Headers/IndexHeader";
 import Recaptcha from "react-recaptcha"; 
 import styled from "styled-components";
-import axios from "axios";
+import {useMutation} from '@apollo/react-hooks';
+import {MUTATION_CONTACTANOS} from './helpers/graphql/mutation'
 import {initGA} from './helpers/initGA.js';
-import sendEmail from './helpers/sendEmail.js'
+
 
 import {
   Row
@@ -32,7 +33,8 @@ export default function Contactanos () {
   const [asunto, setAsunto] = useState("");
   const [email ,setEmail] = useState("");
   const [texto,setTexto] = useState("");
-
+  
+  const [sendEmail, {data, loading, error, called}] = useMutation(MUTATION_CONTACTANOS); 
 
   useEffect(()=> {
     initGA();
@@ -54,8 +56,27 @@ const RecaptchaLoad = ()=> {
 
 }
 
+const clear = ()=> {
+  setNombre(""); 
+  setApellido(""); 
+  setAsunto(""); 
+  setEmail(""); 
+  setTexto(""); 
+}
 
-const handlingOnsubmit = (e) => {
+useEffect(()=> {
+   console.log(data); 
+   if(error) { 
+    setMessage({message:"Error al enviar", isError:false}); 
+     return; 
+   }
+  if(isVerified && !loading && data) {
+    setMessage({message:"Se envio el correo exitosamente", isError:false}); 
+    clear(); 
+  }
+},[data,loading, error,called])
+
+const handlingOnsubmit = async (e) => {
   e.preventDefault(); 
   if(!isVerified)  {
      setMessage({message:"Verifique no ser un robot", isError:true}); 
@@ -69,8 +90,19 @@ const handlingOnsubmit = (e) => {
         texto.trim().length===0 )
         return;
       const nombreCompleto = (nombre + " " + apellido);
-      sendEmail(email , "alejanvelazco2008@hotmail.com",asunto,texto);
-      setMessage({message:"Se envio el correo exitosamente", isError:false}); 
+     await  sendEmail({
+        variables: {
+            message:
+            {
+                from: email,
+                nombre: nombreCompleto,
+                subject: asunto, 
+                text: texto 
+            }
+        }
+    }); 
+      
+    
   } 
 
 const verifyCallback =(response) => {
