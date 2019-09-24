@@ -27,7 +27,7 @@ const CarouselPage = () => {
         <MDBCarouselItem itemId="2">
           <MDBView>
           <ContainerCarousel>
-		  <h6 className="h6-responsive">Obligaciones y titularizaciones</h6>
+		  <h6 className="h6-responsive">Riesgo Bancario y Aseguradoras</h6>
 		  </ContainerCarousel>
           <MDBMask overlay="black-strong" />
           </MDBView>
@@ -38,7 +38,7 @@ const CarouselPage = () => {
         <MDBCarouselItem itemId="3">
           <MDBView>
           <ContainerCarousel>
-		  <h6 className="h6-responsive">Obligaciones y titularizaciones</h6>
+		  <h6 className="h6-responsive">Evaluacion de Riesgo</h6>
 		  </ContainerCarousel>
           <MDBMask overlay="black-slight" />
           </MDBView>

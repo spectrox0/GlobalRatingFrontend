@@ -16,7 +16,7 @@ export default function CardDictamenes({
            setLoading(false); 
           var date_ = new Date(date)
           var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};
-          setDate(date_.toLocaleDateString("es-ES", options));
+          setDate(date_.toLocaleDateString("es-VE", options));
        }
    },[imageUrl,date]); 
       return isLoading? (
@@ -97,7 +97,7 @@ export default function CardDictamenes({
     width: 10rem; 
     margin-bottom: 1rem; 
    
- }import "./CardDictamenes.css";
+ }
  .TitleDictamen{
   display: flex; 
   flex-direction: column;

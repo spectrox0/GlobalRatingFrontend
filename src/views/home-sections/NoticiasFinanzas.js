@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { device } from './../helpers/devices'; 
 // reactstrap components
 import { Button } from "reactstrap";
-import $ from "jquery";
+import axios from 'axios'; 
 export default function DictamenesDeCaificacion() {
    const [noticias, setNoticias] = useState([]); 
    const [isLoading, setLoading] = useState(true); 
@@ -13,20 +13,10 @@ export default function DictamenesDeCaificacion() {
     getJson(); 
     
   },[])
-   const getJson= () => {
-    $.ajax({
-      dataType: 'json',
-      type: "GET",
-      url : "https://www.finanzasdigital.com/traeposts.php?token=aHcT639@/$muzk56&pagina=0&numNoticias=5&categoriaIncluir=-7667,-41,-1574,-7014"
-  })
-  .then(
-    function(data) {
+   const getJson= async () => {
+    const {data} = await axios.get("https://www.finanzasdigital.com/traeposts.php?token=aHcT639@/$muzk56&pagina=0&numNoticias=5&categoriaIncluir=-7667,-41,-1574,-7014")
       setNoticias(data);
       setLoading(false); 
-  }
-  ).catch( err => { 
-    throw new Error("error"); 
-  });
    }
    const NCard =()=> {
        const innerJSX = noticias.map( args => {

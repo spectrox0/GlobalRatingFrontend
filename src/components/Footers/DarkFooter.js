@@ -1,27 +1,28 @@
 /*eslint-disable*/
-import React from "react";
-import {NavLink} from "react-router-dom"; 
+import React , {useContext} from "react";
+import { Link} from "react-router-dom"; 
+import CountryContext from "./../../context/region.js"
 import styled from "styled-components"; 
+import {animateScroll as scroll} from  'react-scroll'; 
 // reactstrap components
 import { 
   Container,
    Row,
-    Col,
-  Input, 
-  Form , 
-  InputGroup,
-   InputGroupAddon, 
-   InputGroupText,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown
+  Col,
+  NavLink
   } from "reactstrap";
-function DarkFooter() {
+
+
+
+export default function DarkFooter() {
+  const {country} = useContext(CountryContext); 
   return (
     <footer className="footer" data-background-color="black">
-      <Container>
-      <Row> 
+      <Container >
+      <Row >
+    
+        <Col sm="6"> 
+        <Row> 
               <a
                 href=""
                 target="_blank"
@@ -36,70 +37,77 @@ function DarkFooter() {
               <GlobalScopeLogo></GlobalScopeLogo>
      
               </a>
+            </Row>
+              </Col>
             
-            
-             <Col lg="3" sm="6">
-             <h3 style= {{marginBottom:"0.7rem"}}> Suscribete </h3>
-             <Form className="form-inline ml-auto" data-background-color="">
-              <InputGroup>
-                <InputGroupAddon addonType="prepend">
-                  <InputGroupText>
-                    <i className="now-ui-icons ui-1_email-85"></i>
-                  </InputGroupText>
-                </InputGroupAddon>
-                <Input placeholder="Escribe tu correo" type="text"></Input>
-              </InputGroup>
-            </Form>
-             </Col> 
-            
-  <Col>     <UncontrolledDropdown>
-        <DropdownToggle
-          aria-expanded={false}
-          aria-haspopup={true}
-          caret
-          color="secondary"
-          data-toggle="dropdown"
-          id="dropdownMenuButton"
-          type="button"
-        >
-          <i className="now-ui-icons location_world"></i>
-                 {"  "}  Region
-        </DropdownToggle>
-        <DropdownMenu aria-labelledby="dropdownMenuButton">
-          <DropdownItem href="#" onClick={e => e.preventDefault()}>
-          <img
-              src={require("assets/img/flags/VE.png")}
-              alt="Venezuela"
-              style={{height:"1rem"}}
-                  /> {" "}  -Venezuela
-          </DropdownItem>
-          <DropdownItem href="#" onClick={e => e.preventDefault()}>
-          <img
-              src={require("assets/img/flags/PA.png")}
-              alt="Venezuela"
-              style={{height:"1rem"}}
-                  /> {" "}   -Panama
-          </DropdownItem>
-        </DropdownMenu>
-      </UncontrolledDropdown></Col>
-         </Row>
-       <Row> <Col className="text-center">
-  <ul className="nav-links">
+  
+      <Col sm="4" className="text-center">
+        <ul className="nav-links">
            <li>
-            <NavLink to="/about"> Nosotros </NavLink>
+            <NavLink 
+             onClick={ e=> {scroll.scrollToTop()}}
+            tag= {Link} 
+            to= {{
+              pathname:`/nosotros/${country}`
+            }} > Nosotros </NavLink>
            </li>
-           <li>  <NavLink to="/productsAndServices"> Productos y Servicios </NavLink>
+           <li>  <NavLink
+            onClick={ e=> {scroll.scrollToTop()}}
+            tag= {Link}
+            to= {{
+              pathname:`/clientes/${country}`
+            }} > Clientes </NavLink>
            </li>
-           <li> <NavLink to="/rateRisk"> Calificacion de Riesgos </NavLink>
+           <li> <NavLink
+            onClick={ e=> {scroll.scrollToTop()}}
+            tag= {Link}
+           to= {{
+              pathname:`/calificacion/${country}`
+            }} > Calificacion de Riesgos </NavLink>
            </li>
-           <li>  <NavLink to="/laws"> Leyes y Normativas </NavLink>
+           <li>  <NavLink 
+            onClick={ e=> {scroll.scrollToTop()}}
+           tag= {Link}
+           to= {{
+              pathname:`/leyesnormativas/${country}`
+            }} > Leyes y Normativas </NavLink>
            </li>
-           <li>  <NavLink to="/capitalMarket"> Mercado de Capitales</NavLink>
+           <li>  <NavLink 
+            onClick={ e=> {scroll.scrollToTop()}}
+           tag= {Link}
+           to= {{
+              pathname:`/estadisticas/${country}`
+            }} > Estadísticas de Mercado </NavLink>
            </li>
-           <li>  <NavLink to="/contact"> Contacto </NavLink>
-           </li>
+           <li>  <NavLink 
+            onClick={ e=> {scroll.scrollToTop()}}
+           tag= {Link} 
+           to= {{
+              pathname:`/contactanos/${country}`
+            }} > Contacto </NavLink>
+           </li>           
+        
        </ul>
-  </Col></Row>
+       </Col>
+       <Col sm="2" className="text-center"> 
+       <ul className="nav-links" >
+         <li> 
+       <NavLink 
+           onClick={ e=> {scroll.scrollToTop()}}
+           tag= {Link}to= {{
+              pathname:`/terminos/${country}`
+            }}> Términos y Condiciones </NavLink>
+         </li>
+         <li> 
+            <NavLink tag= {Link} to= {{
+              pathname:`/mapa/${country}`
+            }}> Mapa del Site </NavLink>
+              </li>
+          </ul>
+       </Col>
+ 
+  </Row>
+
             <Copyright id="copyright">
         <p>
           GlobalRatings, C.A. RIF: J-123456789-0.
@@ -113,6 +121,7 @@ function DarkFooter() {
     </footer>
   );
 }
+
 const FinanzasDigitalLogo = styled.div`
 display:inline-block; 
 background: url("${require("assets/img/pic_footerlogoFD_gris.png")}") no-repeat center; 
@@ -149,4 +158,3 @@ p {
   text-align:center;
 }
 `
-export default DarkFooter;

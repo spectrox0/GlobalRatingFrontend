@@ -1,8 +1,14 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect , useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
+import country from './../../context/region.js'
 // reactstrap components
 import {
+  UncontrolledCollapse,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  UncontrolledDropdown,
   Collapse,
   NavbarBrand,
   Navbar,
@@ -11,33 +17,31 @@ import {
   Nav,
   Container,
   UncontrolledTooltip,
-  UncontrolledDropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle
 } from "reactstrap";
 
-export default function NavbarGlobal() {
-   // Variables useState
-  const [navbarColor, setNavbarColor] = useState("navbar-transparent");
-  const [navbarLogo, setNavbarLogo] = useState("navbar-logoHidden"); 
-  const [collapseOpen, setCollapseOpen] = useState(false);
 
-   // Use effect se carga al iniciar el componente , efectuado cada vez que se renderice el componente 
-   useEffect(() => {
+export default function NavbarGlobal() {
+  // Variables useState
+  const [navbarColor, setNavbarColor] = useState("navbar-transparent");
+  const [navbarLogo, setNavbarLogo] = useState("navbar-logoHidden");
+  const [collapseOpen, setCollapseOpen] = useState(false);
+  const  context = useContext(country); 
+  
+  // Use effect se carga al iniciar el componente , efectuado cada vez que se renderice el componente 
+  useEffect(() => {
     const updateNavbarColor = () => {
       if (
         document.documentElement.scrollTop > 280 ||
         document.body.scrollTop > 280
       ) {
         setNavbarColor("");
-        setNavbarLogo(""); 
+        setNavbarLogo("");
       } else if (
         document.documentElement.scrollTop < 281 ||
         document.body.scrollTop < 281
       ) {
         setNavbarColor("navbar-transparent");
-        setNavbarLogo("navbar-logoHidden"); 
+        setNavbarLogo("navbar-logoHidden");
       }
     };
     window.addEventListener("scroll", updateNavbarColor);
@@ -58,23 +62,24 @@ export default function NavbarGlobal() {
       ) : null}
       <Navbar className={"fixed-top " + navbarColor} color="info" expand="lg">
         <Container>
-         
+
           <div className="navbar-translate">
             <NavbarBrand
-              target="_blank"
               id="navbar-brand"
               className={navbarLogo}
+              tag= {Link}
+              to = {{pathname:`/index/${context.country}`}}
             >
-               <img className="GlobalRatingLogo" 
-              src={require("assets/img/globalrating_white.svg")}
-              style={{ width:"6rem"}}
-      alt=""
-     />
+              <img className="GlobalRatingLogo"
+                src={require("assets/img/globalrating_white.svg")}
+                style={{ width: "6rem" }}
+                alt=""
+              />
             </NavbarBrand>
             <UncontrolledTooltip target="#navbar-brand">
               Global Ratings
             </UncontrolledTooltip>
-            
+
             <button
               className="navbar-toggler navbar-toggler"
               onClick={() => {
@@ -90,77 +95,103 @@ export default function NavbarGlobal() {
             </button>
           </div>
           <Collapse
-            className="justify-content-end"
+            className="justify-content-end collapseNavbar"
             isOpen={collapseOpen}
             navbar
-          > 
-            <Nav navbar>
-              
-            <UncontrolledDropdown nav>
-                <DropdownToggle
-                  aria-haspopup={true}
-                  caret
-                  color="default"
-                  data-toggle="dropdown"
-                  id="navbarDropdownMenuLink"
-                  nav
-                  onClick={e => e.preventDefault()}
-                >
-                   <i className="now-ui-icons business_chart-bar-32"></i>
+          >
+            <Nav className="navBar" navbar>
+              <NavItem>
+                <NavLink to= {{
+               pathname:`/nosotros/${context.country}` }
+                }   tag={Link}>
+                  <i className="now-ui-icons business_chart-bar-32"></i>
                   <p> Nosotros </p>
-                </DropdownToggle>
-                <DropdownMenu aria-labelledby="navbarDropdownMenuLink">
-                  <DropdownItem
-                    href="#pablo"
-                    onClick={e => e.preventDefault()}
-                  >
-                    Quienes Somos
-                  </DropdownItem>
-                  <DropdownItem
-                    href="#pablo"
-                    onClick={e => e.preventDefault()}
-                  >
-                    Como lo hacemos
-                  </DropdownItem>
-                  <DropdownItem
-                    href="#pablo"
-                    onClick={e => e.preventDefault()}
-                  >
-                   Principios y valores
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-              <NavItem>
-                <NavLink to="/index" tag={Link}>
-                <i className="now-ui-icons business_globe"></i>
-                  <p> Productos y Servicios </p>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/index" tag={Link}>
-                <i className="now-ui-icons business_chart-bar-32"></i>
-                  <p> Calificacion de Riesgos </p>
+                <NavLink to={ {
+               pathname:`/clientes/${context.country}` }
+                }  tag={Link}>
+                  <i className="now-ui-icons business_globe"></i>
+                  <p> Clientes </p>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/index" tag={Link}>
-                <i className="now-ui-icons files_paper"></i>
-                 <p> Leyes y Normativas </p>
+                <NavLink to={ {
+               pathname:`/calificacion/${context.country}` }
+                } tag={Link}>
+                  <i className="now-ui-icons business_chart-bar-32"></i>
+                  <p> Calificaciones de Riesgos </p>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/index" tag={Link}>
-                <i className="now-ui-icons business_money-coins"></i>
-                  <p>Mercado de capitales</p>
+                <NavLink to={ {
+               pathname:`/leyesNormativas/${context.country}` }
+                }  tag={Link}>
+                  <i className="now-ui-icons files_paper"></i>
+                  <p> Leyes y Normativas </p>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/index" tag={Link}>
-                <i className="now-ui-icons travel_info"></i>
+                <NavLink to={ {
+               pathname:`/estadisticas/${context.country}` }
+                }  tag={Link}>
+                  <i className="now-ui-icons business_money-coins"></i>
+                  <p>Estadisticas de Mercado</p>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to={ {
+               pathname:`/contactanos/${context.country}` }
+                } tag={Link}>
+                  <i className="now-ui-icons travel_info"></i>
                   <p>Contactanos</p>
                 </NavLink>
               </NavItem>
-              
+              <UncontrolledDropdown nav >
+        <DropdownToggle
+         aria-haspopup={true}
+         caret
+         color="default"
+         data-toggle="dropdown"
+         id="navbarDropdownMenuLink"
+         nav
+         onClick={e => e.preventDefault()}
+        >
+          <i className="now-ui-icons location_world"></i>
+                 {"  "}  Region
+        </DropdownToggle>
+        <DropdownMenu aria-labelledby="navbarDropdownMenuLink">
+          <DropdownItem onClick={ e => {
+             context.changeCountry("ve"); 
+             localStorage.setItem("country","ve")
+            }}
+          tag = {Link} 
+          to= {{ 
+            pathname:"/index/ve"}}
+          > 
+          <img
+              src={require("assets/img/flags/VE.png")}
+              alt="Venezuela"
+              style={{height:"1rem"}}
+                  /> {" "}  -Venezuela
+          </DropdownItem>
+          <DropdownItem
+          onClick={e => {
+            context.changeCountry("pa"); 
+           localStorage.setItem("country", "pa")
+          } } tag = {Link} 
+          to= {{ 
+            pathname:"/index/pa"}}
+          > 
+          <img
+              src={require("assets/img/flags/PA.png")}
+              alt="Venezuela"
+              style={{height:"1rem"}}
+                  /> {" "}   -Panama
+          </DropdownItem>
+        </DropdownMenu>
+      </UncontrolledDropdown>
             </Nav>
           </Collapse>
         </Container>
@@ -173,4 +204,7 @@ const NavbarContainer = styled.div`
 .navbar-logoHidden {
   visibility: hidden; 
 }
+.collapseNavbar {
+} 
+.navBar
 `
