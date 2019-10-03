@@ -3,7 +3,8 @@ import ReactDOM from "react-dom";
 
 // styles 
 import "assets/css/bootstrap.min.css";
-import "assets/scss/now-ui-kit.scss";
+
+import "assets/scss/index.scss"
 // pages
 
 

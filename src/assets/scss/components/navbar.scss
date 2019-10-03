@@ -1,0 +1,47 @@
+
+
+.navbar {
+    position: fixed; 
+    z-index: 200;
+    width:100%; 
+    background: $navbar-color; 
+    display:flex; 
+    justify-content: center; 
+
+    padding-top: $navbar-padding-base;
+    padding-bottom: $navbar-padding-base;
+    min-height: 53px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+    .navbar-translate {
+      display:flex; 
+       width:100%;
+       max-width: 90rem;
+    }
+
+    .navbar-brand{}
+    .navbar-nav {
+      
+    }
+
+    a{
+        vertical-align: middle;
+
+        &:not(.btn):not(.dropdown-item){
+            color: black; 
+        }
+    }
+
+    p{
+        display: inline-block;
+        margin: 0;
+        line-height: 21px;
+        font-weight: inherit;
+        font-size: inherit;
+    }
+}
+.navbar-transparent {
+    background: transparent; 
+    box-shadow: none;
+}
+.navbar-toggle {background: red}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect , useContext } from "react";
 import { Link } from "react-router-dom";
+import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
 import country from './../../context/region.js'
 // reactstrap components
@@ -18,6 +19,11 @@ import {
   Container,
   UncontrolledTooltip,
 } from "reactstrap";
+
+import {
+  MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBFormInline,
+  MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem
+  } from "mdbreact"
 
 
 export default function NavbarGlobal() {
@@ -49,8 +55,9 @@ export default function NavbarGlobal() {
       window.removeEventListener("scroll", updateNavbarColor);
     };
   });
-  return (
+  return ( /*
     <NavbarContainer>
+        
       {collapseOpen ? (
         <div
           id="bodyClick"
@@ -60,7 +67,7 @@ export default function NavbarGlobal() {
           }}
         />
       ) : null}
-      <Navbar className={"fixed-top " + navbarColor} color="info" expand="lg">
+      <Navbar className={"fixed-top " + navbarColor} expand="lg">
         <Container>
 
           <div className="navbar-translate">
@@ -196,7 +203,91 @@ export default function NavbarGlobal() {
           </Collapse>
         </Container>
       </Navbar>
-    </NavbarContainer>
+    </NavbarContainer>*/
+    
+      <MDBNavbar className={navbarColor} expand="lg">
+        <div className="navbar-translate"> 
+      <MDBNavbarBrand
+             id="navbar-brand"
+              className={navbarLogo}
+              tag= {Link}
+              to = {{pathname:`/index/${context.country}`}}
+            >
+              <img className="GlobalRatingLogo"
+                src={require("assets/img/pic_logoGR.svg")}
+                style={{ width: "6rem" }}
+                alt=""
+              />
+        </MDBNavbarBrand>
+        <MDBNavbarToggler onClick={ () => setCollapseOpen(!collapseOpen)} />
+        <MDBCollapse id="navbarCollapse3" isOpen={collapseOpen} navbar>
+          
+          <MDBNavbarNav right>
+          <MDBNavItem active> 
+              <MDBNavLink to= {{
+               pathname:`/nosotros/${context.country}` }
+                }   tag={Link} >Nosotros</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink to={ {
+               pathname:`/clientes/${context.country}` }
+                }  tag={Link}>Clientes</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink to={ {
+               pathname:`/calificacion/${context.country}` }
+                } tag={Link}>Calificacion</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink to={ {
+               pathname:`/clientes/${context.country}` }
+                }  tag={Link} >Clientes</MDBNavLink>
+            </MDBNavItem>
+                 <MDBNavItem>
+              <MDBNavLink to={ {
+               pathname:`/estadisticas/${context.country}` }
+                }  tag={Link} >Estatidisticas</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBDropdown>
+                <MDBDropdownToggle nav caret>
+                  <span className="mr-2">Dropdown</span>
+                </MDBDropdownToggle>
+                <MDBDropdownMenu>
+                  <MDBDropdownItem onClick={ e => {
+             context.changeCountry("ve"); 
+             localStorage.setItem("country","ve")
+            }}
+          tag = {Link} 
+          to= {{ 
+            pathname:"/index/ve"}}
+          > 
+          <img
+              src={require("assets/img/flags/VE.png")}
+              alt="Venezuela"
+              style={{height:"1rem"}}
+                  /> {" "}  -Venezuela </MDBDropdownItem>
+                  <MDBDropdownItem  onClick={e => {
+            context.changeCountry("pa"); 
+           localStorage.setItem("country", "pa")
+          } } tag = {Link} 
+          to= {{ 
+            pathname:"/index/pa"}}
+          > 
+          <img
+              src={require("assets/img/flags/PA.png")}
+              alt="Venezuela"
+              style={{height:"1rem"}}
+                  /> {" "}   -Panama </MDBDropdownItem>
+                </MDBDropdownMenu>
+              </MDBDropdown>
+            </MDBNavItem>
+          
+          </MDBNavbarNav>
+        </MDBCollapse>
+        </div>
+      </MDBNavbar>
+
   );
 }
 
@@ -206,5 +297,4 @@ const NavbarContainer = styled.div`
 }
 .collapseNavbar {
 } 
-.navBar
 `

@@ -32,7 +32,8 @@ export default function App () {
            }
          
     }).catch((error) => {
-        console.log(error);
+      setCountry("ve");
+      localStorage.setItem("country","ve"); 
     });
   };
 
