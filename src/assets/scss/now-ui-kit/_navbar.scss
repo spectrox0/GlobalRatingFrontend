@@ -107,29 +107,7 @@
         line-height: $line-height-nav-link;
     }
 
-    .navbar-toggler{
-        width: 37px;
-        height: 27px;
-        outline: 0;
-        cursor: pointer;
-
-        &.navbar-toggler-left{
-            position: relative;
-            left: 0;
-            padding-left: 0;
-        }
-
-        .navbar-toggler-bar.middle-bar{
-          width: 17px;
-          transition: width .2s linear;
-        }
-
-        &:hover{
-            & .navbar-toggler-bar.middle-bar{
-                width: 22px;
-            }
-        }
-    }
+  
 
     .button-dropdown{
         .navbar-toggler-bar:nth-child(2){

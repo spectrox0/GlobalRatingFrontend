@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
 import country from './../../context/region.js'
+import Toggler from './../Navbars/Toggler.js'
 // reactstrap components
 import {
   UncontrolledCollapse,
@@ -55,7 +56,7 @@ export default function NavbarGlobal() {
       window.removeEventListener("scroll", updateNavbarColor);
     };
   });
-  return ( /*
+  return  ( /*
     <NavbarContainer>
         
       {collapseOpen ? (
@@ -205,7 +206,14 @@ export default function NavbarGlobal() {
       </Navbar>
     </NavbarContainer>*/
     
-      <MDBNavbar className={navbarColor} expand="lg">
+      <MDBNavbar className={navbarColor} dark expand="lg">
+        {collapseOpen && (<div
+          id="bodyClick"
+          onClick={() => {
+            document.documentElement.classList.toggle("nav-open");
+            setCollapseOpen(false);
+          }}
+        /> )}
         <div className="navbar-translate"> 
       <MDBNavbarBrand
              id="navbar-brand"
@@ -214,12 +222,18 @@ export default function NavbarGlobal() {
               to = {{pathname:`/index/${context.country}`}}
             >
               <img className="GlobalRatingLogo"
-                src={require("assets/img/pic_logoGR.svg")}
+                src={require("assets/img/globalrating_white.svg")}
                 style={{ width: "6rem" }}
                 alt=""
               />
         </MDBNavbarBrand>
-        <MDBNavbarToggler onClick={ () => setCollapseOpen(!collapseOpen)} />
+     
+         <Toggler onClick = { () => {
+           document.documentElement.classList.toggle("nav-open");
+           setCollapseOpen(!collapseOpen); 
+         }} ></Toggler>
+   
+
         <MDBCollapse id="navbarCollapse3" isOpen={collapseOpen} navbar>
           
           <MDBNavbarNav right>

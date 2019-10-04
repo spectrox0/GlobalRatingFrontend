@@ -1,0 +1,23 @@
+
+
+@mixin navbar-collapse() {
+    .navbar-collapse{
+        position: fixed;
+        display: block !important;
+        top: 0;
+        height: 100% !important;
+        width: 18rem;
+        left: 100%;
+        z-index: 1032;
+        visibility: visible;
+        background: $sidenav-background; 
+        overflow-y: visible;
+        border-top: none;
+        text-align: left;
+        
+        max-height: none !important; 
+        @include transition (0.50s, cubic-bezier(0.685, 0.0473, 0.346, 1));
+         .navbar-nav {
+             padding:2rem; 
+         }
+ }    }
