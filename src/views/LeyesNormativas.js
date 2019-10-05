@@ -1,14 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import { QUERY_LEYESNORMATIVAS } from './helpers/graphql/querys'
 import { useQuery } from '@apollo/react-hooks';
 import {initGA} from './helpers/initGA.js';
 import {
-    Container,
-    Row,
-    Col,
-} from 'reactstrap';
+    MDBContainer,
+    MDBRow,
+    MDBCol,
+} from 'mdbreact';
 
 export default function LeyesNormativas() {
     React.useEffect(()=> {
@@ -18,12 +17,12 @@ export default function LeyesNormativas() {
 
     const LeyesNormativas = () => {
         const innerJSX = data.leyesNormativas.map(leyesNormativas =>
-            <Row key={leyesNormativas._id}>
+            <MDBRow key={leyesNormativas._id}>
              <h4>{leyesNormativas.titulo}</h4>
                             <div>
                                 <p>{leyesNormativas.descripcion}</p>
                             </div>
-            </Row>)
+            </MDBRow>)
         return innerJSX;
     }
     return (!data && loading) ?
@@ -32,51 +31,13 @@ export default function LeyesNormativas() {
         <LeyesNormativasContent>
             <div className="wrapper">
                 <div>
-                    <Container>
-                        <Row>
+                    <MDBContainer>
+                        <MDBRow>
                     <h3> Leyes Normativas </h3>
                         <LeyesNormativas />
-                        </Row>
-                        <Pagination aria-label="Page navigation example">
-                            <PaginationItem disabled>
-                                <PaginationLink first href="#" />
-                            </PaginationItem>
-                            <PaginationItem disabled>
-                                <PaginationLink previous href="#" />
-                            </PaginationItem>
-                            <PaginationItem active>
-                                <PaginationLink href="#">
-                                    1
-                            </PaginationLink>
-                            </PaginationItem>
-                            <PaginationItem>
-                                <PaginationLink href="#">
-                                    2
-                            </PaginationLink>
-                            </PaginationItem>
-                            <PaginationItem>
-                                <PaginationLink href="#">
-                                    3
-                            </PaginationLink>
-                            </PaginationItem>
-                            <PaginationItem>
-                                <PaginationLink href="#">
-                                    4
-                            </PaginationLink>
-                            </PaginationItem>
-                            <PaginationItem>
-                                <PaginationLink href="#">
-                                    5
-                            </PaginationLink>
-                            </PaginationItem>
-                            <PaginationItem>
-                                <PaginationLink next href="#" />
-                            </PaginationItem>
-                            <PaginationItem>
-                                <PaginationLink last href="#" />
-                            </PaginationItem>
-                        </Pagination>
-                    </Container>
+                        </MDBRow>
+                       
+                    </MDBContainer>
                 </div>
             </div>
         </LeyesNormativasContent>
@@ -130,36 +91,6 @@ li{
     text-indent: 1%;
 }
 
-Pagination.propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-    listClassName: PropTypes.string,
-    cssModule: PropTypes.object,
-    size: PropTypes.string,
-    tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-    listTag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-    'aria-label': PropTypes.string
-  };
-  
-  PaginationItem.propTypes = {
-    active: PropTypes.bool,
-    children: PropTypes.node,
-    className: PropTypes.string,
-    cssModule: PropTypes.object,
-    disabled: PropTypes.bool,
-    tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-  };
-  
-  PaginationLink.propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-    cssModule: PropTypes.object,
-    next: PropTypes.bool,
-    previous: PropTypes.bool,
-    first: PropTypes.bool,
-    last: PropTypes.bool,
-    tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-    'aria-label': PropTypes.string
-  };
+
 
 `

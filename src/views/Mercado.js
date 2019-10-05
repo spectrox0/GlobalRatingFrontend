@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import IndexHeader from "./../components/Headers/IndexHeader";
 import styled from "styled-components";
 import {
-    Row
-    , Col
-    , Container
-} from 'reactstrap'
+    MDBRow
+    , MDBCol
+    , MDBContainer
+} from 'mdbreact'
 
 export default function () {
 
@@ -57,15 +57,15 @@ export default function () {
 `
     return (
 
-        <TerminosContent>
+       
             <div className="wrapper">
 
                 <div>
-                    <Container >
-                        <Row>
+                    <MDBContainer >
+                        <MDBRow>
                             <h3> Términos y Condiciones </h3>
-                        </Row>
-                        <Row>
+                        </MDBRow>
+                        <MDBRow>
                             <div>
                                 <ol>
                                     <li>
@@ -170,11 +170,11 @@ export default function () {
                                     </li>
                                 </ol>
                             </div>
-                        </Row>
-                    </Container>
+                        </MDBRow>
+                    </MDBContainer>
                 </div>
             </div>
-        </TerminosContent>
+     
     );
 
 

@@ -1,11 +1,15 @@
 
-$navbar-color:  rgba(#2CA8FF, .98);
+$navbar-color:  rgba(rgb(255, 255, 255), .98);
 $navbar-padding-base: 0.625rem;
 $sidenav-background: linear-gradient(#2CA8FF, rgba(0,0,0,0.95) ); 
 
-$filter-header: linear-gradient(rgba(44, 167, 255, 0.815),rgba(44, 167, 255, 0.01)); 
+$filter-header: linear-gradient(#2c2c3981,rgba(44, 167, 255, 0.01)); 
 
 $height-header : 35rem; 
 
 $footer-color: #2c2c39; 
 $footer-color-copyrigth:#242433;
+
+$navbar-transparent: rgba(206, 206, 206, 0.4);
+$color-primary: #2CA8FF;
+$color-secondary: rgb(38, 151, 231);

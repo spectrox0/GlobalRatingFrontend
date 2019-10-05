@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
-import Dictamenes from "./components/CardDictamenes.js"
 // reactstrap components
-import { Button,Row } from "reactstrap";
+import { MDBBtn , MDBCol, MDBRow, MDBContainer, MDBCardTitle , MDBCardGroup , MDBCard, MDBCardBody, MDBCardText , MDBCardFooter} from "mdbreact";
+import CardDictamen from './../../components/Cards/CardDictamenes'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import styled from "styled-components"; 
@@ -19,31 +19,7 @@ export default function DictamenesDeCaificacion() {
   
  
    }
-   const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-      partialVisibilityGutter: 40
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 4,
-      partialVisibilityGutter: 40
-     
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-      partialVisibilityGutter: 30
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1 ,
-      partialVisibilityGutter: 30
-    },
-  };
-    
+  
     return( 
       <div className="dictamenes"> 
          <div className="dictamenes-title"
@@ -53,15 +29,38 @@ export default function DictamenesDeCaificacion() {
             </h2>
 
          </div>
+         <MDBContainer>
+          <MDBCardGroup>
+          <MDBRow> 
+           <MDBCol  sm="12" md="6" lg="4"> 
+          <CardDictamen/> </MDBCol>
+ <MDBCol   sm="12" md="6" lg="4"> 
+          <CardDictamen/> </MDBCol>
+ <MDBCol   sm="12" md="6" lg="4"> 
+          <CardDictamen/> </MDBCol>
+          <MDBCol  sm="12" md="6" lg="4"> 
+          <CardDictamen/> </MDBCol>
+ <MDBCol   sm="12" md="6" lg="4"> 
+          <CardDictamen/> </MDBCol>
+ <MDBCol   sm="12" md="6" lg="4"> 
+          <CardDictamen/> </MDBCol>
+ 
+  
+ 
+ 
+ </MDBRow>
+  </MDBCardGroup>
+         </MDBContainer>
          
   
 
-         < div className="row" > 
-             <Button className="btn-round" color="info"
+         < MDBRow style={{display:"flex", justifyContent:"end" , margin:"2rem"}}> 
+             <MDBBtn className="btn-round btn-color-primary"
              style={{width:"10rem", fontSize:"1.2rem"}}
-             > Ver más </Button>
-         </div>
-         </div>
+             > Ver más </MDBBtn>
+         </MDBRow>
+        
+        </div>
   ); 
 }
 

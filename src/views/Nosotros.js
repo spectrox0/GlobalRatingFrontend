@@ -3,10 +3,10 @@ import IndexHeader from "./../components/Headers/IndexHeader";
 import {initGA} from './helpers/initGA.js';
 import styled from "styled-components";
 import {
-    Row
-    , Col
-    , Container
-} from 'reactstrap'
+    MDBRow
+    , MDBCol
+    , MDBContainer
+} from 'mdbreact'
 
 export default function () {
     React.useEffect(()=> {
@@ -67,8 +67,8 @@ export default function () {
             <div className="wrapper">
 
                 <div>
-                    <Container >
-                        <Row>
+                    <MDBContainer >
+                        <MDBRow>
                             <h3> Sobre Nosotros </h3>
 
                             <div>
@@ -90,8 +90,8 @@ export default function () {
                                     Nuestro equipo de trabajo está conformado por profesionales con amplia experiencia en análisis financiero y económico, con capacidad de discutir y dar su opinión en el estudio y aprobación de la calificación de títulos valores, siguiendo la normativa respectiva y de acuerdo al procedimiento de calificación debidamente autorizado por la Comisión Nacional de Valores.
                                 </p>
                             </div>
-                        </Row>
-                        <Row>
+                        </MDBRow>
+                        <MDBRow>
 
                             <h4> Misión </h4>
                             <div>
@@ -99,16 +99,16 @@ export default function () {
                                     Nuestra misión es dar nuestra opinión independiente sobre las posibilidades de repagar de forma oportuna una deuda u obligación en particular, a través de la recopilación, organización y análisis de toda la información disponible en el mercado y aquella obtenida del propio emisor.
                                     </p>
                             </div>
-                        </Row>
-                        <Row>
+                        </MDBRow>
+                        <MDBRow>
                             <h4> Visión </h4>
                             <div>
                                 <p className="sangria">
                                     Nuestra visión es ser la calificadora de riesgo líder del mercado, con la mejor reputación y con la opinión más oportuna y acertada del mercado de capitales venezolano y latinoamericano.
                                     </p>
                             </div>
-                        </Row>
-                        <Row>
+                        </MDBRow>
+                        <MDBRow>
                             <h4> Principios</h4>
                             <ul>
                                 <li type="disc">
@@ -126,8 +126,8 @@ export default function () {
                                     </li>
                             </ul>
 
-                        </Row>
-                        <Row>
+                        </MDBRow>
+                        <MDBRow>
                             <h4> Junta Calificadora </h4>
                             <ul>
                                 <li type="disc">
@@ -146,8 +146,8 @@ export default function () {
                                     Juan Andrés Rodríguez B.
                                     </li>
                             </ul>
-                        </Row>
-                    </Container>
+                        </MDBRow>
+                    </MDBContainer>
                 </div>
             </div>
         </NosotrosContent >

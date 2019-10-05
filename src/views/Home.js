@@ -13,6 +13,7 @@ import Noticias from "views/home-sections/NoticiasFinanzas.js"
 import styled from 'styled-components'; 
 
 import {initGA} from './helpers/initGA.js';
+import {MDBContainer} from 'mdbreact'
 export default function Index() {
   
   React.useEffect(() => {
@@ -30,27 +31,16 @@ export default function Index() {
     initGA();
   },[]);
   return (
-    <HomeContainer>  
-      <div className="wrapper">
+    <div className="homeContainer">  
+      
         <IndexHeader />
         <div className="main" >
          <Dictamenes/>
         <Noticias/>
         </div>
-      </div>
-    </HomeContainer>
+    
+    </div>
   );
 }
 
-const HomeContainer = styled.div`
-.main {
-  display: flex; 
-  flex-direction: column; 
-  align-items:center; 
-  padding:0; 
-  margin:0; 
- 
-}
-
-`
 

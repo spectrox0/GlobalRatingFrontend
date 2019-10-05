@@ -8,19 +8,15 @@ import {initGA} from './helpers/initGA.js';
 
 
 import {
-  Row
-  , Col,
-  Alert,
-  Input,
-  Form,
-  InputGroup,
-  InputGroupAddon,
-  InputGroupText,
-  Label,
-  FormGroup,
-  Container,
-  Button
-} from 'reactstrap'
+  MDBRow
+  , MDBCol,
+  MDBAlert,
+  MDBInput,
+  MDBFormInline,
+  MDBInputGroup,
+  MDBContainer,
+  MDBBtn
+} from 'mdbreact'
 
 export default function Contactanos () {
    
@@ -42,13 +38,13 @@ export default function Contactanos () {
 
   /* useEffect(() => {
        document.body.classList.add("index-page");
-       document.body.classList.add("sidebar-collapse");
+       document.body.classList.add("sidebar-MDBCollapse");
        document.documentElement.classList.remove("nav-open");
        window.scrollTo(0, 0);
        document.body.scrollTop = 0;
        return function cleanup() {
          document.body.classList.remove("index-page");
-         document.body.classList.remove("sidebar-collapse");
+         document.body.classList.remove("sidebar-MDBCollapse");
        };   });
  
 */
@@ -116,14 +112,14 @@ const verifyCallback =(response) => {
       <div className="wrapper">
 
         <div className="main" >
-          <Container >
-            <Row>
-              <Col>
-              <Row> 
+          <MDBContainer >
+            <MDBRow>
+              <MDBCol>
+              <MDBRow> 
               <h3>Nuestras Coordenadas </h3>
-              </Row>
+              </MDBRow>
               
-              <Row> 
+              <MDBRow> 
                 <div className="elementCoordenadas" >
                   <span>
                     Av. Ppal. de la Castellana, Centro Letonia, Piso 12, Oficina 126.
@@ -131,106 +127,99 @@ const verifyCallback =(response) => {
                  </span>
                  
                 </div>
-                </Row>
-                <Row> 
+                </MDBRow>
+                <MDBRow> 
                 <div className="elementCoordenadas" >
                   <span>
                     Master +58 (212) 263.4393
                  </span>
                 </div>
-                </Row>
-                <Row> 
+                </MDBRow>
+                <MDBRow> 
                 <div className="elementCoordenadas" >
                   <span>
                     info@globalratings.com
                  </span>
                 </div>
-                </Row>
-              </Col>
-              <Col> 
+                </MDBRow>
+              </MDBCol>
+              <MDBCol> 
             {message && (
-              <Alert color={message.isError? "danger" : "info"}>
+              <MDBAlert color={message.isError? "danger" : "info"}>
                {message.message}
-          </Alert>
+          </MDBAlert>
             )}
-                <Form onSubmit={handlingOnsubmit}>
-                  <Row>
-                    <Col>
-                    <FormGroup>
-                      <Label htmlFor="nombre" > Nombre</Label>
-                        <Input
+                <MDBFormInline onSubmit={handlingOnsubmit}>
+                  <MDBRow>
+                    <MDBCol>
+                      <label htmlFor="nombre" > Nombre</label>
+                        <MDBInput
                          id="nombre" 
                          placeholder="Escribe tu nombre" 
                          type="text"
                          required
-                         className="textInput"
+                         className="textMDBInput"
                          value={nombre}
                          onChange={ e=> setNombre(e.target.value)}
-                         ></Input>
-                        </FormGroup>
-                    </Col>
-                    <Col>
-                    <FormGroup>
-                      <Label htmlFor="apellido" > Apellido </Label>
-                        <Input 
+                         ></MDBInput>
+                    </MDBCol>
+                    <MDBCol>
+                   
+                      <label htmlFor="apellido" > Apellido </label>
+                        <MDBInput 
                         id="apellido" 
                         placeholder="Escribe tu apellido" 
                         type="text"
                         required
-                        className="textInput"
+                        className="textMDBInput"
                         value={apellido}
                         onChange= {e=> setApellido(e.target.value)}
                        
-                        ></Input>
-                        </FormGroup></Col>
-                  </Row>
-                  <Row>
-                    <Col>
-                    <FormGroup> 
-                    <Label htmlFor="email" > Email </Label>
-                      <InputGroup>
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>
-                            <i className="now-ui-icons ui-1_email-85"></i>
-                          </InputGroupText>
-                        </InputGroupAddon>
-                        <Input 
+                        ></MDBInput>
+                     </MDBCol>
+                  </MDBRow>
+                  <MDBRow>
+                    <MDBCol>
+                   
+                    <label htmlFor="email" > Email </label>
+                      <MDBInputGroup>
+                        <MDBInput 
                         id="email"
                          placeholder="Escribe tu correo" 
                          type="email"
                          required
                          value={email}
                          onChange={e=> setEmail(e.target.value)}
-                         className="textInput"
+                         className="textMDBInput"
                       
-                        ></Input>
-                      </InputGroup>
-                      </FormGroup>
-                      </Col>
-                  </Row>
-                  <Row>
-                    <Col>
-                    <FormGroup>
-                      <Label htmlFor="asunto" > Asunto </Label>
-                        <Input 
+                        ></MDBInput>
+                      </MDBInputGroup>
+                     
+                      </MDBCol>
+                  </MDBRow>
+                  <MDBRow>
+                    <MDBCol>
+                  
+                      <label htmlFor="asunto" > Asunto </label>
+                        <MDBInput 
                         id="asunto" 
                         placeholder="Escribe tu asunto"
                          type="text"
                          required
                          value={asunto}
                          onChange={e=> setAsunto(e.target.value)}
-                         className="textInput"
+                         className="textMDBInput"
                        
-                         ></Input>
-                        </FormGroup>
-                      </Col>
+                         ></MDBInput>
+                       
+                      </MDBCol>
 
-                  </Row>
-                  <Row>
-                    <Col>
-                      <FormGroup>
-                        <Label htmlFor="textArea" > Mensaje</Label>
-                        <Input 
+                  </MDBRow>
+                  <MDBRow>
+                    <MDBCol>
+                   
+                        <label htmlFor="textArea" > Mensaje</label>
+                        <MDBInput 
                         id="textArea" 
                         placeholder="Escribe tu mensaje" 
                         type="textarea"
@@ -238,13 +227,13 @@ const verifyCallback =(response) => {
                         value={texto}
                         onChange={e=> setTexto(e.target.value)}
                         className="textAreaMensaje"
-                        rows="3"
+                        MDBRows="3"
                         
-                        ></Input>
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row> 
+                        ></MDBInput>
+                      
+                    </MDBCol>
+                  </MDBRow>
+                  <MDBRow> 
                   <Recaptcha
     sitekey="6LeFsrgUAAAAAJmjoOiqeDR2Kkv4jcJOWe4njhOt"
     render="explicit"
@@ -253,14 +242,14 @@ const verifyCallback =(response) => {
     verifyCallback={verifyCallback}
   />
 
-                  </Row>
-                  <Button className="btn-round" size="lg" color="info" type="submit">
+                  </MDBRow>
+                  <MDBBtn className="btn-round" size="lg" color="info" type="submit">
                    ENVIAR MENSAJE 
-                 </Button>
-                </Form>
-              </Col>
-            </Row>
-          </Container>
+                 </MDBBtn>
+                </MDBFormInline>
+              </MDBCol>
+            </MDBRow>
+          </MDBContainer>
         </div>
       </div>
     </DictamenContent>
@@ -281,7 +270,7 @@ const DictamenContent = styled.div`
 
 h3{
   color:#4169E1;
-  text-transform:uppercase; 
+  text-transMDBFormInline:uppercase; 
 }
 
 .elementCoordenadas{
@@ -290,7 +279,7 @@ h3{
   }
   margin-bottom:1rem; 
 } 
-  .textAreaMensaje,.textInput{
+  .textAreaMensaje,.textMDBInput{
     &:focus {
      border-color:#1E90FF; 
     }

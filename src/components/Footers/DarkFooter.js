@@ -8,21 +8,8 @@ import {useMutation} from '@apollo/react-hooks';
 import {MUTATION_SEND_FRIEND} from '../../views/helpers/graphql/mutation'
 // reactstrap components
 
-import { 
-  Container,
-   Row,
-  Col,
-  Button,
-   Modal,
-   Input,
-   InputGroup,
-   InputGroupAddon,
-   InputGroupText,
-   Label,
-   Form,
-   
-  } from "reactstrap";
-  import { MDBCol, MDBContainer, MDBRow, MDBFooter ,MDBNavLink } from "mdbreact";
+
+  import { MDBCol, MDBContainer, MDBRow, MDBFooter ,MDBNavLink} from "mdbreact";
 
 
 export default function DarkFooter() {
@@ -211,8 +198,8 @@ export default function DarkFooter() {
       </Container>
     </footer> */ 
 
-    <MDBFooter className="font-small pt-4 mt-4">
-      <MDBContainer fluid className="text-center text-md-left">
+    <MDBFooter>
+      <MDBContainer style={{padding:"2rem"}} fluid className="text-center">
         <MDBRow>
           <MDBCol md="3">
           <a
@@ -309,7 +296,7 @@ info@globalratings.com
           </MDBCol>
         </MDBRow>
       </MDBContainer>
-      <div className="footer-copyright text-center py-3">
+      <div className="footer-copyright text-center">
         <MDBContainer fluid>
      
           GlobalRatings, C.A. RIF: J-123456789-0.

@@ -4,10 +4,10 @@ import { useQuery } from '@apollo/react-hooks';
 import {QUERY_EMISORES_ID} from './helpers/graphql/querys'; 
 import {initGA} from './helpers/initGA.js';
 import {
-    Row , 
-    Col, 
-    Container
-}  from 'reactstrap'; 
+    MDBRow , 
+    MDBCol, 
+    MDBContainer
+}  from 'mdbreact'; 
 export default function PerfilCliente({location})  {
     React.useEffect(()=> {
         initGA();
@@ -23,28 +23,28 @@ export default function PerfilCliente({location})  {
       const innerJSX = emisiones.map(emision => {
       
      return (
-         <Row className="rowEmision" key= {emision.id}> 
-             <Col> 
+         <MDBRow className="MDBRowEmision" key= {emision.id}> 
+             <MDBCol> 
              <span> 
          ID DICTAMEN : {emision.idDictamen}
         </span>
-             </Col>
-             <Col> 
+             </MDBCol>
+             <MDBCol> 
              <span> 
         ID EMISION {emision.idProvidencia}
         </span>
-             </Col>
-             <Col> 
+             </MDBCol>
+             <MDBCol> 
              <span> 
         ID PROSPECTO {emision.idProspecto}
         </span>
-             </Col>
-             <Col> 
+             </MDBCol>
+             <MDBCol> 
              <span> 
         ID PROSPECTO {emision.fechaAprovacion}
         </span>
-             </Col>
-         </Row>
+             </MDBCol>
+         </MDBRow>
         
      )
       }  ); 
@@ -52,54 +52,54 @@ export default function PerfilCliente({location})  {
     
    }
  return (
- <ContainerPerfil> 
+ <MDBContainerPerfil> 
     {(data && !loading) && (
-        <Container> 
-        <Row className="rowPresentation"> 
-        <Col className="colImage" sm="auto"> <div className="profileImage"> 
+        <MDBContainer> 
+        <MDBRow className="MDBRowPresentation"> 
+        <MDBCol className="MDBColImage" sm="auto"> <div className="profileImage"> 
         <img src={data.emisorID.logo} alt =".."/> 
-        </div></Col>
-        <Col className="colName" sm="6"> 
-        <Row>  <h3>{data.emisorID.nombre} </h3> </Row>
-        <Row>   <span> TWITTER: {data.emisorID.twitter} </span> </Row>
-        <Row> <span> INSTAGRAM : {data.emisorID.instagram} </span> </Row>
-        <Row> <span> URL WEB: {data.emisorID.urlWeb} </span> </Row>
-        </Col>
-      </Row>
+        </div></MDBCol>
+        <MDBCol className="MDBColName" sm="6"> 
+        <MDBRow>  <h3>{data.emisorID.nombre} </h3> </MDBRow>
+        <MDBRow>   <span> TWITTER: {data.emisorID.twitter} </span> </MDBRow>
+        <MDBRow> <span> INSTAGRAM : {data.emisorID.instagram} </span> </MDBRow>
+        <MDBRow> <span> URL WEB: {data.emisorID.urlWeb} </span> </MDBRow>
+        </MDBCol>
+      </MDBRow>
       
       <Emisiones emisiones={data.emisorID.emisiones} />
   
-      </Container>
+      </MDBContainer>
       
     )}
  
- </ContainerPerfil> )
+ </MDBContainerPerfil> )
 
 }
 
-const ContainerPerfil = styled.div`
+const MDBContainerPerfil = styled.div`
   margin: 3rem; 
   min-height: 100vh; 
   display:flex; 
-  flex-direction:column; 
+  flex-direction:MDBColumn; 
   justify-content: center ;
-.rowPresentation {
+.MDBRowPresentation {
     background:#151F42; 
     border-radius:10px; 
 }
 
-.colName {
+.MDBColName {
     margin:1rem; 
     h3 {
         font-size:2.5rem; 
-        color:white; 
+        MDBColor:white; 
         font-weight:600; 
         text-transform: uppercase; 
         margin-top:3rem; 
     }
     span {
         font-size: .9rem; 
-        color:white; 
+        MDBColor:white; 
         text-transform: uppercase;
     }
 }
