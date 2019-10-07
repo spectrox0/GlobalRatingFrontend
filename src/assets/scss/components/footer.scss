@@ -1,0 +1,36 @@
+.page-footer {
+    padding-top: 1rem;
+    background: $footer-color; 
+    color: #FFFFFF; 
+    .footer-copyright {
+        padding:.5rem;
+        background: $footer-color-copyrigth; 
+    }
+    .container-fluid {
+        max-width: 60rem; 
+    }
+   
+    p {
+        font-size: .9em;
+    }
+
+    .nav-links {
+        list-style: none; 
+        display:flex; 
+        flex-direction: column; 
+        padding: 0; 
+        text-align: center; 
+        li {
+            margin:0; 
+            padding: 0; 
+        }
+        li a {
+            margin:.1rem; 
+            padding: 0; 
+            font-size: 1em;
+            color:#FFFFFF
+        }
+
+    }
+
+}

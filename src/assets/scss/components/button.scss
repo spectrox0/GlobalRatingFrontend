@@ -1,0 +1,13 @@
+.btn-round {
+    border-radius: 500px;
+}
+.btn-color-primary {
+    background: $color-primary;
+    color: #FFFFFF;
+    &:hover {
+        color: #FFFFFF;
+        text-shadow: 0 0 1px  #FFFFFF;
+        background: $color-secondary;
+
+    }
+}

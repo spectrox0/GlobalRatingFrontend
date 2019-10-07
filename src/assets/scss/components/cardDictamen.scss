@@ -1,0 +1,55 @@
+.card-dictamen {
+    margin:.8rem;
+    min-width:19rem;
+    border: solid 20px rgb(245, 245, 245);
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+   
+    cursor: pointer;
+
+    .card-body {
+        @include transition(.5s , ease-in-out);
+       visibility: hidden;
+       color: #FFFFFF;
+       p{
+           
+        font-size: .9em;
+    }
+    }
+    .card-footer {
+        @include transition(.5s , ease-in-out);
+        border: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        vertical-align: center;
+        padding:0;
+        text-align: center;
+
+        .card-title {
+      
+            margin:0;
+            padding:.4rem;
+
+            font-size: .9em;
+            color:rgb(253, 253, 253);
+        }
+        background: rgba($color-primary, 0.8);
+    }
+   
+      
+}
+
+.card-dictamen:hover {
+    text-decoration: none;
+    .card-body {
+        background: rgba($color-primary, 0.8);
+        visibility:visible;
+    } 
+    .card-footer .card-title{
+        visibility:hidden;
+        
+    }
+
+}
+

@@ -8,22 +8,8 @@ import {useMutation} from '@apollo/react-hooks';
 import {MUTATION_SEND_FRIEND} from '../../views/helpers/graphql/mutation'
 // reactstrap components
 
-import { 
-  Container,
-   Row,
-  Col,
-  NavLink,
-  Button,
-   Modal,
-   Input,
-   InputGroup,
-   InputGroupAddon,
-   InputGroupText,
-   Label,
-   Form,
-   
-  } from "reactstrap";
 
+  import { MDBCol, MDBContainer, MDBRow, MDBFooter ,MDBNavLink} from "mdbreact";
 
 
 export default function DarkFooter() {
@@ -48,7 +34,7 @@ export default function DarkFooter() {
     }); 
 
   }
-  return (
+  return  ( /*
     <footer className="footer" data-background-color="black">
       <Container >
       <Row >
@@ -137,47 +123,47 @@ export default function DarkFooter() {
       <Col className="text-center">
         <ul className="nav-links">
            <li>
-            <NavLink 
+            <MDBNavLink 
              onClick={ e=> {scroll.scrollToTop()}}
             tag= {Link} 
             to= {{
               pathname:`/nosotros/${country}`
-            }} > Nosotros </NavLink>
+            }} > Nosotros </MDBNavLink>
            </li>
-           <li>  <NavLink
+           <li>  <MDBNavLink
             onClick={ e=> {scroll.scrollToTop()}}
             tag= {Link}
             to= {{
               pathname:`/clientes/${country}`
-            }} > Clientes </NavLink>
+            }} > Clientes </MDBNavLink>
            </li>
-           <li> <NavLink
+           <li> <MDBNavLink
             onClick={ e=> {scroll.scrollToTop()}}
             tag= {Link}
            to= {{
               pathname:`/calificacion/${country}`
-            }} > Calificacion de Riesgos </NavLink>
+            }} > Calificacion de Riesgos </MDBNavLink>
            </li>
-           <li>  <NavLink 
+           <li>  <MDBNavLink 
             onClick={ e=> {scroll.scrollToTop()}}
            tag= {Link}
            to= {{
               pathname:`/leyesnormativas/${country}`
-            }} > Leyes y Normativas </NavLink>
+            }} > Leyes y Normativas </MDBNavLink>
            </li>
-           <li>  <NavLink 
+           <li>  <MDBNavLink 
             onClick={ e=> {scroll.scrollToTop()}}
            tag= {Link}
            to= {{
               pathname:`/estadisticas/${country}`
-            }} > Estadísticas de Mercado </NavLink>
+            }} > Estadísticas de Mercado </MDBNavLink>
            </li>
-           <li>  <NavLink 
+           <li>  <MDBNavLink 
             onClick={ e=> {scroll.scrollToTop()}}
            tag= {Link} 
            to= {{
               pathname:`/contactanos/${country}`
-            }} > Contacto </NavLink>
+            }} > Contacto </MDBNavLink>
            </li>           
         
        </ul>
@@ -186,16 +172,16 @@ export default function DarkFooter() {
   <Row> <Col className="text-center"> 
        <ul className="nav-links" >
          <li> 
-       <NavLink 
+       <MDBNavLink 
            onClick={ e=> {scroll.scrollToTop()}}
            tag= {Link}to= {{
               pathname:`/terminos/${country}`
-            }}> Términos y Condiciones </NavLink>
+            }}> Términos y Condiciones </MDBNavLink>
          </li>
          <li> 
-            <NavLink tag= {Link} to= {{
+            <MDBNavLink tag= {Link} to= {{
               pathname:`/mapa/${country}`
-            }}> Mapa del Site </NavLink>
+            }}> Mapa del Site </MDBNavLink>
               </li>
           </ul>
        </Col></Row>
@@ -210,9 +196,117 @@ export default function DarkFooter() {
 
       
       </Container>
-    </footer>
+    </footer> */ 
+
+    <MDBFooter>
+      <MDBContainer style={{padding:"2rem"}} fluid className="text-center">
+        <MDBRow>
+          <MDBCol md="3">
+          <a
+                href=""
+                target="_blank"
+              >
+            <FinanzasDigitalLogo/>
+              </a>
+          
+              <a
+                href=""
+                target="_blank"
+              >
+              <GlobalScopeLogo/>
+     
+              </a>
+          </MDBCol>
+          <MDBCol md="3">
+          <h5 className="title">Contactanos</h5>
+          <p>
+          Av. Ppal. de la Castellana, Centro Letonia, Piso 12, Oficina 126. Caracas - Venezuela </p>
+          <p> 
+Master +58 (212) 263.4393
+</p>
+<p>
+info@globalratings.com
+          </p>
+          </MDBCol>
+          <MDBCol md="3">
+            <h5 className="title">Acerca de Nosotros</h5>
+            <p>
+            
+            </p>
+          </MDBCol>
+          <MDBCol md="3">
+          <ul className="nav-links">
+           <li>
+            <MDBNavLink 
+             onClick={ e=> {scroll.scrollToTop()}}
+            tag= {Link} 
+            to= {{
+              pathname:`/nosotros/${country}`
+            }} > Nosotros </MDBNavLink>
+           </li>
+           <li>  <MDBNavLink
+            onClick={ e=> {scroll.scrollToTop()}}
+            tag= {Link}
+            to= {{
+              pathname:`/clientes/${country}`
+            }} > Clientes </MDBNavLink>
+           </li>
+           <li> <MDBNavLink
+            onClick={ e=> {scroll.scrollToTop()}}
+            tag= {Link}
+           to= {{
+              pathname:`/calificacion/${country}`
+            }} > Calificacion de Riesgos </MDBNavLink>
+           </li>
+           <li>  <MDBNavLink 
+            onClick={ e=> {scroll.scrollToTop()}}
+           tag= {Link}
+           to= {{
+              pathname:`/leyesnormativas/${country}`
+            }} > Leyes y Normativas </MDBNavLink>
+           </li>
+           <li>  <MDBNavLink 
+            onClick={ e=> {scroll.scrollToTop()}}
+           tag= {Link}
+           to= {{
+              pathname:`/estadisticas/${country}`
+            }} > Estadísticas de Mercado </MDBNavLink>
+           </li>
+           <li>  <MDBNavLink 
+            onClick={ e=> {scroll.scrollToTop()}}
+           tag= {Link} 
+           to= {{
+              pathname:`/contactanos/${country}`
+            }} > Contacto </MDBNavLink>
+           </li>           
+           <li> 
+       <MDBNavLink 
+           onClick={ e=> {scroll.scrollToTop()}}
+           tag= {Link}to= {{
+              pathname:`/terminos/${country}`
+            }}> Términos y Condiciones </MDBNavLink>
+         </li>
+         <li> 
+            <MDBNavLink tag= {Link} to= {{
+              pathname:`/mapa/${country}`
+            }}> Mapa del Site </MDBNavLink>
+              </li>
+        
+       </ul>
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
+      <div className="footer-copyright text-center">
+        <MDBContainer fluid>
+     
+          GlobalRatings, C.A. RIF: J-123456789-0.
+          Todos los derechos reservados © {new Date().getFullYear()}.
+        </MDBContainer>
+      </div>
+    </MDBFooter>
   );
 }
+
 
 const FinanzasDigitalLogo = styled.div`
 display:inline-block; 
@@ -233,20 +327,10 @@ background: url("${require("assets/img/pic_footerlogoGS_gris.png")}") no-repeat 
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
-width:20rem;
-height:5rem; 
+width:15rem;
+height:3rem; 
 transition: all 0.3s ease-out; 
 &:hover{
   background-image: url("${require("assets/img/pic_footerlogoGS_color.png")}"); 
-}
-`
-const Copyright = styled.div`
-display:flex; 
-flex-direction:column; 
-justify-content:center; 
-align-items:center; 
-p {
-  font-size:0.8rem; 
-  text-align:center;
 }
 `

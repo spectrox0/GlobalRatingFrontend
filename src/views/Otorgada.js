@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import IndexHeader from "./../components/Headers/IndexHeader";
 import styled from "styled-components";
 import {
-    Row
-    , Col
-    , Container
-} from 'reactstrap'
+    MDBRow
+    , MDBCol
+    , MDBContainer
+} from 'mdbreact'
 
 export default function () {
 
@@ -64,8 +64,8 @@ export default function () {
             <div className="wrapper">
 
                 <div>
-                    <Container >
-                        <Row>
+                    <MDBContainer >
+                        <MDBRow>
                             <h3> Calificaciones Otorgadas </h3>
 
                             <div>
@@ -78,8 +78,8 @@ export default function () {
                                     La confidencialidad en el proceso de calificación, no nos permite nombrar a todos nuestros clientes, por lo que a continuación detallamos solamente algunas que llegaron a hacer oferta pública de un título valor o nos autorizaron a hacer pública su calificación:
                                 </p>
                             </div>
-                        </Row>
-                        <Row>
+                        </MDBRow>
+                        <MDBRow>
                             <ul>
                                 <li>ABA Servicios Financieros, C.A.</li>
                                 <li>All Factoring de Venezuela, C.A.</li>
@@ -149,8 +149,8 @@ export default function () {
                                 <li>Unovalores Casa de Bolsa, C.A.</li>
                                 <li>Valores Inmobiliarios de Venezuela, C.A.</li>
                             </ul>
-                        </Row>
-                    </Container>
+                        </MDBRow>
+                    </MDBContainer>
                 </div>
             </div>
         </OtorgadaContent>

@@ -4,11 +4,11 @@ import {initGA} from './helpers/initGA.js';
 import styled from "styled-components";
 import {Link} from "react-router-dom"
 import {
-    Row
-    , Col
-    , Container,
-    Button
-} from 'reactstrap'
+    MDBRow
+    , MDBCol
+    , MDBContainer,
+    MDBBtn
+} from 'mdbreact'
 
 export default function () {
     React.useEffect(()=> {
@@ -95,8 +95,8 @@ export default function () {
             <div className="wrapper">
 
                 <div>
-                    <Container >
-                        <Row>
+                    <MDBContainer >
+                        <MDBRow>
                             <h3> Calificación de Riesgo </h3>
 
                             <div>
@@ -124,15 +124,15 @@ export default function () {
                                     En caso de existir garantías calificadas o calificables, atadas a la emisión, la Categoría de Riesgo asignada puede ser la de la garantía, en función de su calidad y grado de liquidez.
                                 </p>
                             </div>
-                             <Button
+                             <MDBBtn
                               className="btn-round centrado"
                               color="info"
                            style={{width:"20rem", fontSize:"1.2rem"}} 
                            tag={Link} to={{
                                  pathname: "/otorgada/VE"
-                             }}> Ver calificaciones otorgadas </Button>
-                        </Row>
-                        <Row>
+                             }}> Ver calificaciones otorgadas </MDBBtn>
+                        </MDBRow>
+                        <MDBRow>
                             <h4 className="especial">Categorías de Riesgo</h4>
                             <div>
                                 <h4> Categoría A </h4>
@@ -195,8 +195,8 @@ export default function () {
                                 <p className="sangria">Corresponde a aquellos instrumentos cuyo emisor no posee información suficiente o representativa.
                                 </p>
                             </div>
-                        </Row>
-                        <Row>
+                        </MDBRow>
+                        <MDBRow>
                             <h4 className="especial">Fases del Proceso de Calificación</h4>
                             <ol>
                                 <li>
@@ -235,8 +235,8 @@ export default function () {
                                 </span>
                                     </li>
                             </ol>
-                        </Row>
-                        <Row>
+                        </MDBRow>
+                        <MDBRow>
                             <h4 className="especial">Resumen de Metodología de Calificación</h4>
                             <div>
                                 <ul>
@@ -260,8 +260,8 @@ export default function () {
                                     </li>
                                 </ul>
                             </div>
-                        </Row>
-                    </Container>
+                        </MDBRow>
+                    </MDBContainer>
                 </div>
             </div>
         </CalificacionContent >

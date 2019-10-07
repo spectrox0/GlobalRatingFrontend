@@ -32,7 +32,8 @@ export default function App () {
            }
          
     }).catch((error) => {
-        console.log(error);
+      setCountry("ve");
+      localStorage.setItem("country","ve"); 
     });
   };
 
@@ -54,7 +55,7 @@ export default function App () {
           value={{ country:country , changeCountry: changeCountry}} > 
           <IndexNavbar />
           <Routes />
-          <DarkFooter style={{ position: "absolute", bottom: "0" }} />
+          <DarkFooter/>
           </CountryContext.Provider>
           </ApolloProvider>
         </BrowserRouter>) 

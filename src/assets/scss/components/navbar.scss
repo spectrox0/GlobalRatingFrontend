@@ -1,0 +1,107 @@
+
+
+.navbar {
+    position: fixed; 
+    z-index: 500;
+    width:100%; 
+    background: $navbar-color; 
+    transition: background .3s ease-in-out; 
+    display:flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding-top: $navbar-padding-base;
+    padding-bottom: $navbar-padding-base;
+    min-height: 53px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+
+    .navbar-translate {
+      display:flex; 
+       justify-content: space-between; 
+       width:100%;
+       max-width: 60rem;
+    }
+    .GlobalRatingLogo{
+        width:6rem;
+        @include transition(.2s, ease-in-out);
+    }
+
+  
+
+    a{  
+        outline: none; 
+        font-size: .8rem; 
+        font-weight: 600;
+        vertical-align: middle;
+        text-transform: uppercase;
+        color:  rgb(51, 51, 51);
+        transition: color .2s ease-in-out;
+        @media screen and (max-width:991px) { 
+            color:  rgb(226, 226, 226);
+        }
+          
+        
+    }
+
+    p{
+        display: inline-block;
+        margin: 0;
+        line-height: 21px;
+        font-weight: inherit;
+        font-size: inherit;
+    }
+}
+.navbar-transparent {
+    background: $navbar-transparent !important; 
+    a {
+       
+        &:not(.btn):not(.dropdown-item){
+            color:rgb(255, 255, 255);
+        }
+        
+    }
+    .toggle span {
+        background:rgba(255, 255, 255, 0.856); 
+    }
+   
+  
+}
+
+
+@media screen and (min-width: 992px){
+   
+      
+          .navbar-collapse {
+              display: block !important;
+               
+  
+          
+              }
+          }
+  
+  
+        
+          @media screen and (max-width:991px) {
+             @include navbar-collapse(); 
+            
+            .nav-open  {
+                .navbar-collapse{
+                    @include transform-translate-x(-18rem);
+                }
+    
+                .toggle{
+                    @include transform-translate-x(-18rem);
+                }
+               
+          }
+          #bodyClick{
+            position: fixed;
+            background: rgba(0,0,0,0.5); 
+            width:100%; 
+            height: 200vh!important;
+
+        }
+        
+        }
+
+    

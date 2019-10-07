@@ -1,0 +1,14 @@
+@import './variables';
+@import './mixins/index.scss'; 
+
+@import './components/navbar.scss';
+@import './components//toggle.scss';
+@import './components/header.scss';
+@import './components/footer.scss' ; 
+@import './components/button.scss';
+@import './components/cardDictamen.scss';
+@import './components/cardNoticias.scss';
+
+@import './views/dictamenes.scss'; 
+@import './views//noticias.scss';
+@import './views/index.scss';
