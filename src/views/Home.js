@@ -13,6 +13,7 @@ import Noticias from "views/home-sections/NoticiasFinanzas.js"
 import styled from 'styled-components'; 
 
 import {initGA} from './helpers/initGA.js';
+
 export default function Index() {
   
   React.useEffect(() => {
