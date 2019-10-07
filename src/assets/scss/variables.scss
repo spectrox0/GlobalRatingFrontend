@@ -3,9 +3,12 @@ $navbar-color:  rgba(rgb(255, 255, 255), .98);
 $navbar-padding-base: 0.625rem;
 $sidenav-background: linear-gradient(#2CA8FF, rgba(0,0,0,0.95) ); 
 
-$filter-header: linear-gradient(#2c2c3981,rgba(44, 167, 255, 0.01)); 
+$filter-header: linear-gradient(#2c2c39d3,rgb(255, 255, 255)); 
 
-$height-header : 35rem; 
+$color-letter-header: rgb(31, 77, 110);
+$height-header : 100% !important ; 
+
+
 
 $footer-color: #2c2c39; 
 $footer-color-copyrigth:#242433;
