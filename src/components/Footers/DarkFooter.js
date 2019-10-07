@@ -2,7 +2,6 @@
 import React , {useContext} from "react";
 import { Link} from "react-router-dom"; 
 import CountryContext from "./../../context/region.js"
-import styled from "styled-components"; 
 import {animateScroll as scroll} from  'react-scroll'; 
 import {useMutation} from '@apollo/react-hooks';
 import {MUTATION_SEND_FRIEND} from '../../views/helpers/graphql/mutation'
@@ -206,14 +205,16 @@ export default function DarkFooter() {
                 href=""
                 target="_blank"
               >
-            <FinanzasDigitalLogo/>
+           
+            <div className="finanzasDigital" />
               </a>
           
               <a
                 href=""
                 target="_blank"
               >
-              <GlobalScopeLogo/>
+               
+            <div className="globalScope" />
      
               </a>
           </MDBCol>
@@ -308,29 +309,4 @@ info@globalratings.com
 }
 
 
-const FinanzasDigitalLogo = styled.div`
-display:inline-block; 
-background: url("${require("assets/img/pic_footerlogoFD_gris.png")}") no-repeat center; 
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-width:11rem;
-height:5rem; 
-transition: all 0.3s ease-out; 
-&:hover{
-  background-image: url("${require("assets/img/pic_footerlogoFD_color.png")}"); 
-}
-`
-const GlobalScopeLogo = styled.div`
-display:inline-block; 
-background: url("${require("assets/img/pic_footerlogoGS_gris.png")}") no-repeat center; 
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-width:15rem;
-height:3rem; 
-transition: all 0.3s ease-out; 
-&:hover{
-  background-image: url("${require("assets/img/pic_footerlogoGS_color.png")}"); 
-}
-`
+

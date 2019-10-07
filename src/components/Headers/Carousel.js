@@ -16,7 +16,7 @@ const CarouselPage = () => {
           <MDBView>
             <img
               className="img-carousel"
-              src={require("assets/img/carr_img03.jpg")}
+              src={require("assets/img/Global-ratings.jpg")}
               alt="First slide"
              
             />
