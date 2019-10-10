@@ -16,7 +16,7 @@ const CarouselPage = () => {
           <MDBView>
             <img
               className="img-carousel"
-              src={require("assets/img/carr_img03.jpg")}
+              src={require("./../../assets/img/carousel/Global-ratings.jpg")}
               alt="First slide"
              
             />
@@ -30,7 +30,7 @@ const CarouselPage = () => {
           <MDBView>
             <img
               className="img-carousel"
-              src={require("assets/img/carr_img02.jpg")}
+              src={require("./../../assets/img/carousel/Global-ratings3.jpg")}
               alt="Second slide"
              
             />
@@ -44,7 +44,7 @@ const CarouselPage = () => {
           <MDBView>
             <img
               className="img-carousel"
-              src={require("assets/img/carr_img01.jpg")}
+              src={require("./../../assets/img/carousel/Global-ratings4.jpg")}
               alt="Third slide"
             />
           <MDBMask overlay="black-slight" />

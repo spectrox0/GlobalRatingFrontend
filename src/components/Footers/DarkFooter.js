@@ -2,7 +2,6 @@
 import React , {useContext} from "react";
 import { Link} from "react-router-dom"; 
 import CountryContext from "./../../context/region.js"
-import styled from "styled-components"; 
 import {animateScroll as scroll} from  'react-scroll'; 
 import {useMutation} from '@apollo/react-hooks';
 import {MUTATION_SEND_FRIEND} from '../../views/helpers/graphql/mutation'
@@ -10,7 +9,6 @@ import {MUTATION_SEND_FRIEND} from '../../views/helpers/graphql/mutation'
 
 
   import { MDBCol, MDBContainer, MDBRow, MDBFooter ,MDBNavLink} from "mdbreact";
-
 
 export default function DarkFooter() {
   const {country} = useContext(CountryContext); 
@@ -201,40 +199,49 @@ export default function DarkFooter() {
     <MDBFooter>
       <MDBContainer style={{padding:"2rem"}} fluid className="text-center">
         <MDBRow>
-          <MDBCol md="3">
+          <MDBCol className="col-footer" md="3">
+          <h5 className="title">Paginas Asociadas </h5>
           <a
                 href=""
                 target="_blank"
               >
-            <FinanzasDigitalLogo/>
+           
+            <div className="finanzasDigital" />
               </a>
           
               <a
                 href=""
                 target="_blank"
               >
-              <GlobalScopeLogo/>
+               
+            <div className="globalScope" />
      
               </a>
           </MDBCol>
-          <MDBCol md="3">
+          <MDBCol className="col-footer" md="3">
           <h5 className="title">Contactanos</h5>
+          <iframe
+           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15692.186282877712!2d-66.8513235!3d10.4969951!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x24aa8c392b211b83!2sCentro%20Letonia!5e0!3m2!1ses-419!2sve!4v1570719130296!5m2!1ses-419!2sve" 
+           frameborder="0"
+            style={{width:"10rem", height:"8rem" ,border:0, borderRadius:"10px"}} 
+            allowfullscreen="">
+            </iframe>
           <p>
-          Av. Ppal. de la Castellana, Centro Letonia, Piso 12, Oficina 126. Caracas - Venezuela </p>
-          <p> 
-Master +58 (212) 263.4393
-</p>
-<p>
-info@globalratings.com
+          Av. Ppal. de la Castellana, Centro Letonia, Piso 12, Oficina 126. 
+          <br/> Caracas - Venezuela <br/>
+         Master +58 (212) 263.4393<br/>
+        info@globalratings.com
           </p>
           </MDBCol>
-          <MDBCol md="3">
+          <MDBCol className="col-footer" md="3">
             <h5 className="title">Acerca de Nosotros</h5>
+            
             <p>
             
             </p>
           </MDBCol>
           <MDBCol md="3">
+          <h5 className="title">Menu </h5>
           <ul className="nav-links">
            <li>
             <MDBNavLink 
@@ -286,11 +293,7 @@ info@globalratings.com
               pathname:`/terminos/${country}`
             }}> Términos y Condiciones </MDBNavLink>
          </li>
-         <li> 
-            <MDBNavLink tag= {Link} to= {{
-              pathname:`/mapa/${country}`
-            }}> Mapa del Site </MDBNavLink>
-              </li>
+      
         
        </ul>
           </MDBCol>
@@ -308,29 +311,4 @@ info@globalratings.com
 }
 
 
-const FinanzasDigitalLogo = styled.div`
-display:inline-block; 
-background: url("${require("assets/img/pic_footerlogoFD_gris.png")}") no-repeat center; 
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-width:11rem;
-height:5rem; 
-transition: all 0.3s ease-out; 
-&:hover{
-  background-image: url("${require("assets/img/pic_footerlogoFD_color.png")}"); 
-}
-`
-const GlobalScopeLogo = styled.div`
-display:inline-block; 
-background: url("${require("assets/img/pic_footerlogoGS_gris.png")}") no-repeat center; 
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-width:15rem;
-height:3rem; 
-transition: all 0.3s ease-out; 
-&:hover{
-  background-image: url("${require("assets/img/pic_footerlogoGS_color.png")}"); 
-}
-`
+

@@ -55,14 +55,3 @@ export default function DictamenesDeCaificacion() {
        
     </div>); 
 }
-
-const LoadContainer = styled.div`
- display:flex; 
- width:100%; 
- margin-bottom:2rem; 
-  justify-content:center; 
-  align-items:center; 
-  img {
-    width:20rem; 
-  }
-`

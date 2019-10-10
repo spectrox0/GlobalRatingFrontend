@@ -2,9 +2,13 @@ import React from "react";
 import styled from "styled-components"
 export default function Error404 () {
   
-    return(<Container404> 
-        <p> ERROR 404 PAGINA NO ENCONTRADA </p>
-    </Container404>)
+    return(
+        <div className="loadingPage"> 
+        <div class="spinner-grow text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+</div>
+    )
 
 
 }

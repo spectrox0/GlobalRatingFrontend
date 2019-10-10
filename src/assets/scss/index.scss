@@ -1,6 +1,20 @@
 @import './variables';
 @import './mixins/index.scss'; 
 
+body {
+    margin: 0;
+    font-family: $font-primary;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  * {
+    font-family: $font-primary;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+
 @import './components/navbar.scss';
 @import './components//toggle.scss';
 @import './components/header.scss';
@@ -12,3 +26,4 @@
 @import './views/dictamenes.scss'; 
 @import './views//noticias.scss';
 @import './views/index.scss';
+@import './views/loadingPage.scss'; 

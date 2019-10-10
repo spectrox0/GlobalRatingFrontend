@@ -6,9 +6,11 @@ import country from './../../context/region.js'
 import Toggler from './../Navbars/Toggler.js'
 
 import {
-  MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBFormInline,
+  MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBCollapse,
   MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem
   } from "mdbreact"
+
+  
 
 
 export default function NavbarGlobal() {
@@ -54,14 +56,15 @@ export default function NavbarGlobal() {
         <div className="navbar-translate"> 
       <MDBNavbarBrand
              id="navbar-brand"
-        
-              tag= {Link}
-              to = {{pathname:`/index/${context.country}`}}
             >
-              <img className="GlobalRatingLogo"
+              <MDBNavLink 
+               tag= {Link}
+               to = {{pathname:`/index/${context.country}`}}
+               > <img className="GlobalRatingLogo"
                 src={navbarLogo}
                 alt=""
-              />
+              />  </MDBNavLink>
+             
         </MDBNavbarBrand>
      
          <Toggler onClick = { () => {
@@ -86,7 +89,7 @@ export default function NavbarGlobal() {
             <MDBNavItem>
               <MDBNavLink to={ {
                pathname:`/calificacion/${context.country}` }
-                } tag={Link}>Calificacion</MDBNavLink>
+                } tag={Link}>Calificación</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
               <MDBNavLink to={ {
@@ -96,12 +99,20 @@ export default function NavbarGlobal() {
                  <MDBNavItem>
               <MDBNavLink to={ {
                pathname:`/estadisticas/${context.country}` }
-                }  tag={Link} >Estatidisticas</MDBNavLink>
+                }  tag={Link} >Estadísticas</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
+              <MDBNavLink to={ {
+               pathname:`/contactanos/${context.country}` }
+                }  tag={Link} >contactanos</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              
+              
+              
               <MDBDropdown>
                 <MDBDropdownToggle nav caret>
-                  <span className="mr-2">Region</span>
+                  <span className="mr-2">Región</span>
                 </MDBDropdownToggle>
                 <MDBDropdownMenu>
                   <MDBDropdownItem onClick={ e => {
