@@ -1,9 +1,9 @@
 
 $navbar-color:  rgba(rgb(255, 255, 255), .98);
 $navbar-padding-base: 0.625rem;
-$sidenav-background: linear-gradient(#2CA8FF, rgba(0,0,0,0.95) ); 
+$sidenav-background: linear-gradient(rgba(44, 167, 255, 0.877), rgba(0, 0, 0, 0.664) ); 
 
-$filter-header: linear-gradient(#00000042,rgb(255, 255, 255)); 
+$filter-header: linear-gradient(#00000000,rgb(255, 255, 255)); 
 
 $color-letter-header: rgb(37, 37, 37);
 $height-header : 100% !important ; 
@@ -18,3 +18,5 @@ $color-primary: #2CA8FF;
 $color-secondary: rgb(38, 151, 231);
 
 $font-primary: 'Lato', sans-serif;
+
+$width-logo: 7rem; 

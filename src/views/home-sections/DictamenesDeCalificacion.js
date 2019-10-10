@@ -25,7 +25,7 @@ export default function DictamenesDeCaificacion() {
          <div className="dictamenes-title"
          >
              <h2 > 
-            DICTAMENES DE CALIFICACION 
+            DICTAMENES DE CALIFICACIÓN 
             </h2>
 
          </div>

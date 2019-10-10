@@ -14,7 +14,7 @@
     min-height: 53px;
     margin-bottom: 20px;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
-
+   
     .navbar-translate {
       display:flex; 
        justify-content: space-between; 
@@ -22,8 +22,11 @@
        max-width: 60rem;
     }
     .GlobalRatingLogo{
-        width:6rem;
+        width: $width-logo;
         @include transition(.2s, ease-in-out);
+        @media screen and (max-width:991px){
+            width: 5rem; 
+        }
     }
 
   
@@ -83,14 +86,14 @@
         
           @media screen and (max-width:991px) {
              @include navbar-collapse(); 
-            
+         
             .nav-open  {
                 .navbar-collapse{
-                    @include transform-translate-x(-18rem);
+                    @include transform-translate-x(-50%);
                 }
     
                 .toggle{
-                    @include transform-translate-x(-18rem);
+                    @include transform-translate-x(-50vw);
                 }
                
           }

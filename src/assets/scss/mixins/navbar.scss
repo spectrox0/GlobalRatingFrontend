@@ -1,12 +1,13 @@
 
 
 @mixin navbar-collapse() {
+
     .navbar-collapse{
         position: fixed;
         display: block !important;
         top: 0;
         height: 100% !important;
-        width: 18rem;
+        width: 100%;
         left: 100%;
         z-index: 1032;
         visibility: visible;

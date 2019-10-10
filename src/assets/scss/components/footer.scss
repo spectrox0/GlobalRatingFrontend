@@ -2,13 +2,19 @@
     padding-top: 1rem;
     background: $footer-color; 
     color: #FFFFFF; 
+    .row .col-footer {
+      
+        @media screen and (min-width:992px) {
+            border-right: .2rem solid rgba($footer-color-copyrigth, 0.411); 
+        }
+    }
     .finanzasDigital {
         display:inline-block; 
         background: url("../img/pic_footerlogoFD_gris.png") no-repeat center; 
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
+        -webkit-background-size: contain;
+        -moz-background-size: contain;
+        -o-background-size: contain;
+        background-size: contain;
         width:11rem;
         height:5rem; 
          @include transition(.3s , ease-in-out);
@@ -18,12 +24,12 @@
 
        .globalScope{
         display:inline-block; 
-        background: url("../img/pic_footerlogoGS_gris.png") no-repeat center; 
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        width:15rem;
+        background: url("../img/pic_footerlogoGS_gris.png") no-repeat center ; 
+        -webkit-background-size: contain;
+        -moz-background-size: contain;
+        -o-background-size: contain;
+        background-size: contain;
+        width:11rem;
         height:3rem; 
         @include transition(.3s , ease-in-out);
         &:hover{
@@ -33,13 +39,19 @@
     .footer-copyright {
         padding:.5rem;
         background: $footer-color-copyrigth; 
+        display: flex; 
+        align-items:center;
+        min-height:  4rem; 
     }
     .container-fluid {
         max-width: 60rem; 
     }
-   
+      h5 {
+          font-size: 1em;
+          text-transform: uppercase; 
+      }
     p {
-        font-size: .9em;
+        font-size: .75em;
     }
   
     .nav-links {
@@ -55,7 +67,7 @@
         li a {
             margin:.1rem; 
             padding: 0; 
-            font-size: 1em;
+            font-size: .9em;
             color:#FFFFFF
         }
 
