@@ -13,11 +13,7 @@ import Noticias from "views/home-sections/NoticiasFinanzas.js"
 import styled from 'styled-components'; 
 
 import {initGA} from './helpers/initGA.js';
-<<<<<<< HEAD
-
-=======
 import {MDBContainer} from 'mdbreact'
->>>>>>> c3f66c455a56889719c192832b9de12923455585
 export default function Index() {
   
   React.useEffect(() => {
