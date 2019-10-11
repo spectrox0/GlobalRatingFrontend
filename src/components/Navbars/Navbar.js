@@ -24,14 +24,14 @@ export default function NavbarGlobal() {
   useEffect(() => {
     const updateNavbarColor = () => {
       if (
-        document.documentElement.scrollTop > 280 ||
-        document.body.scrollTop > 280
+        document.documentElement.scrollTop > 100 ||
+        document.body.scrollTop > 100
       ) {
         setNavbarColor("");
          setNavbarLogo(require("assets/img/pic_logoGR.svg"));
       } else if (
-        document.documentElement.scrollTop < 281 ||
-        document.body.scrollTop < 281
+        document.documentElement.scrollTop < 101||
+        document.body.scrollTop < 101
       ) {
         setNavbarColor("navbar-transparent");
         setNavbarLogo(require("assets/img/globalrating_white.svg"));

@@ -4,6 +4,9 @@
 .btn-color-primary {
     background: $color-primary;
     color: #FFFFFF;
+    outline: none;
+    border: none;
+    text-decoration: none;
     &:hover {
         color: #FFFFFF;
         text-shadow: 0 0 1px  #FFFFFF;

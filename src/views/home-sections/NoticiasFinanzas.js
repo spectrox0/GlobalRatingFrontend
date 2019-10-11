@@ -14,17 +14,15 @@ export default function DictamenesDeCaificacion() {
     
   },[])
    const getJson= async () => {
-    const {data} = await axios.get("https://www.finanzasdigital.com/traeposts.php?token=aHcT639@/$muzk56&pagina=0&numNoticias=5&categoriaIncluir=-7667,-41,-1574,-7014")
+    const {data} = await axios.get("https://www.finanzasdigital.com/traeposts.php?token=aHcT639@/$muzk56&pagina=0&numNoticias=3&categoriaIncluir=-7667,-41,-1574,-7014")
       setNoticias(data);
       setLoading(false); 
    }
-   const NCard =()=> {
-       const innerJSX = noticias.map( args => {
-           return <Noticias {...args} /> 
+   const NNoticias =()=> noticias.map( noticia => 
+    <MDBCol key={noticia.id} sm="12" md="6" lg="4"> 
+    <Noticias {...noticia} /> </MDBCol>
 
-       }); 
-       return innerJSX; 
-   }
+    )
  
     return( <div className="noticias"> 
          <div className="title-noticias"> 
@@ -37,13 +35,7 @@ export default function DictamenesDeCaificacion() {
          <MDBContainer>
           <MDBCardGroup>
           <MDBRow> 
-           <MDBCol  sm="12" md="6" lg="4"> 
-          <Noticias/> </MDBCol>
- <MDBCol   sm="12" md="6" lg="4"> 
-          <Noticias/> </MDBCol>
- <MDBCol   sm="12" md="6" lg="4"> 
-          <Noticias/> </MDBCol>
-   
+           <NNoticias/>
  
   
  

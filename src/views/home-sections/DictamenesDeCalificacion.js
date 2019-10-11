@@ -10,15 +10,22 @@ export default function DictamenesDeCaificacion() {
    
   const [dictamenes, setDictamenes] = useState([]); 
    useEffect(()=> {
+     console.log("hola")
     getJson(); 
     
   },[])
+
    const getJson= async () => {
    const {data}= await axios.get("https://www.finanzasdigital.com/traeposts.php?token=aHcT639@/$muzk56&pagina=0&numNoticias=6&categoriaIncluir=7667,-7014");
     setDictamenes(data)
+    console.log(data)
   
- 
    }
+   const Dictamenes = () => dictamenes.map(
+     dictamen => 
+     <MDBCol key={dictamen.id} sm="12" md="6" lg="4">
+    <CardDictamen {...dictamen} />
+   </MDBCol>)
   
     return( 
       <div className="dictamenes"> 
@@ -32,22 +39,8 @@ export default function DictamenesDeCaificacion() {
          <MDBContainer>
           <MDBCardGroup>
           <MDBRow> 
-           <MDBCol  sm="12" md="6" lg="4"> 
-          <CardDictamen/> </MDBCol>
- <MDBCol   sm="12" md="6" lg="4"> 
-          <CardDictamen/> </MDBCol>
- <MDBCol   sm="12" md="6" lg="4"> 
-          <CardDictamen/> </MDBCol>
-          <MDBCol  sm="12" md="6" lg="4"> 
-          <CardDictamen/> </MDBCol>
- <MDBCol   sm="12" md="6" lg="4"> 
-          <CardDictamen/> </MDBCol>
- <MDBCol   sm="12" md="6" lg="4"> 
-          <CardDictamen/> </MDBCol>
- 
-  
- 
- 
+           <Dictamenes/>
+        
  </MDBRow>
   </MDBCardGroup>
          </MDBContainer>
