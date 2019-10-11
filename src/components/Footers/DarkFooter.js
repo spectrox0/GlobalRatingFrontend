@@ -200,28 +200,16 @@ export default function DarkFooter() {
       <MDBContainer style={{padding:"2rem"}} fluid className="text-center">
         <MDBRow>
           <MDBCol className="col-footer" md="3">
-          <h5 className="title">Paginas Asociadas </h5>
-          <a
-                href=""
-                target="_blank"
-              >
-           
-            <div className="finanzasDigital" />
-              </a>
-          
-              <a
-                href=""
-                target="_blank"
-              >
-               
-            <div className="globalScope" />
-     
-              </a>
+          <h5 className="title">Acerca de Nosotros</h5>
+            
+            <p>
+            
+            </p>
           </MDBCol>
           <MDBCol className="col-footer" md="3">
           <h5 className="title">Contactanos</h5>
           <iframe
-           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15692.186282877712!2d-66.8513235!3d10.4969951!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x24aa8c392b211b83!2sCentro%20Letonia!5e0!3m2!1ses-419!2sve!4v1570719130296!5m2!1ses-419!2sve" 
+           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15692.183765877204!2d-66.8512303!3d10.4970447!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1758d7d0ec0a48c6!2sFinanzas%20Digital!5e0!3m2!1ses-419!2sve!4v1570817114346!5m2!1ses-419!2sve" 
            frameborder="0"
             style={{width:"10rem", height:"8rem" ,border:0, borderRadius:"10px"}} 
             allowfullscreen="">
@@ -230,17 +218,10 @@ export default function DarkFooter() {
           Av. Ppal. de la Castellana, Centro Letonia, Piso 12, Oficina 126. 
           <br/> Caracas - Venezuela <br/>
          Master +58 (212) 263.4393<br/>
-        info@globalratings.com
+       
           </p>
           </MDBCol>
           <MDBCol className="col-footer" md="3">
-            <h5 className="title">Acerca de Nosotros</h5>
-            
-            <p>
-            
-            </p>
-          </MDBCol>
-          <MDBCol md="3">
           <h5 className="title">Menu </h5>
           <ul className="nav-links">
            <li>
@@ -296,6 +277,25 @@ export default function DarkFooter() {
       
         
        </ul>
+          </MDBCol>
+          <MDBCol md="3">
+           <h5 className="title">Paginas Asociadas </h5>
+          <a
+                href=""
+                target="_blank"
+              >
+           
+            <div className="finanzasDigital" />
+              </a>
+          
+              <a
+                href=""
+                target="_blank"
+              >
+               
+            <div className="globalScope" />
+     
+              </a>
           </MDBCol>
         </MDBRow>
       </MDBContainer>

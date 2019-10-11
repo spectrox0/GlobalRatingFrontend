@@ -44,7 +44,7 @@ const CarouselPage = () => {
           <MDBView>
             <img
               className="img-carousel"
-              src={require("./../../assets/img/carousel/Global-ratings4.jpg")}
+              src={require("./../../assets/img/carousel/Global-ratings4-2.jpg")}
               alt="Third slide"
             />
           <MDBMask overlay="black-slight" />
