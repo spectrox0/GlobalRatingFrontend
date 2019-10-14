@@ -47,7 +47,7 @@ month[11] = "Dec.";
            <div className="date">
               <span className="month">  {datee.month} </span> 
               <br/>
-              <span className="day">  {datee.day} ° </span> 
+              <span className="day">  {datee.day} </span> 
               </div>
            <MDBCardImage className="img-fluid" src={imageUrl} waves />
         
@@ -63,7 +63,6 @@ month[11] = "Dec.";
               Odit sed qui, dolorum!.</p>
           
           </MDBCardText>
-          <MDBBtn className="btn-color-primary" href="#">MDBBtn</MDBBtn>
           </MDBCardBody>
        
        

@@ -197,15 +197,14 @@ export default function DarkFooter() {
     </footer> */ 
 
     <MDBFooter>
-      <MDBContainer style={{padding:"2rem"}} fluid className="text-center">
+      <MDBContainer style={{padding:"2rem"}} fluid >
         <MDBRow>
           <MDBCol className="col-footer" md="3">
           <h5 className="title">Acerca de Nosotros</h5>
            <div  style={{display:"flex",flexDirection:"column", justifyContent:"flex-start"}} > 
-            <img src={require("./../../assets/img/pic_logoGR.svg")} style={{width:"8rem"}}/>
-            <br/> 
+        
             <p style={{textAlign:"justify"}}>
-             Sociedad Calificadora de Riesgo autorizada por la SUNAVAL desde el año 1994 para emitir una opinión independiente sobre la capacidad de pago de un emisor de títulos de deuda. 
+             Sociedad Calificadora de Riesgo autorizada por la Superintendencia Nacional de Valores (SUNAVAL) desde el año 1994 para emitir una opinión independiente sobre la capacidad de pago de un emisor de títulos de deuda. 
             </p></div>
           </MDBCol>
           <MDBCol className="col-footer" md="3">
@@ -217,7 +216,7 @@ export default function DarkFooter() {
             allowfullscreen="">
             </iframe>
           <p>
-          Av. Ppal. de la Castellana, Centro Letonia, Piso 12, Oficina 126. 
+          Avenida Principal de La Castellana, Centro Letonia, Piso 12, Oficina 126. 
           <br/> Caracas - Venezuela <br/>
          Master +58 (212) 263.4393<br/>
        
