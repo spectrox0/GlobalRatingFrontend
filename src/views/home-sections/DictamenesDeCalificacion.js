@@ -8,7 +8,7 @@ import styled from "styled-components";
 import axios from 'axios'
 export default function DictamenesDeCaificacion() {
    
-  const [dictamenes, setDictamenes] = useState([]); 
+  const [dictamenes, setDictamenes] = useState(); 
    useEffect(()=> {
      console.log("hola")
     getJson(); 
@@ -37,21 +37,31 @@ export default function DictamenesDeCaificacion() {
 
          </div>
          <MDBContainer>
-          <MDBCardGroup>
-          <MDBRow> 
-           <Dictamenes/>
+          
+          {
+              !dictamenes?  
+              <div className="container-load-posts"> 
+              <div className="spinner-grow text-primary" role="status">
+              <span className="sr-only">Cargando...</span>
+              </div>
+              </div> :
+              <MDBCardGroup>
+                <MDBRow> 
+            <Dictamenes/>
         
- </MDBRow>
-  </MDBCardGroup>
+             </MDBRow>
+               </MDBCardGroup>
+            }
+       
+    < MDBRow className="row-button"> 
+             <MDBBtn className="btn-round btn-color-primary"
+             > Ver más </MDBBtn>
+         </MDBRow>
          </MDBContainer>
          
   
-
-         < MDBRow style={{display:"flex", justifyContent:"end" , margin:"2rem"}}> 
-             <MDBBtn className="btn-round btn-color-primary"
-             style={{width:"10rem", fontSize:"1.2rem"}}
-             > Ver más </MDBBtn>
-         </MDBRow>
+         
+       
         
         </div>
   ); 

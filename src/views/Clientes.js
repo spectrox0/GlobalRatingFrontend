@@ -15,10 +15,11 @@ export default function Clientes () {
       },[]);
     const { data , loading , error , refetch} = useQuery(QUERY_EMISORES); 
 
+    
     const Clientes = () => { 
        const innerJSX = data.emisores.map( emisor => 
         <MDBCol key={emisor._id} sm="3">  
-       
+        
         </MDBCol>) 
         return innerJSX; 
     } 
@@ -26,14 +27,14 @@ export default function Clientes () {
         <>
         {loading &&  <div> <span> cargando </span> </div> }
          {error &&  <div> <span> error </span> </div> }
-          {data && <ContainerClientes> 
+          {data && <div className="clientesContainer"> 
   
   <MDBContainer> 
        <Clientes/>    
   </MDBContainer>
    
 
-  </ContainerClientes> }
+  </div> }
       
          </>
     )

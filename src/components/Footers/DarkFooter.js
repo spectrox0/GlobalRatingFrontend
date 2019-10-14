@@ -201,10 +201,12 @@ export default function DarkFooter() {
         <MDBRow>
           <MDBCol className="col-footer" md="3">
           <h5 className="title">Acerca de Nosotros</h5>
-            
-            <p>
-            
-            </p>
+           <div  style={{display:"flex",flexDirection:"column", justifyContent:"flex-start"}} > 
+            <img src={require("./../../assets/img/pic_logoGR.svg")} style={{width:"8rem"}}/>
+            <br/> 
+            <p style={{textAlign:"justify"}}>
+             Sociedad Calificadora de Riesgo autorizada por la SUNAVAL desde el año 1994 para emitir una opinión independiente sobre la capacidad de pago de un emisor de títulos de deuda. 
+            </p></div>
           </MDBCol>
           <MDBCol className="col-footer" md="3">
           <h5 className="title">Contactanos</h5>

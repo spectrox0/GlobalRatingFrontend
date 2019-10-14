@@ -15,8 +15,8 @@ export default function CardNoticias({
     useEffect(()=> {
       if(imageUrl){
           setLoading(false); 
-          var date_ = new Date(date); 
-          const day = date_.getDay(); 
+          var date_ = new Date(date);
+          const day = date_.getDate();
           var month = []
          month[0] = "Ene.";
 month[1] = "Feb.";

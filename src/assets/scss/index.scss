@@ -23,9 +23,12 @@ body {
 @import './components/cardDictamen.scss';
 @import './components/cardNoticias.scss';
 @import './components/headerBlue.scss'; 
+@import './components/spinners.scss'; 
+
 
 @import './views/dictamenes.scss'; 
 @import './views//noticias.scss';
 @import './views/index.scss';
 @import './views/loadingPage.scss'; 
 @import './views/calificacionDeRiesgo.scss'; 
+@import './views/clientes.scss';

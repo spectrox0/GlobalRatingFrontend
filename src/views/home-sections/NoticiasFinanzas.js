@@ -7,8 +7,8 @@ import { device } from './../helpers/devices';
 import { MDBBtn , MDBCol, MDBRow, MDBContainer, MDBCardTitle , MDBCardGroup , MDBCard, MDBCardBody, MDBCardImage , MDBCardText , MDBCardFooter} from "mdbreact";
 import axios from 'axios'; 
 export default function DictamenesDeCaificacion() {
-   const [noticias, setNoticias] = useState([]); 
-   const [isLoading, setLoading] = useState(true); 
+   const [noticias, setNoticias] = useState(); 
+
    useEffect(()=> {
     getJson(); 
     
@@ -16,9 +16,9 @@ export default function DictamenesDeCaificacion() {
    const getJson= async () => {
     const {data} = await axios.get("https://www.finanzasdigital.com/traeposts.php?token=aHcT639@/$muzk56&pagina=0&numNoticias=3&categoriaIncluir=-7667,-41,-1574,-7014")
       setNoticias(data);
-      setLoading(false); 
    }
-   const NNoticias =()=> noticias.map( noticia => 
+   const NNoticias =()=> noticias.map(
+     noticia => 
     <MDBCol key={noticia.id} sm="12" md="6" lg="4"> 
     <Noticias {...noticia} /> </MDBCol>
 
@@ -31,18 +31,30 @@ export default function DictamenesDeCaificacion() {
             </h2>
              <div className="underline"> </div>
          </div>
-        
+         
+     
          <MDBContainer>
-          <MDBCardGroup>
-          <MDBRow> 
-           <NNoticias/>
- 
-  
- 
- 
- </MDBRow>
-  </MDBCardGroup>
-         </MDBContainer>
+         
+            {
+              !noticias?  
+              <div className="container-load-posts"> 
+              <div className="spinner-grow text-primary" role="status">
+              <span className="sr-only">Cargando...</span>
+              </div>
+              </div> :
+               <MDBRow> 
+              <NNoticias/>
+                </MDBRow>
+            }
+             < MDBRow className="row-button"> 
+             <MDBBtn className="btn-round btn-color-primary"
+             > Ver más 
+             </MDBBtn>
+         </MDBRow>
+           </MDBContainer>
+
+           
+       
          
        
     </div>); 

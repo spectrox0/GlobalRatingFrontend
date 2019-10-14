@@ -1,6 +1,5 @@
 import React, { useState, useEffect , useContext } from "react";
 import { Link } from "react-router-dom";
-import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
 import country from './../../context/region.js'
 import Toggler from './../Navbars/Toggler.js'
@@ -91,25 +90,28 @@ export default function NavbarGlobal() {
                pathname:`/calificacion/${context.country}` }
                 } tag={Link}>Calificación</MDBNavLink>
             </MDBNavItem>
-            <MDBNavItem>
-              <MDBNavLink to={ {
-               pathname:`/clientes/${context.country}` }
-                }  tag={Link} >Clientes</MDBNavLink>
-            </MDBNavItem>
+         
                  <MDBNavItem>
               <MDBNavLink to={ {
                pathname:`/estadisticas/${context.country}` }
                 }  tag={Link} >Estadísticas</MDBNavLink>
             </MDBNavItem>
+        
+            <MDBNavItem>
+              <MDBNavLink to={ {
+               pathname:`/leyesnormativas/${context.country}` }
+                } tag={Link}>Leyes y Normativas</MDBNavLink>
+            </MDBNavItem>
+
             <MDBNavItem>
               <MDBNavLink to={ {
                pathname:`/contactanos/${context.country}` }
                 }  tag={Link} >contactanos</MDBNavLink>
             </MDBNavItem>
-            <MDBNavItem>
+           {/*   <MDBNavItem>
               
               
-              
+            
               <MDBDropdown>
                 <MDBDropdownToggle nav caret>
                   <span className="mr-2">Región</span>
@@ -143,7 +145,7 @@ export default function NavbarGlobal() {
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBNavItem>
-          
+           */ }
           </MDBNavbarNav>
         </MDBCollapse>
         </div>

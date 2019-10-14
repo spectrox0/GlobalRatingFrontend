@@ -20,6 +20,7 @@ export default function () {
             <Header
             title="Calificación de Riesgo" 
             urlImage={require("./../assets/img/headers/header1.jpg")}/>
+            
 
                     <MDBContainer >
                         <MDBRow>
@@ -49,7 +50,11 @@ export default function () {
                      
                            
                         </MDBRow>
-                        <MDBRow >
+                        <MDBRow 
+                        style={{
+                        display:"flex",
+                        justifyContent:"center"
+                        }} >
                        <MDBBtn
                               className="btn-round btn-color-primary "
                            tag={Link} to={{
@@ -171,7 +176,7 @@ export default function () {
                         <h3>Resumen de Metodología de Calificación</h3>
                              </MDBRow>
                          
-                            <MDBRow>
+                            <MDBRow className="rowLinks">
                                 <ul>
                                     <li>
                                     <a href="">Empresas no Financieras (109.344 Kb) </a>
