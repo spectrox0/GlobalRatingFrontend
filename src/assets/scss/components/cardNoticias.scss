@@ -4,8 +4,12 @@
     background:transparent;
     box-shadow: 0 0 1px rgba(0,0,0,0.4);
    border:none;
-   
     cursor: pointer;
+     @include transition(.4s , ease-in-out); 
+     &:hover{
+         box-shadow: 0 0 3px rgba(0,0,0,0.2);
+         transform : scale(1.005); 
+     }
     .date {
         position: absolute;
         color:rgb(235, 235, 235);
