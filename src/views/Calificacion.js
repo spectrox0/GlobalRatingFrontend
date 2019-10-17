@@ -8,13 +8,19 @@ import {
     MDBRow
     , MDBContainer,
     MDBBtn
+    ,MDBCollapse
 } from 'mdbreact'
 
 export default function () {
     React.useEffect(()=> {
         initGA();
       },[]);
-    
+    const [collapseID, setCollapseID] = useState(""); 
+
+    const toggleCollapse = (collapseiD) => {
+    setCollapseID( collapseID !==collapseiD? collapseiD : ""); 
+    }
+
     return (
         <div className="calificacionContainer" >
             <Header
@@ -55,18 +61,18 @@ export default function () {
                         display:"flex",
                         justifyContent:"center"
                         }} >
-                       <MDBBtn
-                              className="btn-round btn-color-primary "
-                           tag={Link} to={{
-                                 pathname: "/otorgada/VE"
-                             }}> Ver calificaciones otorgadas </MDBBtn>
+                      
                             </MDBRow>
                         <MDBRow className="subTitle" >
                             <h3>Categorías de Riesgo</h3>
                       
                             </MDBRow>
                             <MDBRow>
-                                <h4> Categoría A </h4>
+                            <MDBBtn
+                              className="btn-round btn-color-primary "
+                              onClick={  () => toggleCollapse("categoryA")}
+                          > Categoria A </MDBBtn>
+                          <MDBCollapse id="categoryA" isOpen={collapseID}>
                                 <p>
                                     Corresponde a aquellos instrumentos con una muy buena capacidad de pago de capital e intereses en los términos y plazos pactados, la cual no debería verse afectada ante eventuales cambios en el emisor, en el sector o área a que éste pertenece, o en la economía, sólo en casos extremos, pudiera afectarse levemente el riesgo del instrumento calificado.
                                 </p>
@@ -80,10 +86,16 @@ export default function () {
                                     <li>
                                         <b>Sub-Categoría A3:</b> Se trata de instrumentos que presentan para el inversor un muy bajo riesgo. Cuentan con una adecuada capacidad de pago, del capital e intereses, en los términos y plazos pactados. A juicio del calificador, sólo en casos extremos, eventuales cambios en la sociedad emisora, en el sector económico a que ésta pertenece o en la marcha de la economía en general, podrían incrementar levemente el riesgo del instrumento bajo consideración.
                                         </li>
-                                </ul>
+                                </ul> 
+                                 </MDBCollapse>
                                 </MDBRow> 
                             <MDBRow>
-                                <h4> Categoría B </h4>
+                            
+                                <MDBBtn
+                              className="btn-round btn-color-primary "
+                              onClick={  () => toggleCollapse("categoryB")}
+                          > Categoria B </MDBBtn>
+                            <MDBCollapse id="categoryB" isOpen={collapseID}> 
                                 <p>
                                     Corresponde a aquellos instrumentos con buena capacidad de pago de capital e intereses en los términos y plazos pactados, pero susceptibles de ser afectadas, en forma moderada ante eventuales cambios en el emisor, en el sector o área a que éste pertenece, o en la economía.
                                 </p>
@@ -98,9 +110,14 @@ export default function () {
                                         <b>Sub-Categoría B3:</b>  Se trata de instrumentos que presentan algún riesgo para la inversión en ellos. Tienen capacidad de pago del capital e intereses en los términos pactados, pero a juicio del calificador son susceptibles de ser afectados ante eventuales cambios en la sociedad emisora, en el sector económico a que ésta pertenece o en la marcha de los negocios en general.
                                         </li>
                                 </ul>
+                                </MDBCollapse>
                             </MDBRow>
                             <MDBRow>
-                                <h4> Categoría C </h4>
+                            <MDBBtn
+                              className="btn-round btn-color-primary "
+                              onClick={  () => toggleCollapse("categoryC")}
+                          > Categoria C </MDBBtn>
+                           <MDBCollapse id="categoryC" isOpen={collapseID}> 
                                 <p>
                                     Corresponde a aquellos instrumentos que no tienen buena capacidad de pago de capital e intereses puesto que son vulnerables ante cambios adversos en el emisor, en el sector o área a que éste pertenece o en la economía, lo que podría producir retardo en el pago o pérdida de intereses.
                                 </p>
@@ -115,24 +132,36 @@ export default function () {
                                         <b>Sub-Categoría C3: </b> Se trata de instrumentos con un alto riesgo de incumplimiento. Su probabilidad de pago, del capital e intereses, en los términos y plazo pactados, depende de una futura evolución más favorable de la sociedad emisora, del sector económico a que ésta pertenece y de la marcha de la economía en general.
                                         </li>
                                 </ul>
+                                </MDBCollapse>
                             </MDBRow>
                             <MDBRow>
-                                <h4>Categoría D</h4>
+                            <MDBBtn
+                              className="btn-round btn-color-primary "
+                              onClick={  () => toggleCollapse("categoryD")}
+                          > Categoria D </MDBBtn>
+                           <MDBCollapse id="categoryD" isOpen={collapseID}>
                                 <p>Corresponde a aquellos instrumentos que tienen una mínima capacidad de pago de capital e intereses con una elevada probabilidad de retardo en los pagos o pérdida de los mismos.
                                 </p>
+                                </MDBCollapse>
                             </MDBRow>
                             <MDBRow>
-                                <h4>Categoría E</h4>
+                            <MDBBtn
+                              className="btn-round btn-color-primary "
+                              onClick={  () => toggleCollapse("categoryE")}
+                          > Categoria E </MDBBtn>
+                          <MDBCollapse id="categoryE" isOpen={collapseID}> 
                                 <p>Corresponde a aquellos instrumentos que tienen una mínima capacidad de pago de capital e intereses con una elevada probabilidad de retardo en los pagos o pérdida de los mismos.
                                 </p>
+                                </MDBCollapse>
                             </MDBRow>
                       
-                        <MDBRow className="subTitle" >
+                        <MDBRow className="subTitle" style={{cursor:"pointer"}} onClick={  () => toggleCollapse("fases")} >
                          
                              <h3 >Fases del Proceso de Calificación</h3>
                           
                            </MDBRow>
                            <MDBRow>
+                           <MDBCollapse id="fases" isOpen={collapseID}> 
                             <ol>
                                 <li>
                                     Visita Introductoria: <span>Se planifica junto con el emisor el proceso de Calificación. Se aclaran dudas sobre el proceso. El emisor hace una presentación general de su empresa a los analistas de SOFTline Ratings. Se le entrega al emisor una lista inicial con la información mínima que debe suministrar para iniciar el proceso de calificación.
@@ -170,6 +199,7 @@ export default function () {
                                 </span>
                                     </li>
                             </ol>
+                            </MDBCollapse>
                         </MDBRow>
                         <MDBRow  className="subTitle">
                   
