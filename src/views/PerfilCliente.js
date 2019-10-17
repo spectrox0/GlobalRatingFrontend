@@ -1,5 +1,4 @@
 import React , {useEffect} from "react"; 
-import styled from 'styled-components'; 
 import { useQuery } from '@apollo/react-hooks';
 import {QUERY_EMISORES_ID} from './helpers/graphql/querys'; 
 import {initGA} from './helpers/initGA.js';
@@ -20,9 +19,7 @@ export default function PerfilCliente({location})  {
    
 
    const Emisiones = ( {emisiones} )=> {
-      const innerJSX = emisiones.map(emision => {
-      
-     return (
+      const innerJSX = emisiones.map(emision => 
          <MDBRow className="MDBRowEmision" key= {emision.id}> 
              <MDBCol> 
              <span> 
@@ -47,13 +44,13 @@ export default function PerfilCliente({location})  {
          </MDBRow>
         
      )
-      }  ); 
+      
       return innerJSX;
     
    }
  return (
- <MDBContainerPerfil> 
-    {(data && !loading) && (
+ <div className="container-profile-client"> 
+    {(data && !loading) && ( { /* 
         <MDBContainer> 
         <MDBRow className="MDBRowPresentation"> 
         <MDBCol className="MDBColImage" sm="auto"> <div className="profileImage"> 
@@ -70,51 +67,10 @@ export default function PerfilCliente({location})  {
       <Emisiones emisiones={data.emisorID.emisiones} />
   
       </MDBContainer>
-      
+    */ }
+     
     )}
  
- </MDBContainerPerfil> )
+ </div> )
 
 }
-
-const MDBContainerPerfil = styled.div`
-  margin: 3rem; 
-  min-height: 100vh; 
-  display:flex; 
-  flex-direction:MDBColumn; 
-  justify-content: center ;
-.MDBRowPresentation {
-    background:#151F42; 
-    border-radius:10px; 
-}
-
-.MDBColName {
-    margin:1rem; 
-    h3 {
-        font-size:2.5rem; 
-        MDBColor:white; 
-        font-weight:600; 
-        text-transform: uppercase; 
-        margin-top:3rem; 
-    }
-    span {
-        font-size: .9rem; 
-        MDBColor:white; 
-        text-transform: uppercase;
-    }
-}
-.profileImage { 
-    width:20rem; 
-    max-width:70% ;
-
-    img {
-        width:100%; 
-        box-shadow: 3px 3px 3px rgba(0,0,0,0.5); 
-        transform: translate(20%, 30%); 
-        object-fit:cover; 
-    }
-    
-
-}
-
-`
