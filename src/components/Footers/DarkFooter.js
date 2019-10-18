@@ -200,7 +200,7 @@ export default function DarkFooter() {
       <MDBContainer style={{padding:"2rem"}} fluid >
         <MDBRow>
           <MDBCol className="col-footer" md="3">
-          <h5 className="title">Acerca de Nosotros</h5>
+         
            <div  style={{display:"flex",flexDirection:"column", justifyContent:"flex-start"}} > 
         
             <p style={{textAlign:"justify"}}>
@@ -208,7 +208,7 @@ export default function DarkFooter() {
             </p></div>
           </MDBCol>
           <MDBCol className="col-footer" md="3">
-          <h5 className="title">Contactanos</h5>
+        
           <iframe
            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15692.183765877204!2d-66.8512303!3d10.4970447!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1758d7d0ec0a48c6!2sFinanzas%20Digital!5e0!3m2!1ses-419!2sve!4v1570817114346!5m2!1ses-419!2sve" 
            frameborder="0"
@@ -223,7 +223,7 @@ export default function DarkFooter() {
           </p>
           </MDBCol>
           <MDBCol className="col-footer" md="3">
-          <h5 className="title">Menu </h5>
+         
           <ul className="nav-links">
            <li>
             <MDBNavLink 
@@ -280,7 +280,7 @@ export default function DarkFooter() {
        </ul>
           </MDBCol>
           <MDBCol md="3">
-           <h5 className="title">Paginas Asociadas </h5>
+ 
           <a
                 href=""
                 target="_blank"

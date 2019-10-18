@@ -40,8 +40,12 @@
         @include transition(.5s , ease-in-out);
        color: rgb(70, 70, 70);
        p{
-           
         font-size: .9em;
+        overflow: hidden;
+text-overflow: ellipsis;
+-webkit-line-clamp: 5;
+display: -webkit-box;
+-webkit-box-orient: vertical;
     }
     }
     .img-fluid{

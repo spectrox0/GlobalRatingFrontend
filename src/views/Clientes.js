@@ -32,7 +32,6 @@ export default function Clientes () {
         title="Clientes" 
         urlImage={require("./../assets/img/headers/header1.jpg")} />
         {loading &&  <div> <span> cargando </span> </div> }
-         {error &&  <div> <span> error </span> </div> }
           {data && 
   <MDBContainer> 
       <MDBRow> 

@@ -7,7 +7,8 @@ export default function CardNoticias({
     id,
     imageUrl,
     date,
-    title
+    title,
+    content
    
   }) { 
     const [isLoading, setLoading] = useState(true); 
@@ -57,10 +58,7 @@ month[11] = "Dec.";
           <MDBCardTitle><strong>{title}</strong></MDBCardTitle>
           <MDBCardText>
             
-          
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
-              optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
-              Odit sed qui, dolorum!.</p>
+          {content}
           
           </MDBCardText>
           </MDBCardBody>

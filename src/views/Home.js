@@ -28,7 +28,7 @@ export default function Index() {
       document.body.classList.remove("sidebar-collapse");
     };
   });
-  React.useEffect( async ()=> {
+  React.useEffect( ()=> {
     initGA();
     getJson(); 
   },[]);

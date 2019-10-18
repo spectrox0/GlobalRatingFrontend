@@ -46,12 +46,6 @@ export default function CardDictamenes({
 
 
         <MDBCardBody>
-          <MDBCardText>
-            
-          
-            <p></p>
-          
-          </MDBCardText>
           </MDBCardBody>
         <MDBCardFooter>
             <MDBCardTitle><strong>{title}</strong></MDBCardTitle>
