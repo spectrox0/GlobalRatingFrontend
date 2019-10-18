@@ -1,10 +1,11 @@
 .card-dictamen {
-    margin:.8rem;
-    min-width:19rem;
+    margin:.5rem;
+     height: 14rem;
+    min-width:17rem;
     border: solid 20px rgb(245, 245, 245);
     box-shadow: 0 0 3px rgba(0,0,0,0.2);
-   
     cursor: pointer;
+
 
     .card-body {
         @include transition(.5s , ease-in-out);
@@ -31,10 +32,10 @@
             margin:0;
             padding:.4rem;
 
-            font-size: .9em;
+            font-size: .75em;
             color:rgb(253, 253, 253);
         }
-        background: rgba($color-primary, 0.8);
+        background: rgba($color-primary, 0.7);
     }
    
       
@@ -43,7 +44,7 @@
 .card-dictamen:hover {
     text-decoration: none;
     .card-body {
-        background: rgba($color-primary, 0.8);
+        background: rgba($color-primary, 0.7);
         visibility:visible;
     } 
     .card-footer .card-title{

@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import IndexHeader from "./../components/Headers/IndexHeader";
+import Header from "../components/Headers/headersViews/header1.js"; 
 import styled from "styled-components";
 import {
     MDBRow
-    , MDBCol
     , MDBContainer
 } from 'mdbreact'
 
@@ -58,23 +57,23 @@ export default function () {
 
    
 `
-    return (
-
-        <OtorgadaContent>
-            <div className="wrapper">
-
-                <div>
-                    <MDBContainer >
+    return ( <div className="calificacionContainer"> 
+    
+        <Header
+        title="Calificaciones Otorgadas" 
+        urlImage={require("./../assets/img/headers/header1.jpg")}/> 
+      
+            <MDBContainer className="calificacionContainer">
+                   
+           
                         <MDBRow>
-                            <h3> Calificaciones Otorgadas </h3>
-
-                            <div>
-                                <p className="sangria">
+                           
+                                <p >
                                     A lo largo de más de 12 años de experiencia en la calificación de riesgo, Global Ratings, C.A. ha calificado emisiones de un gran número de empresas pertenecientes a diferentes sectores de la economía nacional.
                                 </p>
-                            </div>
+                      
                             <div>
-                                <p className="sangria">
+                                <p >
                                     La confidencialidad en el proceso de calificación, no nos permite nombrar a todos nuestros clientes, por lo que a continuación detallamos solamente algunas que llegaron a hacer oferta pública de un título valor o nos autorizaron a hacer pública su calificación:
                                 </p>
                             </div>
@@ -151,9 +150,10 @@ export default function () {
                             </ul>
                         </MDBRow>
                     </MDBContainer>
-                </div>
-            </div>
-        </OtorgadaContent>
+         
+       
+ 
+        </div>
     );
 
 

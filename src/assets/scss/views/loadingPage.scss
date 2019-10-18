@@ -1,0 +1,16 @@
+.loadingPage{
+    display: flex; 
+    background: linear-gradient(rgb(39, 39, 39),#FFFFFF); 
+    flex-direction:column; 
+    justify-content: center;
+    min-height: 100vh; 
+    height: 100% !important; 
+    align-items: center; 
+    padding:4rem; 
+    .spinner-grow {
+  
+            width: 50vh; 
+            height: 50vh;
+        
+    }
+}

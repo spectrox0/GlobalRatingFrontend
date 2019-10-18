@@ -38,7 +38,7 @@ const CarouselPage = () => {
         <MDBCarouselItem itemId="3">
           <MDBView>
           <ContainerCarousel>
-		  <h3 className="h3-responsive">Evaluacion de Riesgo</h3>
+		  <h3 className="h3-responsive">Evaluación de Riesgo</h3>
 		  </ContainerCarousel>
           <MDBMask overlay="black-slight" />
           </MDBView>

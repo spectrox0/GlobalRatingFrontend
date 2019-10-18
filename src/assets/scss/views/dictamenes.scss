@@ -1,5 +1,7 @@
 .dictamenes {
-    margin:4rem;
+    margin-top:4rem;
+    margin-bottom:4rem;
+    width:100%;
     .dictamenes-title {
         margin-bottom:3rem;
         width:100%; 
@@ -7,6 +9,17 @@
         text-align: center;
         h2{ 
             font-size:1.8em; 
+        }
+    }
+    .row-button {
+        display:flex; 
+        justify-content: flex-end; 
+        margin:.5rem;
+        button {
+            
+            width: 10rem ;
+            font-size: 1.2em; 
+
         }
     }
     

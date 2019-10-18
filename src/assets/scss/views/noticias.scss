@@ -1,6 +1,5 @@
 .noticias {
     width: 100%;
-    padding: 2rem;
      background: rgb(250, 250, 250);
     .title-noticias{
         margin-bottom:3rem;
@@ -9,6 +8,18 @@
         text-align: center;
         h2{ 
             font-size:1.8em; 
+        }
+
+    }
+    .row-button {
+        display:flex; 
+        justify-content: flex-end; 
+        margin:.5rem;
+        margin-bottom: 2rem;
+        button {
+            width: 10rem ;
+            font-size: 1.2em; 
+
         }
     }
 }

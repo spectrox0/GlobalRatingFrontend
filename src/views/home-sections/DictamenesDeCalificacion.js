@@ -8,57 +8,60 @@ import styled from "styled-components";
 import axios from 'axios'
 export default function DictamenesDeCaificacion() {
    
-  const [dictamenes, setDictamenes] = useState([]); 
+  const [dictamenes, setDictamenes] = useState(); 
    useEffect(()=> {
+     console.log("hola")
     getJson(); 
     
   },[])
+
    const getJson= async () => {
    const {data}= await axios.get("https://www.finanzasdigital.com/traeposts.php?token=aHcT639@/$muzk56&pagina=0&numNoticias=6&categoriaIncluir=7667,-7014");
     setDictamenes(data)
+    console.log(data)
   
- 
    }
+   const Dictamenes = () => dictamenes.map(
+     dictamen => 
+     <MDBCol key={dictamen.id} sm="12" md="6" lg="4">
+    <CardDictamen {...dictamen} />
+   </MDBCol>)
   
     return( 
       <div className="dictamenes"> 
          <div className="dictamenes-title"
          >
              <h2 > 
-            DICTAMENES DE CALIFICACION 
+            DICTAMENES DE CALIFICACIÓN 
             </h2>
 
          </div>
          <MDBContainer>
-          <MDBCardGroup>
-          <MDBRow> 
-           <MDBCol  sm="12" md="6" lg="4"> 
-          <CardDictamen/> </MDBCol>
- <MDBCol   sm="12" md="6" lg="4"> 
-          <CardDictamen/> </MDBCol>
- <MDBCol   sm="12" md="6" lg="4"> 
-          <CardDictamen/> </MDBCol>
-          <MDBCol  sm="12" md="6" lg="4"> 
-          <CardDictamen/> </MDBCol>
- <MDBCol   sm="12" md="6" lg="4"> 
-          <CardDictamen/> </MDBCol>
- <MDBCol   sm="12" md="6" lg="4"> 
-          <CardDictamen/> </MDBCol>
- 
-  
- 
- 
- </MDBRow>
-  </MDBCardGroup>
+          
+          {
+              !dictamenes?  
+              <div className="container-load-posts"> 
+              <div className="spinner-grow text-primary" role="status">
+              <span className="sr-only">Cargando...</span>
+              </div>
+              </div> :
+              <MDBCardGroup>
+                <MDBRow> 
+            <Dictamenes/>
+        
+             </MDBRow>
+               </MDBCardGroup>
+            }
+       
+    < MDBRow className="row-button"> 
+             <MDBBtn className="btn-round btn-color-primary"
+             > Ver más </MDBBtn>
+         </MDBRow>
          </MDBContainer>
          
   
-
-         < MDBRow style={{display:"flex", justifyContent:"end" , margin:"2rem"}}> 
-             <MDBBtn className="btn-round btn-color-primary"
-             style={{width:"10rem", fontSize:"1.2rem"}}
-             > Ver más </MDBBtn>
-         </MDBRow>
+         
+       
         
         </div>
   ); 

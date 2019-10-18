@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {MDBCardTitle , MDBBtn , MDBCard, MDBCardBody, MDBCardText , MDBCardFooter , MDBCardImage, MDBCardHeader} from "mdbreact";
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-export default function CardDictamenes({
+export default function CardNoticias({
     id,
     imageUrl,
     date,
@@ -15,12 +15,28 @@ export default function CardDictamenes({
     useEffect(()=> {
       if(imageUrl){
           setLoading(false); 
-          var date_ = new Date(date)
-          var options = { year: "numeric", month: "long", day: "numeric"};
-          setDate(date_.toLocaleDateString("es-VE", options));
+          var date_ = new Date(date);
+          const day = date_.getDate();
+          var month = []
+         month[0] = "Ene.";
+month[1] = "Feb.";
+month[2] = "Mar.";
+month[3] = "Abr.";
+month[4] = "May.";
+month[5] = "Jun.";
+month[6] = "Jul.";
+month[7] = "Ago.";
+month[8] = "Sep.";
+month[9] = "Oct.";
+month[10] = "Nov.";
+month[11] = "Dec.";
+ var n = month[date_.getMonth()];
+      setDate({day:day , month: n}); 
+    
+          //var options = { year: "numeric", month: "long", day: "numeric"};
       }
   }, [imageUrl, date]); 
-      return (
+      return isLoading? null: (
        
            
            <MDBCard to={{
@@ -29,16 +45,16 @@ export default function CardDictamenes({
         className="card-noticia" 
          tag={Link}>
            <div className="date">
-              <span className="day"> 19 th</span> 
+              <span className="month">  {datee.month} </span> 
               <br/>
-              <span className="month"> JULY </span> 
+              <span className="day">  {datee.day} </span> 
               </div>
-           <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
+           <MDBCardImage className="img-fluid" src={imageUrl} waves />
         
 
 
         <MDBCardBody>
-          <MDBCardTitle><strong>This is the card title</strong></MDBCardTitle>
+          <MDBCardTitle><strong>{title}</strong></MDBCardTitle>
           <MDBCardText>
             
           
@@ -47,7 +63,6 @@ export default function CardDictamenes({
               Odit sed qui, dolorum!.</p>
           
           </MDBCardText>
-          <MDBBtn className="btn-color-primary" href="#">MDBBtn</MDBBtn>
           </MDBCardBody>
        
        

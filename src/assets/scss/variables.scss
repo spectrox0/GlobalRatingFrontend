@@ -1,11 +1,14 @@
 
 $navbar-color:  rgba(rgb(255, 255, 255), .98);
 $navbar-padding-base: 0.625rem;
-$sidenav-background: linear-gradient(#2CA8FF, rgba(0,0,0,0.95) ); 
+$sidenav-background: linear-gradient(rgba(44, 167, 255, 0.877), rgba(0, 0, 0, 0.664) ); 
 
-$filter-header: linear-gradient(#2c2c3981,rgba(44, 167, 255, 0.01)); 
+$filter-header: linear-gradient(#2c2c393f 50%,  rgba(255, 255, 255, 0.65) 70%, rgb(255, 255, 255) 100%); 
 
-$height-header : 35rem; 
+$color-letter-header: rgb(37, 37, 37);
+$height-header : 75vh; 
+
+
 
 $footer-color: #2c2c39; 
 $footer-color-copyrigth:#242433;
@@ -13,3 +16,7 @@ $footer-color-copyrigth:#242433;
 $navbar-transparent: rgba(206, 206, 206, 0.4);
 $color-primary: #2CA8FF;
 $color-secondary: rgb(38, 151, 231);
+
+$font-primary: 'Lato', sans-serif;
+
+$width-logo: 7rem; 

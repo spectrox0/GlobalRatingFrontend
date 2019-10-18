@@ -1,14 +1,15 @@
 import React, { useState, useEffect , useContext } from "react";
 import { Link } from "react-router-dom";
-import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
 import country from './../../context/region.js'
 import Toggler from './../Navbars/Toggler.js'
 
 import {
-  MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBFormInline,
+  MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBCollapse,
   MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem
   } from "mdbreact"
+
+  
 
 
 export default function NavbarGlobal() {
@@ -22,14 +23,14 @@ export default function NavbarGlobal() {
   useEffect(() => {
     const updateNavbarColor = () => {
       if (
-        document.documentElement.scrollTop > 280 ||
-        document.body.scrollTop > 280
+        document.documentElement.scrollTop > 100 ||
+        document.body.scrollTop > 100
       ) {
         setNavbarColor("");
          setNavbarLogo(require("assets/img/pic_logoGR.svg"));
       } else if (
-        document.documentElement.scrollTop < 281 ||
-        document.body.scrollTop < 281
+        document.documentElement.scrollTop < 101||
+        document.body.scrollTop < 101
       ) {
         setNavbarColor("navbar-transparent");
         setNavbarLogo(require("assets/img/globalrating_white.svg"));
@@ -54,14 +55,15 @@ export default function NavbarGlobal() {
         <div className="navbar-translate"> 
       <MDBNavbarBrand
              id="navbar-brand"
-        
-              tag= {Link}
-              to = {{pathname:`/index/${context.country}`}}
             >
-              <img className="GlobalRatingLogo"
+              <MDBNavLink 
+               tag= {Link}
+               to = {{pathname:`/index/${context.country}`}}
+               > <img className="GlobalRatingLogo"
                 src={navbarLogo}
                 alt=""
-              />
+              />  </MDBNavLink>
+             
         </MDBNavbarBrand>
      
          <Toggler onClick = { () => {
@@ -86,22 +88,33 @@ export default function NavbarGlobal() {
             <MDBNavItem>
               <MDBNavLink to={ {
                pathname:`/calificacion/${context.country}` }
-                } tag={Link}>Calificacion</MDBNavLink>
+                } tag={Link}>Calificación</MDBNavLink>
             </MDBNavItem>
-            <MDBNavItem>
-              <MDBNavLink to={ {
-               pathname:`/clientes/${context.country}` }
-                }  tag={Link} >Clientes</MDBNavLink>
-            </MDBNavItem>
+         
                  <MDBNavItem>
               <MDBNavLink to={ {
                pathname:`/estadisticas/${context.country}` }
-                }  tag={Link} >Estatidisticas</MDBNavLink>
+                }  tag={Link} >Estadísticas</MDBNavLink>
             </MDBNavItem>
+        
             <MDBNavItem>
+              <MDBNavLink to={ {
+               pathname:`/leyesnormativas/${context.country}` }
+                } tag={Link}>Leyes y Normativas</MDBNavLink>
+            </MDBNavItem>
+
+            <MDBNavItem>
+              <MDBNavLink to={ {
+               pathname:`/contactanos/${context.country}` }
+                }  tag={Link} >contactanos</MDBNavLink>
+            </MDBNavItem>
+           {/*   <MDBNavItem>
+              
+              
+            
               <MDBDropdown>
                 <MDBDropdownToggle nav caret>
-                  <span className="mr-2">Region</span>
+                  <span className="mr-2">Región</span>
                 </MDBDropdownToggle>
                 <MDBDropdownMenu>
                   <MDBDropdownItem onClick={ e => {
@@ -132,7 +145,7 @@ export default function NavbarGlobal() {
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBNavItem>
-          
+           */ }
           </MDBNavbarNav>
         </MDBCollapse>
         </div>

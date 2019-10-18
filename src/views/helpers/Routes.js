@@ -13,7 +13,7 @@ import Terminos from "views/Terminos.js";
 import Mapa from "views/Mapa.js";
 import Contactanos from "views/Contactanos.js";
 import Clientes from "views/Clientes.js"; 
-import Error404 from "views/Error404.js";
+import Loading from "views/Loading";
 import PerfilCliente from "views/PerfilCliente.js"
 import CountryContext from "../../context/region"
 
@@ -51,7 +51,9 @@ export default function Routes() {
    } /> 
    } /> 
    </> )}
-   <Route path="*" render = { props=> <Error404 {...props} /> }/>
+   <Route path="*" render = { props=> <Loading {...props} /> }/>
+   
+  
      
      
  
