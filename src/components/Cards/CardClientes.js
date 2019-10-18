@@ -13,8 +13,11 @@ export default function CardClientes ({id, nombre,image}) {
     <div className="card-image"> 
     <img src={image} alt="..." />
     </div>
-     <MDBCardBody> 
-     <MDBCardTitle> {nombre}</MDBCardTitle>
-    </MDBCardBody>
+    <div className="decorate3" > 
+    
+        <MDBCardTitle> {nombre}</MDBCardTitle>
+         </div>
+     
+  
     </MDBCard>); 
 }
