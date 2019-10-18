@@ -6,17 +6,10 @@ import { device } from './../helpers/devices';
 // reactstrap components
 import { MDBBtn , MDBCol, MDBRow, MDBContainer, MDBCardTitle , MDBCardGroup , MDBCard, MDBCardBody, MDBCardImage , MDBCardText , MDBCardFooter} from "mdbreact";
 import axios from 'axios'; 
-export default function DictamenesDeCaificacion() {
-   const [noticias, setNoticias] = useState(); 
+export default function NoticiasFinanzas({noticias}) {
 
-   useEffect(()=> {
-    getJson(); 
-    
-  },[])
-   const getJson= async () => {
-    const {data} = await axios.get("https://www.finanzasdigital.com/traeposts.php?token=aHcT639@/$muzk56&pagina=0&numNoticias=3&categoriaIncluir=-7667,-41,-1574,-7014")
-      setNoticias(data);
-   }
+ 
+   
    const NNoticias =()=> noticias.map(
      noticia => 
     <MDBCol key={noticia.id} sm="12" md="6" lg="4"> 

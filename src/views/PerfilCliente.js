@@ -7,6 +7,8 @@ import {
     MDBCol, 
     MDBContainer
 }  from 'mdbreact'; 
+import Header from './../components/Headers/headersViews/header2'; 
+
 export default function PerfilCliente({location})  {
     React.useEffect(()=> {
         initGA();
@@ -50,7 +52,21 @@ export default function PerfilCliente({location})  {
    }
  return (
  <div className="container-profile-client"> 
-    {(data && !loading) && ( { /* 
+
+    {(data && !loading)?  ( 
+        <>
+          <Header
+          title="Perfil de cliente" 
+          urlImage={require("./../assets/img/headers/header1.jpg")} 
+          profileImage = {data.emisorID.logo} 
+          name = {data.emisorID.nombre}/>
+     <MDBContainer> </MDBContainer>
+     </>
+    ) : <Header
+    title="Perfil de cliente" 
+    urlImage={require("./../assets/img/headers/header1.jpg")} /> }
+
+{ /* 
         <MDBContainer> 
         <MDBRow className="MDBRowPresentation"> 
         <MDBCol className="MDBColImage" sm="auto"> <div className="profileImage"> 
@@ -68,9 +84,6 @@ export default function PerfilCliente({location})  {
   
       </MDBContainer>
     */ }
-     
-    )}
- 
  </div> )
 
 }

@@ -8,7 +8,7 @@ export default function CardClientes ({id, nombre,image}) {
         search: `?id=${id}`}}  
          tag={Link}
           className="cardClientes" > 
-     <MDBCardImage  className="img-fluid"  src={image} waves/> 
+     <MDBCardImage  className="img-fluid" style={{height:"8rem"}}  src={image} waves/> 
      <MDBCardTitle> {nombre}</MDBCardTitle>
 
     </MDBCard>); 

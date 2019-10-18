@@ -6,21 +6,8 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import styled from "styled-components"; 
 import axios from 'axios'
-export default function DictamenesDeCaificacion() {
+export default function DictamenesDeCaificacion({dictamenes}) {
    
-  const [dictamenes, setDictamenes] = useState(); 
-   useEffect(()=> {
-     console.log("hola")
-    getJson(); 
-    
-  },[])
-
-   const getJson= async () => {
-   const {data}= await axios.get("https://www.finanzasdigital.com/traeposts.php?token=aHcT639@/$muzk56&pagina=0&numNoticias=6&categoriaIncluir=7667,-7014");
-    setDictamenes(data)
-    console.log(data)
-  
-   }
    const Dictamenes = () => dictamenes.map(
      dictamen => 
      <MDBCol key={dictamen.id} sm="12" md="6" lg="4">
