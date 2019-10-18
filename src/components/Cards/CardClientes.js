@@ -8,6 +8,8 @@ export default function CardClientes ({id, nombre,image}) {
         search: `?id=${id}`}}  
          tag={Link}
           className="cardClientes" > 
+          <div className="decorate1" />
+          <div className="decorate2" />
     <div className="card-image"> 
     <img src={image} alt="..." />
     </div>

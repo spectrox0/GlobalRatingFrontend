@@ -9,7 +9,6 @@
         text-decoration: none;
         box-shadow: inset 2px 2px 2px rgba(0,0,0,0.1) ,3px 3px 3px rgba(0,0,0,0.3);
         opacity: .8;
-        border: solid blue 1px; 
     }
     .card-image{
         width:100%;
@@ -23,13 +22,28 @@
         }
         
     }
+    .decorate1 {
+        position: absolute;
+        clip-path: polygon(10% 0, 30% 0, 0 30%, 0 10%);
+        background:linear-gradient($color-primary,black);
+        height: 7rem;
+        width: 7rem;
+    }
+    .decorate2 {
+        position: absolute;
+        right:0; 
+        clip-path: polygon(70% 0, 90% 0, 100% 10%, 100% 30%);
+        background: linear-gradient($color-primary,black);
+        height: 7rem;
+        width: 7rem;
+    }
     .card-title {
       margin:0;
         text-align: center;
         text-transform: uppercase;
         font-weight: 600;
         font-size: 1em;
-        text-shadow: 0 0 3px rgba(0,0,0,0.1);
+        text-shadow: 0 0 3px rgba(0,0,0,0.4);
         border-bottom: solid cornflowerblue 1px;
        
           color: $color-title1;
