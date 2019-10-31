@@ -9,10 +9,21 @@
         text-align: center;
         h2{ 
             font-size:1.8em; 
+            display: flex;
+            flex-direction: column;
+            text-align: justify;
+            &:after {
+                content: "";
+                height: .1rem;
+                background: $color-secondary;
+                width: 30rem; 
+                max-width: 100%; }
+    
         }
     }
     .row-button {
         display:flex; 
+       
         justify-content: flex-end; 
         margin:.5rem;
         button {

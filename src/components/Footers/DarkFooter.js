@@ -200,7 +200,7 @@ export default function DarkFooter() {
       <MDBContainer style={{padding:"2rem"}} fluid >
         <MDBRow>
           <MDBCol className="col-footer" md="3">
-         
+          <h4> Global Rating </h4>
            <div  style={{display:"flex",flexDirection:"column", justifyContent:"flex-start"}} > 
         
             <p style={{textAlign:"justify"}}>
@@ -208,13 +208,8 @@ export default function DarkFooter() {
             </p></div>
           </MDBCol>
           <MDBCol className="col-footer" md="3">
-        
-          <iframe
-           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15692.183765877204!2d-66.8512303!3d10.4970447!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1758d7d0ec0a48c6!2sFinanzas%20Digital!5e0!3m2!1ses-419!2sve!4v1570817114346!5m2!1ses-419!2sve" 
-           frameborder="0"
-            style={{width:"100%", height:"8rem" ,border:0, borderRadius:"10px"}} 
-            allowfullscreen="">
-            </iframe>
+           <h4> Direccion </h4>
+          
           <p>
           Avenida Principal de La Castellana, Centro Letonia, Piso 12, Oficina 126. 
           <br/> Caracas - Venezuela <br/>
@@ -224,60 +219,13 @@ export default function DarkFooter() {
           </MDBCol>
           <MDBCol className="col-footer" md="3">
          
-          <ul className="nav-links">
-           <li>
-            <MDBNavLink 
-             onClick={ e=> {scroll.scrollToTop()}}
-            tag= {Link} 
-            to= {{
-              pathname:`/nosotros/${country}`
-            }} > Nosotros </MDBNavLink>
-           </li>
-           <li>  <MDBNavLink
-            onClick={ e=> {scroll.scrollToTop()}}
-            tag= {Link}
-            to= {{
-              pathname:`/clientes/${country}`
-            }} > Clientes </MDBNavLink>
-           </li>
-           <li> <MDBNavLink
-            onClick={ e=> {scroll.scrollToTop()}}
-            tag= {Link}
-           to= {{
-              pathname:`/calificacion/${country}`
-            }} > Calificacion de Riesgos </MDBNavLink>
-           </li>
-           <li>  <MDBNavLink 
-            onClick={ e=> {scroll.scrollToTop()}}
-           tag= {Link}
-           to= {{
-              pathname:`/leyesnormativas/${country}`
-            }} > Leyes y Normativas </MDBNavLink>
-           </li>
-           <li>  <MDBNavLink 
-            onClick={ e=> {scroll.scrollToTop()}}
-           tag= {Link}
-           to= {{
-              pathname:`/estadisticas/${country}`
-            }} > Estadísticas de Mercado </MDBNavLink>
-           </li>
-           <li>  <MDBNavLink 
-            onClick={ e=> {scroll.scrollToTop()}}
-           tag= {Link} 
-           to= {{
-              pathname:`/contactanos/${country}`
-            }} > Contacto </MDBNavLink>
-           </li>           
-           <li> 
-       <MDBNavLink 
-           onClick={ e=> {scroll.scrollToTop()}}
-           tag= {Link}to= {{
-              pathname:`/terminos/${country}`
-            }}> Términos y Condiciones </MDBNavLink>
-         </li>
-      
-        
-       </ul>
+       
+       <iframe
+           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15692.183765877204!2d-66.8512303!3d10.4970447!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1758d7d0ec0a48c6!2sFinanzas%20Digital!5e0!3m2!1ses-419!2sve!4v1570817114346!5m2!1ses-419!2sve" 
+           frameborder="0"
+            style={{width:"100%", height:"8rem" ,border:0, borderRadius:"10px"}} 
+            allowfullscreen="">
+            </iframe>
           </MDBCol>
           <MDBCol md="3">
  
@@ -302,9 +250,14 @@ export default function DarkFooter() {
       </MDBContainer>
       <div className="footer-copyright text-center">
         <MDBContainer fluid>
-     
+        
           GlobalRatings, C.A. RIF: J-123456789-0.
           Todos los derechos reservados © {new Date().getFullYear()}.
+          <MDBNavLink 
+           onClick={ e=> {scroll.scrollToTop()}}
+           tag= {Link}to= {{
+              pathname:`/terminos/${country}`
+            }}> Términos y Condiciones </MDBNavLink> 
         </MDBContainer>
       </div>
     </MDBFooter>

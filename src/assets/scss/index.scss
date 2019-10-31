@@ -26,7 +26,8 @@ body {
 @import './components/headerView.scss'; 
 @import './components/spinners.scss'; 
 @import './components/cardEmision.scss';
-
+@import './components/modal.scss'; 
+@import './components/switch.scss'; 
 
 @import './views/dictamenes.scss'; 
 @import './views//noticias.scss';
@@ -35,3 +36,4 @@ body {
 @import './views/calificacionDeRiesgo.scss'; 
 @import './views/clientes.scss';
 @import './views/profileClient.scss';
+@import './views/dictamen.scss'; 

@@ -74,7 +74,7 @@ export default function NavbarGlobal() {
 
         <MDBCollapse id="navbarCollapse3" isOpen={collapseOpen} navbar>
           
-          <MDBNavbarNav right>
+          <MDBNavbarNav left>
           <MDBNavItem active> 
               <MDBNavLink to= {{
                pathname:`/nosotros/${context.country}` }
@@ -108,6 +108,7 @@ export default function NavbarGlobal() {
                pathname:`/contactanos/${context.country}` }
                 }  tag={Link} >contactanos</MDBNavLink>
             </MDBNavItem>
+            
            {/*   <MDBNavItem>
               
               
@@ -146,6 +147,45 @@ export default function NavbarGlobal() {
               </MDBDropdown>
             </MDBNavItem>
            */ }
+          </MDBNavbarNav>
+          <MDBNavbarNav right> 
+          <MDBNavItem>
+              
+              
+            
+              <MDBDropdown>
+                <MDBDropdownToggle nav caret>
+                  <span className="mr-2">Región</span>
+                </MDBDropdownToggle>
+                <MDBDropdownMenu>
+                  <MDBDropdownItem onClick={ e => {
+             context.changeCountry("ve"); 
+             localStorage.setItem("country","ve")
+            }}
+          tag = {Link} 
+          to= {{ 
+            pathname:"/index/ve"}}
+          > 
+          <img
+              src={require("assets/img/flags/VE.png")}
+              alt="Venezuela"
+              style={{height:"1rem"}}
+                  /> {" "}  -Venezuela </MDBDropdownItem>
+                  <MDBDropdownItem  onClick={e => {
+            context.changeCountry("pa"); 
+           localStorage.setItem("country", "pa")
+          } } tag = {Link} 
+          to= {{ 
+            pathname:"/index/pa"}}
+          > 
+          <img
+              src={require("assets/img/flags/PA.png")}
+              alt="Venezuela"
+              style={{height:"1rem"}}
+                  /> {" "}   -Panama </MDBDropdownItem>
+                </MDBDropdownMenu>
+              </MDBDropdown>
+            </MDBNavItem>
           </MDBNavbarNav>
         </MDBCollapse>
         </div>

@@ -14,3 +14,23 @@
 
     }
 }
+
+.btn-invisible{
+    padding:0; 
+    margin: 0; 
+    display: flex;
+    justify-content: flex-end;
+    
+    &:focus {
+        outline: none;
+        box-shadow: none;
+        
+    }
+   i {
+       color: $color-tertiary; 
+       font-size: 3em; 
+       &:focus, &:hover {
+           opacity: .9;
+       }
+   }
+}

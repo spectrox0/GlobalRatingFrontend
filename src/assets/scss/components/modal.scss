@@ -1,0 +1,14 @@
+.modal-open { overflow-y: scroll } 
+
+.modal {
+    .modal-header,.modal-footer {
+        border:none;
+    }
+    
+        *:focus {
+            outline: none ;
+            border:none; 
+        }
+    
+  
+}
