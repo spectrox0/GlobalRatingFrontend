@@ -8,8 +8,16 @@ export default function CardClientes ({id, nombre,image}) {
         search: `?id=${id}`}}  
          tag={Link}
           className="cardClientes" > 
-     <MDBCardImage  className="img-fluid"  src={image} waves/> 
-     <MDBCardTitle> {nombre}</MDBCardTitle>
-
+          <div className="decorate1" />
+          <div className="decorate2" />
+    <div className="card-image"> 
+    <img src={image} alt="..." />
+    </div>
+    <div className="decorate3" > 
+    
+        <MDBCardTitle> {nombre}</MDBCardTitle>
+         </div>
+     
+  
     </MDBCard>); 
 }

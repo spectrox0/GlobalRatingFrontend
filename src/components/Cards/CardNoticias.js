@@ -1,16 +1,27 @@
 import React, {useState,useEffect} from 'react';
 import styled from 'styled-components';
-import {MDBCardTitle , MDBBtn , MDBCard, MDBCardBody, MDBCardText , MDBCardFooter , MDBCardImage, MDBCardHeader} from "mdbreact";
+import {MDBCardTitle ,
+       MDBBtn , 
+       MDBCard,
+        MDBCardBody,
+          MDBCardImage, 
+          MDBCardHeader, 
+        MDBModal , 
+      MDBModalHeader , 
+     MDBModalBody ,
+     MDBModalFooter} from "mdbreact";
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 export default function CardNoticias({
     id,
     imageUrl,
     date,
-    title
+    title,
+    content
    
   }) { 
     const [isLoading, setLoading] = useState(true); 
+    const [isOpen, setIsOpen] = useState(false); 
     const [datee,setDate] = useState(""); 
     useEffect(()=> {
       if(imageUrl){
@@ -36,14 +47,16 @@ month[11] = "Dec.";
           //var options = { year: "numeric", month: "long", day: "numeric"};
       }
   }, [imageUrl, date]); 
+
+  const toggle = () => {
+    setIsOpen(!isOpen); 
+  }
       return isLoading? null: (
-       
-           
-           <MDBCard to={{
-      pathname: '/noticia',
-      search: `?id=${id}`}} 
-        className="card-noticia" 
-         tag={Link}>
+        <> 
+           <MDBCard 
+        className="card-noticia"
+        onClick={toggle}
+         >
            <div className="date">
               <span className="month">  {datee.month} </span> 
               <br/>
@@ -55,20 +68,35 @@ month[11] = "Dec.";
 
         <MDBCardBody>
           <MDBCardTitle><strong>{title}</strong></MDBCardTitle>
-          <MDBCardText>
+           { /* <MDBCardText>
             
+          {content}
           
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
-              optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
-              Odit sed qui, dolorum!.</p>
-          
-          </MDBCardText>
+          </MDBCardText>*/} 
           </MDBCardBody>
        
-       
-        
          </MDBCard>
-        
+          
+          <MDBModal isOpen={isOpen}  toggle={toggle} size="lg" > 
+          <MDBModalHeader toggle={toggle}> </MDBModalHeader>
+          <MDBModalBody> 
+            <div className="title"> 
+           <h3> {title} </h3>
+          </div>
+          <div className="date"> 
+
+          
+          </div>
+          <div className="content"> 
+          {content}
+          </div>
+           </MDBModalBody>
+          <MDBModalFooter>
+              <MDBBtn className="btn-round btn-primary" onClick={toggle}>Ver en Finanzas Digital</MDBBtn>
+          <MDBBtn className="btn-round btn-primary" onClick={toggle}>Cerrar</MDBBtn>
+        </MDBModalFooter>
+          </MDBModal>
+        </>
      ); 
    
 

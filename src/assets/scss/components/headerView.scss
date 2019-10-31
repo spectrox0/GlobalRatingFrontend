@@ -1,26 +1,16 @@
 .headerView{
    width: 100%;
    height: 13rem;
+   opacity: .9; 
    background: $color-secondary; 
-   img {
-       position:absolute; 
-       z-index: 100;
-       width: 100%;
-       height: 13rem;
-       object-fit: fill;
-   }
+
    @media screen and (max-width:992px) {
     height: 12rem;
-    img{
-        height: 12rem;
-    }
+  
     
    }
    @media screen and (max-width:768px) {
     height: 11rem;
-    img{
-        height: 11rem;
-    }
     
    }
    h1 { 
@@ -42,4 +32,72 @@
 
    }
 
+}
+.headerView2{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 18rem;
+    background: $color-secondary; 
+
+    h1 { 
+        position: relative;
+        font-weight: 600;
+        z-index: 150;
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+        text-shadow:  2px 2px 2px rgba(0,0,0,0.2);
+        font-size:2.5em;
+        @media screen and (max-width:992px) {
+          top: -1rem; 
+         font-size:2em;
+        }
+        @media screen and (max-width:768px) {
+            top: -2rem; 
+         font-size:1.5em;
+        }
+ 
+    }
+    .containerProfile {
+      position: relative;
+      bottom: 0; 
+      width:60rem;
+      max-width: 100%;  
+      height: 7rem !important;
+      background: rgba(255,255,255,0.7);
+      box-shadow: 0 0 2px rgba(255,255,255,0.8);
+      display: flex;
+      
+      img{
+          position: relative;
+          top:-2rem; 
+          margin: .3rem; 
+          margin-left: 1.5rem; 
+          width: 8rem; 
+          height: 8rem;
+          object-fit: fill;
+          @media screen and (max-width:768px) {
+            width: 6rem; 
+            height: 6rem;
+          }
+      }
+      span {
+          color:$color-title1;
+          text-shadow: 0 0 2px rgba(0,0,0,0.5); 
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 2.5em;
+          margin:1rem; 
+          @media screen and (max-width:992px) {
+            font-size:2em;
+           }
+           @media screen and (max-width:768px) {
+            font-size:1.5em;
+           }
+      }
+    }
+  
 }

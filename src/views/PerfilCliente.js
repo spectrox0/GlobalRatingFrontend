@@ -5,8 +5,13 @@ import {initGA} from './helpers/initGA.js';
 import {
     MDBRow , 
     MDBCol, 
-    MDBContainer
+    MDBContainer, 
+    MDBTooltip,
+    MDBBtn
 }  from 'mdbreact'; 
+import Header from './../components/Headers/headersViews/header2'; 
+import CardEmisiones from './../components/Cards/CardEmisiones.js'; 
+
 export default function PerfilCliente({location})  {
     React.useEffect(()=> {
         initGA();
@@ -21,26 +26,8 @@ export default function PerfilCliente({location})  {
    const Emisiones = ( {emisiones} )=> {
       const innerJSX = emisiones.map(emision => 
          <MDBRow className="MDBRowEmision" key= {emision.id}> 
-             <MDBCol> 
-             <span> 
-         ID DICTAMEN : {emision.idDictamen}
-        </span>
-             </MDBCol>
-             <MDBCol> 
-             <span> 
-        ID EMISION {emision.idProvidencia}
-        </span>
-             </MDBCol>
-             <MDBCol> 
-             <span> 
-        ID PROSPECTO {emision.idProspecto}
-        </span>
-             </MDBCol>
-             <MDBCol> 
-             <span> 
-        ID PROSPECTO {emision.fechaAprovacion}
-        </span>
-             </MDBCol>
+            
+             <CardEmisiones fecha={emision.fechaAprovacion} />
          </MDBRow>
         
      )
@@ -50,7 +37,59 @@ export default function PerfilCliente({location})  {
    }
  return (
  <div className="container-profile-client"> 
-    {(data && !loading) && ( { /* 
+
+    {(data && !loading)?  ( 
+        <>
+          <Header
+          title="Perfil de cliente" 
+          urlImage={require("./../assets/img/carousel/Global-ratings4-2.jpg")} 
+          profileImage = {data.emisorID.logo} 
+          name = {data.emisorID.nombre}/>
+           <div className="networksContainer"> 
+           <MDBTooltip placement="top"> 
+    <MDBBtn className="webSocial">  
+    <i className="fa fa-instagram fa-lg"></i>
+        </MDBBtn>
+        <div> 
+           Instagram
+        </div>
+        </MDBTooltip>
+        <MDBTooltip placement="top"> 
+        <MDBBtn className="webSocial"> 
+       
+        <i className="fa fa-twitter fa-lg"></i>
+       </MDBBtn>
+       <div> Twitter </div>
+       </MDBTooltip>
+       <MDBTooltip placement="top"> 
+        <MDBBtn className="webSocial"> 
+        <i className="fa fa-facebook fa-lg " ></i> </ MDBBtn>
+        <div> Facebook</div>
+        </MDBTooltip>
+        <MDBTooltip placement="top"> 
+        <MDBBtn className="webSocial"> 
+        <i className="fa fa-home fa-lg "></i> </MDBBtn>
+        <div> Website </div>
+        </MDBTooltip>
+</div>
+
+
+     <MDBContainer> 
+         <section className="description">
+         <div className="line" /> <p> 
+         Fusce nisi massa, auctor quis nibh et, pulvinar aliquet metus. Morbi euismod sed purus sit amet dictum. Vivamus sit amet vehicula mi, semper varius velit. Suspendisse eu dui ac ex bibendum sollicitudin. In ligula augue, convallis eget porttitor nec, interdum at felis. Phasellus est turpis, tincidunt sit amet porttitor et, accumsan sit amet nisl. Duis ultrices vehicula massa in fringilla. Mauris quis fermentum quam. Maecenas sed augue finibus, gravida risus ut, sodales eros. Maecenas ac velit dignissim, convallis enim eget, porta tellus. Proin sit amet elit eget nibh scelerisque semper ac at tellus.
+         </p>  </section>
+         <section className="emisiones"> 
+         <h3> Emisiones </h3>
+         <Emisiones emisiones={data.emisorID.emisiones} />
+         </section>
+         </MDBContainer>
+     </>
+    ) : <Header
+    title="Perfil de cliente" 
+    urlImage={require("./../assets/img/headers/header1.jpg")} /> }
+
+{ /* 
         <MDBContainer> 
         <MDBRow className="MDBRowPresentation"> 
         <MDBCol className="MDBColImage" sm="auto"> <div className="profileImage"> 
@@ -68,9 +107,6 @@ export default function PerfilCliente({location})  {
   
       </MDBContainer>
     */ }
-     
-    )}
- 
  </div> )
 
 }

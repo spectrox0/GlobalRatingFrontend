@@ -1,6 +1,20 @@
  .calificacionContainer {
      display:flex; 
      flex-direction: column;
+     .title-calificacion {
+        h2 {
+        font-size:1.8em; 
+        display: flex;
+        flex-direction: column;
+        text-align: justify;
+        &:after {
+            content: "";
+            height: .11rem;
+            background: $color-secondary;
+            width: 40rem; 
+            max-width: 100%; }
+
+     } }
      .container{
         margin-top:2rem; 
       p {
@@ -14,22 +28,25 @@
           }
       }
         .btn-color-primary {
-            font-size: 1.5em;
-            width: 19rem;
+            font-size: 1.1em;
+            margin: .5rem; 
             line-height: 1.4rem;
             max-width: 100%;
         }
 
-        .subTitle {
+        .fases {
             justify-content: flex-start;
             align-items: center;
+            width:30rem; 
+            max-width: 100%;
             padding: .7rem;
+            border-radius: 500px;
             padding-left: 1.2rem;
             margin-top: .8rem;
             margin-bottom: .8rem;
             
             background: $color-primary;
-            h3{
+            h2 {
                 vertical-align: center;
                 margin:0;
                 font-weight: bold;
@@ -39,6 +56,13 @@
                 @media screen and (max-width:992px) {
                     font-size: 1em;
                 }
+            
+            } i {
+                vertical-align: center;
+                    color: #FFFFFF;
+                    font-size: 1.2em;
+                    padding-left: 1rem; 
+               
             }
           
         }
@@ -58,25 +82,21 @@
 
      .rowLinks {
        ul {
-            li { padding-left:1rem;}
+            li { padding-left:0}
            li a {
                color: $color-primary;
+           } 
+            li {
+               font-size: 1em;
+           } i {
+               font-size: 1.2em;
            }
           a:hover {
               text-decoration: none;
               color: $color-secondary; 
               text-shadow: .3px .3px .3px rgba(0,0,0,0.3);
           }
-          li::before {
-             
-            content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-            color: $color-primary; /* Change the color */
-            font-weight: bold; /* If you want it to be bold */
-            display: inline-block; /* Needed to add space between the bullet and the text */
-            width: 1em; /* Also needed for space (tweak if needed) */
-            margin-left: -1em; /* Also needed for space (tweak if needed) */
-          
-          }
+    
        }
      }
  }

@@ -9,30 +9,9 @@ export default function CardDictamenes({
     title
    
   }) { 
-    const [isLoading, setLoading] = useState(true); 
-    const [datee ,setDate] = useState(""); 
-     useEffect(()=> {
-       if(imageUrl){
-          var date_ = new Date(date)
-          var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};
-          setDate(date_.toLocaleDateString("es-VE", options));
-          setLoading(false); 
-         
-       }  
-     
-   },[imageUrl,date]); 
+   
 
-      return isLoading? (
-       <div>
-         <img 
-      src={require("../../assets/img/blockLoad.svg")}
-       alt="..."/> 
-        <span> Loading...</span>
-        </div>
-      
-       ) : (
-      
-     
+      return  (
        <MDBCard to={{
         pathname: '/dictamen',
         search: `?id=${id}`}} 
@@ -46,12 +25,6 @@ export default function CardDictamenes({
 
 
         <MDBCardBody>
-          <MDBCardText>
-            
-          
-            <p></p>
-          
-          </MDBCardText>
           </MDBCardBody>
         <MDBCardFooter>
             <MDBCardTitle><strong>{title}</strong></MDBCardTitle>
