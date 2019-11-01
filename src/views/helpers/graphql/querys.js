@@ -54,3 +54,22 @@ query emisorID($_id: String!) {
   }
 }
 `
+
+export const QUERY_NOTICIAS = gql`
+query posts($first: Int!) {
+ 
+    posts(first:$first , where: {categoryId:8}) {
+      nodes {
+        title,
+        content,
+        date,
+        featuredImage {
+          sourceUrl
+        }
+      }
+    }
+  
+  
+  
+}
+`

@@ -11,15 +11,21 @@ import Dictamenes from "views/home-sections/DictamenesDeCalificacion.js"
 import Noticias from "views/home-sections/NoticiasFinanzas.js"
 
 import {initGA} from './helpers/initGA.js';
-
+import { useQuery} from '@apollo/react-hooks';
+import {QUERY_NOTICIAS} from './helpers/graphql/querys'
 import axios from 'axios'; 
 export default function Index() {
-  
+  import { ApolloClient } from 'apollo-client';
+
+  const customClient = new ApolloClient({
+    uri: "https://www.finanzasdigital.com/graphql"
+  });
 
   React.useEffect( ()=> {
     initGA();
     getJson(); 
   },[]);
+   const  noticias_ = useQuery(QUERY_NOTICIAS, client=customClient):
    const [noticias,setNoticias] = React.useState(); 
    const [dictamenes,setDictamenes]= React.useState(); 
 
