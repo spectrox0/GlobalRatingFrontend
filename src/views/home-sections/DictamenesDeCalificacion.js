@@ -8,9 +8,9 @@ import styled from "styled-components";
 import axios from 'axios'
 export default function DictamenesDeCaificacion({dictamenes}) {
    
-   const Dictamenes = () => dictamenes.map(
+   const Dictamenes = () => dictamenes.posts.nodes.map(
      dictamen => 
-     <MDBCol key={dictamen.id} sm="12" md="6" lg="4">
+     <MDBCol key={dictamen.postId} sm="12" md="6" lg="4">
     <CardDictamen {...dictamen} />
    </MDBCol>)
   

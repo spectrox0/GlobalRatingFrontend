@@ -3,7 +3,9 @@ import IndexHeader from "./../components/Headers/IndexHeader";
 import axios from 'axios'
 import {initGA} from './helpers/initGA.js';
 import {MDBRow, MDBContainer, MDBCol} from 'mdbreact'; 
-
+import {QUERY_DICTAMEN} from './helpers/graphql/querys'
+import client from './helpers/graphqlClientFinanzas';
+import { useQuery} from '@apollo/react-hooks';
 
 export default function Dictamen( {location} ) { 
     const [dictamen,setDictamen] = useState([]); 
@@ -13,10 +15,17 @@ export default function Dictamen( {location} ) {
     const [scribd, setScribd] = useState("")
     const id = new URLSearchParams(location.search).get('id');
 
-    const getJson = async (id) => {
+    const  {data ,loading , error}= useQuery(QUERY_DICTAMEN,{variables: {
+      postId: id
+    } ,client  } );
+
+    const getContent= async () => { 
+      /*
        const {data} =  await axios.get(`https://www.finanzasdigital.com/traepost.php?token=aHcT639@/$muzk56&idNoticia=${id}`);
-        let dataa ; 
-        dataa =  await data.content.replace(/(?:\r\n|\r|\n)/g, '<br>');
+        */
+       let dataa ; 
+       console.log(data)
+        dataa =  await data.postBy.content.replace(/(?:\r\n|\r|\n)/g, '<br>');
       
         var Scribd = dataa.substring(
           dataa.lastIndexOf("<iframe")
@@ -27,26 +36,26 @@ export default function Dictamen( {location} ) {
     );
         setScribd(Scribd); 
         setContent(Content);
-         setDictamen(data); 
+         setDictamen(data.postBy); 
          setLoading(false); 
         }
      
         useEffect( () => {
-       getJson(id); 
-        },[id]);
+          if(data) {getContent();}
+        },[data]);
 
         React.useEffect(()=> {
             initGA();
           },[]);
    
              useEffect ( ()=> {
-                 if(dictamen.date){
+                 if(dictamen){
                 var date = new Date(dictamen.date)
                 var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};
                  setDate(date.toLocaleDateString("es-VE", options)); 
                       }
                 
-             },[dictamen.date])
+             },[dictamen])
    
         return (
           <>
@@ -91,7 +100,7 @@ export default function Dictamen( {location} ) {
             </h2> </MDBRow> 
             <MDBRow>
          <MDBCol sm="6" className="col-content" > 
-         <div className="backgroundLogo" style={{background:`url(${dictamen.imageUrl}) center no-repeat`,backgroundSize:"cover"}} />
+         <div className="backgroundLogo" style={{background:`url(${dictamen.featuredImage.sourceUrl}) center no-repeat`,backgroundSize:"cover"}} />
          <span>  {" "+date} </span>
               <div className="contentHtml" dangerouslySetInnerHTML={{ __html: content }} />
          </MDBCol>

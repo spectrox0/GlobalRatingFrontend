@@ -7,18 +7,17 @@ import { device } from './../helpers/devices';
 import { MDBBtn , MDBCol, MDBRow, MDBContainer, MDBIcon} from "mdbreact";
 import axios from 'axios'; 
 export default function NoticiasFinanzas({noticias}) {
-
  
    
-   const NNoticias =()=> noticias.map(
+   const NNoticias =()=> noticias.posts.nodes.map(
      noticia => 
-    <MDBCol key={noticia.id} sm="12" md="6" lg="4"> 
+    <MDBCol key={noticia.postId} sm="12" md="6" lg="4"> 
     <Noticias {...noticia} /> </MDBCol>
 
     )
  
     return( <div className="noticias"> 
-      
+       
          
      
          <MDBContainer>

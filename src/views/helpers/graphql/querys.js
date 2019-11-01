@@ -60,9 +60,10 @@ query posts($first: Int!) {
  
     posts(first:$first , where: {categoryId:8}) {
       nodes {
-        title,
-        content,
-        date,
+        postId
+        title
+        content
+        date
         featuredImage {
           sourceUrl
         }
@@ -71,5 +72,38 @@ query posts($first: Int!) {
   
   
   
+}
+
+
+`
+
+export const QUERY_DICTAMENES= gql`
+query posts($first: Int!) {
+    posts(first:$first , where: {categoryId:7667}) {
+      nodes {
+        postId
+        title
+        featuredImage {
+          sourceUrl
+        }
+      }
+    }
+  
+  
+}
+`
+
+export const QUERY_DICTAMEN = gql`
+query postBy($postId: Int!) {
+  postBy(postId: $postId) {
+        postId
+        title
+        content
+        date
+        featuredImage {
+          sourceUrl
+        }
+      }
+    
 }
 `

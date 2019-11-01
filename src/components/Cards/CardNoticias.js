@@ -13,8 +13,8 @@ import {MDBCardTitle ,
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 export default function CardNoticias({
-    id,
-    imageUrl,
+    postId,
+    featuredImage,
     date,
     title,
     content
@@ -23,8 +23,10 @@ export default function CardNoticias({
     const [isLoading, setLoading] = useState(true); 
     const [isOpen, setIsOpen] = useState(false); 
     const [datee,setDate] = useState(""); 
+    const [content_, setContent] = useState("");
+    const [dateFull, setDateFull] = useState("");
     useEffect(()=> {
-      if(imageUrl){
+      if(featuredImage){
           setLoading(false); 
           var date_ = new Date(date);
           const day = date_.getDate();
@@ -43,10 +45,13 @@ month[10] = "Nov.";
 month[11] = "Dec.";
  var n = month[date_.getMonth()];
       setDate({day:day , month: n}); 
-    
+      var date__= new Date(date)
+      var options = {weekday: "long", year: "numeric", month: "long", day: "numeric", hour:"numeric"};
+       setDateFull(date__.toLocaleDateString("es-VE", options)); 
+       setContent(content.replace(/(?:\r\n|\r|\n)/g, '<br>'));
           //var options = { year: "numeric", month: "long", day: "numeric"};
       }
-  }, [imageUrl, date]); 
+  }, [featuredImage, date]); 
 
   const toggle = () => {
     setIsOpen(!isOpen); 
@@ -62,7 +67,7 @@ month[11] = "Dec.";
               <br/>
               <span className="day">  {datee.day} </span> 
               </div>
-           <MDBCardImage className="img-fluid" src={imageUrl} waves />
+           <MDBCardImage className="img-fluid" src={featuredImage.sourceUrl} waves />
         
 
 
@@ -84,11 +89,11 @@ month[11] = "Dec.";
            <h3> {title} </h3>
           </div>
           <div className="date"> 
-
+          <span> {dateFull}</span>
           
           </div>
           <div className="content"> 
-          {content}
+          <div className="contentHtml" dangerouslySetInnerHTML={{ __html: content_ }} />
           </div>
            </MDBModalBody>
           <MDBModalFooter>

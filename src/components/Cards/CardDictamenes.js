@@ -2,10 +2,9 @@ import React,{useState, useEffect} from 'react';
 import {  Link } from 'react-router-dom';
 import {MDBCardTitle , MDBCard, MDBCardBody, MDBCardText , MDBCardFooter} from "mdbreact";
 export default function CardDictamenes({
-    id,
+   postId,
+    featuredImage,
     date,
-    imageUrl,
-    postUrl,
     title
    
   }) { 
@@ -14,10 +13,10 @@ export default function CardDictamenes({
       return  (
        <MDBCard to={{
         pathname: '/dictamen',
-        search: `?id=${id}`}} 
+        search: `?id=${postId}`}} 
         className="card-dictamen" 
          style= 
-         {{background:`url(${imageUrl}) no-repeat center`,
+         {{background:`url(${featuredImage.sourceUrl}) no-repeat center`,
          backgroundSize:"contain",
         }}
          tag={Link}>
