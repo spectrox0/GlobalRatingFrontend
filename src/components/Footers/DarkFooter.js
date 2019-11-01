@@ -2,7 +2,6 @@
 import React , {useContext} from "react";
 import { Link} from "react-router-dom"; 
 import CountryContext from "./../../context/region.js"
-import {animateScroll as scroll} from  'react-scroll'; 
 import {useMutation} from '@apollo/react-hooks';
 import {MUTATION_SEND_FRIEND} from '../../views/helpers/graphql/mutation'
 // reactstrap components
@@ -254,13 +253,13 @@ export default function DarkFooter() {
           GlobalRatings, C.A. RIF: J-123456789-0.
           Todos los derechos reservados © {new Date().getFullYear()}.
           <nav> 
-          <Link onClick={ e=> {scroll.scrollToTop()}} to= {{
+          <Link  to= {{
               pathname:`/terminos/${country}`
             }}> 
             <span> Términos y Condiciones </span>  
           </Link>
           <span> | </span> 
-          <Link onClick={ e=> {scroll.scrollToTop()}} to= {{
+          <Link to= {{
               pathname:`/terminos/${country}`
             }}> 
             <span> Politica y privacidad  </span>  

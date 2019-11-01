@@ -15,12 +15,13 @@ import Clientes from "views/Clientes.js";
 import Loading from "views/Loading";
 import PerfilCliente from "views/PerfilCliente.js"
 import CountryContext from "../../context/region"
-
+import {animateScroll as scroll} from  'react-scroll'; 
 export default function Routes() {
    
   const {country} = useContext(CountryContext); 
 
   const handlingRender = ( props, Component) => {
+    scroll.scrollToTop({duration:500})
    if(props.match.params.countryName!=="pa" &&
       props.match.params.countryName!=="ve"
     ) return <Redirect to="ve" />
@@ -31,8 +32,8 @@ export default function Routes() {
  <Switch>
   
  <Route path="/index/:countryName" render={(props)=> handlingRender(props,Home) }/>
- <Route path="/dictamen" render={ (props) => <Dictamen {...props} /> } />
- <Route path="/perfilCliente" render = {(props)=>  <PerfilCliente {...props} /> }/>
+ <Route path="/dictamen" render={ (props) => {scroll.scrollToTop({duration:500}); return <Dictamen {...props} /> } } />
+ <Route path="/perfilCliente" render = {(props)=>  {scroll.scrollToTop({duration:500}); return <PerfilCliente {...props} />}  }/>
  <Route path="/nosotros/:countryName" render={ (props) =>   handlingRender(props,Nosotros) } />
  <Route path="/calificacion/:countryName" render={ (props) =>   handlingRender(props,Calificacion) } />
  <Route path="/otorgada/:countryName" render={ (props) =>   handlingRender(props,Otorgada) } />
