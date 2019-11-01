@@ -59,8 +59,10 @@ export default function Clientes () {
 
     }
     return (
+      <>
+      <Header />
         <div className="clientesContainer"> 
-        <Header />
+       
         <MDBContainer> 
         <MDBRow className="title">
            <h2 > 
@@ -81,20 +83,22 @@ export default function Clientes () {
         </label>
       </div>
             </MDBRow>
-        {loading &&  <div> <span> cargando </span> </div> }
-          {data && 
-     <>
-      <MDBRow> 
-       <Clientes/>   </MDBRow>
-      <MDBRow className="row-pagination">
-        <Pagination />
-      </MDBRow>
-      </>
-      }
+        {!data? <div className="container-load-posts"> 
+              <div className="spinner-grow text-primary" role="status">
+              <span className="sr-only">Cargando...</span>
+              </div>
+              </div>
+              :  <>  <MDBRow> 
+              <Clientes/> <Clientes/> <Clientes/> <Clientes/> <Clientes/> </MDBRow>
+             <MDBRow className="row-pagination">
+               <Pagination />
+             </MDBRow> </>} 
+       
 
        </MDBContainer> 
  
   </div> 
+  </>
     )
      
 

@@ -7,7 +7,8 @@ import {
     MDBCol, 
     MDBContainer, 
     MDBTooltip,
-    MDBBtn
+    MDBBtn,
+    MDBIcon
 }  from 'mdbreact'; 
 import Header from './../components/Headers/headersViews/header2'; 
 import CardEmisiones from './../components/Cards/CardEmisiones.js'; 
@@ -48,7 +49,7 @@ export default function PerfilCliente({location})  {
            <div className="networksContainer"> 
            <MDBTooltip placement="top"> 
     <MDBBtn className="webSocial">  
-    <i className="fa fa-instagram fa-lg"></i>
+    <MDBIcon fab icon="instagram" size="lg" />
         </MDBBtn>
         <div> 
            Instagram
@@ -57,13 +58,13 @@ export default function PerfilCliente({location})  {
         <MDBTooltip placement="top"> 
         <MDBBtn className="webSocial"> 
        
-        <i className="fa fa-twitter fa-lg"></i>
+        <MDBIcon fab icon="twitter" size="lg" />
        </MDBBtn>
        <div> Twitter </div>
        </MDBTooltip>
        <MDBTooltip placement="top"> 
         <MDBBtn className="webSocial"> 
-        <i className="fa fa-facebook fa-lg " ></i> </ MDBBtn>
+        <MDBIcon fab icon="facebook-f" size="lg" /> </ MDBBtn>
         <div> Facebook</div>
         </MDBTooltip>
         <MDBTooltip placement="top"> 

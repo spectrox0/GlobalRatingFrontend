@@ -46,7 +46,7 @@ month[11] = "Dec.";
  var n = month[date_.getMonth()];
       setDate({day:day , month: n}); 
       var date__= new Date(date)
-      var options = {weekday: "long", year: "numeric", month: "long", day: "numeric", hour:"numeric"};
+      var options = {weekday: "long", year: "numeric", month: "long", day: "numeric", hour:"numericW"};
        setDateFull(date__.toLocaleDateString("es-VE", options)); 
        setContent(content.replace(/(?:\r\n|\r|\n)/g, '<br>'));
           //var options = { year: "numeric", month: "long", day: "numeric"};

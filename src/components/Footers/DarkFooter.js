@@ -200,7 +200,7 @@ export default function DarkFooter() {
       <MDBContainer style={{padding:"2rem"}} fluid >
         <MDBRow>
           <MDBCol className="col-footer" md="3">
-          <h4> Global Rating </h4>
+          <h4> Global Ratings </h4>
            <div  style={{display:"flex",flexDirection:"column", justifyContent:"flex-start"}} > 
         
             <p style={{textAlign:"justify"}}>
@@ -230,13 +230,13 @@ export default function DarkFooter() {
           <MDBCol md="3">
  
           <a
-                href=""
+                href="https://www.finanzasdigital.com/"
                 target="_blank"
               >
            
             <div className="finanzasDigital" />
               </a>
-          
+               
               <a
                 href=""
                 target="_blank"
@@ -250,14 +250,25 @@ export default function DarkFooter() {
       </MDBContainer>
       <div className="footer-copyright text-center">
         <MDBContainer fluid>
-        
+         
           GlobalRatings, C.A. RIF: J-123456789-0.
           Todos los derechos reservados © {new Date().getFullYear()}.
-          <MDBNavLink 
-           onClick={ e=> {scroll.scrollToTop()}}
-           tag= {Link}to= {{
+          <nav> 
+          <Link onClick={ e=> {scroll.scrollToTop()}} to= {{
               pathname:`/terminos/${country}`
-            }}> Términos y Condiciones </MDBNavLink> 
+            }}> 
+            <span> Términos y Condiciones </span>  
+          </Link>
+          <span> | </span> 
+          <Link onClick={ e=> {scroll.scrollToTop()}} to= {{
+              pathname:`/terminos/${country}`
+            }}> 
+            <span> Politica y privacidad  </span>  
+          </Link>
+          </nav>
+         
+        
+
         </MDBContainer>
       </div>
     </MDBFooter>

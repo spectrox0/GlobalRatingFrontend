@@ -3,7 +3,6 @@ import {Route, Switch, Redirect  } from 'react-router-dom';
 //pages 
 import Home from "views/Home.js";
 import Dictamen from "views/Dictamen.js"; 
-import Noticia from "views/Noticia.js";
 import Nosotros from "views/Nosotros.js";
 import Calificacion from "views/Calificacion.js";
 import Otorgada from "views/Otorgada.js";
@@ -33,7 +32,6 @@ export default function Routes() {
   
  <Route path="/index/:countryName" render={(props)=> handlingRender(props,Home) }/>
  <Route path="/dictamen" render={ (props) => <Dictamen {...props} /> } />
- <Route path="/noticia" render={ (props) =>  <Noticia {...props} /> }/>
  <Route path="/perfilCliente" render = {(props)=>  <PerfilCliente {...props} /> }/>
  <Route path="/nosotros/:countryName" render={ (props) =>   handlingRender(props,Nosotros) } />
  <Route path="/calificacion/:countryName" render={ (props) =>   handlingRender(props,Calificacion) } />
