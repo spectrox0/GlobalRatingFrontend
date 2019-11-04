@@ -105,6 +105,3 @@ export default function Clientes () {
 
 }
 
-const ContainerClientes = styled.div`
-
-`

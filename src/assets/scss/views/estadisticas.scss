@@ -1,0 +1,32 @@
+.estadisticas-pag {
+    min-height: 100vh;
+    .title {
+        display: flex;
+        h2 {
+            font-size:1.8em; 
+            display: flex;
+            flex-direction: column;
+          
+
+            &:after {
+            content: "";
+            height: .1rem;
+            background: $color-secondary;
+            width: 20rem; 
+            max-width: 100%;
+        }
+    } }
+    .row-select{
+        margin-bottom: 1rem;
+        .select{
+            width:10rem; 
+            max-width: 100%;
+           
+        }
+    }
+    .row-table{
+        padding-right:1rem; 
+        @import '../components/table.scss'; 
+    }
+   
+}

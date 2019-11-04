@@ -12,6 +12,5 @@ export default function CardEmision ({title , dictamen, providencia , prospecto,
          <MDBBtn> Providencia </MDBBtn>
          <MDBBtn> Prospecto </MDBBtn>
      </MDBCardBody>
-     <MDBCardFooter> Fecha de aprobacion: {fecha} </MDBCardFooter>
     </MDBCard>); 
 }
