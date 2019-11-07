@@ -1,0 +1,65 @@
+.page-contact {
+    min-height: 100vh;
+    background: rgb(238, 238, 238);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .container {
+    width: 50rem;
+    max-width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    padding-top: 2rem; 
+    padding-bottom: 2rem; 
+    padding-right: 3rem;
+    .info {
+        background: $color-secondary; 
+        position: relative;
+        left: -3rem; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100% !important;
+        padding: 3rem;
+        border-radius: 2px;
+        box-shadow: 0 0 3px rgba(0,0,0,0.5);
+        .row {
+         width: 100%;; 
+          h3 {
+              color: #FFFFFF; 
+              width: 100%;; 
+              margin-bottom: 1.7rem;
+              font-size: 2em;
+              text-align: justify;
+          } 
+          span {
+            color: #FFFFFF; 
+            font-size: 1em;
+          }
+      
+         .elementCoordenadas {
+             margin-bottom:1rem; 
+         }
+        }
+    }
+    h3 {
+        color: #444444; 
+        width: 100%;; 
+        margin-bottom: 1.7rem;
+        font-size: 2em;
+        text-align: justify;
+    }.form { 
+        .form-group {
+            margin-bottom:2rem; 
+        
+         
+        }
+    } 
+    .btn {
+        margin-top:1rem;
+    }
+    
+    }
+
+}
