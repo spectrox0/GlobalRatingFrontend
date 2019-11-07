@@ -8,6 +8,8 @@ import {
     MDBContainer,
     MDBRow,
     MDBCol,
+    MDBBtn, 
+    MDBIcon
 } from 'mdbreact';
 
 export default function LeyesNormativas() {
@@ -45,7 +47,9 @@ export default function LeyesNormativas() {
               </MDBRow>  }
                      
                       
-                       
+              <MDBRow className="rowCompartir"> 
+             <MDBBtn><MDBIcon icon="envelope" size="3x" /></MDBBtn>
+         </MDBRow>
                     </MDBContainer>
              
             </div>
