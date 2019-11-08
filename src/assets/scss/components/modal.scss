@@ -1,10 +1,21 @@
 .modal-open { overflow-y: scroll } 
 
-.modal {
+.modal { 
+    .modal-content {
+        background: rgba(255,255,255,.95);
+        background: linear-gradient(rgba(255,255,255,.85), rgb(255,255,255));
+    }
     .modal-header,.modal-footer {
         border:none;
+     
     }
-    
+    .close {
+        color: $color-secondary;
+        font-size: 2em;
+    }
+    .title {
+        color: $color-secondary;
+    }
         *:focus {
             outline: none ;
             border:none; 

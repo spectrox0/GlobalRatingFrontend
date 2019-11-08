@@ -9,7 +9,7 @@ import {MDBCardTitle ,
         MDBModal , 
       MDBModalHeader , 
      MDBModalBody ,
-     MDBModalFooter} from "mdbreact";
+     MDBModalFooter } from "mdbreact";
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 export default function CardNoticias({
@@ -56,6 +56,7 @@ month[11] = "Dec.";
   const toggle = () => {
     setIsOpen(!isOpen); 
   }
+  const scrollContainerStyle = { width: "800px", maxHeight: "400px" }; 
       return isLoading? null: (
         <> 
            <MDBCard 
@@ -85,16 +86,19 @@ month[11] = "Dec.";
           <MDBModal isOpen={isOpen}  toggle={toggle} size="lg" > 
           <MDBModalHeader toggle={toggle}> </MDBModalHeader>
           <MDBModalBody> 
-            <div className="title"> 
+          <div className="title"> 
            <h3> {title} </h3>
           </div>
           <div className="date"> 
           <span> {dateFull}</span>
           
           </div>
+          <div class="scrollbar" id="style-2">
           <div className="content"> 
           <div className="contentHtml" dangerouslySetInnerHTML={{ __html: content_ }} />
           </div>
+            </div>
+         
            </MDBModalBody>
           <MDBModalFooter>
               <MDBBtn className="btn-round btn-primary" onClick={toggle}>Ver en Finanzas Digital</MDBBtn>
