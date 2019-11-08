@@ -17,4 +17,16 @@
                 max-width: 100%;
             }
         } 
+        .rowCompartir{
+            display: flex;
+            justify-content: flex-end;
+            .btn {
+              
+                i { color:$color-secondary;  }
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+
+        }
 } }}
