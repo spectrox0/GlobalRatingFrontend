@@ -1,5 +1,6 @@
 .page-footer {
-    padding-top: .3em;
+    padding-top: 3rem;
+   
     background: $footer-color; 
     color: #FFFFFF; 
     .row .col-footer {
@@ -41,6 +42,7 @@
         background: $footer-color-copyrigth; 
         display: flex; 
         align-items:center;
+        margin-top:3rem; 
         min-height:  4rem; 
         a {
             color: $color-primary; 
@@ -50,7 +52,7 @@
         }
     }
     .container-fluid {
-        max-width: 70rem; 
+        max-width: 80rem; 
     }
     
     p {

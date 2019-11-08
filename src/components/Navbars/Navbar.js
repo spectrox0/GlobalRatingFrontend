@@ -7,7 +7,7 @@ import Select from 'react-select';
 
 import {
   MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBCollapse,
-  MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem
+  MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBNavbarToggler
   } from "mdbreact"
 
   
@@ -62,14 +62,7 @@ export default function NavbarGlobal() {
   return  ( 
     
       <MDBNavbar className={navbarColor} expand="lg">
-        {collapseOpen && (<div
-          id="bodyClick"
-          onClick={() => {
-            document.documentElement.classList.toggle("nav-open");
-            setCollapseOpen(false);
-          }}
-        /> )}
-        <div className="navbar-translate"> 
+     
       <MDBNavbarBrand
              id="navbar-brand"
             >
@@ -87,7 +80,7 @@ export default function NavbarGlobal() {
            document.documentElement.classList.toggle("nav-open");
            setCollapseOpen(!collapseOpen); 
          }} ></Toggler>
-   
+        
 
         <MDBCollapse id="navbarCollapse3" isOpen={collapseOpen} navbar>
           
@@ -125,87 +118,10 @@ export default function NavbarGlobal() {
                pathname:`/contactanos/${context.country}` }
                 }  tag={Link} >contactanos</MDBNavLink>
             </MDBNavItem>
-            
-           {/*   <MDBNavItem>
-              
-              
-            
-              <MDBDropdown>
-                <MDBDropdownToggle nav caret>
-                  <span className="mr-2">Región</span>
-                </MDBDropdownToggle>
-                <MDBDropdownMenu>
-                  <MDBDropdownItem onClick={ e => {
-             context.changeCountry("ve"); 
-             localStorage.setItem("country","ve")
-            }}
-          tag = {Link} 
-          to= {{ 
-            pathname:"/index/ve"}}
-          > 
-          <img
-              src={require("assets/img/flags/VE.png")}
-              alt="Venezuela"
-              style={{height:"1rem"}}
-                  /> {" "}  -Venezuela </MDBDropdownItem>
-                  <MDBDropdownItem  onClick={e => {
-            context.changeCountry("pa"); 
-           localStorage.setItem("country", "pa")
-          } } tag = {Link} 
-          to= {{ 
-            pathname:"/index/pa"}}
-          > 
-          <img
-              src={require("assets/img/flags/PA.png")}
-              alt="Venezuela"
-              style={{height:"1rem"}}
-                  /> {" "}   -Panama </MDBDropdownItem>
-                </MDBDropdownMenu>
-              </MDBDropdown>
-            </MDBNavItem>
-           */ }
           </MDBNavbarNav>
           <MDBNavbarNav right> 
          
               
-              
-          {/*  <MDBNavItem>
-              <MDBDropdown>
-                <MDBDropdownToggle nav caret>
-                  <span className="mr-2">Región</span>
-                </MDBDropdownToggle>
-                <MDBDropdownMenu>
-                  <MDBDropdownItem onClick={ e => {
-             context.changeCountry("ve"); 
-             localStorage.setItem("country","ve")
-            }}
-          tag = {Link} 
-          to= {{ 
-            pathname:"/index/ve"}}
-          > 
-          <img
-              src={require("assets/img/flags/VE.png")}
-              alt="Venezuela"
-              style={{height:"1rem"}}
-                  /> {" "}  -Venezuela </MDBDropdownItem>
-                  <MDBDropdownItem  onClick={e => {
-            context.changeCountry("pa"); 
-           localStorage.setItem("country", "pa")
-          } } tag = {Link} 
-          to= {{ 
-            pathname:"/index/pa"}}
-          > 
-           
-          <img
-              src={require("assets/img/flags/PA.png")}
-              alt="Venezuela"
-              style={{height:"1rem"}}
-                  /> {" "}   -Panama </MDBDropdownItem>
-                </MDBDropdownMenu>
-              </MDBDropdown>
-
-            </MDBNavItem>
-          */ }
             <MDBNavItem>
               {countryActual &&
                <Select className="selectCountry"  
@@ -223,16 +139,8 @@ export default function NavbarGlobal() {
             </MDBNavItem>
           </MDBNavbarNav>
         </MDBCollapse>
-        </div>
+     
       </MDBNavbar>
 
   );
 }
-
-const NavbarContainer = styled.div`
-.navbar-logoHidden {
-  visibility: hidden; 
-}
-.collapseNavbar {
-} 
-`

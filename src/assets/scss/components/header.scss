@@ -5,7 +5,9 @@
         height: $height-header;
         z-index: 100;
         @include  gradient-background();
-
+        @media screen and(max-width:991px) {
+            height: 40vh; 
+        }
     }
     .page-header-image {
      position:relative; 
@@ -14,6 +16,9 @@
       height: $height-header;
       width:100%; 
         object-fit: fill; 
+        @media screen and(max-width:991px) {
+            height: 40vh; 
+        }
      }
 
     } 
@@ -32,6 +37,13 @@
             
             text-transform: uppercase; 
             text-shadow: 2px 2px 3px rgba(0,0,0,0.5); 
+        }
+        @media screen and(max-width:991px) {
+            top: 25vh; 
+            left:4%; 
+            .h3-responsive {
+                font-size: 1em;
+            }
         }
        
     }

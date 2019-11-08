@@ -84,7 +84,7 @@ export default function PerfilCliente({location})  {
            </MDBRow>
            <MDBRow> 
            <section className="description">
-         <div className="line" /> <p> 
+       <p> 
          Fusce nisi massa, auctor quis nibh et, pulvinar aliquet metus. Morbi euismod sed purus sit amet dictum. Vivamus sit amet vehicula mi, semper varius velit. Suspendisse eu dui ac ex bibendum sollicitudin. In ligula augue, convallis eget porttitor nec, interdum at felis. Phasellus est turpis, tincidunt sit amet porttitor et, accumsan sit amet nisl. Duis ultrices vehicula massa in fringilla. Mauris quis fermentum quam. Maecenas sed augue finibus, gravida risus ut, sodales eros. Maecenas ac velit dignissim, convallis enim eget, porta tellus. Proin sit amet elit eget nibh scelerisque semper ac at tellus.
          </p>  </section>
            </MDBRow>
@@ -99,11 +99,11 @@ export default function PerfilCliente({location})  {
          
          </section>
          </MDBContainer>
-         <MDBContainer> 
-         <MDBRow className="rowCompartir"> 
+       
+         <MDBContainer className="rowCompartir"> 
              <MDBBtn><MDBIcon icon="envelope" size="3x" /></MDBBtn>
-         </MDBRow>
          </MDBContainer>
+       
          
      </>
     ) :    <div className="container-load-posts"> 

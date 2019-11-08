@@ -5,11 +5,15 @@
     padding: 0;
     height: auto;
     transition: border .3s ease-in-out;
-   
+
+ 
+    
     &:focus {
         box-shadow: none;
+        outline: none; 
         border-color: $color-tertiary;
     }
+
    
   
-}
+} 
