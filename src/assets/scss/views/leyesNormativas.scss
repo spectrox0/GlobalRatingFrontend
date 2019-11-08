@@ -1,0 +1,20 @@
+
+.page-leyes-normativas {
+    min-height: 100vh;
+    .container {
+
+        .title {
+   
+            h2 {
+                font-size:1.8em; 
+                display: flex;
+                flex-direction: column;
+                &:after {
+                content: "";
+                height: .1rem;
+                background: $color-secondary;
+                width: 20rem; 
+                max-width: 100%;
+            }
+        } 
+} }}

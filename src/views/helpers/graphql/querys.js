@@ -16,7 +16,23 @@ export const QUERY_EMISORES = gql`
 
    }
 `
-
+export const QUERY_EMISIONES = gql`
+        {
+        emisiones {
+            _id
+            fechaAprovacion
+            monto
+            programa
+            tipoTitulo
+            emisor {
+                nombre
+            }
+            pais {
+                nombre
+            }
+        }
+    }
+`
 export const QUERY_LEYESNORMATIVAS = gql`
   {
  leyesNormativas {

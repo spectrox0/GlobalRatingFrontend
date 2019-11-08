@@ -1,14 +1,47 @@
 .container-profile-client{
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .networksContainer{
-        position: relative; 
-        top:- 1.9rem; 
-        display: flex;
-        
+    background: rgb(245, 245, 245); 
+ 
+    .ProfileContainer{
+    
+        z-index: 300;
+        background: #FFFFFF;
+        width:60rem; 
+        border-radius: 10px;
+        box-shadow: 0 0 6px rgba(0,0,0,0.3); 
+        max-width: 100%;
+        padding:3rem; 
+       
+        .col-img{   
+            padding: 0;
+          
+        }
+        .row {
+            margin-bottom: 1rem;
+        }
+         .col-name{
+             display: flex;
+             flex-direction: column;
+             justify-content: flex-end;
+             .row {
+               margin:0; 
+             }
+            span {
+                font-size: 2.5em;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+         }
+        .profileLogo{
+          border-radius: 50%;
+          object-fit: fill;
+           -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+      border-radius: 50%;
+       overflow:hidden;
+          width:12rem; 
+          margin:0; 
+        }
         .webSocial {
             display:flex;
             justify-content: center;
@@ -30,35 +63,46 @@
         }
 
     }
-    .container {
-        width:60rem;
-        max-width: 100%;
-         .description {
-             min-height: 50vh;
-         }
-         .emisiones {
-            
-            min-height: 50vh;
-         }
+    .emisionesContainer {
+       margin-top: 2rem;  
+     
+    } 
+    
+    .container .emisiones {
         h3 {
-            text-align: center;
-            font-weight: bold;
-            color: $color-title1;
-            border-bottom: solid $color-primary 1px; 
-            box-shadow: 0 2px .5px rgba($color-secondary,0.3);
-            font-size: 2em;
-            text-shadow: 0 0 2px rgba(0,0,0,0.7);
+            font-size:1.8em; 
+            display: flex;
+            flex-direction: column;
+            padding-left: 1rem; ;
+
+            &:after {
+            content: "";
+            height: .1rem;
+            background: $color-secondary;
+            width: 20rem; 
+            max-width: 100%;
         }
-        .line {
-            width: 100%;
-            margin-bottom: 2rem;
-            border-bottom: solid $color-primary 1px; 
-            box-shadow: 0 1px 3px $color-secondary;
-           
+
+     }
+    
+}
+.container {
+    position: relative;
+    top: -12rem; 
+    right: 5vw;
+        @media screen and (max-width:992px) {
+            right: 0;
         }
-        p{
-            font-size: 1.2em; 
-            text-align: justify;
+}
+.rowCompartir {
+    display: flex;
+    justify-content: flex-end;
+    .btn {
+      
+        i { color:$color-secondary;  }
+        &:focus {
+            box-shadow: none;
         }
     }
+}
 }

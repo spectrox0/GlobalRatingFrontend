@@ -1,0 +1,58 @@
+.page-nosotros {
+    min-height: 100vh;
+    .container {
+
+        .title {
+            display: flex;
+           align-items: center;
+            h2 {
+                font-size:1.8em; 
+                display: flex;
+                flex-direction: column;
+
+    
+                &:after {
+                content: "";
+                height: 1.5px ; 
+                background: $color-secondary;
+                width: 20rem; 
+                max-width: 100%;
+            }
+        } }
+      p {
+          font-size: .8em;
+          text-align: justify;
+      } 
+       ul {
+           list-style: none;
+           padding-left: 0;
+       }
+        .img-logo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100% !important;
+            img {
+                width: auto;
+            }
+        }
+    } 
+    .col-nosotros {
+        padding-left: 3rem;
+    }
+    h3 {
+        font-size:1.6em; 
+        display: flex;
+        flex-direction: column;
+
+
+        &:after {
+        content: "";
+        height: 1.5px !important; 
+        background: $color-secondary;
+        width: 10rem; 
+        max-width: 100%;
+    }
+}
+}

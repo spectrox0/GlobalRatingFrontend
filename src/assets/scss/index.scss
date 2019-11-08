@@ -28,7 +28,13 @@ body {
 @import './components/cardEmision.scss';
 @import './components/modal.scss'; 
 @import './components/switch.scss'; 
+<<<<<<< HEAD
 @import './components/scrollBar.scss';
+=======
+@import './components/select.scss'; 
+@import './components/input.scss';
+
+>>>>>>> be552c40ab5da5c100d9f439152265958885fd78
 
 @import './views/dictamenes.scss'; 
 @import './views//noticias.scss';
@@ -38,3 +44,7 @@ body {
 @import './views/clientes.scss';
 @import './views/profileClient.scss';
 @import './views/dictamen.scss'; 
+@import './views/estadisticas.scss';
+@import './views/contact.scss'; 
+@import './views/nosotros.scss';
+@import './views/leyesNormativas.scss'; 

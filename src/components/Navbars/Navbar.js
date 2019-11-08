@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import country from './../../context/region.js'
 import Toggler from './../Navbars/Toggler.js'
+import Select from 'react-select'; 
 
 import {
   MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBCollapse,
@@ -18,7 +19,23 @@ export default function NavbarGlobal() {
   const [navbarLogo, setNavbarLogo] = useState(require("assets/img/globalrating_white.svg"));
   const [collapseOpen, setCollapseOpen] = useState(false);
   const  context = useContext(country); 
-  
+  const countrys = [{ 
+    value:"ve", 
+  label: <Link to="/index/ve" >  <img src={require("assets/img/flags/VE.png")} alt="Venezuela" style={{height:"1rem"}}  />Venezuela</Link>
+  }, 
+  {
+    value:"pa", 
+    label: <Link  to="/index/pa" > <img src={require("assets/img/flags/PA.png")} alt="Panama" style={{height:"1rem"}}  /> Panama </Link>
+  }
+  ]
+  const [countryActual,setCountryActual] = useState(); 
+ 
+  useEffect (()=> {
+
+    if(localStorage.getItem("country")==="ve") {
+      setCountryActual(countrys[0]); 
+    } else  setCountryActual(countrys[1]); 
+  } ,[])
   // Use effect se carga al iniciar el componente , efectuado cada vez que se renderice el componente 
   useEffect(() => {
     const updateNavbarColor = () => {
@@ -149,10 +166,10 @@ export default function NavbarGlobal() {
            */ }
           </MDBNavbarNav>
           <MDBNavbarNav right> 
-          <MDBNavItem>
+         
               
               
-            
+          {/*  <MDBNavItem>
               <MDBDropdown>
                 <MDBDropdownToggle nav caret>
                   <span className="mr-2">Región</span>
@@ -178,6 +195,7 @@ export default function NavbarGlobal() {
           to= {{ 
             pathname:"/index/pa"}}
           > 
+           
           <img
               src={require("assets/img/flags/PA.png")}
               alt="Venezuela"
@@ -185,6 +203,23 @@ export default function NavbarGlobal() {
                   /> {" "}   -Panama </MDBDropdownItem>
                 </MDBDropdownMenu>
               </MDBDropdown>
+
+            </MDBNavItem>
+          */ }
+            <MDBNavItem>
+              {countryActual &&
+               <Select className="selectCountry"  
+               classNamePrefix='Select'
+                 defaultValue={countryActual}
+                 options={countrys} 
+                 onChange= { e=> {
+                     setCountryActual({label:e.label, value:e.value})
+                     context.changeCountry(e.value); 
+                     localStorage.setItem("country", e.value); 
+                     
+                 }}
+                 />  }
+           
             </MDBNavItem>
           </MDBNavbarNav>
         </MDBCollapse>
