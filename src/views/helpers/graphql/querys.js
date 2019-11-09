@@ -46,7 +46,20 @@ export const QUERY_LEYESNORMATIVAS = gql`
  }
 }
 `
-
+export const QUERY_LEYNORMATIVA = gql`
+query leyesNormativasID($_id: String!) {
+  leyesNormativasID(_id:$_id) {
+    _id
+   titulo
+   descripcion
+   htmlScribd
+   pais {
+     nombre
+   }
+ }
+  
+}
+`
 export const QUERY_EMISORES_ID = gql`
 query emisorID($_id: String!) {
   emisorID(_id:$_id) {

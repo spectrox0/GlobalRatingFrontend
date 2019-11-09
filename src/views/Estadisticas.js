@@ -3,6 +3,7 @@ import Header from '../components/Headers/IndexHeader';
 import {MDBContainer, MDBRow } from 'mdbreact'
 import {initGA} from './helpers/initGA.js';
 import Select from 'react-select'; 
+import { MDBTable, MDBTableBody, MDBTableHead, MDBBtn , MDBIcon } from 'mdbreact';
 export default function Estadisticas() {
     const year = (new Date()).getFullYear();
     const yearInitial = 1980; 
@@ -32,85 +33,81 @@ export default function Estadisticas() {
       />
         </MDBRow>
      <MDBRow className="row-table"> 
-        <div class="table">
-    
-    <div class="row header">
-      <div class="cell">
-        Name
-      </div>
-      <div class="cell">
-        Age
-      </div>
-      <div class="cell">
-        Occupation
-      </div>
-      <div class="cell">
-        Location
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="cell" data-title="Name">
-        Luke Peters
-      </div>
-      <div class="cell" data-title="Age">
-        25
-      </div>
-      <div class="cell" data-title="Occupation">
-        Freelance Web Developer
-      </div>
-      <div class="cell" data-title="Location">
-        Brookline, MA
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="cell" data-title="Name">
-        Joseph Smith
-      </div>
-      <div class="cell" data-title="Age">
-        27
-      </div>
-      <div class="cell" data-title="Occupation">
-        Project Manager
-      </div>
-      <div class="cell" data-title="Location">
-        Somerville, MA
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="cell" data-title="Name">
-        Maxwell Johnson
-      </div>
-      <div class="cell" data-title="Age">
-        26
-      </div>
-      <div class="cell" data-title="Occupation">
-        UX Architect & Designer
-      </div>
-      <div class="cell" data-title="Location">
-        Arlington, MA
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="cell" data-title="Name">
-        Harry Harrison
-      </div>
-      <div class="cell" data-title="Age">
-        25
-      </div>
-      <div class="cell" data-title="Occupation">
-        Front-End Developer
-      </div>
-      <div class="cell" data-title="Location">
-        Boston, MA
-      </div>
-    </div>
-    
-  </div>
+     <MDBTable responsive>
+      <MDBTableHead>
+        <tr>
+          <th>Emisor</th>
+          <th>Emision</th>
+          <th>Monto(*)</th>
+          <th>Fecha</th>
+          <th># de Providencia</th>
+          <th>Dictamen</th>
+          <th>Prospecto</th>
+          <th>Providencia</th>
+      
+        </tr>
+      </MDBTableHead>
+      <MDBTableBody>
+        <tr>
+          <td>1</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+         
+        </tr>
+      </MDBTableBody>
+    </MDBTable>
   </MDBRow>
+  <MDBRow>
+    <div className="total"> 
+    <span>
+      <b> Total de año: </b>
+       2121312
+      </span> 
+      </div>
+      </MDBRow>
+      <MDBRow> 
+      <div className="leyenda">
+      <p> 
+        PC: Papeles Comerciales <br/>
+        OQ: Obligaciones Quirografarias <br/>
+        TP: Titulos de Participacion <br/>
+        PB: Pagares Bursatiles <br/>
+
+      </p>
+   
+      </div>
+      </MDBRow>
+  
+  <MDBContainer className="rowCompartir"> 
+             <MDBBtn><MDBIcon icon="envelope" size="3x" /></MDBBtn>
+         </MDBContainer>
   </MDBContainer>
         </div>
         

@@ -13,6 +13,7 @@ import Mapa from "views/Mapa.js";
 import Contactanos from "views/Contactanos.js";
 import Clientes from "views/Clientes.js"; 
 import Loading from "views/Loading";
+import LeyNormativa from "views/LeyNormativa.js";
 import PerfilCliente from "views/PerfilCliente.js"
 import CountryContext from "../../context/region"
 import {animateScroll as scroll} from  'react-scroll'; 
@@ -43,7 +44,7 @@ export default function Routes() {
  <Route path="/mapa/:countryName" render={ (props) =>  <Mapa {...props}/> }/>
  <Route path="/contactanos/:countryName" render={ (props) =>   handlingRender(props,Contactanos) } />
  <Route path="/clientes/:countryName" render = { (props)=>  handlingRender(props,Clientes)  } />
- 
+  <Route path="/:countryName/leynormativa"  render = { props => handlingRender(props,LeyNormativa)} />
    {country && (  <>
    <Redirect exact from="/" to={ {
     pathname:`/index/${country}` }

@@ -19,13 +19,15 @@ export default function LeyesNormativas() {
     const { data, loading, error, refetch } = useQuery(QUERY_LEYESNORMATIVAS);
 
     const LeyesNormativas = () => {
-        const innerJSX = data.leyesNormativas.map(leyesNormativas =>
-            <MDBRow key={leyesNormativas._id}>
-                <Link to="/leyNormativa"> 
-             <h4> <i className="fas fa-file-pdf"></i> {leyesNormativas.titulo}</h4>
+        const innerJSX = data.leyesNormativas.map(({_id, titulo }) =>
+            <li key={_id}>
+                <Link to={{
+        pathname: '/ve/leynormativa',
+        search: `?id=${_id}`}} > 
+             <i className="fas fa-file-pdf"></i> {titulo}
              </Link>
                          
-            </MDBRow>)
+            </li>)
         return innerJSX;
     }
     return <>
@@ -37,20 +39,22 @@ export default function LeyesNormativas() {
                     <MDBRow className="title">
            <h2 > 
             Leyes y Normativas
-
+ 
             </h2> </MDBRow>
+            
                     {(!data && loading) ? <div className="container-load-posts"> 
               <div className="spinner-grow text-primary" role="status">
               <span className="sr-only">Cargando...</span>
               </div>
-              </div>   : <MDBRow>  <LeyesNormativas />
-              </MDBRow>  }
+              </div>   : <ul>  <LeyesNormativas /> </ul>
+              }
                      
                       
-              <MDBRow className="rowCompartir"> 
-             <MDBBtn><MDBIcon icon="envelope" size="3x" /></MDBBtn>
-         </MDBRow>
                     </MDBContainer>
+                    <MDBContainer className="rowCompartir"> 
+             <MDBBtn><MDBIcon icon="envelope" size="3x" /></MDBBtn>
+         </MDBContainer>
+        
              
             </div>
     </>

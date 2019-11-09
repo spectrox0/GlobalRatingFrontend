@@ -196,7 +196,7 @@ export default function DarkFooter() {
     </footer> */ 
 
     <MDBFooter>
-      <MDBContainer style={{padding:"2rem"}} fluid >
+      <MDBContainer fluid >
         <MDBRow>
           <MDBCol className="col-footer" md="3">
           <h4> Global Ratings </h4>

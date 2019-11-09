@@ -8,11 +8,11 @@ import client from './helpers/graphqlClientFinanzas';
 import { useQuery} from '@apollo/react-hooks';
 
 export default function Dictamen( {location} ) { 
-    const [dictamen,setDictamen] = useState([]); 
+    const [dictamen,setDictamen] = useState(); 
     const [isLoading, setLoading] = useState(true);
     const [date, setDate] = useState("Cargando... por favor espere"); 
     const [content, setContent] = useState();
-    const [scribd, setScribd] = useState("")
+    const [scribd, setScribd] = useState()
     const id = new URLSearchParams(location.search).get('id');
 
     const  {data ,loading , error}= useQuery(QUERY_DICTAMEN,{variables: {
@@ -61,33 +61,6 @@ export default function Dictamen( {location} ) {
           <>
           <IndexHeader />
          <section className="dictamen">
-           {/* 
-        <div className="wrapper">
-      
-        <div className="main" >
-            <div className="title">
-         <div className="blockOne"> 
-         </div>
-          <div className ="blockTwo">
-              <h2 className="h2-responsive"> {dictamen.title}</h2>
-          </div>
-          </div>
-         <div className={"imgContainer"}>
-             <div className="blockTree"> 
-              <img 
-              src={ dictamen.imageUrl} 
-              alt="..."
-               ></img>
-             </div>
-         </div>
-          <div className ="contentDictamen">
-              <span>  {" "+date} </span>
-              <div className="contentHtml" dangerouslySetInnerHTML={{ __html: content }} />
-          </div>
-        </div>
-
-        </div> 
-        */}
         <MDBContainer> 
           {isLoading?    <div className="container-load-posts"> 
               <div className="spinner-grow text-primary" role="status">
