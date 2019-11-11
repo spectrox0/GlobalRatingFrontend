@@ -17,8 +17,9 @@
                 content: "";
                 height: .1rem;
                 background: $color-secondary;
-                width: 20rem; 
-                max-width: 100%;
+                min-width: 90%;
+            width: 20rem; 
+            max-width: 100%;
             }
         } 
         .filter {

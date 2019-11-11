@@ -50,8 +50,9 @@
         content: "";
         height: 1.5px !important; 
         background: $color-secondary;
-        width: 10rem; 
-        max-width: 100%;
+        min-width: 70%;
+            width: 10rem; 
+            max-width: 100%;
     }
 }
 }
