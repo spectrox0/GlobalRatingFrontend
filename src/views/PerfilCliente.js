@@ -12,7 +12,7 @@ import {
 }  from 'mdbreact'; 
 import Header from './../components/Headers/IndexHeader'; 
 import CardEmisiones from './../components/Cards/CardEmisiones.js'; 
-
+import ShareEmail from '../components/Others/shareFriends.js'; 
 export default function PerfilCliente({location})  {
     React.useEffect(()=> {
         initGA();
@@ -99,10 +99,8 @@ export default function PerfilCliente({location})  {
          
          </section>
          </MDBContainer>
-       
-         <MDBContainer className="rowCompartir"> 
-             <MDBBtn><MDBIcon icon="envelope" size="3x" /></MDBBtn>
-         </MDBContainer>
+        <ShareEmail/>
+      
        
          
      </>

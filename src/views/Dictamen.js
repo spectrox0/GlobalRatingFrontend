@@ -85,7 +85,7 @@ export default function Dictamen( {location} ) {
               </> }
        
         </MDBContainer>
-        <ShareFriend/>
+        <ShareFriend socialNetworks/>
         </section>
         </>
        ) ; 
