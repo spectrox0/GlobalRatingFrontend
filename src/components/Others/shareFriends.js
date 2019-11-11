@@ -31,7 +31,7 @@ export default function ShareFriend({socialNetworks}) {
        openWindow
        > 
        <MDBBtn >
-            <MDBIcon icon="envelope" size="3x" />
+            <MDBIcon icon="envelope" size="2x" />
           </MDBBtn> 
      </EmailShareButton>
       {socialNetworks && 
@@ -41,20 +41,22 @@ export default function ShareFriend({socialNetworks}) {
       quote={title}
       >
     <MDBBtn >
-            <MDBIcon icon="facebook-f" size="3x" />
+            <MDBIcon fab icon="facebook-f" size="2x" />
           </MDBBtn> 
       </FacebookShareButton> 
       <TwitterShareButton
+       title={title}
       url={window.location.href}> 
         <MDBBtn >
-            <MDBIcon icon="twitter" size="3x" />
+            <MDBIcon fab icon="twitter" size="2x" />
           </MDBBtn> 
       </TwitterShareButton>
       <WhatsappShareButton 
       url={window.location.href}
+      separator=":: "
       title={title}>
  <MDBBtn >
-            <MDBIcon icon="whatsapp" size="3x" />
+            <MDBIcon fab icon="whatsapp" size="2x" />
           </MDBBtn> 
       </WhatsappShareButton>
    </>

@@ -99,7 +99,7 @@ export default function PerfilCliente({location})  {
          
          </section>
          </MDBContainer>
-        <ShareEmail/>
+        <ShareEmail socialNetworks/>
       
        
          
