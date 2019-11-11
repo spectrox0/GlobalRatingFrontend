@@ -1,17 +1,20 @@
 .form-control {
     border: none; 
-    border-radius: 0;
+    border-radius: 2px;
     border-bottom: $color-primary solid 1.5px;
-    padding: 0;
+    padding-bottom: 0;
+    padding-left: .6rem ;
+    padding-top: .5rem ;
+    padding-right: .6rem;;
     height: auto;
     transition: border .3s ease-in-out;
-
+     
  
     
     &:focus {
         box-shadow: none;
-        outline: none; 
-        border-color: $color-tertiary;
+       
+        border-bottom: $color-tertiary solid 1.5px;
     }
 
    

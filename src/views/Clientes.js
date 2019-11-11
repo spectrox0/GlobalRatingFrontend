@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import styled from 'styled-components'; 
 import {Link} from 'react-router-dom'; 
 import {initGA} from './helpers/initGA.js';
-import {QUERY_EMISORES} from './helpers/graphql/querys'
+import {QUERY_EMISORES, QUERY_CLIENTES_BY_ALPHABETIC , QUERY_CLIENTES_BY_TIME} from './helpers/graphql/querys'
 import { useQuery} from '@apollo/react-hooks';
 import  Header from './../components/Headers/IndexHeader'
 import CardClientes from '../components/Cards/CardClientes.js';
+import ShareFriend from '../components/Others/shareFriends.js';
 
 import { 
     MDBContainer , 
@@ -19,11 +20,28 @@ export default function Clientes () {
     React.useEffect(()=> {
         initGA();
       },[]);
-    const { data , loading , error , refetch} = useQuery(QUERY_EMISORES); 
+    const [first , setFirst] = useState(16); 
+    const [after, setAfter] = useState(0); 
+    const [query, setQuery] =useState(QUERY_CLIENTES_BY_ALPHABETIC); 
+
+    const { data , loading , error , refetch} = useQuery(query, {variables: {
+      first: first, 
+      after: after
+    }}); 
    const [filter ,setFilter] = useState(false); 
-    
-    const Clientes = () => { 
-       const innerJSX = data.emisores.map( emisor => 
+     
+   const handlingSwitch = () => {
+      if(!filter) {
+        setQuery(QUERY_CLIENTES_BY_TIME)
+      } 
+      else setQuery(QUERY_CLIENTES_BY_ALPHABETIC)
+      setFirst(16); 
+      setAfter(0); 
+      refetch(); 
+       setFilter(!filter); 
+   }
+    const Clientes = ({clientes}) => { 
+       const innerJSX = clientes.map( emisor => 
         <MDBCol key={emisor._id} sm="3">  
         <CardClientes id={emisor._id} nombre={emisor.nombre} image={emisor.logo}  />
         </MDBCol>) 
@@ -75,7 +93,12 @@ export default function Clientes () {
         </label>
             <div className='switch'>
          
-            <input type="checkbox" value={filter} onClick={() => setFilter(!filter)} name="toggle" className="sw" id="toggle-1"  />
+            <input type="checkbox"
+             value={filter} 
+            onClick={handlingSwitch} 
+            name="toggle" 
+            className="sw"
+             id="toggle-1"  />
   <label htmlFor="toggle-1"> </label>
       </div>
       <label htmlFor='toggle-1'>
@@ -83,20 +106,32 @@ export default function Clientes () {
         </label>
       </div>
             </MDBRow>
-        {!data? <div className="container-load-posts"> 
+        { (data && !loading)?  
+        <>
+        <MDBRow> 
+        <Clientes clientes={
+          query===QUERY_CLIENTES_BY_TIME? 
+          data.emisorByOrdenCronologico: 
+          data.emisorByOrdenAlfabetico
+
+        }/>
+        </MDBRow>
+        <MDBRow className="row-pagination">
+             <Pagination />
+            </MDBRow> 
+          
+           </>  
+              : 
+               <div className="container-load-posts"> 
               <div className="spinner-grow text-primary" role="status">
               <span className="sr-only">Cargando...</span>
               </div>
-              </div>
-              :  <>  <MDBRow> 
-              <Clientes/> <Clientes/> <Clientes/> <Clientes/> <Clientes/> </MDBRow>
-             <MDBRow className="row-pagination">
-               <Pagination />
-             </MDBRow> </>} 
+              </div> 
+          } 
        
 
        </MDBContainer> 
- 
+    <ShareFriend/>
   </div> 
   </>
     )

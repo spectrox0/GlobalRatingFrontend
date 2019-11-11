@@ -1,3 +1,25 @@
 .page-ley-normativa {
     min-height: 100vh;
+
+    .title {
+        margin-bottom: 2rem; 
+        margin-top: 2rem; 
+        h2 {
+            font-size:1.4em; 
+            display: flex;
+            flex-direction: column;
+            padding-left: 1rem; ;
+
+            &:after {
+            content: "";
+            height: .13rem;
+            background: $color-secondary;
+            width:120%; 
+            @media screen and (max-width:991px) {
+             width:100%; 
+            }
+           
+        }
+    } 
+    }
 }

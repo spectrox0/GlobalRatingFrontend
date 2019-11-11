@@ -4,6 +4,7 @@ import {MDBContainer, MDBRow } from 'mdbreact'
 import {initGA} from './helpers/initGA.js';
 import Select from 'react-select'; 
 import { MDBTable, MDBTableBody, MDBTableHead, MDBBtn , MDBIcon } from 'mdbreact';
+import ShareFriend from '../components/Others/shareFriends'; 
 export default function Estadisticas() {
     const year = (new Date()).getFullYear();
     const yearInitial = 1980; 
@@ -99,16 +100,13 @@ export default function Estadisticas() {
         OQ: Obligaciones Quirografarias <br/>
         TP: Titulos de Participacion <br/>
         PB: Pagares Bursatiles <br/>
-
       </p>
-   
       </div>
+      
       </MDBRow>
   
-  <MDBContainer className="rowCompartir"> 
-             <MDBBtn><MDBIcon icon="envelope" size="3x" /></MDBBtn>
-         </MDBContainer>
   </MDBContainer>
+   <ShareFriend />
         </div>
         
         </>
