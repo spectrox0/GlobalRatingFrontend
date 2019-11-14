@@ -37,9 +37,11 @@ export default function Calificacion () {
     }
 
     return (
+        <> 
+        <Header urlImage={ImgHeader} />
         <div className="calificacionContainer" >
        
-          <Header urlImage={ImgHeader} />
+     
                    
                     <MDBContainer >
                     <MDBRow className="title-calificacion"> 
@@ -262,7 +264,8 @@ export default function Calificacion () {
                         </MDBRow>
                     </MDBContainer>
                 </div>
-    );
+                </>
+    ); 
 
 
 }
