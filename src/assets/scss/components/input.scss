@@ -14,7 +14,7 @@
     &:focus {
         box-shadow: none;
        
-        border-bottom: $color-tertiary solid 1.5px;
+        border-bottom: rgba($color-primary,.5) solid 1.5px;
     }
 
    

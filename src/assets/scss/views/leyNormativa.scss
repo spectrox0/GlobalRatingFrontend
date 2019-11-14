@@ -13,7 +13,7 @@
             &:after {
             content: "";
             height: .13rem;
-            background: $color-secondary;
+            background: $color-primary; 
             width:120%; 
             @media screen and (max-width:991px) {
              width:100%; 

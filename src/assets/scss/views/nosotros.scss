@@ -15,7 +15,7 @@
                 &:after {
                 content: "";
                 height: 1.5px ; 
-                background: $color-secondary;
+                background: $color-primary; 
                 width:120%; 
             }
         } }
@@ -50,7 +50,7 @@
         &:after {
         content: "";
         height: 1.5px !important; 
-        background: $color-secondary;
+        background: $color-primary; 
         min-width: 70%;
             width: 10rem; 
             max-width: 100%;

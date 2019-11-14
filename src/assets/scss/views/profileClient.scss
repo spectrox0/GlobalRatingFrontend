@@ -9,7 +9,7 @@
     
         z-index: 300;
         background: #FFFFFF;
-        width:60rem; 
+        width:55rem; 
         border-radius: 10px;
         box-shadow: 0 0 6px rgba(0,0,0,0.3); 
         max-width: 100%;
@@ -30,7 +30,7 @@
                margin:0; 
              }
             span {
-                font-size: 2.3em;
+                font-size: 2em;
                 font-weight: 600;
                 @media screen and (max-width:992px) {
                     font-size: 1.2em;
@@ -45,7 +45,7 @@
     -moz-border-radius: 50%;
       border-radius: 50%;
        overflow:hidden;
-          width:12rem; 
+          width:10rem; 
           margin:0; 
           @media screen and (max-width:992px) {
             width:8rem; 
@@ -65,7 +65,7 @@
             box-shadow: 0 0 3px rgba(0,0,0,0.5);
             @include transition(.3s,ease-in-out);
             &:hover {
-                background: $color-secondary;
+                background: $color-primary; 
             }
             @media screen and (max-width:992px) {
                 font-size: .8em;
@@ -74,7 +74,7 @@
              }
         }
         .description {
-            font-size: 1.2em;
+            font-size: 1.1em;
             @media screen and (max-width:992px) {
                font-size: .8em;
             }
@@ -99,10 +99,9 @@
             &:after {
             content: "";
             height: .1rem;
-            background: $color-secondary;
-            min-width: 90%;
-            width: 20rem; 
-            max-width: 100%;
+            background: $color-primary; 
+             width:50%; 
+             max-width: 10rem;
         }
 
      }
@@ -110,7 +109,7 @@
 }
 .container {
     position: relative;
-    top: -12rem; 
+    top: -9rem; 
     right: 5%;
         @media screen and (max-width:992px) {
             right: 0;

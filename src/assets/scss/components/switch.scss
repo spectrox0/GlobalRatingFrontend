@@ -52,7 +52,7 @@ $sw-width: 51px;
           &:checked{
             & + label:before {
               width: $sw-width;
-              background: rgba($color-secondary,1);
+              background: rgba($color-primary,1);
               transition: width .2s cubic-bezier(0,0,0,.1) !important;
             }
             

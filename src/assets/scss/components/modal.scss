@@ -3,7 +3,7 @@
 .modal { 
     .modal-content {
         background: rgba(255,255,255,.95);
-        background: linear-gradient(rgba(255,255,255,.85), rgb(255,255,255));
+        background: linear-gradient(rgba(255,255,255,.92), rgb(255,255,255));
        
     }
     .modal-header,.modal-footer {
@@ -11,11 +11,11 @@
      
     }
     .close {
-        color: $color-secondary;
+        color: $color-primary; 
         font-size: 2em;
     }
     .title {
-        color: $color-secondary;
+        color: $color-primary; 
     }
         *:focus {
             outline: none ;

@@ -10,7 +10,8 @@
     &:hover {
         color: #FFFFFF;
         text-shadow: 0 0 1px  #FFFFFF;
-        background: $color-secondary;
+        background:$color-primary;
+        opacity: .9;
 
     }
 }
@@ -27,7 +28,7 @@
         
     }
    i {
-       color: $color-tertiary; 
+       color: $color-primary; 
        font-size: 3em; 
        &:focus, &:hover {
            opacity: .9;

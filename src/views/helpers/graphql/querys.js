@@ -156,11 +156,37 @@ export const QUERY_CLIENTES_BY_TIME = gql`
 query emisorByOrdenCronologico($first: Int! ,$after: Int!) {
   emisorByOrdenCronologico(first: $first ,after: $after) {
     
-      _id 
-      nombre
-      logo
+    _id 
+    nombre
+    logo
+  
     }
 
 
 }
+`
+export const EMISIONES_FOR_YEAR = gql`
+ query emisionesForYear($year:Int!) {
+  emisionesForYear(year:$year) {
+    _id
+    fechaAprovacion
+    monto
+    programa
+    tipoTitulo
+    nroProvidencia
+    statusCliente
+    idDictamen
+    idProvidencia
+    idProspecto
+    emisor {
+        nombre
+    }
+  }
+ }
+` 
+export const TOTAL_FOR_YEAR= gql`
+ query totalForYear($year:Int!) {
+  totalForYear(year:$year) 
+  
+ }
 `

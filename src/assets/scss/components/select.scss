@@ -24,7 +24,7 @@
   
     
     & .Select__loading-indicator {
-    color: aqua;
+    color: $color-primary; 
     }
     
     & .Select__control {
@@ -61,7 +61,7 @@
       
         
         & .Select__loading-indicator {
-        color: aqua;
+        color: $color-primary; 
         }
         
         & .Select__control {

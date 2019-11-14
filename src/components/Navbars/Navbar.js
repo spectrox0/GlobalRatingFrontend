@@ -21,11 +21,11 @@ export default function NavbarGlobal() {
   const  context = useContext(country); 
   const countrys = [{ 
     value:"ve", 
-  label: <Link to="/index/ve" >  <img src={require("assets/img/flags/VE.png")} alt="Venezuela" style={{height:"1rem"}}  />Venezuela</Link>
+  label: <Link to="/index/ve" >  <img src={require("assets/img/flags/VE.png")} alt="Venezuela" style={{height:"1rem"}}  /> {" "} Venezuela</Link>
   }, 
   {
     value:"pa", 
-    label: <Link  to="/index/pa" > <img src={require("assets/img/flags/PA.png")} alt="Panama" style={{height:"1rem"}}  /> Panama </Link>
+    label: <Link  to="/index/pa" > <img src={require("assets/img/flags/PA.png")} alt="Panama" style={{height:"1rem"}}  /> {" "}  Panama </Link>
   }
   ]
   const [countryActual,setCountryActual] = useState(); 
@@ -37,6 +37,8 @@ export default function NavbarGlobal() {
     } else  setCountryActual(countrys[1]); 
   } ,[])
   // Use effect se carga al iniciar el componente , efectuado cada vez que se renderice el componente 
+  
+
   useEffect(() => {
     const updateNavbarColor = () => {
       if(!collapseOpen) { 

@@ -3,9 +3,10 @@
     justify-content: flex-end;
     .btn {
       
-        i { color:$color-secondary;  }
+        i { color:$color-primary;  }
         &:focus {
             box-shadow: none;
+            opacity: .9;
         }
     }
 }

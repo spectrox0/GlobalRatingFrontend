@@ -16,7 +16,7 @@
                 &:after {
                 content: "";
                 height: .1rem;
-                background: $color-secondary;
+                background: $color-primary; 
                 min-width: 90%;
                 width: 20rem; 
                 max-width: 100%;
@@ -34,8 +34,12 @@ li {
 }
     a{ 
             font-size:1.8em; 
+            color:$color-primary; 
             &:hover {
                 text-decoration: none;
+            }
+            &:focus {
+                outline: none;
             }
         }
    
@@ -47,7 +51,7 @@ li {
         margin-bottom: 2rem;
         .btn {
           
-            i { color:$color-secondary;  }
+            i { color:$color-primary;   }
             &:focus {
                 box-shadow: none;
             }
