@@ -56,9 +56,9 @@ export default function Estadisticas() {
           <td>Cell</td>
           <td>Cell</td>
           <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
+          <td> <MDBBtn className="btn-estadistica" /> </td>
+          <td><MDBBtn className="btn-estadistica" /> </td>
+          <td><MDBBtn className="btn-estadistica" /> </td>
         
         </tr>
         <tr>

@@ -37,9 +37,20 @@
 .btn-estadistica {
     padding:0; 
     margin: 0; 
-    background: url("../../img/btn/btn_estadisticas.png");
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    background: url("./../img/btn/btn_estadisticas.svg") center no-repeat;
+    background-size: cover;
+    transition: all .2s ease-in-out;
     &:focus {
         outline: none;
-        box-shadow: none;
+        opacity: .8;
+        box-shadow: 0 1px .5px rgba(0, 0, 0, 0.383);
+    }
+    &:hover {
+        opacity: .8;
+        box-shadow: 0 1px .5px rgba(0, 0, 0, 0.383); 
+       
     }
 }
