@@ -1,10 +1,10 @@
 import React , {useState , useEffect} from "react"; 
-import IndexHeader from "./../components/Headers/IndexHeader";
 import {initGA} from './helpers/initGA.js';
 import {MDBRow, MDBContainer, MDBCol} from 'mdbreact'; 
 import {QUERY_LEYNORMATIVA} from './helpers/graphql/querys'
 import { useQuery} from '@apollo/react-hooks';
-
+import Header from '../components/Headers/headersViews/Header';
+import ImgHeader from '../assets/img/headers/Header Leyes.png'; 
 export default function LeyNormativa( {location} ) { 
   
     const [date, setDate] = useState("Cargando... por favor espere"); 
@@ -31,7 +31,7 @@ export default function LeyNormativa( {location} ) {
         },[data])
         return (
           <>
-          <IndexHeader />
+      <Header urlImage={ImgHeader} />
          <section className="page-ley-normativa">
         <MDBContainer> 
           {!data?    <div className="container-load-posts"> 

@@ -1,10 +1,11 @@
 import React from 'react'; 
-import Header from '../components/Headers/IndexHeader';
 import {MDBContainer, MDBRow } from 'mdbreact'
 import {initGA} from './helpers/initGA.js';
 import Select from 'react-select'; 
 import { MDBTable, MDBTableBody, MDBTableHead, MDBBtn , MDBIcon } from 'mdbreact';
 import ShareFriend from '../components/Others/shareFriends'; 
+import Header from '../components/Headers/headersViews/Header';
+import ImgHeader from '../assets/img/headers/Header Estadísticas.jpg'; 
 export default function Estadisticas() {
     const year = (new Date()).getFullYear();
     const yearInitial = 1980; 
@@ -16,7 +17,7 @@ export default function Estadisticas() {
       },[]);
     return (
         <>
-        <Header/>
+       <Header urlImage={ImgHeader} />
         <div className="estadisticas-pag">
             <MDBContainer >
             <MDBRow className="title">

@@ -1,20 +1,18 @@
 import React, { useState, useEffect} from "react";
-import IndexHeader from "./../components/Headers/IndexHeader";
 import Recaptcha from "react-recaptcha"; 
-import styled from "styled-components";
+
 import {useMutation} from '@apollo/react-hooks';
 import {MUTATION_CONTACTANOS} from './helpers/graphql/mutation'
 import {initGA} from './helpers/initGA.js';
-import Header from '../components/Headers/IndexHeader'
+
+import Header from '../components/Headers/headersViews/Header';
+import ImgHeader from '../assets/img/headers/Header Contacto.png'; 
 
 
 import {
   MDBRow
   , MDBCol,
   MDBAlert,
-  MDBInput,
-  MDBFormInline,
-  MDBInputGroup,
   MDBContainer,
   MDBBtn
 } from 'mdbreact'
@@ -37,18 +35,6 @@ export default function Contactanos () {
     initGA();
   },[]);
 
-  /* useEffect(() => {
-       document.body.classList.add("index-page");
-       document.body.classList.add("sidebar-MDBCollapse");
-       document.documentElement.classList.remove("nav-open");
-       window.scrollTo(0, 0);
-       document.body.scrollTop = 0;
-       return function cleanup() {
-         document.body.classList.remove("index-page");
-         document.body.classList.remove("sidebar-MDBCollapse");
-       };   });
- 
-*/
 const RecaptchaLoad = ()=> {
 
 }
@@ -109,7 +95,7 @@ const verifyCallback =(response) => {
 }
   return (
    <> 
-   <Header/>
+    <Header urlImage={ImgHeader} />
     <div className="page-contact">
    
           <MDBContainer >

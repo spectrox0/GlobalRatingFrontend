@@ -10,7 +10,8 @@ import {
     MDBBtn,
     MDBIcon
 }  from 'mdbreact'; 
-import Header from './../components/Headers/IndexHeader'; 
+import Header from '../components/Headers/headersViews/Header';
+import ImgHeader from '../assets/img/headers/Header Clientes.png'; 
 import CardEmisiones from './../components/Cards/CardEmisiones.js'; 
 import ShareEmail from '../components/Others/shareFriends.js'; 
 export default function PerfilCliente({location})  {
@@ -38,7 +39,7 @@ export default function PerfilCliente({location})  {
    }
  return (
      <> 
-     <Header/>
+    <Header urlImage={ImgHeader} />
  <div className="container-profile-client"> 
     {(data && !loading)?  ( 
         <>

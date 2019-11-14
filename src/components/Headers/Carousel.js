@@ -1,6 +1,9 @@
 import React from "react";
 import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask } from
 "mdbreact";
+import Img1 from './../../assets/img/carousel/Carousel 1.png'
+import Img2 from './../../assets/img/carousel/Carousel 2.png'
+import Img3 from './../../assets/img/carousel/Carousel 3.png'
 
 const CarouselPage = () => {
   return (
@@ -16,7 +19,7 @@ const CarouselPage = () => {
           <MDBView>
             <img
               className="img-carousel"
-              src={require("./../../assets/img/carousel/Global-ratings.jpg")}
+              src={Img1}
               alt="First slide"
              
             />
@@ -30,7 +33,7 @@ const CarouselPage = () => {
           <MDBView>
             <img
               className="img-carousel"
-              src={require("./../../assets/img/carousel/Global-ratings3.jpg")}
+              src={Img2}
               alt="Second slide"
              
             />
@@ -44,7 +47,7 @@ const CarouselPage = () => {
           <MDBView>
             <img
               className="img-carousel"
-              src={require("./../../assets/img/carousel/Global-ratings4-2.jpg")}
+              src={Img3}
               alt="Third slide"
             />
           <MDBMask overlay="black-slight" />

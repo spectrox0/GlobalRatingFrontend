@@ -1,13 +1,12 @@
 import React, { useState } from 'react'; 
-import styled from 'styled-components'; 
-import {Link} from 'react-router-dom'; 
 import {initGA} from './helpers/initGA.js';
 import {QUERY_EMISORES, QUERY_CLIENTES_BY_ALPHABETIC , QUERY_CLIENTES_BY_TIME} from './helpers/graphql/querys'
 import { useQuery} from '@apollo/react-hooks';
-import  Header from './../components/Headers/IndexHeader'
 import CardClientes from '../components/Cards/CardClientes.js';
 import ShareFriend from '../components/Others/shareFriends.js';
 
+import Header from '../components/Headers/headersViews/Header';
+import ImgHeader from '../assets/img/headers/Header Clientes.png'; 
 import { 
     MDBContainer , 
     MDBCol, 
@@ -78,7 +77,7 @@ export default function Clientes () {
     }
     return (
       <>
-      <Header />
+     <Header urlImage={ImgHeader} />
         <div className="clientesContainer"> 
        
         <MDBContainer> 

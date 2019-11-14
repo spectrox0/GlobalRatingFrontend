@@ -39,6 +39,7 @@ export default function NavbarGlobal() {
   // Use effect se carga al iniciar el componente , efectuado cada vez que se renderice el componente 
   useEffect(() => {
     const updateNavbarColor = () => {
+      if(!collapseOpen) { 
       if (
         document.documentElement.scrollTop > 100 ||
         document.body.scrollTop > 100
@@ -53,12 +54,12 @@ export default function NavbarGlobal() {
         setNavbarLogo(require("assets/img/globalrating_white.svg"));
        
       }
-    };
+    };}
     window.addEventListener("scroll", updateNavbarColor);
     return function cleanup() {
       window.removeEventListener("scroll", updateNavbarColor);
     };
-  });
+  }, [collapseOpen]);
   return  ( 
     
       <MDBNavbar className={navbarColor} expand="lg">
@@ -77,7 +78,11 @@ export default function NavbarGlobal() {
         </MDBNavbarBrand>
      
          <Toggler onClick = { () => {
-           document.documentElement.classList.toggle("nav-open");
+           if(!collapseOpen) { 
+            setNavbarColor("");
+            setNavbarLogo(require("assets/img/pic_logoGR.svg"));
+           } 
+        
            setCollapseOpen(!collapseOpen); 
          }} ></Toggler>
         

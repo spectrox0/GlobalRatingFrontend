@@ -30,8 +30,11 @@
                margin:0; 
              }
             span {
-                font-size: 2.5em;
+                font-size: 2.3em;
                 font-weight: 600;
+                @media screen and (max-width:992px) {
+                    font-size: 1.2em;
+                 }
                 text-transform: uppercase;
             }
          }
@@ -44,6 +47,9 @@
        overflow:hidden;
           width:12rem; 
           margin:0; 
+          @media screen and (max-width:992px) {
+            width:8rem; 
+        }
         }
         .webSocial {
             display:flex;
@@ -58,11 +64,20 @@
             background: rgba(0,0,0,0.85);
             box-shadow: 0 0 3px rgba(0,0,0,0.5);
             @include transition(.3s,ease-in-out);
-
             &:hover {
                 background: $color-secondary;
             }
-
+            @media screen and (max-width:992px) {
+                font-size: .8em;
+                width: 2rem !important;
+                height: 2rem;
+             }
+        }
+        .description {
+            font-size: 1.2em;
+            @media screen and (max-width:992px) {
+               font-size: .8em;
+            }
         }
 
     }
@@ -73,10 +88,13 @@
     
     .container .emisiones {
         h3 {
-            font-size:1.8em; 
+            font-size:1.5em; 
             display: flex;
             flex-direction: column;
-            padding-left: 1rem; ;
+            padding-left: 1rem; 
+            @media screen and (max-width:992px) {
+                font-size: 1.2em;
+             }
 
             &:after {
             content: "";
@@ -93,9 +111,10 @@
 .container {
     position: relative;
     top: -12rem; 
-    right: 5vw;
+    right: 5%;
         @media screen and (max-width:992px) {
             right: 0;
+            top: 0; 
         }
 }
 

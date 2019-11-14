@@ -34,3 +34,12 @@
        }
    }
 }
+.btn-estadistica {
+    padding:0; 
+    margin: 0; 
+    background: url("../../img/btn/btn_estadisticas.png");
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}
