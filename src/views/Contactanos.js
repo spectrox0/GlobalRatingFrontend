@@ -211,11 +211,10 @@ const verifyCallback =(response) => {
                       
                  
                   <MDBRow> 
-                  <Recaptcha
+    <Recaptcha
     sitekey="6LeFsrgUAAAAAJmjoOiqeDR2Kkv4jcJOWe4njhOt"
     render="explicit"
     onloadCallback={RecaptchaLoad}
-    type="audio"
     verifyCallback={verifyCallback}
   />
 

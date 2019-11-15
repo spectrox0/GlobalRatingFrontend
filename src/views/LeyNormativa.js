@@ -1,10 +1,11 @@
 import React , {useState , useEffect} from "react"; 
 import {initGA} from './helpers/initGA.js';
-import {MDBRow, MDBContainer, MDBCol} from 'mdbreact'; 
-import {QUERY_LEYNORMATIVA} from './helpers/graphql/querys'
+import {MDBRow, MDBContainer, MDBCol, MDBBtn} from 'mdbreact'; 
+import {QUERY_LEYNORMATIVA, GET_NEXT_LEY, GET_PREV_LEY} from './helpers/graphql/querys'
 import { useQuery} from '@apollo/react-hooks';
 import Header from '../components/Headers/headersViews/Header';
 import ImgHeader from '../assets/img/headers/Header Leyes.png'; 
+import {Link} from 'react-router-dom'; 
 export default function LeyNormativa( {location} ) { 
   
     const [date, setDate] = useState("Cargando... por favor espere"); 
@@ -13,8 +14,17 @@ export default function LeyNormativa( {location} ) {
     const  {data ,loading , error}= useQuery(QUERY_LEYNORMATIVA,{variables: {
       _id: id
     }  } );
-
-   
+  
+    const Next = useQuery(GET_NEXT_LEY, {
+      variables: {
+        _id:id
+      }
+    })
+    const Prev = useQuery(GET_PREV_LEY, {
+      variables: {
+        _id:id
+      }
+    })
      
        
 
@@ -55,11 +65,27 @@ export default function LeyNormativa( {location} ) {
 
               <div className="contentHtml" dangerouslySetInnerHTML={{ __html: data.leyesNormativasID.htmlScribd }} />
           </MDBRow>
-
-   
-        
         
               </> }
+              <MDBRow className={
+                (Prev.data && Prev.data.leyesNormativasPrev)? 
+                "btns-control" : 
+                 "btns-control-2"
+              }>
+        {(Prev.data && Prev.data.leyesNormativasPrev ) &&
+         <MDBBtn className="btn-color-primary" tag={Link} 
+          to={{
+          pathname: '/ve/leynormativa',
+          search: `?id=${Prev.data.leyesNormativasPrev}`}}> Anterior </MDBBtn> }
+          {(Next.data && Next.data.leyesNormativasNext ) && 
+          <MDBBtn className="btn-color-primary" tag={Link} 
+          to={{
+            pathname: '/ve/leynormativa',
+            search: `?id=${Next.data.leyesNormativasNext}`}}
+          > Siguiente </MDBBtn> }
+
+              </MDBRow>
+            
        
         </MDBContainer>
     

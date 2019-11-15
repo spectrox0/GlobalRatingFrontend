@@ -22,4 +22,15 @@
         }
     } 
     }
+    .btns-control {
+        display: flex;
+        margin-top: 2rem;
+        justify-content: space-between;
+    }
+    .btns-control-2 {
+        display: flex;
+        margin-top: 2rem;
+        justify-content: flex-end;
+
+    }
 }
