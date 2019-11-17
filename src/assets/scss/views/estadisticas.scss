@@ -34,11 +34,13 @@
             background: $footer-color; 
             padding: .7rem; 
             padding-left:1rem;
-           
+            width: 50vh;
+            min-width: 8rem;
+            margin:1rem;
+            margin-left: 0;
+          
         span {
             font-size:1.2em; 
-            width: 30rem; 
-            max-width: 100%;
             display: flex;
             justify-content: space-between;
             b {
