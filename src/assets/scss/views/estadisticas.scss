@@ -1,5 +1,6 @@
 .estadisticas-pag {
     min-height: 100vh;
+    padding-top: 2rem;
     .title {
         display: flex;
         h2 {
@@ -11,7 +12,7 @@
             &:after {
             content: "";
             height: .1rem;
-            background: $color-secondary;
+            background: $color-primary;
             width: 20rem; 
             max-width: 100%;
         }
@@ -28,5 +29,23 @@
         padding-right:1rem; 
         @import '../components/table.scss'; 
     }
-   
+    .total { display: flex;
+            flex-direction: column;
+            background: $footer-color; 
+            padding: .7rem; 
+            padding-left:1rem;
+           
+        span {
+            font-size:1.2em; 
+            width: 30rem; 
+            max-width: 100%;
+            display: flex;
+            justify-content: space-between;
+            b {
+                color:$color-secondary; 
+            }
+            
+        }
+      
+    }
 }

@@ -21,11 +21,11 @@ export default function NavbarGlobal() {
   const  context = useContext(country); 
   const countrys = [{ 
     value:"ve", 
-  label: <Link to="/index/ve" >  <img src={require("assets/img/flags/VE.png")} alt="Venezuela" style={{height:"1rem"}}  />Venezuela</Link>
+  label: <Link to="/index/ve" >  <img src={require("assets/img/flags/VE.png")} alt="Venezuela" style={{height:"1rem"}}  /> {" "} Venezuela</Link>
   }, 
   {
     value:"pa", 
-    label: <Link  to="/index/pa" > <img src={require("assets/img/flags/PA.png")} alt="Panama" style={{height:"1rem"}}  /> Panama </Link>
+    label: <Link  to="/index/pa" > <img src={require("assets/img/flags/PA.png")} alt="Panama" style={{height:"1rem"}}  /> {" "}  Panama </Link>
   }
   ]
   const [countryActual,setCountryActual] = useState(); 
@@ -37,8 +37,11 @@ export default function NavbarGlobal() {
     } else  setCountryActual(countrys[1]); 
   } ,[])
   // Use effect se carga al iniciar el componente , efectuado cada vez que se renderice el componente 
+  
+
   useEffect(() => {
     const updateNavbarColor = () => {
+      if(!collapseOpen) { 
       if (
         document.documentElement.scrollTop > 100 ||
         document.body.scrollTop > 100
@@ -53,12 +56,12 @@ export default function NavbarGlobal() {
         setNavbarLogo(require("assets/img/globalrating_white.svg"));
        
       }
-    };
+    };}
     window.addEventListener("scroll", updateNavbarColor);
     return function cleanup() {
       window.removeEventListener("scroll", updateNavbarColor);
     };
-  });
+  }, [collapseOpen]);
   return  ( 
     
       <MDBNavbar className={navbarColor} expand="lg">
@@ -77,7 +80,11 @@ export default function NavbarGlobal() {
         </MDBNavbarBrand>
      
          <Toggler onClick = { () => {
-           document.documentElement.classList.toggle("nav-open");
+           if(!collapseOpen) { 
+            setNavbarColor("");
+            setNavbarLogo(require("assets/img/pic_logoGR.svg"));
+           } 
+        
            setCollapseOpen(!collapseOpen); 
          }} ></Toggler>
         

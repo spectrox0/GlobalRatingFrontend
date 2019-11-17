@@ -1,21 +1,57 @@
 import React from 'react'; 
-import Header from '../components/Headers/IndexHeader';
 import {MDBContainer, MDBRow } from 'mdbreact'
 import {initGA} from './helpers/initGA.js';
 import Select from 'react-select'; 
 import { MDBTable, MDBTableBody, MDBTableHead, MDBBtn , MDBIcon } from 'mdbreact';
+import ShareFriend from '../components/Others/shareFriends'; 
+import Header from '../components/Headers/headersViews/Header';
+import ImgHeader from '../assets/img/headers/Header Estadísticas.jpg'; 
+import {useQuery} from '@apollo/react-hooks'; 
+import {EMISIONES_FOR_YEAR ,TOTAL_FOR_YEAR } from './helpers/graphql/querys'
 export default function Estadisticas() {
     const year = (new Date()).getFullYear();
     const yearInitial = 1980; 
     const years = Array.from(new Array(year-yearInitial+1),( val, index) => { return {value: year-index, label:year-index } });
     const [yearFilter , setYearFilter] =React.useState(year); 
+
+    const {data , loading , error ,refetch} = useQuery(EMISIONES_FOR_YEAR, {
+      variables: {
+        year: yearFilter
+      }
+    }); 
+    const totalEmision = useQuery(TOTAL_FOR_YEAR, {
+      variables: {
+        year:yearFilter
+      }
+    })
     React.useEffect(()=> {
         initGA();
        
       },[]);
+
+    const Emisiones = ({emisiones}) => {
+    return emisiones.map ( emision => 
+      <tr key={emision._id}>
+      <td>{emision.emisor.nombre}</td>
+    <td> {emision.tipoTitulo==="PAPELES_COMERCIALES"&& "PC"}
+    {emision.tipoTitulo==="OBLIGACIONES_QUIROGRAFARIAS" && "OQ"}
+    {emision.tipoTitulo===" TITULOS_DE_PARTICIPACION"&& "TP"}
+    {emision.tipoTitulo===" PAGARE_BURSATILES"&& "PB"}
+    
+    </td>
+      <td>{emision.monto}</td> 
+      <td>{emision.fechaAprovacion.split("T")[0]} </td>
+      <td>{emision.nroProvidencia} </td>
+      <td> <MDBBtn className="btn-estadistica" /> </td>
+      <td><MDBBtn className="btn-estadistica" /> </td>
+      <td><MDBBtn className="btn-estadistica" /> </td>
+    
+    </tr>
+      )
+    }
     return (
         <>
-        <Header/>
+       <Header urlImage={ImgHeader} />
         <div className="estadisticas-pag">
             <MDBContainer >
             <MDBRow className="title">
@@ -48,47 +84,30 @@ export default function Estadisticas() {
         </tr>
       </MDBTableHead>
       <MDBTableBody>
-        <tr>
-          <td>1</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-        
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-        
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-         
-        </tr>
+        {( data && !loading && !error) && 
+          <Emisiones emisiones={data.emisionesForYear} />  
+        } {
+          loading && 
+          <tr> 
+            <td colSpan="8">
+          <div className="container-load-posts"> 
+          <div className="spinner-grow text-primary" role="status">
+          <span className="sr-only">Cargando...</span>
+          </div>
+          </div> 
+          </td>
+          </tr>
+        }
+      
       </MDBTableBody>
     </MDBTable>
   </MDBRow>
   <MDBRow>
     <div className="total"> 
     <span>
-      <b> Total de año: </b>
-       2121312
+      <b> Total del año </b>
+      {totalEmision.data && totalEmision.data.totalForYear}
+       {" "} Bs
       </span> 
       </div>
       </MDBRow>
@@ -99,16 +118,13 @@ export default function Estadisticas() {
         OQ: Obligaciones Quirografarias <br/>
         TP: Titulos de Participacion <br/>
         PB: Pagares Bursatiles <br/>
-
       </p>
-   
       </div>
+      
       </MDBRow>
   
-  <MDBContainer className="rowCompartir"> 
-             <MDBBtn><MDBIcon icon="envelope" size="3x" /></MDBBtn>
-         </MDBContainer>
   </MDBContainer>
+   <ShareFriend />
         </div>
         
         </>

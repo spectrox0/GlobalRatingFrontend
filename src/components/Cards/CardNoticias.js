@@ -101,8 +101,8 @@ month[11] = "Dec.";
          
            </MDBModalBody>
           <MDBModalFooter>
-              <MDBBtn className="btn-round btn-primary" onClick={toggle}>Ver en Finanzas Digital</MDBBtn>
-          <MDBBtn className="btn-round btn-primary" onClick={toggle}>Cerrar</MDBBtn>
+              <MDBBtn className="btn-round btn-color-primary" onClick={toggle}>Ver en Finanzas Digital</MDBBtn>
+          <MDBBtn className="btn-round btn-color-primary" onClick={toggle}>Cerrar</MDBBtn>
         </MDBModalFooter>
           </MDBModal>
         </>

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import Header from "./../components/Headers/IndexHeader";
 import {initGA} from './helpers/initGA.js';
 import {
     MDBRow
     , MDBCol
     , MDBContainer
 } from 'mdbreact'
-
+import Header from '../components/Headers/headersViews/Header';
+import ImgHeader from '../assets/img/headers/Header Nosotros.jpg'; 
 export default function () {
     React.useEffect(()=> {
         initGA();
@@ -16,7 +16,7 @@ export default function () {
         <>
              
         
-         <Header /> 
+             <Header urlImage={ImgHeader} />
         <div className="page-nosotros">
 
        

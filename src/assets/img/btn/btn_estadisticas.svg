@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="163.184" height="163.184" viewBox="0 0 163.184 163.184">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#a2a2a2"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" y1="1" y2="0" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#09c"/>
+      <stop offset="1" stop-color="#2b3990"/>
+    </linearGradient>
+  </defs>
+  <g id="Botón_estadísticas" data-name="Botón estadísticas" transform="translate(2311 962)">
+    <circle id="Ellipse_55" data-name="Ellipse 55" cx="62.5" cy="62.5" r="62.5" transform="translate(-2292 -943)" fill="url(#linear-gradient)"/>
+    <path id="Exclusion_4" data-name="Exclusion 4" d="M71.549,0A71.569,71.569,0,0,0,43.7,137.478,71.569,71.569,0,0,0,99.4,5.623,71.1,71.1,0,0,0,71.549,0Zm0,134.313a62.763,62.763,0,1,1,62.764-62.762A62.834,62.834,0,0,1,71.549,134.313Z" transform="translate(-2300.958 -951.958)" fill="url(#linear-gradient-2)"/>
+    <path id="Exclusion_5" data-name="Exclusion 5" d="M81.591,0A81.614,81.614,0,0,0,49.832,156.773,81.613,81.613,0,0,0,113.351,6.412,81.08,81.08,0,0,0,81.591,0Zm0,153.164a71.572,71.572,0,1,1,71.572-71.571A71.652,71.652,0,0,1,81.591,153.164Z" transform="translate(-2311 -962)" fill="url(#linear-gradient-3)"/>
+  </g>
+</svg>

@@ -2,11 +2,12 @@
     padding-top: 3rem;
    
     background: $footer-color; 
-    color: #FFFFFF; 
+    color: rgb(0, 0, 0); 
     .row .col-footer {
       
         @media screen and (min-width:992px) {
-            border-right: .2rem solid rgba($footer-color-copyrigth, 0.8); 
+            border-right: .2rem solid rgba($footer-color-copyrigth, 0.1); 
+            padding: 1rem;
         }
     }
     .finanzasDigital {
@@ -41,18 +42,19 @@
         padding:.5rem;
         background: $footer-color-copyrigth; 
         display: flex; 
+        color: rgb(255, 255, 255); 
         align-items:center;
         margin-top:3rem; 
         min-height:  4rem; 
         a {
-            color: $color-primary; 
+            color: rgb(255, 255, 255); 
             &:hover {
                 text-decoration: none; 
             }
         }
     }
     .container-fluid {
-        max-width: 80rem; 
+        max-width: 70rem; 
     }
     
     p {

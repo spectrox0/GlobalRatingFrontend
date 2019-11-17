@@ -40,6 +40,7 @@ export const QUERY_LEYESNORMATIVAS = gql`
    titulo
    descripcion
    htmlScribd
+   fecha
    pais {
      nombre
    }
@@ -53,6 +54,7 @@ query leyesNormativasID($_id: String!) {
    titulo
    descripcion
    htmlScribd
+   fecha
    pais {
      nombre
    }
@@ -135,4 +137,56 @@ query postBy($postId: Int!) {
       }
     
 }
+`
+export const QUERY_CLIENTES_BY_ALPHABETIC = gql`
+query emisorByOrdenAlfabetico($first: Int! ,$after: Int!) {
+  emisorByOrdenAlfabetico(first: $first ,after: $after) {
+    
+      _id 
+      nombre
+      logo
+    }
+
+
+}
+`
+
+
+export const QUERY_CLIENTES_BY_TIME = gql`
+query emisorByOrdenCronologico($first: Int! ,$after: Int!) {
+  emisorByOrdenCronologico(first: $first ,after: $after) {
+    
+    _id 
+    nombre
+    logo
+  
+    }
+
+
+}
+`
+export const EMISIONES_FOR_YEAR = gql`
+ query emisionesForYear($year:Int!) {
+  emisionesForYear(year:$year) {
+    _id
+    fechaAprovacion
+    monto
+    programa
+    tipoTitulo
+    nroProvidencia
+    statusCliente
+    idDictamen
+    idProvidencia
+    idProspecto
+    emisor {
+        nombre
+    }
+  }
+ }
+` 
+export const TOTAL_FOR_YEAR= gql`
+ query totalForYear($year:Int!) {
+  totalForYear(year:$year) 
+  
+ }
 `

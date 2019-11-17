@@ -1,11 +1,12 @@
 import React , {useState , useEffect} from "react"; 
-import IndexHeader from "./../components/Headers/IndexHeader";
-import axios from 'axios'
 import {initGA} from './helpers/initGA.js';
 import {MDBRow, MDBContainer, MDBCol} from 'mdbreact'; 
 import {QUERY_DICTAMEN} from './helpers/graphql/querys'
 import client from './helpers/graphqlClientFinanzas';
 import { useQuery} from '@apollo/react-hooks';
+import ShareFriend from '../components/Others/shareFriends.js'
+import Header from '../components/Headers/headersViews/Header';
+import ImgHeader from '../assets/img/headers/Header Leyes.png'; 
 
 export default function Dictamen( {location} ) { 
     const [dictamen,setDictamen] = useState(); 
@@ -59,7 +60,7 @@ export default function Dictamen( {location} ) {
    
         return (
           <>
-          <IndexHeader />
+          <Header urlImage={ImgHeader} />
          <section className="dictamen">
         <MDBContainer> 
           {isLoading?    <div className="container-load-posts"> 
@@ -85,7 +86,7 @@ export default function Dictamen( {location} ) {
               </> }
        
         </MDBContainer>
-    
+        <ShareFriend socialNetworks/>
         </section>
         </>
        ) ; 
