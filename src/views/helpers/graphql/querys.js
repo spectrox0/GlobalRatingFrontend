@@ -202,7 +202,7 @@ query leyesNormativasPrev($_id:String!) {
 `
 export const EMISIONES_BY_EMISION= gql`
  query emisionesByEmisor($_id:String!) {
-  emisionesByEmisor(_id: $id){
+  emisionesByEmisor(_id: $_id){
       idDictamen
       idProspecto
       idProvidencia
@@ -212,4 +212,9 @@ export const EMISIONES_BY_EMISION= gql`
 
  }
 
+`
+export const NUMBER_OF_EMISORES = gql`
+ {
+  numberOfEmisores
+ }
 `

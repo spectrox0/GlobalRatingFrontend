@@ -15,7 +15,7 @@
                 flex-direction: column;
                 &:after {
                 content: "";
-                height: .1rem;
+                height:$height-underline;
                 background: $color-primary; 
                 min-width: 90%;
                 width: 20rem; 

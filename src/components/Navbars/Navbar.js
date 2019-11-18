@@ -95,35 +95,64 @@ export default function NavbarGlobal() {
           <MDBNavItem active> 
               <MDBNavLink to= {{
                pathname:`/nosotros/${context.country}` }
-                }   tag={Link} >Nosotros</MDBNavLink>
+                }  tag={Link}
+                 onClick={
+                     () => setCollapseOpen(false)
+                 }
+                 >Nosotros</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
               <MDBNavLink to={ {
                pathname:`/clientes/${context.country}` }
-                }  tag={Link}>Clientes</MDBNavLink>
+                } 
+                 tag={Link}
+                 onClick={
+                  () => setCollapseOpen(false)
+              }
+                 >Clientes</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
               <MDBNavLink to={ {
                pathname:`/calificacion/${context.country}` }
-                } tag={Link}>Calificación</MDBNavLink>
+                } 
+                tag={Link}
+                onClick={
+                  () => setCollapseOpen(false)
+              }
+                >Calificación</MDBNavLink>
             </MDBNavItem>
          
                  <MDBNavItem>
               <MDBNavLink to={ {
                pathname:`/estadisticas/${context.country}` }
-                }  tag={Link} >Estadísticas</MDBNavLink>
+                } 
+                 tag={Link}
+                 onClick={
+                  () => setCollapseOpen(false)
+              }
+                  >Estadísticas</MDBNavLink>
             </MDBNavItem>
         
             <MDBNavItem>
               <MDBNavLink to={ {
                pathname:`/leyesnormativas/${context.country}` }
-                } tag={Link}>Leyes y Normativas</MDBNavLink>
+                } 
+                tag={Link}
+                onClick={
+                  () => setCollapseOpen(false)
+              }
+                >Leyes y Normativas</MDBNavLink>
             </MDBNavItem>
 
             <MDBNavItem>
               <MDBNavLink to={ {
                pathname:`/contactanos/${context.country}` }
-                }  tag={Link} >contactanos</MDBNavLink>
+                } 
+                 tag={Link} 
+                 onClick={
+                  () => setCollapseOpen(false)
+              }
+                 >contactanos</MDBNavLink>
             </MDBNavItem>
           </MDBNavbarNav>
           <MDBNavbarNav right> 
@@ -139,6 +168,7 @@ export default function NavbarGlobal() {
                      setCountryActual({label:e.label, value:e.value})
                      context.changeCountry(e.value); 
                      localStorage.setItem("country", e.value); 
+                     setCollapseOpen(false)
                      
                  }}
                  />  }

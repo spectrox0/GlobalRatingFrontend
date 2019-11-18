@@ -10,11 +10,13 @@
         text-align: justify;
         &:after {
             content: "";
-            height: .11rem;
+            height:$height-underline;
             background:$color-primary; 
-            min-width: 90%;
-            width: 40rem; 
-            max-width: 100%; }
+            width:150%; 
+            @media screen and (max-width:991px) {
+                width: 100%;
+            }
+ }
 
      } }
      .container{

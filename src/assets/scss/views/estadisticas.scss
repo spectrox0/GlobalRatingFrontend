@@ -11,7 +11,7 @@
 
             &:after {
             content: "";
-            height: .1rem;
+            height:$height-underline;
             background: $color-primary;
             width: 20rem; 
             max-width: 100%;

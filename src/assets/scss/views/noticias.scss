@@ -19,10 +19,9 @@
 
             &:after {
             content: "";
-            height: .1rem;
+            height:$height-underline;
             background: $color-primary; 
-            min-width: 90%;
-            width: 40vw;  
+          
             max-width: 100%;
 
             }
