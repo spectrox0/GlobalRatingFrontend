@@ -1,37 +1,23 @@
 .cardEmision {
- background: #FFFFFF;
+ background: transparent; 
  margin:1rem; 
  border:none;
- box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
-  width:50rem; 
-  max-width: 100%;
+  width:100%; 
+  .card-body {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
    .card-title {
        text-transform: uppercase;
        font-weight: bold;
         color:$color-title1;
-       border-bottom: cornflowerblue solid 1px ;
    }
-  .btn {
-      margin: 1rem; 
-      color:white; 
-      border-radius: 500px;
-      background: rgb(100, 149, 237);
-      box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
-      @include transition(.5s , ease-in-out); 
-      font-weight: 600;
-      text-transform: uppercase; 
-      text-shadow: 0 0 3px rgba(0,0,0,0.5);
-      &:hover {
-        box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
-        opacity: .9;
-      }
-  }
-  .card-footer{
-      border:none; 
-      display:flex; 
-      justify-content: flex-end;
-      font-weight: 600;
-      color: $color-title1; 
-      background: linear-gradient(#FFFFFF,rgba($color-tertiary,0.2));
-  }
+   .btns {
+     .btn {
+       margin-left: 2rem;
+     }
+   }
+
+  
 }

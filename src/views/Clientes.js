@@ -1,9 +1,10 @@
 import React, { useState } from 'react'; 
 import {initGA} from './helpers/initGA.js';
-import {QUERY_EMISORES, QUERY_CLIENTES_BY_ALPHABETIC , QUERY_CLIENTES_BY_TIME} from './helpers/graphql/querys'
+import {QUERY_EMISORES, QUERY_CLIENTES_BY_ALPHABETIC , QUERY_CLIENTES_BY_TIME, NUMBER_OF_EMISORES} from './helpers/graphql/querys'
 import { useQuery} from '@apollo/react-hooks';
 import CardClientes from '../components/Cards/CardClientes.js';
 import ShareFriend from '../components/Others/shareFriends.js';
+import Pagination from '../components/Others/Pagination.js'
 
 import Header from '../components/Headers/headersViews/Header';
 import ImgHeader from '../assets/img/headers/Header Clientes.png'; 
@@ -16,65 +17,47 @@ import {
      MDBPageNav,
 } from 'mdbreact'; 
 export default function Clientes () {
+
+  const clientesPerPage = 12; 
+  const [currentPage, setCurrentPage]= useState(1);  
+
     React.useEffect(()=> {
         initGA();
       },[]);
-    const [first , setFirst] = useState(16); 
-    const [after, setAfter] = useState(0); 
+     
+    const Paginate = (number) => {
+      console.log(number+"entrio")
+      setCurrentPage(number); 
+    }
+    const NroEmisores = useQuery(NUMBER_OF_EMISORES); 
     const [query, setQuery] =useState(QUERY_CLIENTES_BY_ALPHABETIC); 
 
     const { data , loading , error , refetch} = useQuery(query, {variables: {
-      first: first, 
-      after: after
+      first: currentPage*clientesPerPage, 
+      after: currentPage*clientesPerPage-clientesPerPage
     }}); 
    const [filter ,setFilter] = useState(false); 
-     
+   
+   
    const handlingSwitch = () => {
       if(!filter) {
         setQuery(QUERY_CLIENTES_BY_TIME)
       } 
       else setQuery(QUERY_CLIENTES_BY_ALPHABETIC)
-      setFirst(16); 
-      setAfter(0); 
+      setCurrentPage(1); 
+     
       refetch(); 
        setFilter(!filter); 
    }
     const Clientes = ({clientes}) => { 
+   
        const innerJSX = clientes.map( emisor => 
         <MDBCol key={emisor._id} sm="3">  
         <CardClientes id={emisor._id} nombre={emisor.nombre} image={emisor.logo}  />
         </MDBCol>) 
         return innerJSX; 
     } 
-    const Pagination = (number) => {
-      return (
-      <MDBCol>
-     <MDBPagination className="mb-5">
-          <MDBPageItem>
-            <MDBPageNav aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            </MDBPageNav>
-          </MDBPageItem>
-          <MDBPageItem active>
-            <MDBPageNav>
-              1
-            </MDBPageNav>
-          </MDBPageItem>
-          <MDBPageItem>
-            <MDBPageNav>2</MDBPageNav>
-          </MDBPageItem>
-          <MDBPageItem>
-            <MDBPageNav>3</MDBPageNav>
-          </MDBPageItem>
-          <MDBPageItem>
-            <MDBPageNav aria-label="Previous">
-            <span aria-hidden="true">&raquo;</span>
-            </MDBPageNav>
-          </MDBPageItem>
-        </MDBPagination>
-    </MDBCol>) 
 
-    }
     return (
       <>
      <Header urlImage={ImgHeader} />
@@ -116,7 +99,16 @@ export default function Clientes () {
         }/>
         </MDBRow>
         <MDBRow className="row-pagination">
-             <Pagination />
+          {
+            NroEmisores.data && 
+            <Pagination
+            paginate ={Paginate} 
+            currentPage={currentPage} 
+            elementsPerPage= {clientesPerPage}
+            totalElements= {NroEmisores.data.numberOfEmisores}
+             />
+          }
+     
             </MDBRow> 
           
            </>  

@@ -1,6 +1,6 @@
 import React , {useEffect} from "react"; 
 import { useQuery } from '@apollo/react-hooks';
-import {QUERY_EMISORES_ID} from './helpers/graphql/querys'; 
+import {QUERY_EMISORES_ID, EMISIONES_BY_EMISION} from './helpers/graphql/querys'; 
 import {initGA} from './helpers/initGA.js';
 import {
     MDBRow , 
@@ -22,14 +22,18 @@ export default function PerfilCliente({location})  {
     const {data, loading, error} = useQuery(QUERY_EMISORES_ID, {variables: {
         _id:id
     }} ); 
+    const Query_emisiones = useQuery(EMISIONES_BY_EMISION, {
+        variables: {
+            _id:id
+        }
+    })
 
    
 
    const Emisiones = ( {emisiones} )=> {
       const innerJSX = emisiones.map(emision => 
          <MDBRow className="MDBRowEmision" key= {emision.id}> 
-            
-             <CardEmisiones fecha={emision.fechaAprovacion} />
+             <CardEmisiones />
          </MDBRow>
         
      )
@@ -96,8 +100,11 @@ export default function PerfilCliente({location})  {
      <MDBContainer className="emisionesContainer">  
          <section className="emisiones"> 
          <h3> Emisiones </h3>
-         <Emisiones emisiones={data.emisorID.emisiones} />
-         
+         {Query_emisiones.data && 
+         <Emisiones emisiones={Query_emisiones.data.emisionesByEmisor} /> 
+         }
+   
+        
          </section>
          </MDBContainer>
         <ShareEmail socialNetworks/>

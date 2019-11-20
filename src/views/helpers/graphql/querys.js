@@ -35,7 +35,7 @@ export const QUERY_EMISIONES = gql`
 `
 export const QUERY_LEYESNORMATIVAS = gql`
   {
- leyesNormativas {
+    leyesNormativasByDate {
    _id
    titulo
    descripcion
@@ -75,12 +75,7 @@ query emisorID($_id: String!) {
       twitter 
       instagram
       urlWeb
-      emisiones {
-        idDictamen
-        idProspecto
-        idProvidencia
-        fechaAprovacion
-      }
+     
 
   }
 }
@@ -188,5 +183,38 @@ export const TOTAL_FOR_YEAR= gql`
  query totalForYear($year:Int!) {
   totalForYear(year:$year) 
   
+ }
+`
+export const GET_NEXT_LEY = gql`
+query leyesNormativasNext($_id:String!) {
+  leyesNormativasNext(_id:$_id) 
+  
+ }
+
+`
+
+export const GET_PREV_LEY = gql`
+query leyesNormativasPrev($_id:String!) {
+  leyesNormativasPrev(_id:$_id)
+  
+ }
+
+`
+export const EMISIONES_BY_EMISION= gql`
+ query emisionesByEmisor($_id:String!) {
+  emisionesByEmisor(_id: $_id){
+      idDictamen
+      idProspecto
+      idProvidencia
+      fechaAprovacion
+
+  }
+
+ }
+
+`
+export const NUMBER_OF_EMISORES = gql`
+ {
+  numberOfEmisores
  }
 `

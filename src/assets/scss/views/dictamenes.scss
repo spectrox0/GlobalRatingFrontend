@@ -14,7 +14,7 @@
             text-align: justify;
             &:after {
                 content: "";
-                height: .1rem;
+                height:$height-underline;
                 background: $color-primary; 
                 width: 40vw;  
                 min-width: 90%;

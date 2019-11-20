@@ -22,7 +22,7 @@ export default function LeyesNormativas() {
     const { data, loading, error, refetch } = useQuery(QUERY_LEYESNORMATIVAS);
 
     const LeyesNormativas = () => {
-        const innerJSX = data.leyesNormativas.map(({_id, titulo ,fecha }) => {
+        const innerJSX = data.leyesNormativasByDate.map(({_id, titulo ,fecha }) => {
          
            var date = new Date(fecha)
             var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};

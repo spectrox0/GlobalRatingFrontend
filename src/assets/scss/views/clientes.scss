@@ -15,7 +15,7 @@
     
                 &:after {
                 content: "";
-                height: .1rem;
+                height:$height-underline;
                 background: $color-primary; 
                 min-width: 90%;
             width: 20rem; 
@@ -40,36 +40,5 @@
     }
 }
 
-.row-pagination {
 
-    .pagination {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        .page-item{
-         margin:.5rem
-        }
-        .page-link {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width:2rem; 
-            height: 2rem;
-         border-radius: 50%;
-         border: none; 
-         @include transition(.3s ,ease-in-out); 
-         &:hover {
-            background: $color-primary;
-            box-shadow: 0 0 1px $color-primary;
-            color:white; 
-            cursor:pointer;
-         }
-         
-        }
-        .active .page-link { 
-
-            background: $color-secondary;
-        }
-    }
-}
 }

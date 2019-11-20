@@ -12,7 +12,7 @@
 
             &:after {
             content: "";
-            height: .13rem;
+            height:$height-underline;
             background: $color-primary; 
             width:120%; 
             @media screen and (max-width:991px) {
@@ -21,5 +21,16 @@
            
         }
     } 
+    }
+    .btns-control {
+        display: flex;
+        margin-top: 2rem;
+        justify-content: space-between;
+    }
+    .btns-control-2 {
+        display: flex;
+        margin-top: 2rem;
+        justify-content: flex-end;
+
     }
 }
