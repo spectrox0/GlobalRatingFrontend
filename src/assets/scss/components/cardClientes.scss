@@ -20,6 +20,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            height: auto;
             clip-path: polygon(100% 36%, 87% 58%, 100% 76%, 0 77%, 0 37%);
             background: linear-gradient($color-primary,$color-tertiary);
             box-shadow: inset 0 0 7px rgba(0,0,0,0.8);

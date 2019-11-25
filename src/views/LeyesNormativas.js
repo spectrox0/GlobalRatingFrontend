@@ -9,10 +9,7 @@ import ImgHeader from '../assets/img/headers/Header Leyes.png';
 import {Link} from 'react-router-dom';
 import {
     MDBContainer,
-    MDBRow,
-    MDBCol,
-    MDBBtn, 
-    MDBIcon
+    MDBRow
 } from 'mdbreact';
 
 export default function LeyesNormativas() {
@@ -25,7 +22,7 @@ export default function LeyesNormativas() {
         const innerJSX = data.leyesNormativasByDate.map(({_id, titulo ,fecha }) => {
          
            var date = new Date(fecha)
-            var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};
+            var options = {timeZone: 'UTC' ,weekday: "long", year: "numeric", month: "long", day: "numeric"};
              var dateF= date.toLocaleDateString("es-VE", options); 
             
            return(  <li key={_id}>
