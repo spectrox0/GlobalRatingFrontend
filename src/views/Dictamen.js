@@ -52,7 +52,7 @@ export default function Dictamen( {location} ) {
              useEffect ( ()=> {
                  if(dictamen){
                 var date = new Date(dictamen.date)
-                var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};
+                var options = {timeZone: 'UTC' ,weekday: "long", year: "numeric", month: "long", day: "numeric"};
                  setDate(date.toLocaleDateString("es-VE", options)); 
                       }
                 

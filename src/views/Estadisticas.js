@@ -35,8 +35,9 @@ export default function Estadisticas() {
       <td>{emision.emisor.nombre}</td>
     <td> {emision.tipoTitulo==="PAPELES_COMERCIALES"&& "PC"}
     {emision.tipoTitulo==="OBLIGACIONES_QUIROGRAFARIAS" && "OQ"}
-    {emision.tipoTitulo===" TITULOS_DE_PARTICIPACION"&& "TP"}
-    {emision.tipoTitulo===" PAGARE_BURSATILES"&& "PB"}
+    {emision.tipoTitulo==="TITULOS_DE_PARTICIPACION"&& "TP"}
+    {emision.tipoTitulo==="PAGARE_BURSATILES"&& "PB"}
+    {emision.tipoTitulo==="ACCIONES_PREFERIDAS"&& "AP"}
     
     </td>
       <td>{emision.monto}</td> 

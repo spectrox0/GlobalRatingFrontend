@@ -26,14 +26,13 @@ export default function Clientes () {
       },[]);
      
     const Paginate = (number) => {
-      console.log(number+"entrio")
       setCurrentPage(number); 
     }
     const NroEmisores = useQuery(NUMBER_OF_EMISORES); 
     const [query, setQuery] =useState(QUERY_CLIENTES_BY_ALPHABETIC); 
 
     const { data , loading , error , refetch} = useQuery(query, {variables: {
-      first: currentPage*clientesPerPage, 
+      first: clientesPerPage, 
       after: currentPage*clientesPerPage-clientesPerPage
     }}); 
    const [filter ,setFilter] = useState(false); 

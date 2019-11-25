@@ -11,7 +11,6 @@ import {MDBCardTitle ,
      MDBModalBody ,
      MDBModalFooter } from "mdbreact";
 
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 export default function CardNoticias({
     postId,
     featuredImage,
@@ -46,7 +45,7 @@ month[11] = "Dec.";
  var n = month[date_.getMonth()];
       setDate({day:day , month: n}); 
       var date__= new Date(date)
-      var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};
+      var options = {timeZone: 'UTC'  ,weekday: "long", year: "numeric", month: "long", day: "numeric"};
        setDateFull(date__.toLocaleDateString("es-VE", options)); 
        setContent(content.replace(/(?:\r\n|\r|\n)/g, '<br>'));
           //var options = { year: "numeric", month: "long", day: "numeric"};
@@ -56,7 +55,7 @@ month[11] = "Dec.";
   const toggle = () => {
     setIsOpen(!isOpen); 
   }
-  const scrollContainerStyle = { width: "800px", maxHeight: "400px" }; 
+ 
       return isLoading? null: (
         <> 
            <MDBCard 

@@ -35,7 +35,7 @@ export default function LeyNormativa( {location} ) {
         React.useEffect( ()=> {
              if(data) {
               var date = new Date(data.leyesNormativasID.fecha)
-              var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};
+              var options = {timeZone: 'UTC' ,weekday: "long", year: "numeric", month: "long", day: "numeric"};
                setDate(date.toLocaleDateString("es-VE", options)); 
              }
         },[data])
