@@ -25,7 +25,7 @@ export default function DarkFooter() {
             </p></div>
           </MDBCol>
           <MDBCol className="col-footer" md="3">
-           <h4> Direccion </h4>
+           <h4> Dirección y Contacto </h4>
           
           <p>
           Avenida Principal de La Castellana, Centro Letonia, Piso 12, Oficina 126. 

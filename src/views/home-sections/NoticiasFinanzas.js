@@ -23,7 +23,7 @@ export default function NoticiasFinanzas({noticias}) {
          <MDBContainer>
          <MDBRow className="title-noticias"> 
              <h2> 
-            TITULARES FINANZAS DIGITAL 
+            Titulares Finanzas Digital
             </h2>
          
          </MDBRow>
