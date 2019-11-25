@@ -5,7 +5,8 @@ import {MDBCardTitle ,
        MDBCard,
         MDBCardBody,
           MDBCardImage, 
-          MDBCardHeader, 
+          MDBCardHeader,
+          MDBCardText, 
         MDBModal , 
       MDBModalHeader , 
      MDBModalBody ,
@@ -45,7 +46,7 @@ month[11] = "Dec.";
  var n = month[date_.getMonth()];
       setDate({day:day , month: n}); 
       var date__= new Date(date)
-      var options = {timeZone: 'UTC'  ,weekday: "long", year: "numeric", month: "long", day: "numeric"};
+      var options = {timeZone: 'UTC' ,  year: "numeric", month: "long", day: "numeric"};
        setDateFull(date__.toLocaleDateString("es-VE", options)); 
        setContent(content.replace(/(?:\r\n|\r|\n)/g, '<br>'));
           //var options = { year: "numeric", month: "long", day: "numeric"};
@@ -61,23 +62,26 @@ month[11] = "Dec.";
            <MDBCard 
         className="card-noticia"
         onClick={toggle}
-         >
-           <div className="date">
+         >   { 
+           /* 
+            <div className="date">
               <span className="month">  {datee.month} </span> 
               <br/>
               <span className="day">  {datee.day} </span> 
               </div>
+         */ }
+        
            <MDBCardImage className="img-fluid" src={featuredImage.sourceUrl} waves />
         
 
 
         <MDBCardBody>
           <MDBCardTitle><strong>{title}</strong></MDBCardTitle>
-           { /* <MDBCardText>
+          <MDBCardText>
             
-          {content}
+          {dateFull}
           
-          </MDBCardText>*/} 
+          </MDBCardText>
           </MDBCardBody>
        
          </MDBCard>

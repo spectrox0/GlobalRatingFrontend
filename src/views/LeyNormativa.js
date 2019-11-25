@@ -62,8 +62,14 @@ export default function LeyNormativa( {location} ) {
          <p>  {data.leyesNormativasID.descripcion} </p>
          </MDBRow>
          <MDBRow> 
-
-              <div className="contentHtml" dangerouslySetInnerHTML={{ __html: data.leyesNormativasID.htmlScribd }} />
+       
+         <iframe 
+         id={data.leyesNormativasID._id}
+          className="scribd"
+           title={data.leyesNormativasID.titulo} 
+           src={data.leyesNormativasID.htmlScribd}>
+           </iframe>
+             
           </MDBRow>
         
               </> }

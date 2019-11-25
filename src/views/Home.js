@@ -24,7 +24,7 @@ export default function Index() {
   },[]);
 
 const  noticias = useQuery(QUERY_NOTICIAS,{variables: {
-    first:3 
+    first:4 
 } ,client  } );
 const  dictamenes= useQuery(QUERY_DICTAMENES,{variables: {
   first:6

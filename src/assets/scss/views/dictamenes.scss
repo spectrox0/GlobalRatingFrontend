@@ -1,7 +1,8 @@
 .dictamenes {
-    margin-top:4rem;
-    margin-bottom:4rem;
+    padding-top:2rem;
+    
     width:100%;
+    background: $color-background; 
     .dictamenes-title {
         margin-bottom:3rem;
         width:100%; 
@@ -27,6 +28,7 @@
        
         justify-content: flex-end; 
         margin:.5rem;
+        margin-bottom: 2rem;
         button {
             
             width: 10rem ;

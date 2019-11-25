@@ -40,7 +40,7 @@ export default function Estadisticas() {
     {emision.tipoTitulo==="ACCIONES_PREFERIDAS"&& "AP"}
     
     </td>
-      <td>{emision.monto}</td> 
+      <td>{emision.monto.toLocaleString()}</td> 
       <td>{emision.fechaAprovacion.split("T")[0]} </td>
       <td>{emision.nroProvidencia} </td>
       <td> <MDBBtn className="btn-estadistica" /> </td>
@@ -107,7 +107,7 @@ export default function Estadisticas() {
     <div className="total"> 
     <span>
       <b> Total del año </b>
-      {totalEmision.data && totalEmision.data.totalForYear}
+      {totalEmision.data && totalEmision.data.totalForYear.toLocaleString()}
        {" "} Bs
       </span> 
       </div>
@@ -119,9 +119,16 @@ export default function Estadisticas() {
         OQ: Obligaciones Quirografarias <br/>
         TP: Titulos de Participacion <br/>
         PB: Pagares Bursatiles <br/>
+        AP: Acciones Preferidas <br/>
       </p>
       </div>
-      
+      </MDBRow>
+      <MDBRow>
+      <div className="leyenda">
+      <p> 
+       (*) Miles de bolivares soberanos
+      </p>
+      </div>
       </MDBRow>
   
   </MDBContainer>

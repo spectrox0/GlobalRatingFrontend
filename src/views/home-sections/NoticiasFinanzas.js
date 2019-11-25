@@ -11,7 +11,7 @@ export default function NoticiasFinanzas({noticias}) {
    
    const NNoticias =()=> noticias.posts.nodes.map(
      noticia => 
-    <MDBCol key={noticia.postId} sm="12" md="6" lg="4"> 
+    <MDBCol key={noticia.postId} sm="6" md="4" lg="3"> 
     <Noticias {...noticia} /> </MDBCol>
 
     )
