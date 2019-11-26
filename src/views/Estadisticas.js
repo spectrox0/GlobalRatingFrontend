@@ -40,9 +40,9 @@ export default function Estadisticas() {
     {emision.tipoTitulo==="ACCIONES_PREFERIDAS"&& "AP"}
     
     </td>
-      <td>{emision.monto.toLocaleString()}</td> 
+      <td style={{textAlign:"right"}}>{emision.monto.toLocaleString()}</td> 
       <td>{emision.fechaAprovacion.split("T")[0]} </td>
-      <td>{emision.nroProvidencia} </td>
+      <td >{emision.nroProvidencia} </td>
       <td> <MDBBtn className="btn-estadistica" /> </td>
       <td><MDBBtn className="btn-estadistica" /> </td>
       <td><MDBBtn className="btn-estadistica" /> </td>

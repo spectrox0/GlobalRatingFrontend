@@ -140,6 +140,7 @@ query emisorByOrdenAlfabetico($first: Int! ,$after: Int!) {
       _id 
       nombre
       logo
+      fichaCliente
     }
 
 
@@ -154,6 +155,7 @@ query emisorByOrdenCronologico($first: Int! ,$after: Int!) {
     _id 
     nombre
     logo
+    fichaCliente
   
     }
 

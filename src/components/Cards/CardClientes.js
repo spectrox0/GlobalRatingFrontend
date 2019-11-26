@@ -2,21 +2,14 @@ import React from 'react';
 import {  Link } from 'react-router-dom';
 import {MDBCardTitle , MDBCard, MDBCardBody, MDBCardText , MDBCardFooter, MDBCardImage, MDBCollapse} from "mdbreact";
 
-export default function CardClientes ({id, nombre,image}) {
+export default function CardClientes ({_id, nombre, fichaCliente}) {
     return ( <MDBCard to={{
         pathname: '/perfilCliente',
-        search: `?id=${id}`}}  
+        search: `?id=${_id}`}}  
          tag={Link}
           className="cardClientes" > 
-          <div className="decorate1" />
-          <div className="decorate2" />
-    <div className="card-image"> 
-    <img src={image} alt="..." />
-    </div>
-    <div className="decorate3" > 
-    
-        <MDBCardTitle> {nombre}</MDBCardTitle>
-         </div>
+       
+       <MDBCardImage className="img-fluid" src={fichaCliente} alt={nombre} waves />
      
   
     </MDBCard>); 
