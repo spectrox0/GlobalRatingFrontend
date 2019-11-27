@@ -1,6 +1,7 @@
 .page-ley-normativa {
     min-height: 100vh;
-    padding-top: 2rem;
+    padding-top: 1.8rem;
+    background: $color-background;
     
     .title {
         margin-bottom: 2rem; 
@@ -25,15 +26,12 @@
         display: flex;
         margin-top: 2rem;
         justify-content: space-between;
-        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        .btn {
+            margin-left: 1rem;
+        }
     }
-    .btns-control-2 {
-        display: flex;
-        margin-top: 2rem;
-        justify-content: flex-end;
-        margin-bottom: 2rem;
-
-    }
+ 
     .scribd {
         width: 100%;
         height: 100vh;

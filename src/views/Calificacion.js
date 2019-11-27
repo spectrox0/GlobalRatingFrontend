@@ -5,15 +5,15 @@ import {initGA} from './helpers/initGA.js';
 import {Link} from "react-router-dom"
 
 import {
-    MDBRow
-    , MDBContainer,
+    MDBRow,
+    MDBContainer,
     MDBCollapse,
     MDBTabPane,
-     MDBTabContent,
-     MDBNav , 
-     MDBNavLink, 
-     MDBNavItem,
-     MDBIcon
+    MDBTabContent,
+    MDBNav , 
+    MDBNavLink, 
+    MDBNavItem,
+    MDBIcon
 } from 'mdbreact'
 
 export default function Calificacion () {
@@ -46,7 +46,7 @@ export default function Calificacion () {
                     <MDBContainer >
                     <MDBRow className="title-calificacion"> 
                     <h2> 
-                        Calificacion de Riesgo
+                        Calificación de riesgo
                     </h2>
                     </MDBRow>
                         <MDBRow>
@@ -78,7 +78,7 @@ export default function Calificacion () {
                         </MDBRow>
                         <MDBRow className="title-calificacion"> 
                     <h2> 
-                        Categorias de Riesgo
+                        Categorías de riesgo
                     </h2>
                     </MDBRow>
                            
@@ -190,7 +190,7 @@ export default function Calificacion () {
                       
                         <MDBRow className="fases" style={{cursor:"pointer"}} onClick={  () => toggleCollapse("fases")} >
                          
-                             <h2 >Fases del Proceso de Calificación</h2> <MDBIcon icon="plus" />
+                             <h2 >Fases del Proceso de Calificación</h2> <MDBIcon icon={collapseID!=="fases"?"plus":"minus"} />
                           
                            </MDBRow>
                            <MDBRow>
@@ -236,7 +236,7 @@ export default function Calificacion () {
                         </MDBRow>
                         <MDBRow className="title-calificacion"> 
                   
-                        <h2>Resumen de Metodología de Calificación</h2>
+                        <h2>Resumen de metodología de calificación</h2>
                              </MDBRow>
                          
                             <MDBRow className="rowLinks">

@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react';
 import {  Link } from 'react-router-dom';
-import {MDBCardTitle , MDBCard, MDBCardBody, MDBCardText , MDBCardFooter} from "mdbreact";
+import {MDBCardTitle , MDBCard, MDBCardBody, MDBCardText , MDBCardFooter , MDBCardImage,} from "mdbreact";
 export default function CardDictamenes({
    postId,
     featuredImage,
@@ -14,20 +14,32 @@ export default function CardDictamenes({
        <MDBCard to={{
         pathname: '/dictamen',
         search: `?id=${postId}`}} 
-        className="card-dictamen" 
-         style= 
+        className="card-dictamen2" 
+      
+         tag={Link}>
+        
+
+          {/* 
+             style= 
          {{background:`url(${featuredImage.sourceUrl}) no-repeat center`,
          backgroundSize:"contain",
-        }}
-         tag={Link}>
+        }} 
+        <MDBCardBody>
+          </MDBCardBody>
+        <MDBCardFooter>
+            <MDBCardTitle> {title} </MDBCardTitle>
+        </MDBCardFooter>*/ }
+    
+          <MDBCardImage className="img-fluid" src={featuredImage.sourceUrl} waves />
         
 
 
         <MDBCardBody>
+       
+          <MDBCardTitle>   {title} </MDBCardTitle>
+     
           </MDBCardBody>
-        <MDBCardFooter>
-            <MDBCardTitle><strong>{title}</strong></MDBCardTitle>
-        </MDBCardFooter>
+
          </MDBCard>
         
     ); 

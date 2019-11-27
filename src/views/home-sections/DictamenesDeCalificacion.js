@@ -10,7 +10,7 @@ export default function DictamenesDeCaificacion({dictamenes}) {
    
    const Dictamenes = () => dictamenes.posts.nodes.map(
      dictamen => 
-     <MDBCol key={dictamen.postId} sm="12" md="6" lg="4">
+     <MDBCol key={dictamen.postId} sm="6" md="4" lg="4">
     <CardDictamen {...dictamen} />
    </MDBCol>)
   
@@ -20,7 +20,7 @@ export default function DictamenesDeCaificacion({dictamenes}) {
          <MDBContainer>
          <MDBRow className="dictamenes-title"  >
            <h2 > 
-            Dictamenes De Calificación
+            Dictamenes de Calificación
             </h2>
             </MDBRow>
 

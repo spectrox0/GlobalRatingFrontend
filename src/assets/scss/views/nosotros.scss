@@ -1,6 +1,7 @@
 .page-nosotros {
     min-height: 100vh;
-    padding-top: 2rem;
+    background: $color-background;
+    padding-top: 1.8rem;
     .container {
 
         .title {
@@ -43,6 +44,10 @@
     } 
     .col-nosotros {
         padding-left: 3rem;
+        @media screen and (max-width:991px) {
+            padding-left: 0;
+        }
+
     }
     h3 {
         font-size:1.6em; 

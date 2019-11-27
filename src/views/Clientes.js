@@ -29,13 +29,13 @@ export default function Clientes () {
       setCurrentPage(number); 
     }
     const NroEmisores = useQuery(NUMBER_OF_EMISORES); 
-    const [query, setQuery] =useState(QUERY_CLIENTES_BY_ALPHABETIC); 
+    const [query, setQuery] =useState(QUERY_CLIENTES_BY_TIME); 
 
     const { data , loading , error , refetch} = useQuery(query, {variables: {
       first: clientesPerPage, 
       after: currentPage*clientesPerPage-clientesPerPage
     }}); 
-   const [filter ,setFilter] = useState(false); 
+   const [filter ,setFilter] = useState(true); 
    
    
    const handlingSwitch = () => {
@@ -60,22 +60,24 @@ export default function Clientes () {
     return (
       <>
      <Header urlImage={ImgHeader} />
-        <div className="clientesContainer"> 
+        <section className="clientesContainer"> 
        
         <MDBContainer> 
         <MDBRow className="title">
            <h2 > 
-            CLIENTES
+            Clientes
             </h2>
             <div className="filter"> 
             <span>Ordenar por: </span>
             <label htmlFor='toggle-1'>
-          Orden Albatetico
+              {!filter? <strong> Orden Albatetico</strong> : <span>Orden Albatetico </span>}
+          
         </label>
             <div className='switch'>
          
             <input type="checkbox"
-             value={filter} 
+              checked={filter}
+             
             onClick={handlingSwitch} 
             name="toggle" 
             className="sw"
@@ -83,7 +85,7 @@ export default function Clientes () {
   <label htmlFor="toggle-1"> </label>
       </div>
       <label htmlFor='toggle-1'>
-          Fecha
+      {filter? <strong> Fecha </strong> : <span>Fecha </span>}
         </label>
       </div>
             </MDBRow>
@@ -105,6 +107,7 @@ export default function Clientes () {
             currentPage={currentPage} 
             elementsPerPage= {clientesPerPage}
             totalElements= {NroEmisores.data.numberOfEmisores}
+            
              />
           }
      
@@ -122,7 +125,7 @@ export default function Clientes () {
 
        </MDBContainer> 
     <ShareFriend/>
-  </div> 
+  </section> 
   </>
     )
      

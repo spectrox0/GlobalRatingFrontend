@@ -1,10 +1,9 @@
 .dictamenes {
     padding-top:2rem;
-    
     width:100%;
     background: $color-background; 
     .dictamenes-title {
-        margin-bottom:3rem;
+        margin-bottom:1.8rem;
         width:100%; 
         color: #000000; 
         text-align: center;
@@ -17,9 +16,9 @@
                 content: "";
                 height:$height-underline;
                 background: $color-primary; 
-                width: 40vw;  
-                min-width: 90%;
-                max-width: 100%; }
+                width: 30rem;
+                max-width: 100%;
+             }
     
         }
     }

@@ -1,6 +1,7 @@
 .estadisticas-pag {
     min-height: 100vh;
-    padding-top: 2rem;
+    padding-top: 1.8rem;
+    background: $color-background;
     .title {
         display: flex;
         h2 {
@@ -49,5 +50,17 @@
             
         }
       
+    }
+    .row-btn{
+      .btn{
+          margin-left: 40%;
+          margin-right: 40%;
+      }
+    }
+    .row-text-center{
+        text-align: center;
+    }
+    .row-text-right{
+        text-align: right;
     }
 }

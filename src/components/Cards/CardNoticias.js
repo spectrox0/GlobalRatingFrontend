@@ -29,6 +29,7 @@ export default function CardNoticias({
       if(featuredImage){
           setLoading(false); 
           var date_ = new Date(date);
+          const year = date_.getFullYear();
           const day = date_.getDate();
           var month = []
          month[0] = "Ene.";
@@ -44,7 +45,7 @@ month[9] = "Oct.";
 month[10] = "Nov.";
 month[11] = "Dec.";
  var n = month[date_.getMonth()];
-      setDate({day:day , month: n}); 
+      setDate({day:day , month: n , year}); 
       var date__= new Date(date)
       var options = {timeZone: 'UTC' ,  year: "numeric", month: "long", day: "numeric"};
        setDateFull(date__.toLocaleDateString("es-VE", options)); 
@@ -76,12 +77,9 @@ month[11] = "Dec.";
 
 
         <MDBCardBody>
-          <MDBCardTitle><strong>{title}</strong></MDBCardTitle>
-          <MDBCardText>
-            
-          {dateFull}
-          
-          </MDBCardText>
+        <p className="date"> {datee.month+" "+datee.day+", "+datee.year} </p>
+          <MDBCardTitle>   {title} </MDBCardTitle>
+     
           </MDBCardBody>
        
          </MDBCard>

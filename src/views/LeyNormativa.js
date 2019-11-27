@@ -6,6 +6,7 @@ import { useQuery} from '@apollo/react-hooks';
 import Header from '../components/Headers/headersViews/Header';
 import ImgHeader from '../assets/img/headers/Header Leyes.png'; 
 import {Link} from 'react-router-dom'; 
+import ShareFriend from '../components/Others/shareFriends.js'
 export default function LeyNormativa( {location} ) { 
   
     const [date, setDate] = useState("Cargando... por favor espere"); 
@@ -73,11 +74,15 @@ export default function LeyNormativa( {location} ) {
           </MDBRow>
         
               </> }
-              <MDBRow className={
-                (Prev.data && Prev.data.leyesNormativasPrev)? 
-                "btns-control" : 
-                 "btns-control-2"
-              }>
+              <MDBRow className="btns-control" >
+                <MDBBtn className="btn-color-primary" tag={Link} 
+                 to={{
+          pathname: `/leyesnormativas/ve`
+}}
+                >
+                  Leyes y Normativas
+                </MDBBtn>
+          <div className="btns-prev-next"> 
         {(Prev.data && Prev.data.leyesNormativasPrev ) &&
          <MDBBtn className="btn-color-primary" tag={Link} 
           to={{
@@ -89,12 +94,12 @@ export default function LeyNormativa( {location} ) {
             pathname: '/ve/leynormativa',
             search: `?id=${Next.data.leyesNormativasNext}`}}
           > Siguiente </MDBBtn> }
-
+</div>
               </MDBRow>
-            
+           
        
         </MDBContainer>
-    
+        <ShareFriend/>
         </section>
         </>
        ) ; 

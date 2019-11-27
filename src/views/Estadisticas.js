@@ -33,19 +33,19 @@ export default function Estadisticas() {
     return emisiones.map ( emision => 
       <tr key={emision._id}>
       <td>{emision.emisor.nombre}</td>
-    <td> {emision.tipoTitulo==="PAPELES_COMERCIALES"&& "PC"}
+    <td  className="row-text-center" > {emision.tipoTitulo==="PAPELES_COMERCIALES"&& "PC"}
     {emision.tipoTitulo==="OBLIGACIONES_QUIROGRAFARIAS" && "OQ"}
     {emision.tipoTitulo==="TITULOS_DE_PARTICIPACION"&& "TP"}
     {emision.tipoTitulo==="PAGARE_BURSATILES"&& "PB"}
     {emision.tipoTitulo==="ACCIONES_PREFERIDAS"&& "AP"}
     
     </td>
-      <td style={{textAlign:"right"}}>{emision.monto.toLocaleString()}</td> 
+      <td className="row-text-right">{emision.monto.toLocaleString()}</td> 
       <td>{emision.fechaAprovacion.split("T")[0]} </td>
-      <td >{emision.nroProvidencia} </td>
-      <td> <MDBBtn className="btn-estadistica" /> </td>
-      <td><MDBBtn className="btn-estadistica" /> </td>
-      <td><MDBBtn className="btn-estadistica" /> </td>
+      <td className="row-text-center" >{emision.nroProvidencia} </td>
+      <td className="row-btn"> <MDBBtn className="btn-estadistica" /> </td>
+      <td className="row-btn"><MDBBtn className="btn-estadistica" /> </td>
+      <td className="row-btn"><MDBBtn className="btn-estadistica" /> </td>
     
     </tr>
       )
@@ -77,7 +77,7 @@ export default function Estadisticas() {
           <th>Emision</th>
           <th>Monto(*)</th>
           <th>Fecha</th>
-          <th># de Providencia</th>
+          <th># Providencia</th>
           <th>Dictamen</th>
           <th>Prospecto</th>
           <th>Providencia</th>
