@@ -17,6 +17,7 @@
       color: $color-primary; 
       &:hover{
         text-decoration: none;
+        text-shadow: 0 0 1px $color-primary;
       }
       &:focus {
         outline: none;

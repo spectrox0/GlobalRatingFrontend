@@ -10,7 +10,6 @@
             font-size:1.4em; 
             display: flex;
             flex-direction: column;
-            padding-left: 1rem; 
             font-weight: $font-weight-title;
 
             &:after {
@@ -22,6 +21,10 @@
            
         }
     } 
+    p {
+        text-align: justify;
+        font-size: 1em;
+    }
     }
     .btns-control {
         display: flex;
