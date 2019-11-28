@@ -8,12 +8,13 @@ import Header from '../components/Headers/headersViews/Header';
 import ImgHeader from '../assets/img/headers/Header Estadísticas.jpg'; 
 import {useQuery} from '@apollo/react-hooks'; 
 import {EMISIONES_FOR_YEAR ,TOTAL_FOR_YEAR } from './helpers/graphql/querys'
+import {Link} from 'react-router-dom'; 
 export default function Estadisticas() {
     const year = (new Date()).getFullYear();
     const yearInitial = 1980; 
     const years = Array.from(new Array(year-yearInitial+1),( val, index) => { return {value: year-index, label:year-index } });
     const [yearFilter , setYearFilter] =React.useState(year); 
-
+    var options = {timeZone: 'UTC' , month: "short", day: "numeric"};
     const {data , loading , error ,refetch} = useQuery(EMISIONES_FOR_YEAR, {
       variables: {
         year: yearFilter
@@ -32,7 +33,15 @@ export default function Estadisticas() {
     const Emisiones = ({emisiones}) => {
     return emisiones.map ( emision => 
       <tr key={emision._id}>
-      <td>{emision.emisor.nombre}</td>
+        {emision.statusCliente?  <td>
+          <Link to= {{
+               pathname: '/perfilCliente',
+               search: `?id=${emision.emisor._id}`
+          }}> 
+        {emision.emisor.nombre} </Link></td> : 
+  <td>{emision.emisor.nombre}</td>
+        }
+    
     <td  className="row-text-center" > {emision.tipoTitulo==="PAPELES_COMERCIALES"&& "PC"}
     {emision.tipoTitulo==="OBLIGACIONES_QUIROGRAFARIAS" && "OQ"}
     {emision.tipoTitulo==="TITULOS_DE_PARTICIPACION"&& "TP"}
@@ -41,7 +50,7 @@ export default function Estadisticas() {
     
     </td>
       <td className="row-text-right">{emision.monto.toLocaleString()}</td> 
-      <td>{emision.fechaAprovacion.split("T")[0]} </td>
+      <td>{new Date (emision.fechaAprovacion).toLocaleDateString("es-VE", options)} </td>
       <td className="row-text-center" >{emision.nroProvidencia} </td>
       <td className="row-btn"> <MDBBtn className="btn-estadistica" /> </td>
       <td className="row-btn"><MDBBtn className="btn-estadistica" /> </td>

@@ -15,7 +15,8 @@
             font-size:1.8em; 
             display: flex;
             flex-direction: column;
-            padding-left: 1rem; ;
+            padding-left: 1rem; 
+            font-weight: $font-weight-title;
 
             &:after {
             content: "";

@@ -176,7 +176,8 @@ export const EMISIONES_FOR_YEAR = gql`
     idProvidencia
     idProspecto
     emisor {
-        nombre
+      _id
+      nombre
     }
   }
  }

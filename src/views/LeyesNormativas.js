@@ -22,14 +22,14 @@ export default function LeyesNormativas() {
         const innerJSX = data.leyesNormativasByDate.map(({_id, titulo ,fecha }) => {
          
            var date = new Date(fecha)
-            var options = {timeZone: 'UTC' ,weekday: "long", year: "numeric", month: "long", day: "numeric"};
+            var options = {timeZone: 'UTC' ,year: "numeric", month: "long", day: "numeric"};
              var dateF= date.toLocaleDateString("es-VE", options); 
             
            return(  <li key={_id}>
             <Link to={{
     pathname: '/ve/leynormativa',
     search: `?id=${_id}`}} > 
-         <i className="fas fa-file-pdf fa-lg" ></i> {titulo} 
+         {titulo} 
          </Link>
          <p style={{paddingLeft:"2.5rem"}}> {dateF} </p>
                      
@@ -50,12 +50,13 @@ export default function LeyesNormativas() {
  
             </h2> </MDBRow>
             
-                    {(!data && loading) ? <div className="container-load-posts"> 
-              <div className="spinner-grow text-primary" role="status">
-              <span className="sr-only">Cargando...</span>
-              </div>
-              </div>   : <ul>  <LeyesNormativas /> </ul>
-              }
+                    {(data && !loading) ? <ul>  <LeyesNormativas /> </ul> : 
+                    <div className="container-load-posts"> 
+                    <div className="spinner-grow text-primary" role="status">
+                    <span className="sr-only">Cargando...</span>
+                    </div>
+                    </div>   
+              } 
                      
                       
                     </MDBContainer>
