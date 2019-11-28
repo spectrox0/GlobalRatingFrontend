@@ -1,6 +1,7 @@
  .calificacionContainer {
      display:flex; 
      flex-direction: column;
+     min-height: 100vh;
      padding-top: 1.8rem;
      background: $color-background;
      .title-calificacion {

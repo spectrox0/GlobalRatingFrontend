@@ -15,9 +15,10 @@
     }
     a {
       color: $color-primary; 
+      font-weight: 600;
       &:hover{
         text-decoration: none;
-        text-shadow: 0 0 1px $color-primary;
+        text-shadow: 0 0 .2px $color-primary;
       }
       &:focus {
         outline: none;

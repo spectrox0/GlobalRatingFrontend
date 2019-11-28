@@ -52,9 +52,13 @@ export default function Estadisticas() {
       <td className="row-text-right">{emision.monto.toLocaleString()}</td> 
       <td>{new Date (emision.fechaAprovacion).toLocaleDateString("es-VE", options)} </td>
       <td className="row-text-center" >{emision.nroProvidencia} </td>
+      {emision.statusCliente? 
+      <>
       <td className="row-btn"> <MDBBtn className="btn-estadistica" /> </td>
       <td className="row-btn"><MDBBtn className="btn-estadistica" /> </td>
-      <td className="row-btn"><MDBBtn className="btn-estadistica" /> </td>
+      <td className="row-btn"><MDBBtn className="btn-estadistica" /> </td> 
+      </> :<> <td> </td> <td> </td> <td> </td> </>
+      }
     
     </tr>
       )
@@ -83,13 +87,13 @@ export default function Estadisticas() {
       <MDBTableHead>
         <tr>
           <th>Emisor</th>
-          <th>Emision</th>
-          <th>Monto(*)</th>
+          <th className="row-text-center" >Emision</th>
+          <th className="row-text-right">Monto(*)</th>
           <th>Fecha</th>
-          <th># Providencia</th>
-          <th>Dictamen</th>
-          <th>Prospecto</th>
-          <th>Providencia</th>
+          <th className="row-text-center" ># Providencia</th>
+          <th className="row-text-center" >Dictamen</th>
+          <th className="row-text-center" >Prospecto</th>
+          <th className="row-text-center">Providencia</th>
       
         </tr>
       </MDBTableHead>

@@ -70,7 +70,7 @@ export default function Clientes () {
             <div className="filter"> 
             <span>Ordenar por: </span>
             <label htmlFor='toggle-1'>
-              {!filter? <strong> Orden Albatetico</strong> : <span>Orden Albatetico </span>}
+              {!filter? <strong> Alfabético</strong> : <span>Alfabético </span>}
           
         </label>
             <div className='switch'>

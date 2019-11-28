@@ -219,9 +219,12 @@ const verifyCallback =(response) => {
   />
 
                   </MDBRow>
+                  <MDBRow style={{display:"flex",justifyContent:"flex-end"}}> 
                   <MDBBtn className="btn-color-primary" size="lg" color="info" type="submit">
                    Enviar
                  </MDBBtn>
+                  </MDBRow>
+                 
                 </form>
               </MDBCol>
             </MDBRow>
