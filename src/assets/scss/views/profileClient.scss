@@ -12,9 +12,17 @@
         width:55rem; 
         border-radius: 10px;
         box-shadow: 0 0 6px rgba(0,0,0,0.3); 
-        max-width: 100%;
+        max-width: 80%;
         padding:3rem; 
-       
+        position: relative;
+        top: -9rem; 
+        margin-left: 10%; 
+        margin-right: 10%;
+        @media screen and (max-width:992px) {
+            margin-right: 5%;
+        margin-left: 5%;
+        max-width: 90%;
+        }
         .col-img{   
             padding: 0;
           
@@ -35,17 +43,17 @@
                 @media screen and (max-width:992px) {
                     font-size: 1.2em;
                  }
-                text-transform: uppercase;
+              
             }
          }
         .profileLogo{
-          border-radius: 50%;
+          border-radius: 10px;
           object-fit: fill;
-           -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-      border-radius: 50%;
+           -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
        overflow:hidden;
           width:10rem; 
+          height: 8rem;
           margin:0; 
           @media screen and (max-width:992px) {
             width:8rem; 
@@ -82,17 +90,30 @@
 
     }
     .emisionesContainer {
-       margin-top: 2rem;  
+        position: relative; 
+        top: -9rem; 
+        margin-right: 10%;
+        margin-left: 10%;
+        max-width: 80%;
+        margin-top:1rem; 
+        padding-left: .5rem;
+        padding:0; 
+        @media screen and (max-width:992px) {
+            margin-right: 5%;
+        margin-left: 5%;
+        max-width: 90%;
+        }
      
     } 
     
-    .container .emisiones {
+    .emisionesContainer  .emisiones {
         h3 {
             font-size:1.5em; 
             display: flex;
             flex-direction: column;
-            padding-left: 1rem; 
             font-weight: $font-weight-title;
+            padding: 0;
+            margin:0; 
             @media screen and (max-width:992px) {
                 font-size: 1.2em;
              }
@@ -107,15 +128,16 @@
 
      }
     
-}
-.container {
-    position: relative;
-    top: -9rem; 
-    right: 5%;
-        @media screen and (max-width:992px) {
-            right: 0;
-            top: 0; 
-        }
+} 
+.rowCompartir {
+    margin-right: 10%;
+    margin-left: 10%;
+    max-width: 80%;
+    @media screen and (max-width:992px) {
+        margin-right: 5%;
+    margin-left: 5%;
+    max-width: 90%;
+    }
 }
 
 }

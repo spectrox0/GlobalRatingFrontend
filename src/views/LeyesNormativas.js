@@ -31,10 +31,11 @@ export default function LeyesNormativas() {
     search: `?id=${_id}`}} > 
          {titulo} 
          </Link>
-         <p style={{paddingLeft:"2.5rem"}}> {dateF} </p>
+         <p style={{paddingLeft:"3rem"}}> {dateF} </p>
                      
            </li> )
         } )
+        
         
         return innerJSX;
     }

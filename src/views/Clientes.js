@@ -11,10 +11,7 @@ import ImgHeader from '../assets/img/headers/Header Clientes.png';
 import { 
     MDBContainer , 
     MDBCol, 
-    MDBRow,
-    MDBPagination,
-     MDBPageItem, 
-     MDBPageNav,
+    MDBRow
 } from 'mdbreact'; 
 export default function Clientes () {
 

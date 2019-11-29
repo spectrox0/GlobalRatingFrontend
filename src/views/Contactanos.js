@@ -14,7 +14,11 @@ import {
   , MDBCol,
   MDBAlert,
   MDBContainer,
-  MDBBtn
+  MDBBtn,
+  MDBModal , 
+  MDBModalHeader , 
+ MDBModalBody ,
+ MDBModalFooter
 } from 'mdbreact'
 
 export default function Contactanos () {
@@ -28,8 +32,11 @@ export default function Contactanos () {
   const [asunto, setAsunto] = useState("");
   const [email ,setEmail] = useState("");
   const [texto,setTexto] = useState("");
-  
+  const [isOpen, setIsOpen] = useState(false); 
   const [sendEmail, {data, loading, error, called}] = useMutation(MUTATION_CONTACTANOS); 
+  const toggle = () => {
+    setIsOpen(!isOpen); 
+  }
 
   useEffect(()=> {
     initGA();
@@ -48,7 +55,6 @@ const clear = ()=> {
 }
 
 useEffect(()=> {
-   console.log(data); 
    if(error) { 
     setMessage({message:"Error al enviar", isError:false}); 
      return; 
@@ -59,7 +65,11 @@ useEffect(()=> {
   }
 },[data,loading, error,called])
 
-const handlingOnsubmit = async (e) => {
+const handlingOnsubmit = e => {
+  e.preventDefault(); 
+  toggle(); 
+}
+const handlingOnsubmit2 = async (e) => {
   e.preventDefault(); 
   if(!isVerified)  {
      setMessage({message:"Verifique no ser un robot", isError:true}); 
@@ -70,9 +80,13 @@ const handlingOnsubmit = async (e) => {
        apellido.trim().length===0 ||
        asunto.trim().length===0 || 
         email.trim().length===0 || 
-        texto.trim().length===0 )
-        return;
+        texto.trim().length===0 ) {
+          setMessage({message:"Rellene todos los campos", isError:true}); 
+          return;
+        }
+      
       const nombreCompleto = (nombre + " " + apellido);
+      toggle(); 
      await  sendEmail({
         variables: {
             message:
@@ -136,38 +150,40 @@ const verifyCallback =(response) => {
             )}
                 <form onSubmit={handlingOnsubmit}>
                
-                    <div className="form-group" > 
+                    <div className={nombre.length>0? "form-group not-empty":"form-group"} > 
                         <input
                          id="nombre" 
-                         placeholder="Nombre" 
                          type="text"
                          required
                          autocomplete="off"
                          className="form-control"
                          value={nombre}
                          onChange={ e=> setNombre(e.target.value)}
-                         /> </div>
-                  
+                         /> 
+                             <label for="nombre" class="animated-label">Nombre</label>
+                         
+                         </div>
+              
                    
-                    <div className="form-group" > 
+                    <div className={apellido.length>0? "form-group not-empty":"form-group"} > 
                         <input 
                         id="apellido" 
-                        placeholder="Apellido" 
                         type="text"
                         required
                         autocomplete="off"
                         className="form-control"
                         value={apellido}
                         onChange= {e=> setApellido(e.target.value)}
+                      /> 
+                       <label for="apellido" class="animated-label">Apellido</label>
                        
-                      /> </div>
+                       </div>
            
                 
                          
-                    <div className="form-group" > 
+                    <div className={email.length>0? "form-group not-empty":"form-group"} > 
                         <input 
                         id="email"
-                         placeholder="Correo Electronico" 
                          type="email"
                          required
                          autocomplete="off"
@@ -176,30 +192,29 @@ const verifyCallback =(response) => {
                          className="form-control"
                       
                         />
+                         <label for="email" class="animated-label">Correo Electronico</label>
                      </div>
                      
                  
                  
                   
-                    <div className="form-group" > 
+                    <div className={asunto.length>0? "form-group not-empty":"form-group"} > 
                         <input
                         id="asunto" 
-                        placeholder="Asunto"
                          type="text"
                          required
                          autocomplete="off"
                          value={asunto}
                          onChange={e=> setAsunto(e.target.value)}
                          className="form-control"
-                       
                         />
+                          <label for="asunto" class="animated-label">Asunto</label>
                        </div>
                   
                   
-                      <div className="form-group" > 
+                      <div className={texto.length>0? "form-group not-empty":"form-group"}> 
                         <textarea
                         id="textArea" 
-                        placeholder="Mensaje" 
                         type="textarea"
                         required
                         value={texto}
@@ -207,25 +222,43 @@ const verifyCallback =(response) => {
                         onChange={e=> setTexto(e.target.value)}
                         className="form-control"
                         />
+                         <label for="textArea" class="animated-label">Mensaje</label>
                       </div>
                       
                  
                   <MDBRow> 
-    <Recaptcha
+
+
+                  </MDBRow>
+                  <MDBRow style={{display:"flex",justifyContent:"flex-end"}}> 
+                  <MDBBtn type="submit" className="btn-color-primary" size="lg" color="info">
+                   Enviar
+                 </MDBBtn>
+                  </MDBRow>
+                  </form>
+                  
+                  <form onSubmit={handlingOnsubmit2}> 
+          <MDBModal isOpen={isOpen}  toggle={toggle} > 
+          <MDBModalHeader toggle={toggle}> </MDBModalHeader>
+          <MDBModalBody> 
+          <Recaptcha
     sitekey="6LeFsrgUAAAAAJmjoOiqeDR2Kkv4jcJOWe4njhOt"
     render="explicit"
     onloadCallback={RecaptchaLoad}
     verifyCallback={verifyCallback}
   />
-
-                  </MDBRow>
-                  <MDBRow style={{display:"flex",justifyContent:"flex-end"}}> 
-                  <MDBBtn className="btn-color-primary" size="lg" color="info" type="submit">
+         
+           </MDBModalBody>
+          <MDBModalFooter>
+          <MDBBtn className="btn-color-primary" size="lg" color="info" type="submit">
                    Enviar
                  </MDBBtn>
-                  </MDBRow>
+        </MDBModalFooter>
+          </MDBModal>
+          </form>
+                
                  
-                </form>
+               
               </MDBCol>
             </MDBRow>
           </MDBContainer>

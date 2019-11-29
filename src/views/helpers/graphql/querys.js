@@ -72,6 +72,8 @@ query emisorID($_id: String!) {
         nombre
         _id
       }
+      descripcion
+      facebook
       twitter 
       instagram
       urlWeb
@@ -203,13 +205,19 @@ query leyesNormativasPrev($_id:String!) {
  }
 
 `
-export const EMISIONES_BY_EMISION= gql`
- query emisionesByEmisor($_id:String!) {
-  emisionesByEmisor(_id: $_id){
+export const EMISIONES_BY_EMISOR= gql`
+ query calificacionesByEmisor($_id:String!, $first:Int!, $after:Int!) {
+  calificacionesByEmisor(_id: $_id, first: $first , after: $after){
       idDictamen
       idProspecto
       idProvidencia
       fechaAprovacion
+      D_R
+      fecha
+      programa
+      tipoTitulo
+      monto
+      
 
   }
 
@@ -220,4 +228,9 @@ export const NUMBER_OF_EMISORES = gql`
  {
   numberOfEmisores
  }
+`
+export const NUMBER_OF_EMISIONES_BY_EMISOR = gql`
+ query nroCalificacionesByEmisor($_id:String!) {
+  nroCalificacionesByEmisor(_id: $_id)
+}
 `

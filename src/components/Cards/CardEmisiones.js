@@ -9,28 +9,54 @@ import {MDBCardTitle ,
     MDBTooltip
        , MDBCollapse
     } from "mdbreact"; 
-
-export default function CardEmision ({title , dictamen, providencia , prospecto, fecha}) {
+ import {Link} from 'react-router-dom';
+export default function CardEmision ({monto, programa, tipoTitulo, D_R, idDictamen, idProvidencia , idProspecto, fechaAprovacion}) {
+    var options = {timeZone: 'UTC' ,  year: "numeric", month: "long", day: "numeric"};
     return ( <MDBCard
           className="cardEmision" > 
     
      
      <MDBCardBody> 
-     <MDBCardTitle> {title} </MDBCardTitle>
-     <div className="btns">  
-      <MDBTooltip placement="top"> 
-       <MDBBtn className="btn-estadistica "/> 
-        <div> Dictamen </div>
-        </MDBTooltip>
+     <MDBCardTitle>
+          {D_R? "Dictamen ": "Revision "} 
+          {tipoTitulo==="PAPELES_COMERCIALES"&& "Papeles Comerciales"}
+          {tipoTitulo==="OBLIGACIONES_QUIROGRAFARIAS" && "Obligaciones Quirografarias"}
+          {tipoTitulo==="TITULOS_DE_PARTICIPACION"&& "Titulos de Participación"}
+          {tipoTitulo==="PAGARE_BURSATILES"&& "Pagares Bursatiles"}
+          {tipoTitulo==="ACCIONES_PREFERIDAS"&& "Acciones Preferidas"}
+          {" "+programa}
+           </MDBCardTitle>
+     <div className="btns">   
+     { idDictamen.length>0 &&
         <MDBTooltip placement="top"> 
-     <MDBBtn className="btn-estadistica "/> 
-     <div> Prospecto </div>
-      </MDBTooltip>
-      <MDBTooltip>
-     <MDBBtn className="btn-estadistica "/> 
-     <div> Providencia </div>
-      </MDBTooltip>
+       <MDBBtn className="btn-estadistica "
+        tag={Link} 
+        to= {{
+                pathname: '/dictamen',
+                search: `?id=${idDictamen}`
+        }}
+       /> 
+        <div> Dictamen </div>
+        </MDBTooltip>}
+      {idProspecto.length>0 && 
+       <MDBTooltip placement="top"> 
+       <MDBBtn className="btn-estadistica "/> 
+       <div> Prospecto </div>
+        </MDBTooltip>
+        } {
+            idProvidencia.length>0 && 
+            <MDBTooltip> 
+            <MDBBtn className="btn-estadistica "/> 
+            <div> Providencia </div>
+             </MDBTooltip>
+        }
+      
          </div>
      </MDBCardBody>
+     <MDBCardFooter>
+         { new Date(fechaAprovacion).toLocaleDateString("es-VE", options)} 
+         <br/>
+        <span> Monto : {monto+" Bs"}  </span>
+     </MDBCardFooter>
     </MDBCard>); 
 }
