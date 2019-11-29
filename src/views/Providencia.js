@@ -45,9 +45,11 @@ export default function Dictamen( {location} ) {
       setScribd(Scribd); 
       setContent(Content);
       } else {
-            setContent(dataa); 
+            setContent(dataa.substring(
+                dataa.indexOf("<p") ,
+                dataa.indexOf("<br>") )); 
       }
-      
+     
        
          setDictamen(data.postBy); 
          setLoading(false); 

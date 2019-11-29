@@ -78,7 +78,7 @@ month[11] = "Dec.";
 
         <MDBCardBody>
         <p className="date"> {datee.month+" "+datee.day+", "+datee.year} </p>
-          <MDBCardTitle>   {title} </MDBCardTitle>
+          <MDBCardTitle>   {title.replace("&#8221;",'"').replace("&#8220;",'"') } </MDBCardTitle>
      
           </MDBCardBody>
        
@@ -88,7 +88,7 @@ month[11] = "Dec.";
           <MDBModalHeader toggle={toggle}> </MDBModalHeader>
           <MDBModalBody> 
           <div className="title"> 
-           <h3> {title} </h3>
+           <h3> {title.replace("&#8221;",'"').replace("&#8220;",'"') } </h3>
           </div>
           <div className="date"> 
           <span> {dateFull}</span>

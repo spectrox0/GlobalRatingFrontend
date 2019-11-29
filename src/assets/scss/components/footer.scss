@@ -46,10 +46,15 @@
         align-items:center;
         margin-top:3rem; 
         min-height:  4rem; 
+        font-size: .9em;
         a {
+            
             color: rgb(255, 255, 255); 
             &:hover {
                 text-decoration: none; 
+            }
+            &:focus {
+                outline: none;
             }
         }
     }

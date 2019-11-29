@@ -9,11 +9,18 @@ import ImgHeader from '../assets/img/headers/Header Estadísticas.jpg';
 import {useQuery} from '@apollo/react-hooks'; 
 import {EMISIONES_FOR_YEAR ,TOTAL_FOR_YEAR } from './helpers/graphql/querys'
 import {Link} from 'react-router-dom'; 
+import { set } from 'react-ga';
 export default function Estadisticas() {
     const year = (new Date()).getFullYear();
     const yearInitial = 1980; 
     const years = Array.from(new Array(year-yearInitial+1),( val, index) => { return {value: year-index, label:year-index } });
     const [yearFilter , setYearFilter] =React.useState(year); 
+    const [papelComercial , setPapelComercial] = React.useState(false);
+    const [obligacionQuirografaria, setObligacionQuirografaria] = React.useState(false);
+    const [titulosDeParticipacion , setTitulosDeParticipacion] = React.useState(false);
+    const [pagareBursatiles , setPagaresBursatiles] = React.useState(false);
+    const [accionesPreferidas , setAccionesPreferidas] = React.useState(false);
+
     var options = {timeZone: 'UTC' , month: "short", day: "numeric"};
     const {data , loading , error ,refetch} = useQuery(EMISIONES_FOR_YEAR, {
       variables: {
@@ -30,9 +37,22 @@ export default function Estadisticas() {
        
       },[]);
 
+  const handlindFilter = (e) => {
+    setYearFilter(e.value); 
+    setPapelComercial(false); 
+    setObligacionQuirografaria(false);
+    setTitulosDeParticipacion(false); 
+    setPagaresBursatiles(false); 
+    setAccionesPreferidas(false); 
+  }
     const Emisiones = ({emisiones}) => {
-    return emisiones.map ( emision => 
-      <tr key={emision._id}>
+    return emisiones.map ( emision => {
+        if(emision.tipoTitulo==="PAPELES_COMERCIALES" && !papelComercial) setPapelComercial(true)
+        else if(emision.tipoTitulo==="OBLIGACIONES_QUIROGRAFARIAS" && !obligacionQuirografaria) setObligacionQuirografaria(true)
+        else if(emision.tipoTitulo==="TITULOS_DE_PARTICIPACION" && !titulosDeParticipacion) setTitulosDeParticipacion(true)
+        else if(emision.tipoTitulo==="PAGARE_BURSATILES" && !pagareBursatiles) setPagaresBursatiles(true)
+        else if(emision.tipoTitulo==="ACCIONES_PREFERIDAS" && !accionesPreferidas) setAccionesPreferidas(true)
+      return  <tr key={emision._id}>
         {emision.statusCliente?  <td>
           <Link to= {{
                pathname: '/perfilCliente',
@@ -42,7 +62,8 @@ export default function Estadisticas() {
   <td>{emision.emisor.nombre}</td>
         }
     
-    <td  className="row-text-center" > {emision.tipoTitulo==="PAPELES_COMERCIALES"&& "PC"}
+    <td  className="row-text-center" >
+    {emision.tipoTitulo==="PAPELES_COMERCIALES" && "PC"}
     {emision.tipoTitulo==="OBLIGACIONES_QUIROGRAFARIAS" && "OQ"}
     {emision.tipoTitulo==="TITULOS_DE_PARTICIPACION"&& "TP"}
     {emision.tipoTitulo==="PAGARE_BURSATILES"&& "PB"}
@@ -50,7 +71,7 @@ export default function Estadisticas() {
     
     </td>
       <td className="row-text-right">{emision.monto.toLocaleString()}</td> 
-      <td>{new Date (emision.fechaAprovacion).toLocaleDateString("es-VE", options)} </td>
+      <td className="row-text-center" >{new Date (emision.fechaAprovacion).toLocaleDateString("es-VE", options).replace(".","")} </td>
       <td className="row-text-center" >{emision.nroProvidencia} </td>
       {emision.statusCliente? 
       <>
@@ -91,6 +112,8 @@ export default function Estadisticas() {
       }
     
     </tr>
+    }
+     
       )
     }
     return (
@@ -107,9 +130,7 @@ export default function Estadisticas() {
     classNamePrefix='Select'
       defaultValue={{ label: year, value: year }} 
       options={years} 
-      onChange= { e=> {
-          setYearFilter(e.value)
-      }}
+      onChange= {handlindFilter}
       />
         </MDBRow>
      <MDBRow className="row-table"> 
@@ -117,9 +138,9 @@ export default function Estadisticas() {
       <MDBTableHead>
         <tr>
           <th>Emisor</th>
-          <th className="row-text-center" >Emision</th>
-          <th className="row-text-right">Monto(*)</th>
-          <th>Fecha</th>
+          <th className="row-text-center" >Emisión</th>
+          <th className="row-text-right">Monto (<MDBIcon icon="asterisk" size="sm" />) </th>
+          <th className="row-text-center" >Fecha</th>
           <th className="row-text-center" ># Providencia</th>
           <th className="row-text-center" >Dictamen</th>
           <th className="row-text-center" >Prospecto</th>
@@ -151,25 +172,26 @@ export default function Estadisticas() {
     <span>
       <b> Total del año </b>
       {totalEmision.data && totalEmision.data.totalForYear.toLocaleString()}
-       {" "} Bs
+       
       </span> 
       </div>
       </MDBRow>
       <MDBRow> 
       <div className="leyenda">
       <p> 
-        PC: Papeles Comerciales <br/>
-        OQ: Obligaciones Quirografarias <br/>
-        TP: Titulos de Participacion <br/>
-        PB: Pagares Bursatiles <br/>
-        AP: Acciones Preferidas <br/>
+        {papelComercial && <> PC: Papeles Comerciales  <br/> </> }  
+        {obligacionQuirografaria && <>  OQ: Obligaciones Quirografarias <br/> </>}
+        {titulosDeParticipacion && <>  TP: Titulos de Participacion <br/> </> }
+        {pagareBursatiles && <>  PB: Pagares Bursatiles <br/> </> }
+        {accionesPreferidas && <>  AP: Acciones Preferidas <br/> </> }
+       
       </p>
       </div>
       </MDBRow>
       <MDBRow>
       <div className="leyenda">
       <p> 
-       (*) Miles de bolivares soberanos
+      (<MDBIcon icon="asterisk" size="sm" />) Miles de bolivares soberanos
       </p>
       </div>
       </MDBRow>
