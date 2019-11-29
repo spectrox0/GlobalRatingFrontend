@@ -63,7 +63,7 @@ export default function PerfilCliente({location})  {
         <>
          
         
-           <div className="ProfileContainer"> 
+           <MDBContainer className="ProfileContainer"> 
            <MDBRow> 
                <MDBCol className="col-img" sm="3"> 
                  <img className="profileLogo" alt={data.emisorID.nombre} src={data.emisorID.logo} />
@@ -114,7 +114,7 @@ export default function PerfilCliente({location})  {
          </p>  </section>
            </MDBRow>
          
-</div >
+</MDBContainer>
 
 
      <MDBContainer className="emisionesContainer">  

@@ -234,3 +234,36 @@ export const NUMBER_OF_EMISIONES_BY_EMISOR = gql`
   nroCalificacionesByEmisor(_id: $_id)
 }
 `
+export const EMISION_BY_DICTAMEN= gql`
+query emisionByDictamen($_id:String!) {
+  emisionByDictamen(_id:$_id) {
+    idProvidencia
+    idProspecto
+    emisor {
+      _id
+    }
+  }
+}
+`
+export const EMISION_BY_PROSPECTO= gql`
+query emisionByProspecto($_id:String!) {
+  emisionByProspecto(_id:$_id) {
+    idProvidencia
+    idDictamen
+    emisor {
+      _id
+    }
+  }
+}
+`
+export const EMISION_BY_PROVIDENCIA = gql`
+query emisionByProvidencia($_id:String!) {
+  emisionByProvidencia(_id:$_id) {
+    idDictamen
+    idProspecto
+    emisor {
+      _id
+    }
+  }
+}
+`

@@ -152,7 +152,7 @@ export default function NavbarGlobal() {
                  onClick={
                   () => setCollapseOpen(false)
               }
-                 >contactanos</MDBNavLink>
+                 >contáctanos</MDBNavLink>
             </MDBNavItem>
           </MDBNavbarNav>
           <MDBNavbarNav right> 

@@ -12,7 +12,9 @@
         opacity: .8;
 
    
-} 
+}  &:focus {
+    outline: none;
+}
 .img-fluid{
     width: auto;
     height: 13rem;

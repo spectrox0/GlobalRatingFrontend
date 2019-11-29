@@ -54,9 +54,39 @@ export default function Estadisticas() {
       <td className="row-text-center" >{emision.nroProvidencia} </td>
       {emision.statusCliente? 
       <>
-      <td className="row-btn"> <MDBBtn className="btn-estadistica" /> </td>
-      <td className="row-btn"><MDBBtn className="btn-estadistica" /> </td>
-      <td className="row-btn"><MDBBtn className="btn-estadistica" /> </td> 
+     
+      <td className="row-btn"> 
+      {emision.idDictamen.length>0 && 
+      <MDBBtn className="btn-estadistica"
+      to={{
+        pathname: '/dictamen',
+        search: `?id=${emision.idDictamen}`}} 
+       
+      
+         tag={Link}
+       /> }  </td>
+      <td className="row-btn">
+        { emision.idProspecto.length>0 && 
+          <MDBBtn className="btn-estadistica" 
+          to={{
+            pathname: '/prospecto',
+            search: `?id=${emision.idProspecto}`}} 
+           
+          
+             tag={Link}/>
+        }
+        
+       </td>
+       <td className="row-btn">
+       { emision.idProvidencia.length>0 && 
+          <MDBBtn className="btn-estadistica" 
+          to={{
+            pathname: '/providencia',
+            search: `?id=${emision.idProvidencia}`}} 
+           
+          
+             tag={Link}/>
+        } </td>
       </> :<> <td> </td> <td> </td> <td> </td> </>
       }
     
@@ -70,7 +100,7 @@ export default function Estadisticas() {
             <MDBContainer >
             <MDBRow className="title">
            <h2 > 
-           Estadisticas
+           Estadísticas
             </h2> </MDBRow>
         <MDBRow className="row-select"> 
       <Select className="select"  

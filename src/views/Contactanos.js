@@ -117,7 +117,7 @@ const verifyCallback =(response) => {
               <MDBCol sm="12" md="6">
                 <div className="info"> 
               <MDBRow> 
-              <h3> Ubicanos </h3>
+              <h3> Ubícanos </h3>
               </MDBRow>
               
               <MDBRow> 
@@ -142,7 +142,7 @@ const verifyCallback =(response) => {
                 </div>
               </MDBCol>
               <MDBCol sm="12" md="6"> 
-              <h3> Escribenos </h3>
+              <h3> Escríbenos </h3>
             {message && (
               <MDBAlert color={message.isError? "danger" : "info"}>
                {message.message}

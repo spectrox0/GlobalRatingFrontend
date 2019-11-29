@@ -13,6 +13,8 @@ import Clientes from "views/Clientes.js";
 import Loading from "views/Loading";
 import LeyNormativa from "views/LeyNormativa.js";
 import PerfilCliente from "views/PerfilCliente.js"
+import Providencia from "views/Providencia.js";
+import Prospecto from "views/Prospecto.js"
 import CountryContext from "../../context/region"
 import {animateScroll as scroll} from  'react-scroll'; 
 export default function Routes() {
@@ -32,6 +34,8 @@ export default function Routes() {
   
  <Route path="/index/:countryName" render={(props)=> handlingRender(props,Home) }/>
  <Route path="/dictamen" render={ (props) => {scroll.scrollToTop({duration:500}); return <Dictamen {...props} /> } } />
+ <Route path="/providencia" render={ (props) => {scroll.scrollToTop({duration:500}); return <Providencia {...props} /> } } />
+ <Route path="/prospecto" render={ (props) => {scroll.scrollToTop({duration:500}); return <Prospecto {...props} /> } } />
  <Route path="/perfilCliente" render = {(props)=>  {scroll.scrollToTop({duration:500}); return <PerfilCliente {...props} />}  }/>
  <Route path="/nosotros/:countryName" render={ (props) =>   handlingRender(props,Nosotros) } />
  <Route path="/calificacion/:countryName" render={ (props) =>   handlingRender(props,Calificacion) } />

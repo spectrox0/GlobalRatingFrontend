@@ -1,7 +1,7 @@
 import React , {useState , useEffect} from "react"; 
 import {initGA} from './helpers/initGA.js';
 import {MDBRow, MDBContainer, MDBCol, MDBBtn} from 'mdbreact'; 
-import {QUERY_DICTAMEN, EMISION_BY_DICTAMEN} from './helpers/graphql/querys'
+import {QUERY_DICTAMEN, EMISION_BY_PROVIDENCIA} from './helpers/graphql/querys'
 import client from './helpers/graphqlClientFinanzas';
 import { useQuery} from '@apollo/react-hooks';
 import ShareFriend from '../components/Others/shareFriends.js'
@@ -19,7 +19,7 @@ export default function Dictamen( {location} ) {
     const  {data ,loading , error}= useQuery(QUERY_DICTAMEN,{variables: {
       postId: id
     } ,client  } );
-   const emision = useQuery(EMISION_BY_DICTAMEN, {
+   const emision = useQuery(EMISION_BY_PROVIDENCIA, {
      variables: {
        _id : id
      }
@@ -31,18 +31,27 @@ export default function Dictamen( {location} ) {
        let dataa ; 
        console.log(data)
         dataa =  await data.postBy.content.replace(/(?:\r\n|\r|\n)/g, '<br>');
-      
-        var Scribd = dataa.substring(
+      const containScribd = dataa.includes("<iframe"); 
+      let Scribd, Content; 
+      if(containScribd) {
+         Scribd = dataa.substring(
+            dataa.lastIndexOf("<iframe")
+        );
+         Content = dataa.substring(
+          dataa.indexOf("<p") ,
           dataa.lastIndexOf("<iframe")
+          
       );
-      var Content = dataa.substring(
-        dataa.indexOf("<p") ,
-        dataa.lastIndexOf("<iframe")
-    );
-        setScribd(Scribd); 
-        setContent(Content);
+      setScribd(Scribd); 
+      setContent(Content);
+      } else {
+            setContent(dataa); 
+      }
+      
+       
          setDictamen(data.postBy); 
          setLoading(false); 
+         
         }
      
         useEffect( () => {
@@ -94,28 +103,28 @@ export default function Dictamen( {location} ) {
              <MDBBtn className="btn-color-primary" size="lg" tag={Link}
              to= {{
               pathname: '/perfilCliente',
-              search: `?id=${emision.data.emisionByDictamen.emisor._id}`
+              search: `?id=${emision.data.emisionByProvidencia.emisor._id}`
              }}
              > 
               Cliente
              </MDBBtn> 
              <div> 
-               {emision.data.emisionByDictamen.idProvidencia.length>0 && 
-                 <MDBBtn className="btn-color-primary" size="lg" tag={Link}
+               {emision.data.emisionByProvidencia.idDictamen.length>0 && 
+                 <MDBBtn className="btn-color-primary" size="lg" 
+                 tag={Link}
                  to={{
-                  pathname: '/providencia',
-                  search: `?id=${emision.data.emisionByDictamen.idProvidencia}` }}
+                    pathname: '/dictamen',
+                    search: `?id=${emision.data.emisionByProvidencia.idDictamen}` }}
                  > 
-                   Providencia
+                   Dictamen
                  </MDBBtn>
                }
-               {emision.data.emisionByDictamen.idProspecto.length>0 && 
+               {emision.data.emisionByProvidencia.idProspecto.length>0 && 
                  <MDBBtn className="btn-color-primary" size="lg" tag={Link}
                  to={{
-                  pathname: '/prospecto',
-                  search: `?id=${emision.data.emisionByDictamen.idProspecto}` }}
+                    pathname: '/prospecto',
+                    search: `?id=${emision.data.emisionByProvidencia.idProspecto}` }}
                  > 
-                 
                  > 
                    Prospecto
                  </MDBBtn>

@@ -1,7 +1,7 @@
 import React , {useState , useEffect} from "react"; 
 import {initGA} from './helpers/initGA.js';
 import {MDBRow, MDBContainer, MDBCol, MDBBtn} from 'mdbreact'; 
-import {QUERY_DICTAMEN, EMISION_BY_DICTAMEN} from './helpers/graphql/querys'
+import {QUERY_DICTAMEN, EMISION_BY_PROSPECTO} from './helpers/graphql/querys'
 import client from './helpers/graphqlClientFinanzas';
 import { useQuery} from '@apollo/react-hooks';
 import ShareFriend from '../components/Others/shareFriends.js'
@@ -19,7 +19,7 @@ export default function Dictamen( {location} ) {
     const  {data ,loading , error}= useQuery(QUERY_DICTAMEN,{variables: {
       postId: id
     } ,client  } );
-   const emision = useQuery(EMISION_BY_DICTAMEN, {
+   const emision = useQuery(EMISION_BY_PROSPECTO, {
      variables: {
        _id : id
      }
@@ -94,30 +94,27 @@ export default function Dictamen( {location} ) {
              <MDBBtn className="btn-color-primary" size="lg" tag={Link}
              to= {{
               pathname: '/perfilCliente',
-              search: `?id=${emision.data.emisionByDictamen.emisor._id}`
+              search: `?id=${emision.data.emisionByProspecto.emisor._id}`
              }}
              > 
               Cliente
              </MDBBtn> 
              <div> 
-               {emision.data.emisionByDictamen.idProvidencia.length>0 && 
+               {emision.data.emisionByProspecto.idProvidencia.length>0 && 
                  <MDBBtn className="btn-color-primary" size="lg" tag={Link}
                  to={{
-                  pathname: '/providencia',
-                  search: `?id=${emision.data.emisionByDictamen.idProvidencia}` }}
-                 > 
+                    pathname: '/providencia',
+                    search: `?id=${emision.data.emisionByProspecto.idProvidencia}` }}> 
                    Providencia
                  </MDBBtn>
                }
-               {emision.data.emisionByDictamen.idProspecto.length>0 && 
+               {emision.data.emisionByProspecto.idDictamen.length>0 && 
                  <MDBBtn className="btn-color-primary" size="lg" tag={Link}
                  to={{
-                  pathname: '/prospecto',
-                  search: `?id=${emision.data.emisionByDictamen.idProspecto}` }}
+                    pathname: '/dictamen',
+                    search: `?id=${emision.data.emisionByProspecto.idDictamen}` }}
                  > 
-                 
-                 > 
-                   Prospecto
+                   Dictamen
                  </MDBBtn>
                }
               

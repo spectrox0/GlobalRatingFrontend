@@ -40,13 +40,25 @@ export default function CardEmision ({monto, programa, tipoTitulo, D_R, idDictam
         </MDBTooltip>}
       {idProspecto.length>0 && 
        <MDBTooltip placement="top"> 
-       <MDBBtn className="btn-estadistica "/> 
+       <MDBBtn className="btn-estadistica " 
+           tag={Link} 
+           to= {{
+                   pathname: '/prospecto',
+                   search: `?id=${idProspecto}`
+           }}
+       /> 
        <div> Prospecto </div>
         </MDBTooltip>
         } {
             idProvidencia.length>0 && 
             <MDBTooltip> 
-            <MDBBtn className="btn-estadistica "/> 
+            <MDBBtn className="btn-estadistica "
+                tag={Link} 
+                to= {{
+                        pathname: '/providencia',
+                        search: `?id=${idProvidencia}`
+                }}
+            /> 
             <div> Providencia </div>
              </MDBTooltip>
         }
@@ -56,7 +68,7 @@ export default function CardEmision ({monto, programa, tipoTitulo, D_R, idDictam
      <MDBCardFooter>
          { new Date(fechaAprovacion).toLocaleDateString("es-VE", options)} 
          <br/>
-        <span> Monto : {monto+" Bs"}  </span>
+        <span> Monto : {monto.toLocaleString()+" Bs"}  </span>
      </MDBCardFooter>
     </MDBCard>); 
 }
