@@ -22,7 +22,7 @@ export default function LeyesNormativas() {
         const innerJSX = data.leyesNormativasByDate.map(({_id, titulo ,fecha }) => {
          
            var date = new Date(fecha)
-            var options = {timeZone: 'UTC' ,year: "numeric", month: "long", day: "numeric"};
+            var options = {timeZone: 'UTC' ,year: "numeric", month: "short", day: "numeric"};
              var dateF= date.toLocaleDateString("es-VE", options); 
             
            return(  <li key={_id}>

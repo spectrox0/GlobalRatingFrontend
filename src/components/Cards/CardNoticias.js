@@ -84,7 +84,7 @@ month[11] = "Dic.";
        
          </MDBCard>
           
-          <MDBModal isOpen={isOpen}  toggle={toggle} size="lg" > 
+          <MDBModal isOpen={isOpen}  toggle={toggle} size="lg" className="modalNoticia"> 
           <MDBModalHeader toggle={toggle}> </MDBModalHeader>
           <MDBModalBody> 
           <div className="title"> 
@@ -102,7 +102,7 @@ month[11] = "Dic.";
          
            </MDBModalBody>
           <MDBModalFooter>
-              <MDBBtn className="btn-round btn-color-primary" onClick={toggle}>Ver en Finanzas Digital</MDBBtn>
+              <MDBBtn href="https://www.finanzasdigital.com/category/noticias" target="_blank" className="btn-round btn-color-primary" onClick={toggle}>Ver en Finanzas Digital</MDBBtn>
           <MDBBtn className="btn-round btn-color-primary" onClick={toggle}>Cerrar</MDBBtn>
         </MDBModalFooter>
           </MDBModal>

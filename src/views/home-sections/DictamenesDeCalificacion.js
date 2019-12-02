@@ -41,16 +41,12 @@ export default function DictamenesDeCaificacion({dictamenes}) {
             }
        
     < MDBRow className="row-button"> 
-             <MDBBtn href="https://www.finanzasdigital.com/category/rf/calificacion" className="btn-invisible"
+             <MDBBtn href="/clientes/ve" className="btn-invisible"
+            
              > <MDBIcon icon="plus-circle" />
              </MDBBtn>
          </MDBRow>
          </MDBContainer>
-         
-  
-         
-       
-        
         </div>
   ); 
 }

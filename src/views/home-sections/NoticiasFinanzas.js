@@ -40,7 +40,7 @@ export default function NoticiasFinanzas({noticias}) {
                 </MDBRow>
             }
              < MDBRow className="row-button"> 
-             <MDBBtn href="https://www.finanzasdigital.com/category/noticias" className="btn-invisible"
+             <MDBBtn href="https://www.finanzasdigital.com/category/noticias" target="_blank" className="btn-invisible"
              > <MDBIcon icon="plus-circle" />
              </MDBBtn>
          </MDBRow>
