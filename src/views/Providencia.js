@@ -70,8 +70,27 @@ export default function Dictamen( {location} ) {
                 var options = {timeZone: 'UTC' , year: "numeric", month: "long", day: "numeric"};
                  setDate(date.toLocaleDateString("es-VE", options)); 
                       }
+                      var date_ = new Date(date);
+          const year = date_.getFullYear();
+          const day = date_.getDate();
+          var month = []
+         month[0] = "Ene.";
+month[1] = "Feb.";
+month[2] = "Mar.";
+month[3] = "Abr.";
+month[4] = "May.";
+month[5] = "Jun.";
+month[6] = "Jul.";
+month[7] = "Ago.";
+month[8] = "Sep.";
+month[9] = "Oct.";
+month[10] = "Nov.";
+month[11] = "Dic.";
+ var n = month[date_.getMonth()];
+      setDate({day:day , month: n , year}); 
+                      }
                 
-             },[dictamen])
+             ,[dictamen])
    
         return (
           <>
@@ -90,7 +109,7 @@ export default function Dictamen( {location} ) {
             {dictamen.title}
             </h2> </MDBRow> 
          <div className="backgroundLogo" style={{background:`url(${dictamen.featuredImage.sourceUrl}) center no-repeat`,backgroundSize:"cover"}} />
-         <span>  {" "+date} </span>
+         <span>  {date.month+" "+date.day+", "+date.year} </span>
               <div className="contentHtml" dangerouslySetInnerHTML={{ __html: content }} />
          </MDBCol>
          <MDBCol sm="6" className="col-scribd">

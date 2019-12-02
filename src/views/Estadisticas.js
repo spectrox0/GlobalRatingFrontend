@@ -77,18 +77,19 @@ export default function Estadisticas() {
         search: `?id=${emision.idDictamen}`}} 
          tag={Link}
        /> }</td>
-      <td className="row-btn">{ emision.idProspecto.length>0 && 
-          <MDBBtn className="btn-estadistica" 
-          to={{
-            pathname: '/prospecto',
-            search: `?id=${emision.idProspecto}`}} tag={Link}/>
-        }</td>
        <td className="row-btn">{ emision.idProvidencia.length>0 && 
           <MDBBtn className="btn-estadistica" 
           to={{
             pathname: '/providencia',
             search: `?id=${emision.idProvidencia}`}} 
              tag={Link}/>
+        }</td>
+        <td className="row-btn">{ emision.idProspecto.length>0 && 
+          <MDBBtn className="btn-estadistica" 
+          to={{
+            pathname: '/prospecto',
+            search: `?id=${emision.idProspecto}`}} 
+            tag={Link}/>
         }</td></>:<><td></td><td></td><td></td></>}</tr>
     }
      
@@ -122,8 +123,8 @@ export default function Estadisticas() {
           <th className="row-text-center" >Fecha</th>
           <th className="row-text-center" ># Providencia</th>
           <th className="row-text-center" >Dictamen</th>
-          <th className="row-text-center" >Prospecto</th>
-          <th className="row-text-center">Providencia</th></tr>
+          <th className="row-text-center" >Providencia</th>
+          <th className="row-text-center">Prospecto</th></tr>
       </MDBTableHead>
       <MDBTableBody>
         

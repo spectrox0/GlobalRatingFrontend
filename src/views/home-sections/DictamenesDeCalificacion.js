@@ -48,11 +48,6 @@ export default function DictamenesDeCaificacion({dictamenes}) {
              </MDBBtn>
          </MDBRow>
          </MDBContainer>
-         
-  
-         
-       
-        
         </div>
   ); 
 }
