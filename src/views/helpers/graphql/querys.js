@@ -276,3 +276,13 @@ export const RANGE_YEAR = gql`
  }
 
 `
+export const QUERY_PAISES = gql`
+ {
+   paises {
+    abreviatura
+    nombre
+    activo
+   }
+   
+ }
+`

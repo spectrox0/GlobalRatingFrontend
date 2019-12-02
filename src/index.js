@@ -7,8 +7,17 @@ import "assets/scss/index.scss"
 // pages
 
 
+import client from './views/helpers/graphqlEndpoint'
+
+
+import { ApolloProvider } from '@apollo/react-hooks'; 
+ 
+
+
 import App from './App.js'
 ;
 
-ReactDOM.render(<App/>, document.getElementById("root")
+ReactDOM.render( 
+<ApolloProvider client={client}>
+    <App/> </ApolloProvider>, document.getElementById("root")
 );
