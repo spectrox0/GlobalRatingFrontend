@@ -43,7 +43,7 @@ month[7] = "Ago.";
 month[8] = "Sep.";
 month[9] = "Oct.";
 month[10] = "Nov.";
-month[11] = "Dec.";
+month[11] = "Dic.";
  var n = month[date_.getMonth()];
       setDate({day:day , month: n , year}); 
       var date__= new Date(date)
@@ -91,7 +91,7 @@ month[11] = "Dec.";
            <h3> {title.replace("&#8221;",'"').replace("&#8220;",'"') } </h3>
           </div>
           <div className="date"> 
-          <span> {dateFull}</span>
+          <span> {datee.month+" "+datee.day+", "+datee.year}</span>
           
           </div>
           <div class="scrollbar" id="style-2">

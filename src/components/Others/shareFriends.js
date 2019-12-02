@@ -25,7 +25,7 @@ export default function ShareFriend({socialNetworks}) {
       <MDBContainer className="rowCompartir"> 
      
       <EmailShareButton 
-       subject="Visita Global Ratings!! "
+       subject="Visita Global Ratings!!! "
        body=" Alguien ha compartido el siguiente link contigo "
        url={window.location.href}
        openWindow
