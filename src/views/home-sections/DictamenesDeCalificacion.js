@@ -20,7 +20,7 @@ export default function DictamenesDeCaificacion({dictamenes}) {
          <MDBContainer>
          <MDBRow className="dictamenes-title"  >
            <h2 > 
-            Dictamenes de Calificación
+            Dictámenes de Calificación
             </h2>
             </MDBRow>
 

@@ -20,7 +20,7 @@ import {
 
 export default function ShareFriend({socialNetworks}) {
     const url = window.location.href; 
-    const title = "Visita Global Ratings"
+    const title = "Visita la página web de Global Ratings en el siguiente enlace: "
     return <> 
       <MDBContainer className="rowCompartir"> 
      
