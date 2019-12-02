@@ -1,16 +1,20 @@
 import React , {useEffect} from "react"; 
 import { useQuery } from '@apollo/react-hooks';
-import {QUERY_EMISORES_ID} from './helpers/graphql/querys'; 
+import {QUERY_EMISORES_ID, EMISIONES_BY_EMISOR, NUMBER_OF_EMISIONES_BY_EMISOR} from './helpers/graphql/querys'; 
 import {initGA} from './helpers/initGA.js';
 import {
     MDBRow , 
     MDBCol, 
     MDBContainer, 
     MDBTooltip,
-    MDBBtn
+    MDBBtn,
+    MDBIcon
 }  from 'mdbreact'; 
-import Header from './../components/Headers/headersViews/header2'; 
+import Header from '../components/Headers/headersViews/Header';
+import ImgHeader from '../assets/img/headers/Header Clientes.png'; 
 import CardEmisiones from './../components/Cards/CardEmisiones.js'; 
+import ShareEmail from '../components/Others/shareFriends.js'; 
+import Pagination from '../components/Others/Pagination.js'
 
 export default function PerfilCliente({location})  {
     React.useEffect(()=> {
@@ -20,14 +24,30 @@ export default function PerfilCliente({location})  {
     const {data, loading, error} = useQuery(QUERY_EMISORES_ID, {variables: {
         _id:id
     }} ); 
+    const emisionesPerPage =3; 
+     const [currentPage, setCurrentPage]= React.useState(1);  
+    const Query_emisiones = useQuery(EMISIONES_BY_EMISOR, {
+        variables: {
+            _id:id,
+            first:  emisionesPerPage , 
+            after:currentPage*emisionesPerPage-emisionesPerPage
+        }
+    })
+    const nroEmisiones = useQuery( NUMBER_OF_EMISIONES_BY_EMISOR, {
+        variables: {
+            _id:id
+        }
+    })
 
-   
+    const Paginate = (number) => {
+        setCurrentPage(number); 
+      }
 
    const Emisiones = ( {emisiones} )=> {
       const innerJSX = emisiones.map(emision => 
-         <MDBRow className="MDBRowEmision" key= {emision.id}> 
-            
-             <CardEmisiones fecha={emision.fechaAprovacion} />
+         <MDBRow className="MDBRowEmision" 
+         key= {emision.id}> 
+             <CardEmisiones {...emision} />
          </MDBRow>
         
      )
@@ -36,77 +56,100 @@ export default function PerfilCliente({location})  {
     
    }
  return (
+     <> 
+    <Header urlImage={ImgHeader} />
  <div className="container-profile-client"> 
-
     {(data && !loading)?  ( 
         <>
-          <Header
-          title="Perfil de cliente" 
-          urlImage={require("./../assets/img/carousel/Global-ratings4-2.jpg")} 
-          profileImage = {data.emisorID.logo} 
-          name = {data.emisorID.nombre}/>
-           <div className="networksContainer"> 
-           <MDBTooltip placement="top"> 
-    <MDBBtn className="webSocial">  
-    <i className="fa fa-instagram fa-lg"></i>
-        </MDBBtn>
-        <div> 
-           Instagram
-        </div>
-        </MDBTooltip>
-        <MDBTooltip placement="top"> 
-        <MDBBtn className="webSocial"> 
-       
-        <i className="fa fa-twitter fa-lg"></i>
-       </MDBBtn>
-       <div> Twitter </div>
-       </MDBTooltip>
+         
+        
+           <MDBContainer className="ProfileContainer"> 
+           <MDBRow> 
+               <MDBCol className="col-img" sm="3"> 
+                 <img className="profileLogo" alt={data.emisorID.nombre} src={data.emisorID.logo} />
+               </MDBCol>
+               <MDBCol className="col-name" sm="9"> 
+                   <MDBRow> 
+                       <span className="nameClient"> {data.emisorID.nombre }</span>
+                   </MDBRow>
+                   <MDBRow> 
+                       {data.emisorID.instagram.length>0 && 
+                       <MDBTooltip placement="top"> 
+                       <MDBBtn target="_blank" href={`https://www.instagram.com/${data.emisorID.instagram.replace("@","")}/`}className="webSocial">  
+                       <MDBIcon fab icon="instagram" size="lg" />
+                           </MDBBtn>
+                           <div> 
+                              Instagram
+                           </div>
+                           </MDBTooltip>
+                       }
+               {data.emisorID.twitter.length>0 && 
+               <MDBTooltip placement="top"> 
+               <MDBBtn target="_blank" href={`https://twitter.com/${data.emisorID.instagram.replace("@","")}/`} className="webSocial"> 
+              
+               <MDBIcon fab icon="twitter" size="lg" />
+              </MDBBtn>
+              <div> Twitter </div>
+              </MDBTooltip>
+               }
+         {data.emisorID.facebook.length>0 && 
        <MDBTooltip placement="top"> 
-        <MDBBtn className="webSocial"> 
-        <i className="fa fa-facebook fa-lg " ></i> </ MDBBtn>
+        <MDBBtn target="_blank"href={`https://facebook.com/${data.emisorID.facebook.replace("@","")}/`} className="webSocial"> 
+        <MDBIcon fab icon="facebook-f" size="lg" /> </ MDBBtn>
         <div> Facebook</div>
-        </MDBTooltip>
+         </MDBTooltip> }
+         {data.emisorID.urlWeb.length>0 && 
         <MDBTooltip placement="top"> 
-        <MDBBtn className="webSocial"> 
+        <MDBBtn target="_blank" href={data.emisorID.urlWeb}  className="webSocial"> 
         <i className="fa fa-home fa-lg "></i> </MDBBtn>
         <div> Website </div>
-        </MDBTooltip>
-</div>
-
-
-     <MDBContainer> 
-         <section className="description">
-         <div className="line" /> <p> 
-         Fusce nisi massa, auctor quis nibh et, pulvinar aliquet metus. Morbi euismod sed purus sit amet dictum. Vivamus sit amet vehicula mi, semper varius velit. Suspendisse eu dui ac ex bibendum sollicitudin. In ligula augue, convallis eget porttitor nec, interdum at felis. Phasellus est turpis, tincidunt sit amet porttitor et, accumsan sit amet nisl. Duis ultrices vehicula massa in fringilla. Mauris quis fermentum quam. Maecenas sed augue finibus, gravida risus ut, sodales eros. Maecenas ac velit dignissim, convallis enim eget, porta tellus. Proin sit amet elit eget nibh scelerisque semper ac at tellus.
+         </MDBTooltip> }
+        </MDBRow>
+               </MDBCol>
+           </MDBRow>
+           <MDBRow> 
+           <section className="description">
+       <p> 
+        {data.emisorID.descripcion}
          </p>  </section>
+           </MDBRow>
+         
+</MDBContainer>
+
+
+     <MDBContainer className="emisionesContainer">  
          <section className="emisiones"> 
          <h3> Emisiones </h3>
-         <Emisiones emisiones={data.emisorID.emisiones} />
+         {Query_emisiones.data && 
+         <Emisiones emisiones={Query_emisiones.data.calificacionesByEmisor} /> 
+         } 
+          <MDBRow className="row-pagination">
+    {nroEmisiones.data && 
+      <Pagination
+      paginate ={Paginate} 
+      currentPage={currentPage} 
+      elementsPerPage= {emisionesPerPage}
+      totalElements= {nroEmisiones.data.nroCalificacionesByEmisor}
+      
+       />}
+        </MDBRow>
+        
+   
+        
          </section>
          </MDBContainer>
-     </>
-    ) : <Header
-    title="Perfil de cliente" 
-    urlImage={require("./../assets/img/headers/header1.jpg")} /> }
-
-{ /* 
-        <MDBContainer> 
-        <MDBRow className="MDBRowPresentation"> 
-        <MDBCol className="MDBColImage" sm="auto"> <div className="profileImage"> 
-        <img src={data.emisorID.logo} alt =".."/> 
-        </div></MDBCol>
-        <MDBCol className="MDBColName" sm="6"> 
-        <MDBRow>  <h3>{data.emisorID.nombre} </h3> </MDBRow>
-        <MDBRow>   <span> TWITTER: {data.emisorID.twitter} </span> </MDBRow>
-        <MDBRow> <span> INSTAGRAM : {data.emisorID.instagram} </span> </MDBRow>
-        <MDBRow> <span> URL WEB: {data.emisorID.urlWeb} </span> </MDBRow>
-        </MDBCol>
-      </MDBRow>
+        <ShareEmail/>
       
-      <Emisiones emisiones={data.emisorID.emisiones} />
-  
-      </MDBContainer>
-    */ }
- </div> )
+       
+         
+     </>
+    ) :    <div className="container-load-posts"> 
+    <div className="spinner-grow text-primary" role="status">
+    <span className="sr-only">Cargando...</span>
+    </div>
+    </div>}
+
+ </div> 
+ </>)
 
 }

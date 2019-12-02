@@ -10,7 +10,48 @@
     &:hover {
         color: #FFFFFF;
         text-shadow: 0 0 1px  #FFFFFF;
-        background: $color-secondary;
+        background:$color-primary;
+        opacity: .9;
 
+    }
+}
+
+.btn-invisible{
+    padding:0; 
+    margin: 0; 
+    display: flex;
+    justify-content: flex-end;
+    
+    &:focus {
+        outline: none;
+        box-shadow: none;
+        
+    }
+   i {
+       color: $color-primary; 
+       font-size: 3em; 
+       &:focus, &:hover {
+           opacity: .9;
+       }
+   }
+}
+.btn-estadistica {
+    padding:0; 
+    margin: 0; 
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    background: url("./../img/btn/btn_estadisticas.svg") center no-repeat;
+    background-size: cover;
+    transition: all .2s ease-in-out;
+    &:focus {
+        outline: none;
+        opacity: .8;
+        box-shadow: 0 1px .5px rgba(0, 0, 0, 0.383);
+    }
+    &:hover {
+        opacity: .8;
+        box-shadow: 0 1px .5px rgba(0, 0, 0, 0.383); 
+       
     }
 }

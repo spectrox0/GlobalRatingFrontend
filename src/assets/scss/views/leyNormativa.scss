@@ -1,0 +1,45 @@
+.page-ley-normativa {
+    min-height: 100vh;
+    padding-top: 1.8rem;
+    background: $color-background;
+    
+    .title {
+        margin-bottom: 2rem; 
+        margin-top: 2rem; 
+        h2 {
+            font-size:1.4em; 
+            display: flex;
+            flex-direction: column;
+            font-weight: $font-weight-title;
+
+            &:after {
+            content: "";
+            height:$height-underline;
+            background: $color-primary; 
+            width:100%; 
+         
+           
+        }
+    } 
+    p {
+        text-align: justify;
+        font-size: 1em;
+    }
+    }
+    .btns-control {
+        display: flex;
+        margin-top: 2rem;
+        justify-content: space-between;
+        padding-bottom: 2rem;
+        .btn {
+            margin-left: 1rem;
+        }
+    }
+ 
+    .scribd {
+        width: 100%;
+        height: 100vh;
+        border: none;
+        box-shadow:  0 0 2px $color-primary;
+    }
+}

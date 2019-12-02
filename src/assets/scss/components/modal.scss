@@ -1,0 +1,28 @@
+.modal-open { overflow-y: scroll } 
+
+.modal { 
+    .modal-content {
+        background: rgba(255,255,255,.95);
+        background: linear-gradient(rgba(255,255,255,.92), rgb(255,255,255));
+       
+    }
+    .modal-header,.modal-footer {
+        border:none;
+     
+    }
+    .close {
+        color: $color-primary; 
+        font-size: 2em;
+    }
+    .title {
+        color: $color-primary; 
+    }
+        *:focus {
+            outline: none ;
+            border:none; 
+        }
+     .date {
+         font-size: .9em;
+     }
+  
+}

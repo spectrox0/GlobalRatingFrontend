@@ -38,7 +38,7 @@ export default function App () {
   };
 
   useEffect(()=> {
-
+     setCountry(localStorage.getItem("country")); 
      if(country) {
          setCountry(country)
          return; 

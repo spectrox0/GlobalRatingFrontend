@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "apollo-boost": "^0.4.4",
     "apollo-cache-inmemory": "^1.6.3",
     "apollo-client": "^2.6.4",
     "apollo-link-http": "^1.5.16",
@@ -27,6 +28,8 @@
     "react-router-dom": "5.0.1",
     "react-scripts": "3.0.1",
     "react-scroll": "^1.7.14",
+    "react-select": "^3.0.8",
+    "react-share": "^3.0.1",
     "styled-components": "^4.3.2"
   },
   "scripts": {

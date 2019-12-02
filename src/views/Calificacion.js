@@ -1,34 +1,54 @@
 import React, { useState, useEffect } from "react";
-import IndexHeader from "./../components/Headers/IndexHeader";
-import Header from "../components/Headers/headersViews/header1.js"; 
+import Header from '../components/Headers/headersViews/Header';
+ import ImgHeader from '../assets/img/headers/Header Calificación.png'; 
 import {initGA} from './helpers/initGA.js';
-import styled from "styled-components";
 import {Link} from "react-router-dom"
+
 import {
-    MDBRow
-    , MDBContainer,
-    MDBBtn
-    ,MDBCollapse
+    MDBRow,
+    MDBContainer,
+    MDBCollapse,
+    MDBTabPane,
+    MDBTabContent,
+    MDBNav , 
+    MDBNavLink, 
+    MDBNavItem,
+    MDBIcon
 } from 'mdbreact'
 
-export default function () {
+export default function Calificacion () {
     React.useEffect(()=> {
         initGA();
       },[]);
     const [collapseID, setCollapseID] = useState(""); 
+    const [items ,setItems] =useState({default: "1",}); 
+
+    const togglePills = (type, tab) => e => {
+        e.preventDefault();
+        if (items[type] !== tab) {
+          let items_ = { ...items };
+          items_[type] = tab;
+          setItems(items_); 
+        }
+      };
 
     const toggleCollapse = (collapseiD) => {
     setCollapseID( collapseID !==collapseiD? collapseiD : ""); 
     }
 
     return (
+        <> 
+        <Header urlImage={ImgHeader} />
         <div className="calificacionContainer" >
-            <Header
-            title="Calificación de Riesgo" 
-            urlImage={require("./../assets/img/headers/header1.jpg")}/>
-            
-
+       
+     
+                   
                     <MDBContainer >
+                    <MDBRow className="title-calificacion"> 
+                    <h2> 
+                        Calificación de riesgo
+                    </h2>
+                    </MDBRow>
                         <MDBRow>
                                 <p >
                                     La calificación de riesgo proporciona una opinión independiente sobre la posibilidad que tiene una empresa de cancelar oportunamente y según las condiciones pactadas, la totalidad del capital y los intereses generados de una obligación específica. En ningún caso implica una recomendación para comprar, vender o mantener un título valor, ni una garantía de su pago, más bien debe ser vista por el inversionista, como una información complementaria a la hora de tomar una decisión.
@@ -56,23 +76,49 @@ export default function () {
                      
                            
                         </MDBRow>
-                        <MDBRow 
-                        style={{
-                        display:"flex",
-                        justifyContent:"center"
-                        }} >
-                      
-                            </MDBRow>
-                        <MDBRow className="subTitle" >
-                            <h3>Categorías de Riesgo</h3>
-                      
-                            </MDBRow>
-                            <MDBRow>
-                            <MDBBtn
-                              className="btn-round btn-color-primary "
-                              onClick={  () => toggleCollapse("categoryA")}
-                          > Categoria A </MDBBtn>
-                          <MDBCollapse id="categoryA" isOpen={collapseID}>
+                        <MDBRow className="title-calificacion"> 
+                    <h2> 
+                        Categorías de riesgo
+                    </h2>
+                    </MDBRow>
+                           
+                            <MDBNav className="nav-pills"> 
+                            <MDBNavItem>
+                            <MDBNavLink
+                              
+                              active={items["default"] === "1"} onClick={togglePills("default", "1")}
+                          > Categoria A </MDBNavLink>
+                          </MDBNavItem>
+                          <MDBNavItem>
+                            <MDBNavLink
+                              
+                              active={items["default"] === "2"} onClick={togglePills("default", "2")}
+                          > Categoria B </MDBNavLink>
+                          </MDBNavItem>
+                              <MDBNavItem>
+                            <MDBNavLink
+                              
+                              active={items["default"] === "3"} onClick={togglePills("default", "3")}
+                          > Categoria C </MDBNavLink>
+                          </MDBNavItem>
+                              <MDBNavItem>
+                            <MDBNavLink
+                              
+                              active={items["default"] === "4"} onClick={togglePills("default", "4")}
+                          > Categoria D </MDBNavLink>
+                          </MDBNavItem>
+
+                             <MDBNavItem>
+                            <MDBNavLink
+                              
+                              active={items["default"] === "5"} onClick={togglePills("default", "5")}
+                          > Categoria E </MDBNavLink>
+                          </MDBNavItem>
+                          </MDBNav>
+                        
+                          <MDBRow> 
+                         <MDBTabContent activeItem={items["default"]}> 
+                         <MDBTabPane tabId="1"> 
                                 <p>
                                     Corresponde a aquellos instrumentos con una muy buena capacidad de pago de capital e intereses en los términos y plazos pactados, la cual no debería verse afectada ante eventuales cambios en el emisor, en el sector o área a que éste pertenece, o en la economía, sólo en casos extremos, pudiera afectarse levemente el riesgo del instrumento calificado.
                                 </p>
@@ -87,15 +133,9 @@ export default function () {
                                         <b>Sub-Categoría A3:</b> Se trata de instrumentos que presentan para el inversor un muy bajo riesgo. Cuentan con una adecuada capacidad de pago, del capital e intereses, en los términos y plazos pactados. A juicio del calificador, sólo en casos extremos, eventuales cambios en la sociedad emisora, en el sector económico a que ésta pertenece o en la marcha de la economía en general, podrían incrementar levemente el riesgo del instrumento bajo consideración.
                                         </li>
                                 </ul> 
-                                 </MDBCollapse>
-                                </MDBRow> 
-                            <MDBRow>
-                            
-                                <MDBBtn
-                              className="btn-round btn-color-primary "
-                              onClick={  () => toggleCollapse("categoryB")}
-                          > Categoria B </MDBBtn>
-                            <MDBCollapse id="categoryB" isOpen={collapseID}> 
+
+                                </MDBTabPane>
+                                <MDBTabPane tabId="2">  
                                 <p>
                                     Corresponde a aquellos instrumentos con buena capacidad de pago de capital e intereses en los términos y plazos pactados, pero susceptibles de ser afectadas, en forma moderada ante eventuales cambios en el emisor, en el sector o área a que éste pertenece, o en la economía.
                                 </p>
@@ -110,19 +150,14 @@ export default function () {
                                         <b>Sub-Categoría B3:</b>  Se trata de instrumentos que presentan algún riesgo para la inversión en ellos. Tienen capacidad de pago del capital e intereses en los términos pactados, pero a juicio del calificador son susceptibles de ser afectados ante eventuales cambios en la sociedad emisora, en el sector económico a que ésta pertenece o en la marcha de los negocios en general.
                                         </li>
                                 </ul>
-                                </MDBCollapse>
-                            </MDBRow>
-                            <MDBRow>
-                            <MDBBtn
-                              className="btn-round btn-color-primary "
-                              onClick={  () => toggleCollapse("categoryC")}
-                          > Categoria C </MDBBtn>
-                           <MDBCollapse id="categoryC" isOpen={collapseID}> 
-                                <p>
+                                 </MDBTabPane>
+                                 <MDBTabPane tabId="3"> 
+                                 <p>
                                     Corresponde a aquellos instrumentos que no tienen buena capacidad de pago de capital e intereses puesto que son vulnerables ante cambios adversos en el emisor, en el sector o área a que éste pertenece o en la economía, lo que podría producir retardo en el pago o pérdida de intereses.
                                 </p>
                                 <ul>
                                     <li>
+                                  
                                         <b>Sub-Categoría C1:</b> Se trata de instrumentos que presentan riesgo moderado para la inversión. Cuentan con una baja capacidad de pago del capital e intereses en los términos y plazos pactados, ya que ante eventuales cambios en la sociedad emisora, en el sector económico a que ésta pertenece o en la marcha de la economía en general, tendrían probabilidad de retardo en el pago o de pérdida de los intereses.
                                     </li>
                                     <li>
@@ -132,32 +167,30 @@ export default function () {
                                         <b>Sub-Categoría C3: </b> Se trata de instrumentos con un alto riesgo de incumplimiento. Su probabilidad de pago, del capital e intereses, en los términos y plazo pactados, depende de una futura evolución más favorable de la sociedad emisora, del sector económico a que ésta pertenece y de la marcha de la economía en general.
                                         </li>
                                 </ul>
-                                </MDBCollapse>
-                            </MDBRow>
-                            <MDBRow>
-                            <MDBBtn
-                              className="btn-round btn-color-primary "
-                              onClick={  () => toggleCollapse("categoryD")}
-                          > Categoria D </MDBBtn>
-                           <MDBCollapse id="categoryD" isOpen={collapseID}>
-                                <p>Corresponde a aquellos instrumentos que tienen una mínima capacidad de pago de capital e intereses con una elevada probabilidad de retardo en los pagos o pérdida de los mismos.
+                                 </MDBTabPane>
+                                 <MDBTabPane  tabId="4"> 
+                                 <p>Corresponde a aquellos instrumentos que tienen una mínima capacidad de pago de capital e intereses con una elevada probabilidad de retardo en los pagos o pérdida de los mismos.
                                 </p>
-                                </MDBCollapse>
-                            </MDBRow>
-                            <MDBRow>
-                            <MDBBtn
-                              className="btn-round btn-color-primary "
-                              onClick={  () => toggleCollapse("categoryE")}
-                          > Categoria E </MDBBtn>
-                          <MDBCollapse id="categoryE" isOpen={collapseID}> 
-                                <p>Corresponde a aquellos instrumentos que tienen una mínima capacidad de pago de capital e intereses con una elevada probabilidad de retardo en los pagos o pérdida de los mismos.
+                                 </MDBTabPane>
+                                 <MDBTabPane  tabId="5"> 
+                                 <p>Corresponde a aquellos instrumentos cuyo emisor no posee información suficiente o representativa.
                                 </p>
-                                </MDBCollapse>
-                            </MDBRow>
-                      
-                        <MDBRow className="subTitle" style={{cursor:"pointer"}} onClick={  () => toggleCollapse("fases")} >
+                                 </MDBTabPane>
+                                </MDBTabContent>
+                                </MDBRow>
+                            
+                              
                          
-                             <h3 >Fases del Proceso de Calificación</h3>
+                          
+                            
+                           
+                          
+                           
+                          
+                      
+                        <MDBRow className="fases" style={{cursor:"pointer"}} onClick={  () => toggleCollapse("fases")} >
+                         
+                             <h2 >Fases del Proceso de Calificación</h2> <MDBIcon icon={collapseID!=="fases"?"plus":"minus"} />
                           
                            </MDBRow>
                            <MDBRow>
@@ -201,37 +234,38 @@ export default function () {
                             </ol>
                             </MDBCollapse>
                         </MDBRow>
-                        <MDBRow  className="subTitle">
+                        <MDBRow className="title-calificacion"> 
                   
-                        <h3>Resumen de Metodología de Calificación</h3>
+                        <h2>Resumen de metodología de calificación</h2>
                              </MDBRow>
                          
                             <MDBRow className="rowLinks">
                                 <ul>
                                     <li>
-                                    <a href="">Empresas no Financieras (109.344 Kb) </a>
+                                    <a href="">   <i className="fas fa-file-pdf"></i>  Empresas no Financieras (109.344 Kb) </a>
                                     </li>
                                     <li>
-                                    <a href="">Instituciones Financieras (100.861 Kb) </a>
+                                    <a href=""> <i className="fas fa-file-pdf"></i>  Instituciones Financieras (100.861 Kb) </a>
                                     </li>
                                     <li>
-                                    <a href="">Seguros (81.725 Kb) </a>
+                                    <a href=""> <i className="fas fa-file-pdf"></i> Seguros (81.725 Kb) </a>
                                     </li>
                                     <li>
-                                    <a href="">Casas de Bolsa (101.483 Kb) </a>
+                                    <a href=""> <i className="fas fa-file-pdf"></i> Casas de Bolsa (101.483 Kb) </a>
                                     </li>
                                     <li>
-                                    <a href="">Holdings (77.709 Kb) </a>
+                                    <a href=""> <i className="fas fa-file-pdf"></i> Holdings (77.709 Kb) </a>
                                     </li>
                                     <li>
-                                    <a href="">Titularizaciones (114.218 Kb)</a>
+                                    <a href=""> <i className="fas fa-file-pdf"></i> Titularizaciones (114.218 Kb)</a>
                                     </li>
                                 </ul>
                           
                         </MDBRow>
                     </MDBContainer>
                 </div>
-    );
+                </>
+    ); 
 
 
 }

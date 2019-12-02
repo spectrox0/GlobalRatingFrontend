@@ -1,22 +1,35 @@
 import React, {useState,useEffect} from 'react';
 import styled from 'styled-components';
-import {MDBCardTitle , MDBBtn , MDBCard, MDBCardBody, MDBCardText , MDBCardFooter , MDBCardImage, MDBCardHeader} from "mdbreact";
+import {MDBCardTitle ,
+       MDBBtn , 
+       MDBCard,
+        MDBCardBody,
+          MDBCardImage, 
+          MDBCardHeader,
+          MDBCardText, 
+        MDBModal , 
+      MDBModalHeader , 
+     MDBModalBody ,
+     MDBModalFooter } from "mdbreact";
 
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 export default function CardNoticias({
-    id,
-    imageUrl,
+    postId,
+    featuredImage,
     date,
     title,
     content
    
   }) { 
     const [isLoading, setLoading] = useState(true); 
+    const [isOpen, setIsOpen] = useState(false); 
     const [datee,setDate] = useState(""); 
+    const [content_, setContent] = useState("");
+    const [dateFull, setDateFull] = useState("");
     useEffect(()=> {
-      if(imageUrl){
+      if(featuredImage){
           setLoading(false); 
           var date_ = new Date(date);
+          const year = date_.getFullYear();
           const day = date_.getDate();
           var month = []
          month[0] = "Ene.";
@@ -32,41 +45,68 @@ month[9] = "Oct.";
 month[10] = "Nov.";
 month[11] = "Dec.";
  var n = month[date_.getMonth()];
-      setDate({day:day , month: n}); 
-    
+      setDate({day:day , month: n , year}); 
+      var date__= new Date(date)
+      var options = {timeZone: 'UTC' ,  year: "numeric", month: "long", day: "numeric"};
+       setDateFull(date__.toLocaleDateString("es-VE", options)); 
+       setContent(content.replace(/(?:\r\n|\r|\n)/g, '<br>'));
           //var options = { year: "numeric", month: "long", day: "numeric"};
       }
-  }, [imageUrl, date]); 
+  }, [featuredImage, date]); 
+
+  const toggle = () => {
+    setIsOpen(!isOpen); 
+  }
+ 
       return isLoading? null: (
-       
-           
-           <MDBCard to={{
-      pathname: '/noticia',
-      search: `?id=${id}`}} 
-        className="card-noticia" 
-         tag={Link}>
-           <div className="date">
+        <> 
+           <MDBCard 
+        className="card-noticia"
+        onClick={toggle}
+         >   { 
+           /* 
+            <div className="date">
               <span className="month">  {datee.month} </span> 
               <br/>
               <span className="day">  {datee.day} </span> 
               </div>
-           <MDBCardImage className="img-fluid" src={imageUrl} waves />
+         */ }
+        
+           <MDBCardImage className="img-fluid" src={featuredImage.sourceUrl} waves />
         
 
 
         <MDBCardBody>
-          <MDBCardTitle><strong>{title}</strong></MDBCardTitle>
-          <MDBCardText>
-            
-          {content}
-          
-          </MDBCardText>
+        <p className="date"> {datee.month+" "+datee.day+", "+datee.year} </p>
+          <MDBCardTitle>   {title.replace("&#8221;",'"').replace("&#8220;",'"') } </MDBCardTitle>
+     
           </MDBCardBody>
        
-       
-        
          </MDBCard>
-        
+          
+          <MDBModal isOpen={isOpen}  toggle={toggle} size="lg" > 
+          <MDBModalHeader toggle={toggle}> </MDBModalHeader>
+          <MDBModalBody> 
+          <div className="title"> 
+           <h3> {title.replace("&#8221;",'"').replace("&#8220;",'"') } </h3>
+          </div>
+          <div className="date"> 
+          <span> {dateFull}</span>
+          
+          </div>
+          <div class="scrollbar" id="style-2">
+          <div className="content"> 
+          <div className="contentHtml" dangerouslySetInnerHTML={{ __html: content_ }} />
+          </div>
+            </div>
+         
+           </MDBModalBody>
+          <MDBModalFooter>
+              <MDBBtn className="btn-round btn-color-primary" onClick={toggle}>Ver en Finanzas Digital</MDBBtn>
+          <MDBBtn className="btn-round btn-color-primary" onClick={toggle}>Cerrar</MDBBtn>
+        </MDBModalFooter>
+          </MDBModal>
+        </>
      ); 
    
 

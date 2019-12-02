@@ -1,55 +1,45 @@
 import React,{useState, useEffect} from 'react';
 import {  Link } from 'react-router-dom';
-import {MDBCardTitle , MDBCard, MDBCardBody, MDBCardText , MDBCardFooter} from "mdbreact";
+import {MDBCardTitle , MDBCard, MDBCardBody, MDBCardText , MDBCardFooter , MDBCardImage,} from "mdbreact";
 export default function CardDictamenes({
-    id,
+   postId,
+    featuredImage,
     date,
-    imageUrl,
-    postUrl,
     title
    
   }) { 
-    const [isLoading, setLoading] = useState(true); 
-    const [datee ,setDate] = useState(""); 
-     useEffect(()=> {
-       if(imageUrl){
-          var date_ = new Date(date)
-          var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};
-          setDate(date_.toLocaleDateString("es-VE", options));
-          setLoading(false); 
-         
-       }  
-     
-   },[imageUrl,date]); 
+   
 
-      return isLoading? (
-       <div>
-         <img 
-      src={require("../../assets/img/blockLoad.svg")}
-       alt="..."/> 
-        <span> Loading...</span>
-        </div>
-      
-       ) : (
-      
-     
+      return  (
        <MDBCard to={{
         pathname: '/dictamen',
-        search: `?id=${id}`}} 
-        className="card-dictamen" 
-         style= 
-         {{background:`url(${imageUrl}) no-repeat center`,
-         backgroundSize:"contain",
-        }}
+        search: `?id=${postId}`}} 
+        className="card-dictamen2" 
+      
          tag={Link}>
+        
+
+          {/* 
+             style= 
+         {{background:`url(${featuredImage.sourceUrl}) no-repeat center`,
+         backgroundSize:"contain",
+        }} 
+        <MDBCardBody>
+          </MDBCardBody>
+        <MDBCardFooter>
+            <MDBCardTitle> {title} </MDBCardTitle>
+        </MDBCardFooter>*/ }
+    
+          <MDBCardImage className="img-fluid" src={featuredImage.sourceUrl} waves />
         
 
 
         <MDBCardBody>
+       
+          <MDBCardTitle>   {title} </MDBCardTitle>
+     
           </MDBCardBody>
-        <MDBCardFooter>
-            <MDBCardTitle><strong>{title}</strong></MDBCardTitle>
-        </MDBCardFooter>
+
          </MDBCard>
         
     ); 

@@ -11,30 +11,33 @@ import Dictamenes from "views/home-sections/DictamenesDeCalificacion.js"
 import Noticias from "views/home-sections/NoticiasFinanzas.js"
 
 import {initGA} from './helpers/initGA.js';
+import { useQuery} from '@apollo/react-hooks';
+import {QUERY_NOTICIAS, QUERY_DICTAMENES} from './helpers/graphql/querys'
+import client from './helpers/graphqlClientFinanzas';
 
-import axios from 'axios'; 
+
 export default function Index() {
   
 
   React.useEffect( ()=> {
     initGA();
-    getJson(); 
   },[]);
-   const [noticias,setNoticias] = React.useState(); 
-   const [dictamenes,setDictamenes]= React.useState(); 
 
-  const getJson= async () => {
-    const {data} = await axios.get("https://www.finanzasdigital.com/traeinfo.php?token=aHcT639@/$muzk56&pagina1=0&numNoticias1=3&categoriaIncluir1=-7667,-41,-1574,-7014&largo1=400&pagina2=0&numNoticias2=6&categoriaIncluir2=7667,-7014&largo2=0")
-      setNoticias(data.slice(0,3));
-      setDictamenes(data.slice(3,9));
-   }
+const  noticias = useQuery(QUERY_NOTICIAS,{variables: {
+    first:4 
+} ,client  } );
+const  dictamenes= useQuery(QUERY_DICTAMENES,{variables: {
+  first:6
+} ,client  } );
+
+
   return (
     <div className="homeContainer">  
       
         <IndexHeader />
         <div className="main" >
-      <Dictamenes dictamenes= {dictamenes} />
-      <Noticias noticias= {noticias} />
+      <Dictamenes dictamenes= {dictamenes.data} />
+      <Noticias noticias= {noticias.data} />
         
         </div>
     

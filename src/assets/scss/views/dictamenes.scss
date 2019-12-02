@@ -1,20 +1,34 @@
 .dictamenes {
-    margin-top:4rem;
-    margin-bottom:4rem;
+    padding-top:2rem;
     width:100%;
+    background: $color-background; 
     .dictamenes-title {
-        margin-bottom:3rem;
+        margin-bottom:1.8rem;
         width:100%; 
-        color: rgba(71, 71, 71, 0.877); 
+        color: #000000; 
         text-align: center;
         h2{ 
             font-size:1.8em; 
+            display: flex;
+            flex-direction: column;
+            text-align: justify;
+            font-weight: $font-weight-title;
+            &:after {
+                content: "";
+                height:$height-underline;
+                background: $color-primary; 
+                width: 30rem;
+                max-width: 100%;
+             }
+    
         }
     }
     .row-button {
         display:flex; 
+       
         justify-content: flex-end; 
         margin:.5rem;
+        margin-bottom: 2rem;
         button {
             
             width: 10rem ;

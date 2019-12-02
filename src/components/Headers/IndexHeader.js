@@ -13,7 +13,11 @@ function IndexHeader() {
   return (
     <>
       <div className="page-header">
-        <div className="page-header-filter" />
+        {/* <div className="page-header-filter" > 
+        </div>
+        */ }
+        
+       
         <div className="page-header-image">
           <Carousel/>
         </div>

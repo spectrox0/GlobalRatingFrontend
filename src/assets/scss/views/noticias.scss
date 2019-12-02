@@ -1,13 +1,31 @@
 .noticias {
     width: 100%;
-     background: rgb(250, 250, 250);
+     background: #FFFFFF; 
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     padding-top: 2rem;
+     align-items: center;
     .title-noticias{
-        margin-bottom:3rem;
-        width:100%; 
-        color: rgb(70, 70, 70);
-        text-align: center;
+        margin-bottom:1.8rem;
+        width: 100%; 
+        color: #000000; 
+        text-align: justify;
         h2{ 
             font-size:1.8em; 
+            display: flex;
+            flex-direction: column;
+            padding-left: 1rem; 
+            font-weight: $font-weight-title;
+
+            &:after {
+            content: "";
+            height:$height-underline;
+            background: $color-primary; 
+            width: 30rem;
+            max-width: 100%;
+
+            }
         }
 
     }

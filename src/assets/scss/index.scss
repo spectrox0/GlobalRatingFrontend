@@ -26,7 +26,14 @@ body {
 @import './components/headerView.scss'; 
 @import './components/spinners.scss'; 
 @import './components/cardEmision.scss';
-
+@import './components/modal.scss'; 
+@import './components/switch.scss'; 
+@import './components/scrollBar.scss';
+@import './components/select.scss'; 
+@import './components/input.scss';
+@import './components/shareFriend.scss'; 
+@import './components/pagination.scss'; 
+@import './components/pill.scss';
 
 @import './views/dictamenes.scss'; 
 @import './views//noticias.scss';
@@ -35,3 +42,9 @@ body {
 @import './views/calificacionDeRiesgo.scss'; 
 @import './views/clientes.scss';
 @import './views/profileClient.scss';
+@import './views/dictamen.scss'; 
+@import './views/estadisticas.scss';
+@import './views/contact.scss'; 
+@import './views/nosotros.scss';
+@import './views/leyesNormativas.scss'; 
+@import './views/leyNormativa.scss';

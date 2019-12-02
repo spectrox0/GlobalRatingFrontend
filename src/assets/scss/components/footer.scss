@@ -1,11 +1,13 @@
 .page-footer {
-    padding-top: .3em;
+    padding-top: 3rem;
+   
     background: $footer-color; 
-    color: #FFFFFF; 
+    color: rgb(0, 0, 0); 
     .row .col-footer {
       
         @media screen and (min-width:992px) {
-            border-right: .2rem solid rgba($footer-color-copyrigth, 0.8); 
+            border-right: .2rem solid rgba($footer-color-copyrigth, 0.1); 
+            padding: 1rem;
         }
     }
     .finanzasDigital {
@@ -15,7 +17,7 @@
         -moz-background-size: contain;
         -o-background-size: contain;
         background-size: contain;
-        width:11rem;
+        width:100%;
         height:5rem; 
          @include transition(.3s , ease-in-out);
         &:hover{
@@ -24,51 +26,50 @@
 
        .globalScope{
         display:inline-block; 
-        background: url("../img/pic_footerlogoGS_gris.png") no-repeat center ; 
+        background: url("../img/logo/LOGO GLOBAL SCOPE2.png") no-repeat center; 
         -webkit-background-size: contain;
         -moz-background-size: contain;
         -o-background-size: contain;
         background-size: contain;
-        width:11rem;
-        height:3rem; 
+        width:100%; 
+        height:5rem; 
         @include transition(.3s , ease-in-out);
         &:hover{
-          background-image: url("../img/pic_footerlogoGS_color.png"); 
+          background-image: url("../img/logo/LOGO GLOBAL SCOPE.png"); 
         } }
        
     .footer-copyright {
         padding:.5rem;
         background: $footer-color-copyrigth; 
         display: flex; 
+        color: rgb(255, 255, 255); 
         align-items:center;
+        margin-top:3rem; 
         min-height:  4rem; 
+        font-size: .9em;
+        a {
+            
+            color: rgb(255, 255, 255); 
+            &:hover {
+                text-decoration: none; 
+            }
+            &:focus {
+                outline: none;
+            }
+        }
     }
     .container-fluid {
-        max-width: 60rem; 
+        max-width: 70rem; 
     }
     
     p {
          text-align: justify;
         font-size: .8em;
     }
-  
-    .nav-links {
-        list-style: none; 
-        display:flex; 
-        flex-direction: column; 
-        padding: 0; 
-        text-align: justify; 
-        li {
-            margin:0; 
-            padding: 0; 
-        }
-        li a {
-            margin:.1rem; 
-            padding: 0; 
-            font-size: .8em;
-            color:#FFFFFF
-        }
-
+   h4 {
+    font-weight: $font-weight-title;
+    font-size: 1.2em;
+   }
+   
     }
 
-}

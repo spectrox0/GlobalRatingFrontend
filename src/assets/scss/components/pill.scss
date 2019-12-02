@@ -1,0 +1,18 @@
+.nav-pills {
+    .nav-item{
+         .nav-link {
+             color: $color-primary;
+             font-weight: 600;
+             transition: all .3s  linear;
+        &:focus {
+            outline: none;
+        }
+      
+    } 
+    .active {
+        background:$color-primary;
+        color: #FFFFFF;
+    }
+    }
+   
+}
