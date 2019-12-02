@@ -7,14 +7,12 @@ import ShareFriend from '../components/Others/shareFriends';
 import Header from '../components/Headers/headersViews/Header';
 import ImgHeader from '../assets/img/headers/Header Estadísticas.jpg'; 
 import {useQuery} from '@apollo/react-hooks'; 
-import {EMISIONES_FOR_YEAR ,TOTAL_FOR_YEAR } from './helpers/graphql/querys'
+import {EMISIONES_FOR_YEAR ,TOTAL_FOR_YEAR, RANGE_YEAR } from './helpers/graphql/querys'
 import {Link} from 'react-router-dom'; 
 import { set } from 'react-ga';
 export default function Estadisticas() {
-    const year = (new Date()).getFullYear();
-    const yearInitial = 1980; 
-    const years = Array.from(new Array(year-yearInitial+1),( val, index) => { return {value: year-index, label:year-index } });
-    const [yearFilter , setYearFilter] =React.useState(year); 
+    const rangeYear = useQuery(RANGE_YEAR); 
+    const [yearFilter , setYearFilter] =React.useState(rangeYear.data? rangeYear.data.rangeYearEmision.lastYear : (new Date()).getFullYear()); 
     const [papelComercial , setPapelComercial] = React.useState(false);
     const [obligacionQuirografaria, setObligacionQuirografaria] = React.useState(false);
     const [titulosDeParticipacion , setTitulosDeParticipacion] = React.useState(false);
@@ -37,6 +35,10 @@ export default function Estadisticas() {
        
       },[]);
 
+     const RangeYears = (data) => {
+       return Array.from(new Array(data.lastYear+1-data.firstYear),( val, index) => { return {value: data.lastYear-index, label:data.lastYear-index } });
+     }
+
   const handlindFilter = (e) => {
     setYearFilter(e.value); 
     setPapelComercial(false); 
@@ -52,66 +54,42 @@ export default function Estadisticas() {
         else if(emision.tipoTitulo==="TITULOS_DE_PARTICIPACION" && !titulosDeParticipacion) setTitulosDeParticipacion(true)
         else if(emision.tipoTitulo==="PAGARE_BURSATILES" && !pagareBursatiles) setPagaresBursatiles(true)
         else if(emision.tipoTitulo==="ACCIONES_PREFERIDAS" && !accionesPreferidas) setAccionesPreferidas(true)
-      return  <tr key={emision._id}>
-        {emision.statusCliente?  <td>
+      return  <tr key={emision._id}>{emision.statusCliente?  <td>
           <Link to= {{
                pathname: '/perfilCliente',
                search: `?id=${emision.emisor._id}`
           }}> 
         {emision.emisor.nombre} </Link></td> : 
   <td>{emision.emisor.nombre}</td>
-        }
-    
-    <td  className="row-text-center" >
+        }<td  className="row-text-center">
     {emision.tipoTitulo==="PAPELES_COMERCIALES" && "PC"}
     {emision.tipoTitulo==="OBLIGACIONES_QUIROGRAFARIAS" && "OQ"}
     {emision.tipoTitulo==="TITULOS_DE_PARTICIPACION"&& "TP"}
     {emision.tipoTitulo==="PAGARE_BURSATILES"&& "PB"}
     {emision.tipoTitulo==="ACCIONES_PREFERIDAS"&& "AP"}
-    
-    </td>
-      <td className="row-text-right">{emision.monto.toLocaleString()}</td> 
-      <td className="row-text-center" >{new Date (emision.fechaAprovacion).toLocaleDateString("es-VE", options).replace(".","")} </td>
-      <td className="row-text-center" >{emision.nroProvidencia} </td>
-      {emision.statusCliente? 
-      <>
-     
-      <td className="row-btn"> 
-      {emision.idDictamen.length>0 && 
+    </td><td className="row-text-right">{emision.monto.toLocaleString()}</td> 
+      <td className="row-text-center" >{new Date (emision.fechaAprovacion).toLocaleDateString("es-VE", options).replace(".","")}</td>
+      <td className="row-text-center" >{emision.nroProvidencia}</td>
+      {emision.statusCliente?<><td className="row-btn">{emision.idDictamen.length>0 && 
       <MDBBtn className="btn-estadistica"
       to={{
         pathname: '/dictamen',
         search: `?id=${emision.idDictamen}`}} 
-       
-      
          tag={Link}
-       /> }  </td>
-      <td className="row-btn">
-        { emision.idProspecto.length>0 && 
+       /> }</td>
+      <td className="row-btn">{ emision.idProspecto.length>0 && 
           <MDBBtn className="btn-estadistica" 
           to={{
             pathname: '/prospecto',
-            search: `?id=${emision.idProspecto}`}} 
-           
-          
-             tag={Link}/>
-        }
-        
-       </td>
-       <td className="row-btn">
-       { emision.idProvidencia.length>0 && 
+            search: `?id=${emision.idProspecto}`}} tag={Link}/>
+        }</td>
+       <td className="row-btn">{ emision.idProvidencia.length>0 && 
           <MDBBtn className="btn-estadistica" 
           to={{
             pathname: '/providencia',
             search: `?id=${emision.idProvidencia}`}} 
-           
-          
              tag={Link}/>
-        } </td>
-      </> :<> <td> </td> <td> </td> <td> </td> </>
-      }
-    
-    </tr>
+        }</td></>:<><td></td><td></td><td></td></>}</tr>
     }
      
       )
@@ -125,36 +103,35 @@ export default function Estadisticas() {
            <h2 > 
            Estadísticas
             </h2> </MDBRow>
-        <MDBRow className="row-select"> 
-      <Select className="select"  
-    classNamePrefix='Select'
-      defaultValue={{ label: year, value: year }} 
-      options={years} 
-      onChange= {handlindFilter}
-      />
+        <MDBRow className="row-select">
+          {rangeYear.data &&
+              <Select className="select"  
+              classNamePrefix='Select'
+                defaultValue={{ label: rangeYear.data.rangeYearEmision.lastYear, value: rangeYear.data.rangeYearEmision.lastYear }} 
+                options= { RangeYears(rangeYear.data.rangeYearEmision)} 
+                onChange= {handlindFilter}
+                />
+          }
         </MDBRow>
      <MDBRow className="row-table"> 
      <MDBTable responsive>
       <MDBTableHead>
-        <tr>
-          <th>Emisor</th>
+        <tr><th>Emisor</th>
           <th className="row-text-center" >Emisión</th>
           <th className="row-text-right">Monto (<MDBIcon icon="asterisk" size="sm" />) </th>
           <th className="row-text-center" >Fecha</th>
           <th className="row-text-center" ># Providencia</th>
           <th className="row-text-center" >Dictamen</th>
           <th className="row-text-center" >Prospecto</th>
-          <th className="row-text-center">Providencia</th>
-      
-        </tr>
+          <th className="row-text-center">Providencia</th></tr>
       </MDBTableHead>
       <MDBTableBody>
+        
         {( data && !loading && !error) && 
           <Emisiones emisiones={data.emisionesForYear} />  
         } {
           loading && 
-          <tr> 
-            <td colSpan="8">
+          <tr><td colSpan="8">
           <div className="container-load-posts"> 
           <div className="spinner-grow text-primary" role="status">
           <span className="sr-only">Cargando...</span>

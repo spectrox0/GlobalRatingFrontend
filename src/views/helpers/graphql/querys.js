@@ -267,3 +267,12 @@ query emisionByProvidencia($_id:String!) {
   }
 }
 `
+export const RANGE_YEAR = gql`
+ {
+  rangeYearEmision{
+    firstYear
+    lastYear
+  }
+ }
+
+`
