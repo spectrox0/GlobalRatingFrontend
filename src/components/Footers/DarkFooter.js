@@ -39,9 +39,9 @@ export default function DarkFooter() {
        
        <iframe
            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15692.183765877204!2d-66.8512303!3d10.4970447!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1758d7d0ec0a48c6!2sFinanzas%20Digital!5e0!3m2!1ses-419!2sve!4v1570817114346!5m2!1ses-419!2sve" 
-           frameborder="0"
+           frameBorder="0"
             style={{width:"100%", height:"8rem" ,border:0, borderRadius:"10px"}} 
-            allowfullscreen="">
+            allowFullScreen="">
             </iframe>
           </MDBCol>
           <MDBCol md="3">

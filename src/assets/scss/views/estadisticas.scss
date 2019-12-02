@@ -2,6 +2,20 @@
     min-height: 100vh;
     padding-top: 1.8rem;
     background: $color-background;
+   .leyenda, thead {
+      
+       align-items: center;
+        i {
+            font-size: .3em;
+            padding: .1rem;
+            position: relative;
+            bottom: .2rem;
+            
+        }
+     }
+     .leyenda {
+         font-size: .8em;
+     }
     .title {
         display: flex;
         h2 {
