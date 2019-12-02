@@ -13,11 +13,13 @@
             font-weight: $font-weight-title;
 
             &:after {
-            content: "";
-            height:$height-underline;
-            background: $color-primary; 
-            width:100%; 
-        }
+                content: "";
+                height:$height-underline;
+                background: $color-primary; 
+                min-width: 90%;
+                width: 20rem; 
+                max-width: 100%;
+            }
     } 
     }
     .backgroundLogo{

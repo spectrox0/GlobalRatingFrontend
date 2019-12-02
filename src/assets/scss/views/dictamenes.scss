@@ -17,9 +17,17 @@
                 content: "";
                 height:$height-underline;
                 background: $color-primary; 
-                width: 30rem;
-                max-width: 100%;
-             }
+                width: 150%; 
+        
+            } 
+            @media screen and (max-width:992px) {
+                font-size: 1.3em;
+                &:after {
+                    
+                    width: 120%; 
+            
+                } 
+            }
     
         }
     }
