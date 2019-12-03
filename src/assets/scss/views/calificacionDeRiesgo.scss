@@ -114,4 +114,20 @@
     
        }
      }
+     .letter {
+        float: left; 
+        display: flex;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        top: .6rem; 
+          height: .8rem;
+         font-size: 4em;
+         font-weight: 900;
+         text-shadow: 0 0 2px rgba(0,0,0,0.8);
+         margin:.4rem; 
+         ~ p {
+            margin-top:2rem 
+         }
+     }
  }

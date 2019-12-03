@@ -119,6 +119,7 @@ export default function Calificacion () {
                           <MDBRow> 
                          <MDBTabContent activeItem={items["default"]}> 
                          <MDBTabPane tabId="1"> 
+                           <div className="letter" > A </div>
                                 <p>
                                     Corresponde a aquellos instrumentos con una muy buena capacidad de pago de capital e intereses en los términos y plazos pactados, la cual no debería verse afectada ante eventuales cambios en el emisor, en el sector o área a que éste pertenece, o en la economía, sólo en casos extremos, pudiera afectarse levemente el riesgo del instrumento calificado.
                                 </p>
@@ -136,6 +137,7 @@ export default function Calificacion () {
 
                                 </MDBTabPane>
                                 <MDBTabPane tabId="2">  
+                                <div className="letter" > B </div>
                                 <p>
                                     Corresponde a aquellos instrumentos con buena capacidad de pago de capital e intereses en los términos y plazos pactados, pero susceptibles de ser afectadas, en forma moderada ante eventuales cambios en el emisor, en el sector o área a que éste pertenece, o en la economía.
                                 </p>
@@ -152,6 +154,7 @@ export default function Calificacion () {
                                 </ul>
                                  </MDBTabPane>
                                  <MDBTabPane tabId="3"> 
+                                 <div className="letter" > C </div>
                                  <p>
                                     Corresponde a aquellos instrumentos que no tienen buena capacidad de pago de capital e intereses puesto que son vulnerables ante cambios adversos en el emisor, en el sector o área a que éste pertenece o en la economía, lo que podría producir retardo en el pago o pérdida de intereses.
                                 </p>
@@ -169,10 +172,12 @@ export default function Calificacion () {
                                 </ul>
                                  </MDBTabPane>
                                  <MDBTabPane  tabId="4"> 
+                                 <div className="letter" > D </div>
                                  <p>Corresponde a aquellos instrumentos que tienen una mínima capacidad de pago de capital e intereses con una elevada probabilidad de retardo en los pagos o pérdida de los mismos.
                                 </p>
                                  </MDBTabPane>
                                  <MDBTabPane  tabId="5"> 
+                                 <div className="letter" > E </div>
                                  <p>Corresponde a aquellos instrumentos cuyo emisor no posee información suficiente o representativa.
                                 </p>
                                  </MDBTabPane>
