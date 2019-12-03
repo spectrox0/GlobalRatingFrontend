@@ -1,5 +1,6 @@
 import React , {useEffect} from "react"; 
 import { useQuery } from '@apollo/react-hooks';
+import {Link} from 'react-router-dom';
 import {QUERY_EMISORES_ID, EMISIONES_BY_EMISOR, NUMBER_OF_EMISIONES_BY_EMISOR} from './helpers/graphql/querys'; 
 import {initGA} from './helpers/initGA.js';
 import {
@@ -134,8 +135,12 @@ export default function PerfilCliente({location})  {
        />}
         </MDBRow>
         
-   
-        
+        <MDBBtn className="btn-color-primary margin" size="lg" tag={Link}
+                 to={{
+                  pathname: '/clientes/${country}',}}
+                 > 
+                   Regresar a Clientes
+                 </MDBBtn>
          </section>
          </MDBContainer>
         <ShareEmail/>
