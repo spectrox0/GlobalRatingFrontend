@@ -263,6 +263,9 @@ export default function Calificacion () {
                           
                         </MDBRow>
                     </MDBContainer>
+        <ShareFriend
+         message="Leer el entrando al siguiente link:"
+        /> 
                 </div>
                 </>
     ); 
