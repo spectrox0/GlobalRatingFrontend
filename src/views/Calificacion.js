@@ -201,7 +201,7 @@ export default function Calificacion () {
                                     </span>
                                     </li>
                                 <li>
-                                <b>Recepción de Recaudos.</b> 
+                                Recepción de Recaudos.
                                     </li>
                                 <li>
                                 Análisis de Recaudos: <span>Nuestro personal analiza la calidad de la información suministrada y comienza formalmente el proceso de calificación. Dado que la comunicación emisor-calificadora debe ser fluida, este paso no limita a que en un futuro se le pueda solicitar más información al emisor, en particular más detalle o algún desglose en las cifras.

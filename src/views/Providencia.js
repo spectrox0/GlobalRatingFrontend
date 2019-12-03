@@ -158,7 +158,7 @@ month[11] = "Dic.";
        
             </MDBRow>
         </MDBContainer>
-        <ShareFriend socialNetworks/>
+        {dictamen &&  <ShareFriend socialNetworks title={`Leer el ${dictamen.title} entrando al siguiente link: `} /> }
         </section>
         </>
        ) ; 

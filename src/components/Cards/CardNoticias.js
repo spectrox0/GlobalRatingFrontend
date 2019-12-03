@@ -85,8 +85,8 @@ month[11] = "Dic.";
          </MDBCard>
           
           <MDBModal isOpen={isOpen}  toggle={toggle} size="lg"> 
-          <MDBModalHeader toggle={toggle} className="modalNoticia"> </MDBModalHeader>
-          <MDBModalBody className="modalNoticia"> 
+          <MDBModalHeader toggle={toggle} > </MDBModalHeader>
+          <MDBModalBody> 
           <div className="title modalNoticia"> 
            <h3> {title.replace("&#8221;",'"').replace("&#8220;",'"') } </h3>
           </div>

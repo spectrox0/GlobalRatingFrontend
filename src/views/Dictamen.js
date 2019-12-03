@@ -33,7 +33,9 @@ export default function Dictamen( {location} ) {
         dataa =  await data.postBy.content.replace(/(?:\r\n|\r|\n)/g, '<br>');
       
         var Scribd = dataa.substring(
-          dataa.lastIndexOf("<iframe")
+          dataa.indexOf("<iframe"),
+          dataa.lastIndexOf("</p>")
+         
       );
       var Content = dataa.substring(
         dataa.indexOf("<p") ,
@@ -41,6 +43,7 @@ export default function Dictamen( {location} ) {
     );
         setScribd(Scribd); 
         setContent(Content);
+        console.log(Scribd)
          setDictamen(data.postBy); 
          setLoading(false); 
         }
@@ -97,7 +100,8 @@ month[11] = "Dic.";
             {dictamen.title}
             </h2> </MDBRow> 
          <div className="backgroundLogo" style={{background:`url(${dictamen.featuredImage.sourceUrl}) center no-repeat`,backgroundSize:"cover"}} />
-         <span>  {date.month+" "+date.day+", "+date.year} </span>
+         <span className="space">  {date.month+" "+date.day+", "+date.year} </span>
+          
               <div className="contentHtml" dangerouslySetInnerHTML={{ __html: content }} />
          </MDBCol>
          <MDBCol sm="6" className="col-scribd">
@@ -146,7 +150,7 @@ month[11] = "Dic.";
        
             </MDBRow>
         </MDBContainer>
-        <ShareFriend socialNetworks/>
+        {dictamen &&  <ShareFriend socialNetworks title={`Leer el ${dictamen.title} entrando al siguiente link: `} /> }
         </section>
         </>
        ) ; 

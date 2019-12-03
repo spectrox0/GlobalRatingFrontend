@@ -18,9 +18,9 @@ import {
 } from 'react-share'
 
 
-export default function ShareFriend({socialNetworks}) {
+export default function ShareFriend({socialNetworks,title}) {
     const url = window.location.href; 
-    const title = "Visita la página web de Global Ratings en el siguiente enlace: "
+    //const title = "Visita la página web de Global Ratings en el siguiente enlace: "
     return <> 
       <MDBContainer className="rowCompartir"> 
      
