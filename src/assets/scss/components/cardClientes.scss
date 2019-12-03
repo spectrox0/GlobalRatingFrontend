@@ -16,10 +16,35 @@
     outline: none;
 }
 .img-fluid{
-    width: auto;
     height: 13rem;
     width:100%;
     object-fit:fill; 
 } .hidden {
     visibility: hidden;
-}} 
+  }  
+   @media screen and (max-width:992px) {
+    .img-fluid{
+        height: 12rem;
+     
+    }
+
+   }
+   @media screen and (max-width:768px) {
+    .img-fluid{
+       
+        height: 11rem;
+    
+    }
+
+   }
+   @media screen and (max-width:576px) {
+    .img-fluid{
+       
+        height: 8rem;
+    
+    }
+
+   }
+
+
+} 
