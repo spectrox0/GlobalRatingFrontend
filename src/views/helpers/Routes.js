@@ -44,13 +44,14 @@ export default function Routes({country}) {
  <Route path="/contactanos/:countryName" render={ (props) =>   handlingRender(props,Contactanos) } />
  <Route path="/clientes/:countryName" render = { (props)=>  handlingRender(props,Clientes)  } />
   <Route path="/:countryName/leynormativa"  render = { props => handlingRender(props,LeyNormativa)} />
+ 
    {country && (  <>
    <Redirect exact from="/" to={ {
     pathname:`/index/${country}` }
    } /> 
    } /> 
-   </> )}
-   <Route path="*" render = { props=> <Loading {...props} /> }/>
+</> ) }
+  
    
   
      

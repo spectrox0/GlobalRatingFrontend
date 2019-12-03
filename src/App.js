@@ -10,6 +10,7 @@ import Routes from './views/helpers/Routes';
 import axios from 'axios'
 import {useQuery} from '@apollo/react-hooks'; 
 import {QUERY_PAISES} from './views/helpers/graphql/querys'; 
+import Loading from './views/Loading'; 
 export default function App () { 
 
     const [country, setCountry] = useState(null); 
@@ -88,9 +89,11 @@ export default function App () {
             country={country}
             changeCountry={changeCountry}
              />}
-          
-          <Routes />
-          <DarkFooter/>
+           {country?  <>  <Routes country={country.value} />  <DarkFooter/> </> : 
+           <Loading/>
+            }
+        
+         
       
        
         </BrowserRouter>) 
