@@ -4,10 +4,10 @@ import { MDBBtn , MDBCol, MDBRow, MDBContainer, MDBCardGroup ,MDBIcon} from "mdb
 import CardDictamen from './../../components/Cards/CardDictamenes'
 
 import {Link} from 'react-router-dom';
-import Country from './../../context/region.js';
 
-export default function DictamenesDeCaificacion({dictamenes}) {
-    const {country} = useContext(Country); 
+
+export default function DictamenesDeCaificacion({dictamenes,country}) {
+   
    const Dictamenes = () => dictamenes.posts.nodes.map(
      dictamen => 
      <MDBCol key={dictamen.postId} sm="6" md="4" lg="4">

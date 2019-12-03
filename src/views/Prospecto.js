@@ -25,9 +25,7 @@ export default function Dictamen( {location} ) {
      }
    })
     const getContent= async () => { 
-      /*
-       const {data} =  await axios.get(`https://www.finanzasdigital.com/traepost.php?token=aHcT639@/$muzk56&idNoticia=${id}`);
-        */
+     
        let dataa ; 
        console.log(data)
         dataa =  await data.postBy.content.replace(/(?:\r\n|\r|\n)/g, '<br>');

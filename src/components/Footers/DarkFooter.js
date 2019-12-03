@@ -1,7 +1,7 @@
 /*eslint-disable*/
 import React , {useContext} from "react";
 import { Link} from "react-router-dom"; 
-import CountryContext from "./../../context/region.js"
+
 
 // reactstrap components
 
@@ -9,7 +9,7 @@ import CountryContext from "./../../context/region.js"
   import { MDBCol, MDBContainer, MDBRow, MDBFooter ,MDBNavLink} from "mdbreact";
 
 export default function DarkFooter() {
-  const {country} = useContext(CountryContext); 
+
  
   
   return  ( 
@@ -72,13 +72,13 @@ export default function DarkFooter() {
           Todos los derechos reservados © {new Date().getFullYear()}.
           <nav> 
           <Link  to= {{
-              pathname:`/terminos/${country}`
+              pathname:`/terminos/`
             }}> 
             <span> Términos y Condiciones </span>  
           </Link>
           <span> | </span> 
           <Link to= {{
-              pathname:`/terminos/${country}`
+              pathname:`/terminos/`
             }}> 
             <span> Politica y privacidad  </span>  
           </Link>
