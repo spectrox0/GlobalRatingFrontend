@@ -28,7 +28,7 @@ export default function () {
                         <MDBRow>
                             <MDBCol sm="5"> 
                                 <div className="img-logo">
-                                <img src={require("../assets/img/pic_logoGR.svg")} alt="Global Ratings" />
+                                <img src={require("../assets/img/Linea de tiempo.png")} alt="Linea de Tiempo"/>
                                 </div>
                             </MDBCol>
                         <MDBCol sm="7"> 

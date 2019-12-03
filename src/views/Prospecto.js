@@ -125,7 +125,10 @@ export default function Dictamen( {location} ) {
        
             </MDBRow>
         </MDBContainer>
-        <ShareFriend socialNetworks/>
+        <ShareFriend socialNetworks 
+         messageSocialNetworks={`Leer el ${dictamen.title} entrando al siguiente link: `} 
+         message={`Leer el ${dictamen.title} entrando al siguiente link: `}
+        />
         </section>
         </>
        ) ; 
