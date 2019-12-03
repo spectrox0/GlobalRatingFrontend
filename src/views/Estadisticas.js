@@ -175,7 +175,10 @@ export default function Estadisticas() {
       </MDBRow>
   
   </MDBContainer>
-   <ShareFriend />
+  {<ShareFriend socialNetworks 
+        messageSocialNetworks={`Leer más información acerca de las Estadísticas de las Emisiones entrando al siguiente link:`}
+         message={`Leer más información acerca de las Estadísticas de las Emisiones entrando al siguiente link:`}
+         /> }
         </div>
         
         </>

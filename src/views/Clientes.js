@@ -121,7 +121,9 @@ export default function Clientes () {
        
 
        </MDBContainer> 
-    <ShareFriend/>
+    <ShareFriend
+         message="Leer más información acerca de los Clientes entrando al siguiente link:"
+        /> 
   </section> 
   </>
     )

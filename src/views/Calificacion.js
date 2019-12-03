@@ -269,7 +269,7 @@ export default function Calificacion () {
                         </MDBRow>
                     </MDBContainer>
         <ShareFriend
-         message="Leer más información acerca de las Calificación de Riesgo entrando al siguiente link:"
+         message="Leer más información acerca de la Calificación de Riesgo entrando al siguiente link:"
         /> 
                 </div>
                 </>
