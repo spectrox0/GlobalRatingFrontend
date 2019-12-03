@@ -1,13 +1,13 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 // reactstrap components
 import { MDBBtn , MDBCol, MDBRow, MDBContainer, MDBCardGroup ,MDBIcon} from "mdbreact";
 import CardDictamen from './../../components/Cards/CardDictamenes'
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-import styled from "styled-components"; 
-import axios from 'axios'
+
+import {Link} from 'react-router-dom';
+import Country from './../../context/region.js';
+
 export default function DictamenesDeCaificacion({dictamenes}) {
-   
+    const {country} = useContext(Country); 
    const Dictamenes = () => dictamenes.posts.nodes.map(
      dictamen => 
      <MDBCol key={dictamen.postId} sm="6" md="4" lg="4">
@@ -41,8 +41,9 @@ export default function DictamenesDeCaificacion({dictamenes}) {
             }
        
     < MDBRow className="row-button"> 
-             <MDBBtn href="/clientes/ve" className="btn-invisible"
-            
+             <MDBBtn tag= {Link} to={{
+                pathname:`/clientes/${country}` 
+             }} className="btn-invisible"
              > <MDBIcon icon="plus-circle" />
              </MDBBtn>
          </MDBRow>

@@ -34,7 +34,7 @@ export default function Estadisticas() {
         initGA();
        
       },[]);
-
+     
      const RangeYears = (data) => {
        return Array.from(new Array(data.lastYear+1-data.firstYear),( val, index) => { return {value: data.lastYear-index, label:data.lastYear-index } });
      }
