@@ -3,7 +3,7 @@ import Header from '../components/Headers/headersViews/Header';
  import ImgHeader from '../assets/img/headers/Header Calificación.png'; 
 import {initGA} from './helpers/initGA.js';
 import {Link} from "react-router-dom"
-
+import ShareFriend from './../components/Others/shareFriends'
 import {
     MDBRow,
     MDBContainer,
@@ -264,7 +264,7 @@ export default function Calificacion () {
                         </MDBRow>
                     </MDBContainer>
         <ShareFriend
-         message="Leer el entrando al siguiente link:"
+         message="Leer más información acerca de las Calificación de Riesgo entrando al siguiente link:"
         /> 
                 </div>
                 </>

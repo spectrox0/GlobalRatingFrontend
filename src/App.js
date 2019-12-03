@@ -45,6 +45,11 @@ export default function App () {
   };
  React.useEffect( ()=> {
    if( (data && !loading ) || error ) {
+     if(error) {
+      localStorage.setItem("country","ve"); 
+      return setCountry({ value: "ve", nombre:"venezuela"} )
+     }
+      else
      if(data.paisesActivos.length>1)
      getCountry(); 
      else { 
