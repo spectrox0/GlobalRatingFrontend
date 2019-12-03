@@ -278,7 +278,7 @@ export const RANGE_YEAR = gql`
 `
 export const QUERY_PAISES = gql`
  {
-   paisesActivos {
+  paisesActivos {
     abreviatura
     nombre
     activo

@@ -21,7 +21,6 @@ export default function NavbarGlobal({countrys ,country ,changeCountry}) {
   
 
 
- console.log(country)
 
 
 
@@ -160,7 +159,7 @@ export default function NavbarGlobal({countrys ,country ,changeCountry}) {
          
               
             <MDBNavItem>
-              {(countrys.length>1 && country) &&
+              {(countrys && countrys.length>1 && country) &&
                <Select className="selectCountry"  
                classNamePrefix='Select'
                  defaultValue={{label: <> <img src={country.img} alt=""/> {country.nombre} </> , 

@@ -6,8 +6,8 @@ const endpoint = 'https://api-global-ratings.herokuapp.com/graphql'
 
 const cache = new InMemoryCache();
 const link = new HttpLink({
-  //uri: endpoint
- uri: 'http://localhost:4000/graphql'
+  uri: endpoint
+// uri: 'http://localhost:4000/graphql'
 })
 
 const client = new ApolloClient({
