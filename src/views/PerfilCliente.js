@@ -1,6 +1,7 @@
 import React , {useEffect} from "react"; 
 import { useQuery } from '@apollo/react-hooks';
 import {Link} from 'react-router-dom';
+import ShareFriend from '../components/Others/shareFriends.js';
 import {QUERY_EMISORES_ID, EMISIONES_BY_EMISOR, NUMBER_OF_EMISIONES_BY_EMISOR} from './helpers/graphql/querys'; 
 import {initGA} from './helpers/initGA.js';
 import {
@@ -142,7 +143,11 @@ export default function PerfilCliente({location})  {
                  </MDBBtn>
          </section>
          </MDBContainer>
-        <ShareEmail/>
+         {data && <ShareFriend
+         message={`Leer más información acerca de las emisiones de ${data.emisorID.nombre} entrando al siguiente link:`}
+         /> }
+
+
       
        
          

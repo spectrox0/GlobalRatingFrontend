@@ -99,7 +99,11 @@ export default function LeyNormativa( {location} ) {
            
        
         </MDBContainer>
-        <ShareFriend/>
+        {data && <ShareFriend socialNetworks 
+        messageSocialNetworks={`Leer más información acerca de  ${data.leyesNormativasID.titulo} entrando al siguiente link:`}
+         message={`Leer más información acerca de  ${data.leyesNormativasID.titulo} entrando al siguiente link:`}
+         /> }
+         
         </section>
         </>
        ) ; 
