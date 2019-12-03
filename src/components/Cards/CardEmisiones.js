@@ -28,39 +28,46 @@ export default function CardEmision ({monto, programa, tipoTitulo, D_R, idDictam
            </MDBCardTitle>
      <div className="btns">   
      { idDictamen.length>0 &&
+     <Link  to= {{
+        pathname: '/dictamen',
+        search: `?id=${idDictamen}`
+}}> 
         <MDBTooltip placement="top"> 
        <MDBBtn className="btn-estadistica "
-        tag={Link} 
-        to= {{
-                pathname: '/dictamen',
-                search: `?id=${idDictamen}`
-        }}
-       /> 
+       
+       
+       />  
+       
         <div> Dictamen </div>
-        </MDBTooltip>}
+        </MDBTooltip>
+        </Link> }
       {idProspecto.length>0 && 
+      <Link
+      to= {{
+        pathname: '/prospecto',
+        search: `?id=${idProspecto}`
+}} >
        <MDBTooltip placement="top"> 
        <MDBBtn className="btn-estadistica " 
-           tag={Link} 
-           to= {{
-                   pathname: '/prospecto',
-                   search: `?id=${idProspecto}`
-           }}
+           
        /> 
        <div> Prospecto </div>
         </MDBTooltip>
+        </Link>
         } {
-            idProvidencia.length>0 && 
+            idProvidencia.length>0 &&
+            <Link
+            to= {{
+                pathname: '/providencia',
+                search: `?id=${idProvidencia}` }} > 
             <MDBTooltip> 
             <MDBBtn className="btn-estadistica "
-                tag={Link} 
-                to= {{
-                        pathname: '/providencia',
-                        search: `?id=${idProvidencia}`
-                }}
+                
             /> 
             <div> Providencia </div>
+          
              </MDBTooltip>
+             </Link> 
         }
       
          </div>

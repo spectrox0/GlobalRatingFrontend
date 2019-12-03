@@ -48,7 +48,7 @@ export default function Clientes () {
     const Clientes = ({clientes}) => { 
    
        const innerJSX = clientes.map( emisor => 
-        <MDBCol key={emisor._id} sm="3">  
+        <MDBCol key={emisor._id} sm="3" xs="6">  
         <CardClientes {...emisor}  />
         </MDBCol>) 
         return innerJSX; 

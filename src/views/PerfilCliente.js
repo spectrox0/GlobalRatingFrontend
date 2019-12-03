@@ -114,7 +114,6 @@ export default function PerfilCliente({location})  {
         {data.emisorID.descripcion}
          </p>  </section>
            </MDBRow>
-         
 </MDBContainer>
 
 

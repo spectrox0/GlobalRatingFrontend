@@ -1,7 +1,7 @@
 import React, { useState, useEffect , useContext } from "react";
 import { Link ,Redirect } from "react-router-dom";
 import styled from 'styled-components';
-import country from './../../context/region.js'
+
 import Toggler from './../Navbars/Toggler.js'
 import Select from 'react-select'; 
 import {
@@ -12,24 +12,16 @@ import {
   
 
 
-export default function NavbarGlobal({countryss, countryActuals }) {
+export default function NavbarGlobal({countrys ,country ,changeCountry}) {
   // Variables useState
   const [navbarColor, setNavbarColor] = useState("navbar-transparent");
   const [navbarLogo, setNavbarLogo] = useState(require("assets/img/globalrating_white.svg"));
   const [collapseOpen, setCollapseOpen] = useState(false);
-  const  context = useContext(country); 
-  const countrys = [{ 
-    value:"ve", 
-  label: <>  <img src={require("assets/img/flags/VE.png")} alt="Venezuela" style={{height:"1rem"}}  /> {"  Venezuela"} </>
-  }, 
-  {
-    value:"pa", 
-    label: <> <img src={require("assets/img/flags/PA.png")} alt="Panama" style={{height:"1rem"}}  /> {" "}  Panama </>
-  }
-  ]
-  const [countryActual,setCountryActual] = useState(); 
- 
 
+  
+
+
+ console.log(country)
 
 
 
@@ -59,6 +51,17 @@ export default function NavbarGlobal({countryss, countryActuals }) {
       window.removeEventListener("scroll", updateNavbarColor);
     };
   }, [collapseOpen]);
+
+  const countrysSelect = (countrys) => {
+    return countrys.map(country => 
+      {return {
+        value: {
+          value: country.abreviatura,
+          nombre: country.nombre,
+          img: countrys.bandera
+        },
+         label: <> <img src={country.bandera} alt=""/> {country.nombre} </> }})
+  }
   return  ( 
     
       <MDBNavbar className={navbarColor} expand="lg">
@@ -68,7 +71,7 @@ export default function NavbarGlobal({countryss, countryActuals }) {
             >
               <MDBNavLink 
                tag= {Link}
-               to = {{pathname:`/index/${context.country}`}}
+               to = {{pathname:`/index/${country.value}`}}
                > <img className="GlobalRatingLogo"
                 src={navbarLogo}
                 alt=""
@@ -91,7 +94,7 @@ export default function NavbarGlobal({countryss, countryActuals }) {
           <MDBNavbarNav left>
           <MDBNavItem active> 
               <MDBNavLink to= {{
-               pathname:`/nosotros/${context.country}` }
+               pathname:`/nosotros/${country.value}` }
                 }  tag={Link}
                  onClick={
                      () => setCollapseOpen(false)
@@ -100,7 +103,7 @@ export default function NavbarGlobal({countryss, countryActuals }) {
             </MDBNavItem>
             <MDBNavItem>
               <MDBNavLink to={ {
-               pathname:`/clientes/${context.country}` }
+               pathname:`/clientes/${country.value}` }
                 } 
                  tag={Link}
                  onClick={
@@ -110,7 +113,7 @@ export default function NavbarGlobal({countryss, countryActuals }) {
             </MDBNavItem>
             <MDBNavItem>
               <MDBNavLink to={ {
-               pathname:`/calificacion/${context.country}` }
+               pathname:`/calificacion/${country.value}` }
                 } 
                 tag={Link}
                 onClick={
@@ -121,7 +124,7 @@ export default function NavbarGlobal({countryss, countryActuals }) {
          
                  <MDBNavItem>
               <MDBNavLink to={ {
-               pathname:`/estadisticas/${context.country}` }
+               pathname:`/estadisticas/${country.value}` }
                 } 
                  tag={Link}
                  onClick={
@@ -132,18 +135,19 @@ export default function NavbarGlobal({countryss, countryActuals }) {
         
             <MDBNavItem>
               <MDBNavLink to={ {
-               pathname:`/leyesnormativas/${context.country}` }
+               pathname:`/leyesnormativas/${country.value}` }
                 } 
                 tag={Link}
                 onClick={
                   () => setCollapseOpen(false)
-              }
+              } 
+              
                 >Leyes y Normativas</MDBNavLink>
             </MDBNavItem>
 
             <MDBNavItem>
               <MDBNavLink to={ {
-               pathname:`/contactanos/${context.country}` }
+               pathname:`/contactanos/${country.value}` }
                 } 
                  tag={Link} 
                  onClick={
@@ -156,17 +160,21 @@ export default function NavbarGlobal({countryss, countryActuals }) {
          
               
             <MDBNavItem>
-              {context.country &&
+              {(countrys.length>1 && country) &&
                <Select className="selectCountry"  
                classNamePrefix='Select'
-                 defaultValue={context.country }
-                 options={countrys} 
+                 defaultValue={{label: <> <img src={country.img} alt=""/> {country.nombre} </> , 
+                 value:{nombre:country.nombre,
+                   value:country.value,
+                   img:country.img
+                  } }}
+                 options={countrysSelect(countrys)} 
                  onChange= { e=> {
-                     setCountryActual({label:e.label, value:e.value})
-                     context.changeCountry(e.value); 
-                     localStorage.setItem("country", e.value); 
+                
+                     changeCountry(e.value.value, e.value.img, e.value.nombre); 
                      setCollapseOpen(false)
-                     window.location.href=`/index/${e.value}`;
+                     window.location.href=`/index/${e.value.value}`;
+                    
                      
                      
                  }}
