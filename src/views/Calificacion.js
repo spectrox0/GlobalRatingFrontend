@@ -205,7 +205,7 @@ export default function Calificacion () {
                            </MDBRow>
                            <MDBRow>
                            <MDBCollapse id="fases" isOpen={collapseID}> 
-                            <ol>
+                            <ul>
                                 <li>
                                     Visita Introductoria: <span>Se planifica junto con el emisor y se aclaran dudas sobre el proceso. El emisor hace una presentación general de su empresa a los analistas de Global Ratings.
                                     </span>
@@ -242,7 +242,7 @@ export default function Calificacion () {
                                     Revisión periódica de la emisión:  <span>Se analiza la evolución de los indicadores financieros de la empresa que sustentan la calificación previamente asignada, y dependiendo de los resultados obtenidos, puede ratificarse o modificarse la letra otorgada originalmente.
                                 </span>
                                     </li>
-                            </ol>
+                            </ul>
                             </MDBCollapse>
                         </MDBRow>
                         <MDBRow className="title"> 

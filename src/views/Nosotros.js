@@ -34,11 +34,6 @@ export default function() {
               En Global Ratings SCR contamos con profesionales con experiencia en análisis económico-financiero para evaluar, sustentar y calificar la capacidad de pago de emisiones de títulos de deuda, de acuerdo a la normativa respectiva y a la metodología de calificación debidamente autorizada por la Superintendencia Nacional de Valores.
               </p>
 
-              <ul className="lista"><b>Gráfico:</b>
-    <li>1994: Clasificadores Asociados S&S, C.A.</li>
-    <li>2006: Softline Ratings, C.A.</li> 
-    <li>2016: Global Ratings, C.A.</li>
-              </ul>
             </MDBCol>
           </MDBRow>
           <MDBRow>
