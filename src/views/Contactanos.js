@@ -146,19 +146,19 @@ export default function Contactanos() {
                       values.email
                     )
                   ) {
-                    errors.email = "email invalido";
+                    errors.email = "Email Inválido";
                   }
                   if (!values.nombre) {
-                    errors.nombre = "nombre requerido";
+                    errors.nombre = "Nombre Requerido";
                   }
                   if (!values.apellido) {
-                    errors.apellido = "apellido requerido";
+                    errors.apellido = "Apellido Requerido";
                   }
                   if (!values.asunto) {
-                    errors.asunto = "asunto requerido";
+                    errors.asunto = "Asunto Requerido";
                   }
                   if (!values.texto) {
-                    errors.texto = "mensaje requerido";
+                    errors.texto = "Mensaje Requerido";
                   }
                   return errors;
                 }}
