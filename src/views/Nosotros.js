@@ -27,37 +27,13 @@ export default function() {
             </MDBCol>
             <MDBCol sm="7">
               <p>
-                <b> Global Ratings, C.A.</b> , antes CLASIFICADORES ASOCIADOS
-                S&S, C.A., es una empresa con capital 100% nacional y es la
-                primera sociedad calificadora de riesgo, autorizada por la
-                Comisión Nacional de Valores de Venezuela, según Resolución Nº
-                057-94 de fecha 08 de Marzo de 1994. Estamos dentro de las
-                principales empresas calificadoras del país y hemos participado
-                en aproximadamente el 80% de las ofertas públicas de emisiones
-                de títulos de deuda. Nuestro equipo de trabajo está conformado
-                por profesionales con amplia experiencia en análisis financiero
-                y económico, con capacidad de discutir y dar su opinión en el
-                estudio y aprobación de la calificación de títulos valores,
-                siguiendo la normativa respectiva y de acuerdo al procedimiento
-                de calificación debidamente autorizado por la Comisión Nacional
-                de Valores.
+                <b>Global Ratings Sociedad Calificadora de Riesgo,</b> inicia sus operaciones en el año 1994 y se convierte en la primera Sociedad Calificadora de Riesgo autorizada por la Comisión Nacional de Valores de Venezuela (actualmente Superintendencia Nacional de Valores), según Resolución Nº 057-94 de fecha 08 de Marzo del mismo año. Durante más de 25 años han sido calificadas emisiones de Papeles Comerciales, Obligaciones Quirografarias, Títulos de Participación y Acciones Preferidas de un número importante de empresas públicas y privadas de diferentes sectores de la economía (Industrias, Servicio, Comercio, Bancos, Casas de Bolsa y Sucursales de Bancos Extranjeros, entre otros).
               </p>
 
               <p>
-                Estamos dentro de las principales empresas calificadoras del
-                país y hemos participado en aproximadamente el 80% de las
-                ofertas públicas de emisiones de títulos de deuda.
+              En Global Ratings SCR contamos con profesionales con experiencia en análisis económico-financiero para evaluar, sustentar y calificar la capacidad de pago de emisiones de títulos de deuda, de acuerdo a la normativa respectiva y a la metodología de calificación debidamente autorizada por la Superintendencia Nacional de Valores.
               </p>
 
-              <p>
-                Nuestro equipo de trabajo está conformado por profesionales con
-                amplia experiencia en análisis financiero y económico, con
-                capacidad de discutir y dar su opinión en el estudio y
-                aprobación de la calificación de títulos valores, siguiendo la
-                normativa respectiva y de acuerdo al procedimiento de
-                calificación debidamente autorizado por la Comisión Nacional de
-                Valores.
-              </p>
             </MDBCol>
           </MDBRow>
           <MDBRow>
@@ -66,13 +42,8 @@ export default function() {
                 <div className="title">
                   <h3> Misión </h3>
                 </div>
-
                 <p>
-                  Nuestra misión es dar nuestra opinión independiente sobre las
-                  posibilidades de repagar de forma oportuna una deuda u
-                  obligación en particular, a través de la recopilación,
-                  organización y análisis de toda la información disponible en
-                  el mercado y aquella obtenida del propio emisor.
+                Dar una opinión profesional, especializada, objetiva e independiente sobre la calidad crediticia de un determinado instrumento de deuda, así como de la capacidad de pago de las empresas e instituciones, públicas o privadas, nacionales o internacionales, que los emitan, a través de la recopilación, organización y análisis de toda la información disponible en el mercado, además de aquella proporcionada por el emisor.
                 </p>
               </MDBRow>
               <MDBRow>
@@ -81,10 +52,7 @@ export default function() {
                 </div>
 
                 <p>
-                  Nuestra visión es ser la calificadora de riesgo líder del
-                  mercado, con la mejor reputación y con la opinión más oportuna
-                  y acertada del mercado de capitales venezolano y
-                  latinoamericano.
+                Ser la calificadora de riesgo líder del mercado, con la mejor reputación y la opinión más oportuna y acertada.
                 </p>
               </MDBRow>
             </MDBCol>
@@ -97,49 +65,28 @@ export default function() {
                 <ul>
                   <li>
                     <p>
-                      <b>Calidad e integridad del proceso de calificación:</b>{" "}
-                      Nos esforzamos para que nuestras opiniones ayuden a
-                      reducir las asimetrías de información de los participantes
-                      en el mercado de capitales. Para ello, hemos implementado
-                      procedimientos y metodologías que aseguren que nuestras
-                      opiniones estén basadas en criterios justos y análisis
-                      cuidadosos de la información relevante disponible en el
-                      mercado y de la suministrada por la empresa calificada.
-                      Nuestra metodología es rigurosa, sistemática y es validada
-                      continuamente con base a nuestra experiencia histórica.
+                      <b>Calidad e integridad del proceso de calificación:</b>
+                      Nos esforzamos para que nuestras opiniones ayuden a reducir las asimetrías de información de los participantes en el mercado de capitales. Nuestra metodología es rigurosa, sistemática y es validada continuamente con base a nuestra experiencia histórica. 
                     </p>
                   </li>
                   <li>
                     <p>
-                      <b>Independencia:</b> Nuestras calificaciones son
-                      independientes de presiones políticas y económicas y de
-                      conflictos de interés de sus propietarios, o de intereses
-                      financieros de sus empleados, evitándose compromisos o
-                      relaciones que expongan la independencia y objetividad en
-                      nuestros procesos de calificación.
+                      <b>Independencia y objetividad:</b>                       
+                      Nuestras calificaciones son independientes de presiones políticas, económicas,  y conflictos de interés de sus propietarios, o intereses financieros de sus empleados, evitando así sesgos que puedan afectar la imparcialidad y equilibrio en nuestros análisis.
+                      
                     </p>
                   </li>
                   <li>
                     <p>
-                      <b>Transparencia y puntualidad en la calificación:</b>{" "}
-                      Partimos de la idea de hacer accesible la información por
-                      parte de los interesados, tanto del procedimiento de
-                      calificación, como de los criterios de análisis básicos
-                      que se utilizan. Asimismo, nuestro proceso de calificación
-                      es puntual y oportuno de acuerdo a los requerimientos del
-                      emisor, de tal forma que no se convierta en un obstáculo
-                      para el proceso de autorización ante la Comisión Nacional
-                      de Valores.
+                      <b>Transparencia y puntualidad en la calificación:</b>
+                      Nuestro proceso de calificación es accesible, puntual y oportuno de acuerdo a los requerimientos del emisor, de tal forma que no se convierta en un obstáculo para el proceso de autorización ante la Superintendencia Nacional de Valores.
                     </p>
                   </li>
 
                   <li>
                     <p>
-                      <b>Información Confidencial:</b> Mantenemos bajo
-                      confidencialidad la información no pública suministrada
-                      por el emisor, bajo los términos de un acuerdo que la
-                      proteja. En ese sentido, sólo es utilizada para el proceso
-                      de calificación.
+                      <b>Confidencialidad:</b> 
+                      Resguardamos la información no pública suministrada por el emisor, bajo los términos de un acuerdo que la proteja. En ese sentido, sólo es utilizada para el proceso de calificación.
                     </p>
                   </li>
                 </ul>

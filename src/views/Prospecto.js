@@ -95,7 +95,7 @@ export default function Dictamen( {location} ) {
               search: `?id=${emision.data.emisionByProspecto.emisor._id}`
              }}
              > 
-              Cliente
+              Emisor
              </MDBBtn> 
              <div> 
                {emision.data.emisionByProspecto.idProvidencia.length>0 && 

@@ -108,7 +108,7 @@ export default function NavbarGlobal({countrys ,country ,changeCountry}) {
                  onClick={
                   () => setCollapseOpen(false)
               }
-                 >Clientes</MDBNavLink>
+                 >Emisores</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
               <MDBNavLink to={ {

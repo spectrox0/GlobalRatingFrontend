@@ -14,8 +14,11 @@
     .row {
       margin-bottom: 1.5em;
       ul {
-        list-style: none;
         padding: 0;
+      }
+      li{
+        margin-bottom: 0.8rem;
+        margin-top: 0.5rem;
       }
     }
     .btn-color-primary {
@@ -105,11 +108,12 @@
     text-align: center;
     position: relative;
     top: 0.6rem;
-    height: 0.8rem;
+    height: 1.1rem;
     font-size: 4em;
     font-weight: 900;
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
-    margin: 0.4rem;
+    margin: 1rem;
+   
     ~ p {
       min-width: 100%;
     }

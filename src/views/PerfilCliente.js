@@ -139,7 +139,7 @@ export default function PerfilCliente({location})  {
                  to={{
                   pathname: '/clientes/${country}',}}
                  > 
-                   Regresar a Clientes
+                   Regresar a Emisores
                  </MDBBtn>
          </section>
          </MDBContainer>
