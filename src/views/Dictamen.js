@@ -104,10 +104,11 @@ export default function Dictamen({ location }) {
             </div>
           ) : (
             <>
+              {" "}
+              <MDBRow className="title">
+                <h2>{dictamen.title}</h2>{" "}
+              </MDBRow>
               <MDBRow>
-                <MDBRow className="title">
-                  <h2>{dictamen.title}</h2>{" "}
-                </MDBRow>
                 <MDBCol sm="6" className="col-content">
                   <span className="space">
                     {" "}

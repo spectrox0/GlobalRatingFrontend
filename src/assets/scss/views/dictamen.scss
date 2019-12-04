@@ -1,7 +1,3 @@
-br {
-  display: none;
-}
-
 .space {
   margin-bottom: 2rem;
 }
@@ -11,6 +7,9 @@ br {
   min-height: 100vh;
   padding-top: 1.8rem;
   background: $color-background;
+  br {
+    display: none;
+  }
 
   .col-scribd {
     display: flex;
