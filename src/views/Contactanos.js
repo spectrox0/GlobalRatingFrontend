@@ -107,7 +107,7 @@ export default function Contactanos() {
                 <MDBRow>
                   <div className="elementCoordenadas">
                     <span>
-                      Avenida Principal de la Castellana <br />
+                      Avenida Principal de La Castellana <br />
                       Centro Letonia <br />
                       Piso 12, Oficina 126. <br />
                       Caracas - Venezuela <br />
