@@ -55,7 +55,7 @@ export default function DarkFooter() {
               </a>
                
               <a
-                href=""
+                href="http://glscope.com/"
                 target="_blank"
               >
                

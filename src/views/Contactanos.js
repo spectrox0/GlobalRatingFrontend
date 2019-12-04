@@ -60,7 +60,7 @@ export default function Contactanos() {
     }
     if (isVerified && !loading && data) {
       setMessage({
-        message: "Se envio el correo exitosamente",
+        message: "Se envió el correo exitósamente",
         isError: false
       });
       clear();
@@ -116,7 +116,7 @@ export default function Contactanos() {
                 </MDBRow>
                 <MDBRow>
                   <div className="elementCoordenadas">
-                    <span>Master +58 (212) 263.4393</span>
+                    <span>Máster +58 (212) 263.4393</span>
                   </div>
                 </MDBRow>
               </div>
@@ -272,7 +272,7 @@ export default function Contactanos() {
                           className="form-control"
                         />
                         <label for="email" class="animated-label">
-                          Correo Electronico
+                          Correo Electrónico
                         </label>
                       </div>
                       {errors.email && touched.email && (
