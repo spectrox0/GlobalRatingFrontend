@@ -1,90 +1,70 @@
-
-
 .navbar {
-    position: fixed; 
-    z-index: 500;
-    width:100%; 
-    background: $navbar-color; 
-    transition: background .3s ease-in-out; 
-    padding-left: 4rem;
-    padding-right: 4rem;
-    padding-top: $navbar-padding-base;
-    padding-bottom: $navbar-padding-base;
-    min-height: 53px;
-    margin-bottom: 20px;
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  z-index: 500;
+  width: 100%;
+  background: $navbar-color;
+  transition: background 0.3s ease-in-out;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: $navbar-padding-base;
+  padding-bottom: $navbar-padding-base;
+  min-height: 53px;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
 
-    .GlobalRatingLogo{
-        width: $width-logo;
-        @include transition(.2s, ease-in-out);
-        @media screen and (max-width:991px){
-            width: 5rem; 
-        }
+  .GlobalRatingLogo {
+    width: $width-logo;
+    @include transition(0.2s, ease-in-out);
+    @media screen and (max-width: 991px) {
+      width: 5rem;
     }
+  }
 
-  
+  a {
+    outline: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    vertical-align: middle;
+    text-transform: uppercase;
+    color: $font-color-primary;
+    transition: color 0.2s ease-in-out;
+  }
 
-    a{  
-        outline: none; 
-        font-size: .8rem; 
-        font-weight: 600;
-        vertical-align: middle;
-        text-transform: uppercase;
-        color:  rgb(51, 51, 51);
-        transition: color .2s ease-in-out;
-        
-          
-        
-    }
-
-    p{
-        display: inline-block;
-        margin: 0;
-        line-height: 21px;
-        font-weight: inherit;
-        font-size: inherit;
-    }
+  p {
+    display: inline-block;
+    margin: 0;
+    line-height: 21px;
+    font-weight: inherit;
+    font-size: inherit;
+  }
 }
 .navbar-transparent {
-    background: $navbar-transparent !important; 
-    a {
-       
-        &:not(.btn):not(.dropdown-item){
-            color:rgb(255, 255, 255);
-        }
-        
+  background: $navbar-transparent !important;
+  a {
+    &:not(.btn):not(.dropdown-item) {
+      color: rgb(255, 255, 255);
     }
-    .toggle span {
-        background:rgba(255, 255, 255, 0.856); 
-    }
-   
-  
+  }
+  .toggle span {
+    background: rgba(255, 255, 255, 0.856);
+  }
 }
-.nav-open{
-    background: $navbar-color;
-    a {
-        color:  rgb(51, 51, 51);
-    }
+.nav-open {
+  background: $navbar-color;
+  a {
+    color: $font-color-primary;
+  }
 }
 
+@media screen and (min-width: 992px) {
+  .navbar-collapse {
+    display: none;
+  }
+}
 
-@media screen and (min-width: 992px){
- 
-    .navbar-collapse {
-        display: none;
-    }
-          
-          }
-  
-  
-        
-          @media screen and (max-width:991px) {
-     
-            .navbar {
-                padding-left: .5rem;
-                padding-right: .5rem;
-            }
-          
-        }
-
-    
+@media screen and (max-width: 991px) {
+  .navbar {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}

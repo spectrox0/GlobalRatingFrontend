@@ -18,8 +18,11 @@ br {
     align-items: center;
     justify-content: center;
     .contentHtml {
-      min-height: 70%;
+      position: relative;
+      top: -5rem;
+      min-height: 90%;
       height: 0;
+      width: 100%;
       @media screen and (max-width: 576px) {
         height: 100vh;
       }
@@ -35,6 +38,7 @@ br {
   }
 
   .options {
+    margin-top: 1rem;
     display: flex;
     justify-content: space-between;
 
