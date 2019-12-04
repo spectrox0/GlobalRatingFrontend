@@ -76,7 +76,7 @@ export default function Calificacion () {
                      
                            
                         </MDBRow>
-                        <MDBRow className="title-calificacion"> 
+                        <MDBRow className="title"> 
                     <h2> 
                         Categorías de riesgo
                     </h2>
@@ -239,32 +239,42 @@ export default function Calificacion () {
                             </ol>
                             </MDBCollapse>
                         </MDBRow>
-                        <MDBRow className="title-calificacion"> 
-                  
+                        <MDBRow className="title"> 
+                    
                         <h2>Resumen de metodología de calificación</h2>
                              </MDBRow>
                          
                             <MDBRow className="rowLinks">
                                 <ul>
                                     <li>
-                                <a
-                                    href="https://es.scribd.com/embeds/438101482/content?start_page=1&view_mode=scroll&access_key=key-kD7PpRmzihw34xLVuAe1&show_recommendations=true" data-auto-height="false" data-aspect-ratio="0.7729220222793488" scrolling="no" id="doc_8949" width="100%" height="600" frameborder="0"
-                                    download="FileName">   <i className="fas fa-file-pdf"></i>  Empresas no Financieras (109.344 Kb) </a>
+                                <a  
+                                    href="https://es.scribd.com/embeds/438101482/content?start_page=1&view_mode=scroll&access_key=key-kD7PpRmzihw34xLVuAe1&show_recommendations=true" 
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >   <i className="fas fa-file-pdf"></i>Empresas </a>
                                     </li>
                                     <li>
-                                    <a href=""> <i className="fas fa-file-pdf"></i>  Instituciones Financieras (100.861 Kb) </a>
+                                <a href="https://es.scribd.com/embeds/438100239/content?start_page=1&view_mode=scroll&access_key=key-2NGrRbubrXNHCeNuOkPe&show_recommendations=true"
+                                    target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i className="fas fa-file-pdf"></i>
+                                    Instituciones Financieras  </a>
                                     </li>
                                     <li>
-                                    <a href=""> <i className="fas fa-file-pdf"></i> Seguros (81.725 Kb) </a>
+                                <a href="https://es.scribd.com/embeds/438101065/content?start_page=1&view_mode=scroll&access_key=key-UHr15QDX5ny8XznUxHbc&show_recommendations=true"
+                                    target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i className="fas fa-file-pdf"></i>
+                                    Seguros  </a>
                                     </li>
+                                  
+                                    
                                     <li>
-                                    <a href=""> <i className="fas fa-file-pdf"></i> Casas de Bolsa (101.483 Kb) </a>
-                                    </li>
-                                    <li>
-                                    <a href=""> <i className="fas fa-file-pdf"></i> Holdings (77.709 Kb) </a>
-                                    </li>
-                                    <li>
-                                    <a href=""> <i className="fas fa-file-pdf"></i> Titularizaciones (114.218 Kb)</a>
+                                <a href="https://es.scribd.com/embeds/438101289/content?start_page=1&view_mode=scroll&access_key=key-3avKh3tWt1GsGvTf1eBS&show_recommendations=true"
+                                    target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i className="fas fa-file-pdf"></i>
+                                    Titulos de Participación </a>
                                     </li>
                                 </ul>
                           
