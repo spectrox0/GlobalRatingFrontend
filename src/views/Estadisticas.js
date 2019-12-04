@@ -176,9 +176,11 @@ export default function Estadisticas() {
   
   </MDBContainer>
   {<ShareFriend socialNetworks 
-        messageSocialNetworks={`Leer más información acerca de las Estadísticas de las Emisiones entrando al siguiente link:`}
-         message={`Leer más información acerca de las Estadísticas de las Emisiones entrando al siguiente link:`}
+        subject={`Estadística de las Emisiones de Títulos de deuda autorizados por la SUNAVAL en el año ${data.year}`}
+         message={`Revise las Estadísticas de las Emisiones de Títulos de deuda autorizados por la Superintendencia Nacional de Valores (SUNAVAL) en el año ${data.year}`}
+         messageSocialNetworks={`Revise las Estadísticas de las Emisiones de Títulos de deuda autorizados por la Superintendencia Nacional de Valores (SUNAVAL) en el año ${data.year}`}
          /> }
+
         </div>
         
         </>

@@ -122,8 +122,9 @@ export default function Clientes () {
 
        </MDBContainer> 
     <ShareFriend
-         message="Leer más información acerca de los Clientes entrando al siguiente link:"
-        /> 
+    subject={`Emisiones de Títulos de Deuda calificadas por Global Ratings Sociedad Calificadora de Riesgo`}
+    message={`Infórmate sobre las emisiones de Títulos de  calificadas por Global Ratings Sociedad Calificadora de Riesgo, entrando al siguiente enlace:`}
+        />    
   </section> 
   </>
     )

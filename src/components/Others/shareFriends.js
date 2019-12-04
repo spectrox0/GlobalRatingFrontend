@@ -18,14 +18,13 @@ import {
 } from 'react-share'
 
 
-export default function ShareFriend({socialNetworks,message,messageSocialNetworks }) {
+export default function ShareFriend({socialNetworks,subject, message,messageSocialNetworks }) {
     const url = window.location.href; 
-    //const title = "Visita la página web de Global Ratings en el siguiente enlace: "
     return <> 
       <MDBContainer className="rowCompartir"> 
      
       <EmailShareButton 
-       subject="Visita Global Ratings!!! "
+       subject={subject}
        body={message}
        url={window.location.href}
        openWindow

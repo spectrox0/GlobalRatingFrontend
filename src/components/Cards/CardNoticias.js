@@ -87,7 +87,7 @@ month[11] = "Dic.";
           <MDBModal isOpen={isOpen}  toggle={toggle} size="lg"> 
           <MDBModalHeader toggle={toggle} > </MDBModalHeader>
           <MDBModalBody> 
-          <div className="title modalNoticia"> 
+          <div style={{textAlign:"left"}}> 
            <h3> {title.replace("&#8221;",'"').replace("&#8220;",'"') } </h3>
           </div>
           <div className="date modalNoticia"> 
