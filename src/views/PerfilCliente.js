@@ -144,7 +144,8 @@ export default function PerfilCliente({location})  {
          </section>
          </MDBContainer>
          {data && <ShareFriend
-         message={`Leer más información acerca de las emisiones de ${data.emisorID.nombre} entrando al siguiente link:`}
+         subject={`Emisiones de Títulos de ${data.emisorID.nombre} calificadas por Global Ratings, SCR`}
+         message={`Leer más información sobre las emisiones de Títulos de Deuda de ${data.emisorID.nombre} calificadas por Global Ratings Sociedad Calificadora de Riesgo, entrando al siguiente enlace:`}
          /> }
 
 

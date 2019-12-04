@@ -60,7 +60,7 @@ export default function Contactanos() {
     }
     if (isVerified && !loading && data) {
       setMessage({
-        message: "Se envio el correo exitosamente",
+        message: "Se envió el correo exitósamente",
         isError: false
       });
       clear();
@@ -107,7 +107,7 @@ export default function Contactanos() {
                 <MDBRow>
                   <div className="elementCoordenadas">
                     <span>
-                      Avenida Principal de la Castellana <br />
+                      Avenida Principal de La Castellana <br />
                       Centro Letonia <br />
                       Piso 12, Oficina 126. <br />
                       Caracas - Venezuela <br />
@@ -116,7 +116,7 @@ export default function Contactanos() {
                 </MDBRow>
                 <MDBRow>
                   <div className="elementCoordenadas">
-                    <span>Master +58 (212) 263.4393</span>
+                    <span>Máster +58 (212) 263.4393</span>
                   </div>
                 </MDBRow>
               </div>
@@ -146,19 +146,19 @@ export default function Contactanos() {
                       values.email
                     )
                   ) {
-                    errors.email = "email invalido";
+                    errors.email = "Email Inválido";
                   }
                   if (!values.nombre) {
-                    errors.nombre = "nombre requerido";
+                    errors.nombre = "Nombre Requerido";
                   }
                   if (!values.apellido) {
-                    errors.apellido = "apellido requerido";
+                    errors.apellido = "Apellido Requerido";
                   }
                   if (!values.asunto) {
-                    errors.asunto = "asunto requerido";
+                    errors.asunto = "Asunto Requerido";
                   }
                   if (!values.texto) {
-                    errors.texto = "mensaje requerido";
+                    errors.texto = "Mensaje Requerido";
                   }
                   return errors;
                 }}
@@ -274,7 +274,7 @@ export default function Contactanos() {
                           className="form-control"
                         />
                         <label for="email" class="animated-label">
-                          Correo Electronico
+                          Correo Electrónico
                         </label>
                       </div>
                       {errors.email && touched.email && (

@@ -241,6 +241,7 @@ query emisionByDictamen($_id:String!) {
     idProspecto
     emisor {
       _id
+      nombre
     }
   }
 }

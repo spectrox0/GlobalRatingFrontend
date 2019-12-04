@@ -271,7 +271,8 @@ export default function Calificacion () {
                         </MDBRow>
                     </MDBContainer>
         <ShareFriend
-         message="Leer más información acerca de la Calificación de Riesgo entrando al siguiente link:"
+            subject={`Información sobre el proceso de Calificación de Riesgo de emisiones de Títulos de Deuda`}
+         message="Leer más información sobre el proceso de Calificación de Riesgo de emisiones de Títulos de Deuda entrando al siguiente link:"
         /> 
                 </div>
                 </>

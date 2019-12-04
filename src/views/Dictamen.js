@@ -150,9 +150,11 @@ month[11] = "Dic.";
        
             </MDBRow>
         </MDBContainer>
-        {dictamen &&  <ShareFriend socialNetworks 
-                      messageSocialNetworks={`Leer el ${dictamen.title} entrando al siguiente link: `} 
-                       message={`Leer el ${dictamen.title} entrando al siguiente link: `}/> }
+        {(dictamen && emision.data.emisionByDictamen) && <ShareFriend socialNetworks
+        subject={`${dictamen.title}`}
+        message={`Leer el ${dictamen.title} elaborado por Global Ratings Sociedad Calificadora de Riesgo, entrando al siguiente enlace:`} 
+        messageSocialNetworks={`Leer el ${dictamen.title} elaborado por Global Ratings Sociedad Calificadora de Riesgo, entrando al siguiente enlace:`} 
+                       /> }
         </section>
         </>
        ) ; 
