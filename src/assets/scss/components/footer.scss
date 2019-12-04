@@ -5,23 +5,6 @@
   .row .col-footer {
     @media screen and (min-width: 992px) {
       border-right: 0.2rem solid rgba($footer-color-copyrigth, 0.1);
-<<<<<<< HEAD
-      padding: 1rem;}
-       .globalScope{
-        display:inline-block; 
-        background: url("../img/2.png") no-repeat center; 
-        -webkit-background-size: contain;
-        -moz-background-size: contain;
-        -o-background-size: contain;
-        background-size: contain;
-        width:100%; 
-        height:5rem; 
-        @include transition(.3s , ease-in-out);
-        &:hover{
-          background-image: url("../img/1.png"); 
-        } }
-       
-=======
       padding: 1rem;
     }
     .globalScope {
@@ -39,7 +22,6 @@
       }
     }
 
->>>>>>> 896e0a373167d81be7afbe7c00b261de98248bae
     .footer-copyright {
       padding: 0.5rem;
       background: $footer-color-copyrigth;

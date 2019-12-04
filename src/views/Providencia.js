@@ -127,7 +127,7 @@ month[11] = "Dic.";
               search: `?id=${emision.data.emisionByProvidencia.emisor._id}`
              }}
              > 
-              Cliente
+              Emisor
              </MDBBtn> 
              <div> 
                {emision.data.emisionByProvidencia.idDictamen.length>0 && 
