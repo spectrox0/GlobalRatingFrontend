@@ -63,8 +63,13 @@ export default function LeyesNormativas() {
                     </MDBContainer>
                  
                     <ShareFriend
-         message="Leer más información acerca de las Leyes y Normativas entrando al siguiente link:"
+        subject={`Información sobre las Leyes y Normativas`}
+         message="Leer más información sobre las Leyes y Normativas entrando al siguiente enlace:"
         /> 
+
+
+
+
              
             </div>
     </>
