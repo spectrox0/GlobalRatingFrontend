@@ -44,7 +44,7 @@ export default function Calificacion () {
      
                    
                     <MDBContainer >
-                    <MDBRow className="title-calificacion"> 
+                    <MDBRow className="title"> 
                     <h2> 
                         Calificación de riesgo
                     </h2>
@@ -247,7 +247,9 @@ export default function Calificacion () {
                             <MDBRow className="rowLinks">
                                 <ul>
                                     <li>
-                                    <a href="">   <i className="fas fa-file-pdf"></i>  Empresas no Financieras (109.344 Kb) </a>
+                                <a
+                                    href="https://es.scribd.com/embeds/438101482/content?start_page=1&view_mode=scroll&access_key=key-kD7PpRmzihw34xLVuAe1&show_recommendations=true" data-auto-height="false" data-aspect-ratio="0.7729220222793488" scrolling="no" id="doc_8949" width="100%" height="600" frameborder="0"
+                                    download="FileName">   <i className="fas fa-file-pdf"></i>  Empresas no Financieras (109.344 Kb) </a>
                                     </li>
                                     <li>
                                     <a href=""> <i className="fas fa-file-pdf"></i>  Instituciones Financieras (100.861 Kb) </a>

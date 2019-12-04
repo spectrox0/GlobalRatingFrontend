@@ -1,28 +1,33 @@
-
-$navbar-color:  rgba(rgb(255, 255, 255), .98);
+$navbar-color: rgba(rgb(255, 255, 255), 0.98);
 $navbar-padding-base: 0.625rem;
-$sidenav-background: linear-gradient(rgba(44, 167, 255, 0.877), rgba(0, 0, 0, 0.664) ); 
+$sidenav-background: linear-gradient(
+  rgba(44, 167, 255, 0.877),
+  rgba(0, 0, 0, 0.664)
+);
 
-$filter-header: linear-gradient(#2c2c393f 50%,  rgba(255, 255, 255, 0.65) 70%, rgb(255, 255, 255) 100%); 
+$filter-header: linear-gradient(
+  #2c2c393f 50%,
+  rgba(255, 255, 255, 0.65) 70%,
+  rgb(255, 255, 255) 100%
+);
 
 $color-letter-header: rgb(37, 37, 37);
-$height-header : 75vh; 
+$height-header: 75vh;
 
-
-
-$footer-color: #C9C9C9; 
-$footer-color-copyrigth:#0E1544; 
+$footer-color: #c9c9c9;
+$footer-color-copyrigth: #0e1544;
 
 $navbar-transparent: rgba(206, 206, 206, 0.4);
-$color-primary: #0099CC;
-$color-background: #F5F5F5; 
-$color-secondary: #2B3990; 
-$color-tertiary: #2B3990; 
-$color-title1:  rgb(75, 75, 75) ;
+$font-color-primary: #303030;
+$color-primary: #0099cc;
+$color-background: #f5f5f5;
+$color-secondary: #2b3990;
+$color-tertiary: #2b3990;
+$color-title1: rgb(75, 75, 75);
 
-$font-primary: 'Lato', sans-serif;
+$font-primary: "Lato", sans-serif;
 
-$width-logo: 7rem; 
+$width-logo: 7rem;
 
-$height-underline: 3px ; 
-$font-weight-title: 900; 
+$height-underline: 3px;
+$font-weight-title: 900;

@@ -1,46 +1,28 @@
-.clientesContainer{
-     min-height: 100vh;
-     padding-top:1.8rem;
-     background:$color-background;
-    .container {
+.clientesContainer {
+  min-height: 100vh;
+  padding: 0.8rem;
+  padding-top: 1.8rem;
+  background: $color-background;
+  .container {
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-        .title {
-            display: flex;
-           align-items: center;
-            justify-content: space-between;
-            h2 {
-                font-size:1.8em; 
-                display: flex;
-                flex-direction: column;
-                padding-left: 1rem; 
-                font-weight: $font-weight-title;
-    
-                &:after {
-                content: "";
-                height:$height-underline;
-                background: $color-primary; 
-                min-width: 90%;
-            width: 20rem; 
-            max-width: 100%;
-            }
-        } 
-        .filter {
-            display: flex;
-            margin-top: 2rem; 
-            span,label {
-                margin-right:.3rem; 
-            }
-            label {
-                cursor:pointer; 
-                &:hover {
-                    text-shadow: 0 0 .2px black; 
-                }
-            }
-
+      .filter {
+        display: flex;
+        margin-top: 2rem;
+        span,
+        label {
+          margin-right: 0.3rem;
         }
-        
+        label {
+          cursor: pointer;
+          &:hover {
+            text-shadow: 0 0 0.2px black;
+          }
+        }
+      }
     }
-}
-
-
+  }
 }

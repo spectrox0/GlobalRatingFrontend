@@ -1,73 +1,50 @@
-
 .page-leyes-normativas {
-    min-height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  padding-top: 1.8rem;
+  background: $color-background;
+  flex-direction: column;
+  justify-content: space-between;
+  .container {
+    ul {
+      padding: 0;
+      list-style: none;
+    }
+    li {
+      margin-top: 2rem;
+    }
+    a {
+      font-size: 1.5em;
+      color: $color-primary;
+      display: flex;
+      align-items: center;
+      line-height: 1.7rem;
+      &:hover {
+        text-decoration: none;
+      }
+      &:focus {
+        outline: none;
+      }
+      &:before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f1c1";
+        font-size: 3rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+  .rowCompartir {
     display: flex;
-    padding-top: 1.8rem;
-    background: $color-background;
-    flex-direction: column;
-    justify-content: space-between;
-    .container {
-      
-        .title {
-   
-            h2 {
-                font-size:1.8em; 
-                display: flex;
-                flex-direction: column;
-                font-weight: $font-weight-title;
-                &:after {
-                content: "";
-                height:$height-underline;
-                background: $color-primary; 
-                min-width: 90%;
-                width: 20rem; 
-                max-width: 100%;
-            }
-        } 
-        
-}   
-ul {
-    padding: 0;
-    list-style: none;
-}
-li {
-   
-   margin-top: 2rem;
-}
-    a{ 
-            font-size:1.5em; 
-            color:$color-primary; 
-            display:flex;
-            align-items: center; 
-            line-height: 1.7rem;
-            &:hover {
-                text-decoration: none;
-            }
-            &:focus {
-                outline: none;
-            }
-            &:before {
-                font-family: "Font Awesome 5 Free";
-                 font-weight: 900; 
-                 content: "\f1c1";
-                 font-size: 3rem;
-                 margin-right: .5rem;
-            }
-        }
-   
-
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+    .btn {
+      i {
+        color: $color-primary;
+      }
+      &:focus {
+        box-shadow: none;
+      }
     }
-    .rowCompartir{
-        display: flex;
-        justify-content: flex-end;
-        margin-bottom: 2rem;
-        .btn {
-          
-            i { color:$color-primary;   }
-            &:focus {
-                box-shadow: none;
-            }
-        }
-    
-    }
+  }
 }

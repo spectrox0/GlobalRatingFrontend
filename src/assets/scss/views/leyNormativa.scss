@@ -3,27 +3,6 @@
   padding-top: 1.8rem;
   background: $color-background;
 
-  .title {
-    margin-bottom: 2rem;
-    margin-top: 2rem;
-    h2 {
-      font-size: 1.4em;
-      display: flex;
-      flex-direction: column;
-      font-weight: $font-weight-title;
-
-      &:after {
-        content: "";
-        height: $height-underline;
-        background: $color-primary;
-        width: 100%;
-      }
-    }
-    p {
-      text-align: justify;
-      font-size: 1em;
-    }
-  }
   .btns-control {
     display: flex;
     margin-top: 2rem;

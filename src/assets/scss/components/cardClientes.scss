@@ -1,50 +1,26 @@
-
 .cardClientes {
-    border:0;
-    margin:.5rem;
-    margin-bottom: 1rem;
-    box-shadow: inset 2px 2px 2px rgba(0,0,0,0.1) ,  1px 1px 1px rgba(0,0,0,0.3);
-    @include transition(.5s, ease-in-out); 
-    
-    &:hover {
-        text-decoration: none;
-        box-shadow: inset 2px 2px 2px rgba(0,0,0,0.1) ,3px 3px 3px rgba(0,0,0,0.3);
-        opacity: .8;
+  border: 0;
+  margin: 0.5rem;
+  margin-bottom: 1rem;
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.1),
+    1px 1px 1px rgba(0, 0, 0, 0.3);
+  @include transition(0.5s, ease-in-out);
 
-   
-}  &:focus {
+  &:hover {
+    text-decoration: none;
+    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.1),
+      3px 3px 3px rgba(0, 0, 0, 0.3);
+    opacity: 0.8;
+  }
+  &:focus {
     outline: none;
-}
-.img-fluid{
-    height: 13rem;
-    width:100%;
-    object-fit:fill; 
-} .hidden {
+  }
+  .img-fluid {
+    height: auto;
+    width: 100%;
+    object-fit: fill;
+  }
+  .hidden {
     visibility: hidden;
-  }  
-   @media screen and (max-width:992px) {
-    .img-fluid{
-        height: 12rem;
-     
-    }
-
-   }
-   @media screen and (max-width:768px) {
-    .img-fluid{
-       
-        height: 11rem;
-    
-    }
-
-   }
-   @media screen and (max-width:576px) {
-    .img-fluid{
-       
-        height: 8rem;
-    
-    }
-
-   }
-
-
-} 
+  }
+}

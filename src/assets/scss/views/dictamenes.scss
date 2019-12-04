@@ -1,48 +1,17 @@
 .dictamenes {
-    padding-top:2rem;
-    width:100%;
-    background: $color-background; 
-    .dictamenes-title {
-        margin-bottom:1.8rem;
-        width:100%; 
-        color: #000000; 
-        text-align: center;
-        h2{ 
-            font-size:1.8em; 
-            display: flex;
-            flex-direction: column;
-            text-align: justify;
-            font-weight: $font-weight-title;
-            &:after {
-                content: "";
-                height:$height-underline;
-                background: $color-primary; 
-                width: 150%; 
-        
-            } 
-            @media screen and (max-width:992px) {
-                font-size: 1.3em;
-                &:after {
-                    
-                    width: 120%; 
-            
-                } 
-            }
-    
-        }
-    }
-    .row-button {
-        display:flex; 
-       
-        justify-content: flex-end; 
-        margin:.5rem;
-        margin-bottom: 2rem;
-        button {
-            
-            width: 10rem ;
-            font-size: 1.2em; 
+  padding-top: 2rem;
+  width: 100%;
+  background: $color-background;
 
-        }
+  .row-button {
+    display: flex;
+
+    justify-content: flex-end;
+    margin: 0.5rem;
+    margin-bottom: 2rem;
+    button {
+      width: 10rem;
+      font-size: 1.2em;
     }
-    
+  }
 }

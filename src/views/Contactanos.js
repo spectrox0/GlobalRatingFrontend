@@ -182,6 +182,8 @@ export default function Contactanos() {
                       }
                     }
                   });
+                  setSubmitting(false);
+                  resetForm();
                 }}
               >
                 {({
