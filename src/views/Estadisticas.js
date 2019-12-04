@@ -12,7 +12,7 @@ import {Link} from 'react-router-dom';
 import { set } from 'react-ga';
 export default function Estadisticas() {
     const rangeYear = useQuery(RANGE_YEAR); 
-    const [yearFilter , setYearFilter] =React.useState(rangeYear.data? rangeYear.data.rangeYearEmision.lastYear : (new Date()).getFullYear()); 
+    const [yearFilter , setYearFilter] =React.useState();
     const [papelComercial , setPapelComercial] = React.useState(false);
     const [obligacionQuirografaria, setObligacionQuirografaria] = React.useState(false);
     const [titulosDeParticipacion , setTitulosDeParticipacion] = React.useState(false);
@@ -35,8 +35,14 @@ export default function Estadisticas() {
        
       },[]);
      
+      React.useEffect(()=> {
+       if(rangeYear.data ) {
+         setYearFilter(rangeYear.data.rangeYearEmision.firstYear)
+       }
+      },[rangeYear.data,rangeYear.loading])
+  
      const RangeYears = (data) => {
-       return Array.from(new Array(data.lastYear+1-data.firstYear),( val, index) => { return {value: data.lastYear-index, label:data.lastYear-index } });
+       return Array.from(new Array(data.firstYear+1-data.lastYear),( val, index) => { return {value: data.firstYear-index, label:data.firstYear-index } });
      }
 
   const handlindFilter = (e) => {
@@ -108,7 +114,7 @@ export default function Estadisticas() {
           {rangeYear.data &&
               <Select className="select"  
               classNamePrefix='Select'
-                defaultValue={{ label: rangeYear.data.rangeYearEmision.lastYear, value: rangeYear.data.rangeYearEmision.lastYear }} 
+                defaultValue={{ label: rangeYear.data.rangeYearEmision.firstYear, value: rangeYear.data.rangeYearEmision.firstYear }} 
                 options= { RangeYears(rangeYear.data.rangeYearEmision)} 
                 onChange= {handlindFilter}
                 />
