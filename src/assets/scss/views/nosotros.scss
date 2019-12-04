@@ -9,8 +9,13 @@
       padding: 0.2rem;
     }
     ul {
+      font-size: 0.8em;
+      padding: 0.2rem;
       list-style: none;
       padding-left: 0;
+       p {
+        font-size: 1em;
+       }
     }
     .img-logo {
       display: flex;
