@@ -1,97 +1,103 @@
 .page-contact {
-    min-height: 100vh;
-    padding-top: 1.8rem;
-    background:$color-background;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    .container {
+  min-height: 100vh;
+  padding-top: 1.8rem;
+  background: $color-background;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .container {
     width: 50rem;
     max-width: 100%;
-    min-height: 80vh; 
-    background: #FFFFFF;
-    box-shadow: 0 0 3px rgba(0,0,0,0.5);
-    padding-top: 2rem; 
-    padding-bottom: 2rem; 
+    min-height: 80vh;
+    background: #ffffff;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     padding-right: 3rem;
-    
-    
-    .info {
-        background: $color-primary; 
-        position: relative;
-        left: -3rem; 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100% ;
-        min-height: 80vh;
-        padding: 3rem;
-        border-radius: 2px;
-        box-shadow: 0 0 3px rgba(0,0,0,0.5);
-        .row {
-         width: 100%;; 
-          h3 {
-              color: #FFFFFF; 
-              width: 100%;; 
-              margin-bottom: 1.7rem;
-              font-weight: $font-weight-title;
-              font-size: 2em;
-              text-align: justify;
-          } 
-          span {
-            color: #FFFFFF; 
-            font-size: 1em;
-          }
-      
-         .elementCoordenadas {
-             margin-bottom:1rem; 
-         }
-        } 
-        @media screen and (max-width:991px) {
-           
-            height: 20rem ;
-            min-height: unset; 
-        left: 5%; 
-        margin-bottom: 2rem; 
-        .row {
-           
-             h3 {
-                
-                 font-size: 1.4em;
-             
-             } 
-             span {
-            
-               font-size: .8em;
-             }
-         
-         
-           } 
+    .spinner-grow {
+      height: 15rem;
+      width: 15rem;
+      position: relative;
+      top: -9rem;
 
+      @media screen and (max-wdith: 992px) {
+        height: 10rem;
+        width: 10rem;
+      }
+    }
+    .SpinerContain {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .info {
+      background: $color-primary;
+      position: relative;
+      left: -3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      min-height: 80vh;
+      padding: 3rem;
+      border-radius: 2px;
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+      .row {
+        width: 100%;
+        h3 {
+          color: #ffffff;
+          width: 100%;
+          margin-bottom: 1.7rem;
+          font-weight: $font-weight-title;
+          font-size: 2em;
+          text-align: justify;
         }
+
+        span {
+          color: #ffffff;
+          font-size: 1em;
+        }
+
+        .elementCoordenadas {
+          margin-bottom: 1rem;
+        }
+      }
+      @media screen and (max-width: 991px) {
+        height: 20rem;
+        min-height: unset;
+        left: 5%;
+        margin-bottom: 2rem;
+        .row {
+          h3 {
+            font-size: 1.4em;
+          }
+          span {
+            font-size: 0.8em;
+          }
+        }
+      }
     }
     h3 {
-        color: #444444; 
-        width: 100%;; 
-        margin-bottom: 1.7rem;
-        font-weight: $font-weight-title;
-        font-size: 2em;
-        text-align: justify;
-    }.form { 
-        .form-group {
-            margin-bottom:2rem; 
-        
-         
-        }
-    } 
+      color: #444444;
+      width: 100%;
+      margin-bottom: 1.7rem;
+      font-weight: $font-weight-title;
+      font-size: 2em;
+      text-align: justify;
+    }
+    .form {
+      .form-group {
+        margin-bottom: 2rem;
+      }
+    }
     .btn {
-        margin-top:1rem;
+      margin-top: 1rem;
     }
-    
-    }
-    .recaptcha {
-        transform: scale(.3);
-    }
-
+  }
+  .recaptcha {
+    transform: scale(0.3);
+  }
 }
