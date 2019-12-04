@@ -88,13 +88,14 @@ month[11] = "Dic.";
           <MDBModalHeader toggle={toggle} > </MDBModalHeader>
           <MDBModalBody> 
           <div style={{textAlign:"left"}}> 
-           <h3> {title.replace("&#8221;",'"').replace("&#8220;",'"') } </h3>
+           <h3 className="modalNoticia"> {title.replace("&#8221;",'"').replace("&#8220;",'"') } </h3>
           </div>
+          <div class="scrollbar" id="style-2">
           <div className="date modalNoticia"> 
           <span> {datee.month+" "+datee.day+", "+datee.year}</span>
           
           </div>
-          <div class="scrollbar" id="style-2">
+          
           <div className="content"> 
           <div className="contentHtml modalNoticia" dangerouslySetInnerHTML={{ __html: content_ }} />
           </div>
@@ -102,9 +103,9 @@ month[11] = "Dic.";
          
            </MDBModalBody>
           <MDBModalFooter>
-              <MDBBtn href="https://www.finanzasdigital.com/category/noticias" target="_blank" className="btn-round btn-color-primary" onClick={toggle}>Ver en Finanzas Digital</MDBBtn>
-          <MDBBtn className="btn-round btn-color-primary" onClick={toggle}>Cerrar</MDBBtn>
-        </MDBModalFooter>
+          <MDBBtn className="btn-round color" onClick={toggle}>Cerrar</MDBBtn>
+         <MDBBtn href={"https://www.finanzasdigital.com/?p="+postId} target="_blank" className="btn-round color" onClick={toggle}>Leer más en Finanzas Digital</MDBBtn>
+         </MDBModalFooter>
           </MDBModal>
         </>
      ); 
