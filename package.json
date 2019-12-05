@@ -1,5 +1,6 @@
 {
-  "name": "now-ui-kit-react",
+  "name": "global-ratings",
+  "homepage": "http://www.glratings.com",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
