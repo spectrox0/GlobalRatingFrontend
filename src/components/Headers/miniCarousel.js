@@ -19,6 +19,7 @@ const CarouselPage = () => {
       showIndicators={false}
       className="z-depth-2"
       slide
+      data-interval={5}
     >
       <MDBCarouselInner>
         <MDBCarouselItem itemId="1">
