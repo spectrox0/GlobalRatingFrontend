@@ -86,49 +86,58 @@ export default function Dictamen({ location }) {
       month[10] = "Nov.";
       month[11] = "Dic.";
       var n = month[date_.getMonth()];
-      setDate({ day: day, month: n, year });
+      setDate({
+        day: day,
+        month: n,
+        year
+      });
     }
   }, [dictamen]);
 
   return (
     <>
-      <Header urlImage={ImgHeader} />
+      <Header urlImage={ImgHeader} />{" "}
       <section className="dictamen">
         <MDBContainer>
+          {" "}
           {isLoading ? (
             <div className="container-load-posts">
               <div className="spinner-grow text-primary" role="status">
-                <span className="sr-only">Cargando...</span>
-              </div>
+                <span className="sr-only"> Cargando... </span>{" "}
+              </div>{" "}
             </div>
           ) : (
             <>
               {" "}
               <MDBRow className="title">
-                <h2>{dictamen.title}</h2>{" "}
-              </MDBRow>
+                <h1> {dictamen.title} </h1>{" "}
+              </MDBRow>{" "}
               <MDBRow>
                 <MDBCol sm="6" className="col-content">
                   <span className="space">
                     {" "}
                     {date.month + " " + date.day + ", " + date.year}{" "}
                   </span>
-
                   <div
                     className="contentHtml"
-                    dangerouslySetInnerHTML={{ __html: content }}
-                  />
-                </MDBCol>
+                    dangerouslySetInnerHTML={{
+                      __html: content
+                    }}
+                  />{" "}
+                </MDBCol>{" "}
                 <MDBCol sm="6" className="col-scribd">
                   <div
                     className="contentHtml"
-                    dangerouslySetInnerHTML={{ __html: scribd }}
-                  />
-                </MDBCol>
-              </MDBRow>
+                    dangerouslySetInnerHTML={{
+                      __html: scribd
+                    }}
+                  />{" "}
+                </MDBCol>{" "}
+              </MDBRow>{" "}
             </>
-          )}
+          )}{" "}
           <MDBRow className="options">
+            {" "}
             {emision.data && (
               <>
                 <MDBBtn
@@ -140,9 +149,10 @@ export default function Dictamen({ location }) {
                     search: `?id=${emision.data.emisionByDictamen.emisor._id}`
                   }}
                 >
-                  Cliente
-                </MDBBtn>
+                  Perfil del Emisor{" "}
+                </MDBBtn>{" "}
                 <div>
+                  {" "}
                   {emision.data.emisionByDictamen.idProvidencia.length > 0 && (
                     <MDBBtn
                       className="btn-color-primary"
@@ -153,9 +163,9 @@ export default function Dictamen({ location }) {
                         search: `?id=${emision.data.emisionByDictamen.idProvidencia}`
                       }}
                     >
-                      Providencia
+                      Providencia{" "}
                     </MDBBtn>
-                  )}
+                  )}{" "}
                   {emision.data.emisionByDictamen.idProspecto.length > 0 && (
                     <MDBBtn
                       className="btn-color-primary"
@@ -166,14 +176,14 @@ export default function Dictamen({ location }) {
                         search: `?id=${emision.data.emisionByDictamen.idProspecto}`
                       }}
                     >
-                      > Prospecto
+                      > Prospecto{" "}
                     </MDBBtn>
-                  )}
-                </div>
+                  )}{" "}
+                </div>{" "}
               </>
-            )}
-          </MDBRow>
-        </MDBContainer>
+            )}{" "}
+          </MDBRow>{" "}
+        </MDBContainer>{" "}
         {dictamen && emision.data.emisionByDictamen && (
           <ShareFriend
             socialNetworks
@@ -181,8 +191,8 @@ export default function Dictamen({ location }) {
             message={`Leer el ${dictamen.title} elaborado por Global Ratings Sociedad Calificadora de Riesgo, entrando al siguiente enlace:`}
             messageSocialNetworks={`Leer el ${dictamen.title} elaborado por Global Ratings Sociedad Calificadora de Riesgo, entrando al siguiente enlace:`}
           />
-        )}
-      </section>
+        )}{" "}
+      </section>{" "}
     </>
   );
 }

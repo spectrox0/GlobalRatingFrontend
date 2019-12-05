@@ -51,7 +51,7 @@ export default function LeyesNormativas() {
       <div className="page-leyes-normativas">
         <MDBContainer>
           <MDBRow className="title">
-            <h2>Leyes y Normativas</h2>{" "}
+            <h1>Leyes y Normativas</h1>{" "}
           </MDBRow>
 
           {data && !loading ? (

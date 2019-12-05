@@ -62,7 +62,7 @@ export default function LeyNormativa({ location }) {
           ) : (
             <>
               <MDBRow className="title">
-                <h2>{data.leyesNormativasID.titulo}</h2>{" "}
+                <h1>{data.leyesNormativasID.titulo}</h1>{" "}
               </MDBRow>
 
               <MDBRow>

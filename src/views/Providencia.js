@@ -110,7 +110,7 @@ export default function Dictamen({ location }) {
           ) : (
             <>
               <MDBRow className="title">
-                <h2>{dictamen.title}</h2>{" "}
+                <h1>{dictamen.title}</h1>{" "}
               </MDBRow>
               <MDBRow>
                 <MDBCol sm="6" className="col-content">
@@ -151,7 +151,7 @@ export default function Dictamen({ location }) {
                     search: `?id=${emision.data.emisionByProvidencia.emisor._id}`
                   }}
                 >
-                  Emisor
+                  Perfil del Emisor
                 </MDBBtn>
                 <div>
                   {emision.data.emisionByProvidencia.idDictamen.length > 0 && (
