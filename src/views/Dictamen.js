@@ -45,7 +45,6 @@ export default function Dictamen({ location }) {
     );
     setScribd(Scribd);
     setContent(Content);
-    console.log(Scribd);
     setDictamen(data.postBy);
     setLoading(false);
   };
@@ -54,7 +53,7 @@ export default function Dictamen({ location }) {
     if (data) {
       getContent();
     }
-  }, [data]);
+  }, [data, getContent]);
 
   React.useEffect(() => {
     initGA();
@@ -137,7 +136,7 @@ export default function Dictamen({ location }) {
                   size="lg"
                   tag={Link}
                   to={{
-                    pathname: "/perfilCliente",
+                    pathname: "/perfilCliente/ve",
                     search: `?id=${emision.data.emisionByDictamen.emisor._id}`
                   }}
                 >
@@ -150,7 +149,7 @@ export default function Dictamen({ location }) {
                       size="lg"
                       tag={Link}
                       to={{
-                        pathname: "/providencia",
+                        pathname: "/providencia/ve",
                         search: `?id=${emision.data.emisionByDictamen.idProvidencia}`
                       }}
                     >
@@ -163,7 +162,7 @@ export default function Dictamen({ location }) {
                       size="lg"
                       tag={Link}
                       to={{
-                        pathname: "/prospecto",
+                        pathname: "/prospecto/ve",
                         search: `?id=${emision.data.emisionByDictamen.idProspecto}`
                       }}
                     >

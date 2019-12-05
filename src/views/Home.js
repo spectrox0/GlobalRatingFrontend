@@ -15,7 +15,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { QUERY_NOTICIAS, QUERY_DICTAMENES } from "./helpers/graphql/querys";
 import client from "./helpers/graphqlClientFinanzas";
 
-export default function Index() {
+export default function Index({ country }) {
   React.useEffect(() => {
     initGA();
   }, []);
@@ -37,7 +37,7 @@ export default function Index() {
     <div className="homeContainer">
       <IndexHeader />
       <div className="main">
-        <Dictamenes dictamenes={dictamenes.data} />
+        <Dictamenes dictamenes={dictamenes.data} country={country} />
         <Noticias noticias={noticias.data} />
       </div>
     </div>

@@ -31,7 +31,7 @@ export default function LeyesNormativas() {
           <li key={_id}>
             <Link
               to={{
-                pathname: "/ve/leynormativa",
+                pathname: "/leynormativa/ve",
                 search: `?id=${_id}`
               }}
             >

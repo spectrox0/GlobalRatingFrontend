@@ -114,7 +114,7 @@ export default function Dictamen({ location }) {
                   size="lg"
                   tag={Link}
                   to={{
-                    pathname: "/perfilCliente",
+                    pathname: "/perfilCliente/ve",
                     search: `?id=${emision.data.emisionByProspecto.emisor._id}`
                   }}
                 >
@@ -127,7 +127,7 @@ export default function Dictamen({ location }) {
                       size="lg"
                       tag={Link}
                       to={{
-                        pathname: "/providencia",
+                        pathname: "/providencia/ve",
                         search: `?id=${emision.data.emisionByProspecto.idProvidencia}`
                       }}
                     >
@@ -140,7 +140,7 @@ export default function Dictamen({ location }) {
                       size="lg"
                       tag={Link}
                       to={{
-                        pathname: "/dictamen",
+                        pathname: "/dictamen/ve",
                         search: `?id=${emision.data.emisionByProspecto.idDictamen}`
                       }}
                     >

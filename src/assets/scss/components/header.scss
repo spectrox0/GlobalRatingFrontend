@@ -1,4 +1,11 @@
 .page-header {
+  .carrouselHeader {
+    .carousel-inner .carousel-item {
+      transition: -webkit-transform 0.3s ease;
+      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+    }
+  }
   .page-header-filter {
     position: absolute;
     width: 100%;

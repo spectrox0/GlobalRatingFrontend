@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React from "react";
 // reactstrap components
 import {
   MDBBtn,
@@ -19,7 +19,6 @@ export default function DictamenesDeCaificacion({ dictamenes, country }) {
         <CardDictamen {...dictamen} />
       </MDBCol>
     ));
-
   return (
     <div className="dictamenes">
       <MDBContainer>

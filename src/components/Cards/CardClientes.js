@@ -14,7 +14,7 @@ export default function CardClientes({ _id, nombre, fichaCliente }) {
   return (
     <MDBCard
       to={{
-        pathname: "/perfilCliente",
+        pathname: "/perfilCliente/ve",
         search: `?id=${_id}`
       }}
       tag={Link}

@@ -12,7 +12,7 @@ export default function CardDictamenes({ postId, featuredImage, date, title }) {
   return (
     <MDBCard
       to={{
-        pathname: "/dictamen",
+        pathname: "/dictamen/ve",
         search: `?id=${postId}`
       }}
       className="card-dictamen2"
