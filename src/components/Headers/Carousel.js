@@ -18,29 +18,40 @@ const CarouselPage = () => {
       length={3}
       showControls={false}
       showIndicators={false}
-      className="z-depth-1"
+      className="z-depth-2"
+      interval={3000}
     >
       <MDBCarouselInner>
         <MDBCarouselItem itemId="1">
           <MDBView>
-            <img className="img-carousel" src={Img1} alt="First slide" />
-            <MDBMask overlay="black-light" />
+            <img
+              className="img-carousel d-block w-100"
+              src={Img1}
+              alt="First slide"
+            />
           </MDBView>
-          <MDBCarouselCaption></MDBCarouselCaption>
         </MDBCarouselItem>
         <MDBCarouselItem itemId="2">
           <MDBView>
-            <img className="img-carousel" src={Img2} alt="Second slide" />
+            <img
+              className="img-carousel d-block w-100"
+              src={Img2}
+              alt="First slide"
+            />
+
             <MDBMask overlay="black-strong" />
           </MDBView>
-          <MDBCarouselCaption></MDBCarouselCaption>
         </MDBCarouselItem>
         <MDBCarouselItem itemId="3">
           <MDBView>
-            <img className="img-carousel" src={Img3} alt="Third slide" />
+            <img
+              className="img-carousel d-block w-100"
+              src={Img3}
+              alt="First slide"
+            />
+
             <MDBMask overlay="black-slight" />
           </MDBView>
-          <MDBCarouselCaption></MDBCarouselCaption>
         </MDBCarouselItem>
       </MDBCarouselInner>
     </MDBCarousel>

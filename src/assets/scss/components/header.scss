@@ -1,23 +1,22 @@
 .page-header {
-  .page-header-filter {
-    position: absolute;
-    width: 100%;
-    height: auto;
-    max-height: $height-header;
-    z-index: 100;
-    @include gradient-background();
-    @media screen and(max-width:991px) {
-      height: 40vh;
-    }
-  }
   .page-header-image {
     position: relative;
-    z-index: 50;
     .img-carousel {
-      height: auto;
       max-height: $height-header;
-      width: 100%;
-      object-fit: fill;
+      @media screen and (max-width: 992px) {
+        height: auto;
+      }
+    }
+  }
+  .container-title {
+    width: 100%;
+    padding: 0.7rem;
+    margin: 0;
+    font-family: "Ovo", serif;
+
+    h6 {
+      font-family: "Ovo", serif;
+      font-size: 1rem;
     }
   }
   .page-header-mini-carousel {
