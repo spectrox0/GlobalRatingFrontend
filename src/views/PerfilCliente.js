@@ -176,7 +176,7 @@ export default function PerfilCliente({ location }) {
                     pathname: "/clientes/${country}"
                   }}
                 >
-                  Regresar a Emisores
+                  Emisores
                 </MDBBtn>
               </section>
             </MDBContainer>

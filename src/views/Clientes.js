@@ -60,7 +60,7 @@ export default function Clientes() {
       <section className="clientesContainer">
         <MDBContainer>
           <MDBRow className="title">
-            <h2>Emisores</h2>
+            <h1>Emisores</h1>
             <div className="filter">
               <span>Ordenar por: </span>
               <label htmlFor="toggle-1">

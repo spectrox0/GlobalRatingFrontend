@@ -101,7 +101,7 @@ export default function Contactanos() {
             <MDBCol sm="12" md="6">
               <div className="info">
                 <MDBRow>
-                  <h3> Ubícanos </h3>
+                  <h1> Ubícanos </h1>
                 </MDBRow>
 
                 <MDBRow>

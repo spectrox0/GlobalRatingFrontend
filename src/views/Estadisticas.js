@@ -178,7 +178,7 @@ export default function Estadisticas() {
       <div className="estadisticas-pag">
         <MDBContainer>
           <MDBRow className="title">
-            <h2>Estadísticas</h2>{" "}
+            <h1>Estadísticas</h1>{" "}
           </MDBRow>
           <MDBRow className="row-select">
             {rangeYear.data && (

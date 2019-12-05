@@ -18,7 +18,7 @@ export default function NoticiasFinanzas({ noticias }) {
     <div className="noticias">
       <MDBContainer>
         <MDBRow className="title">
-          <h2>Titulares Finanzas Digital</h2>
+          <h1>Titulares Finanzas Digital</h1>
         </MDBRow>
 
         {!noticias ? (
