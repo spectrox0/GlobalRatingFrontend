@@ -94,7 +94,7 @@ month[11] = "Dic.";
           <span> {datee.month+" "+datee.day+", "+datee.year}</span>
           
           </div>
-          <div class="scrollbar" id="style-2">
+          <div className="scrollbar" id="style-2">
           <div className="content"> 
           <div className="contentHtml modalNoticia" dangerouslySetInnerHTML={{ __html: content_ }} />
           </div>
