@@ -1,6 +1,10 @@
 .modal-open { overflow-y: scroll } 
 
 .modal { 
+    br {
+        display: none;
+      }
+
     .modal-content {
         background: rgba(255,255,255,.95);
         background: linear-gradient(rgba(255,255,255,.92), rgb(255,255,255));
