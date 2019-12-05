@@ -241,6 +241,7 @@ query emisionByDictamen($_id:String!) {
     idProspecto
     emisor {
       _id
+      nombre
     }
   }
 }
@@ -278,7 +279,7 @@ export const RANGE_YEAR = gql`
 `
 export const QUERY_PAISES = gql`
  {
-   paises {
+  paisesActivos {
     abreviatura
     nombre
     activo

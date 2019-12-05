@@ -1,81 +1,63 @@
 .estadisticas-pag {
-    min-height: 100vh;
-    padding-top: 1.8rem;
-    background: $color-background;
-   .leyenda, thead {
-      
-       align-items: center;
-        i {
-            font-size: .3em;
-            padding: .1rem;
-            position: relative;
-            bottom: .2rem;
-            
-        }
-     }
-     .leyenda {
-         font-size: .8em;
-     }
-    .title {
-        display: flex;
-        h2 {
-            font-size:1.8em; 
-            display: flex;
-            flex-direction: column;
-            font-weight: $font-weight-title;
-          
+  padding: 0.8rem;
+  min-height: 100vh;
+  padding-top: 1.8rem;
+  background: $color-background;
+  .leyenda,
+  thead {
+    align-items: center;
+    i {
+      font-size: 0.3em;
+      padding: 0.1rem;
+      position: relative;
+      bottom: 0.2rem;
+    }
+  }
+  .leyenda {
+    font-size: 0.8em;
+  }
 
-            &:after {
-            content: "";
-            height:$height-underline;
-            background: $color-primary;
-            width: 20rem; 
-            max-width: 100%;
-        }
-    } }
-    .row-select{
-        margin-bottom: 1rem;
-        .select{
-            width:10rem; 
-            max-width: 100%;
-           
-        }
+  .row-select {
+    margin-bottom: 1rem;
+    .select {
+      width: 10rem;
+      max-width: 100%;
     }
-    .row-table{
-        padding-right:1rem; 
-        @import '../components/table.scss'; 
-    }
-    .total { display: flex;
-            flex-direction: column;
-            background: $footer-color; 
-            padding: .7rem; 
-            padding-left:1rem;
-            width: 70vh;
-            min-width: 8rem;
-            margin:1rem;
-            margin-left: 0;
-          
-        span {
-            font-size:1.2em; 
-            display: flex;
-            justify-content: space-between;
-            b {
-                color:$color-secondary; 
-            }
-            
-        }
-      
-    }
-    .row-btn{
-      .btn{
-          margin-left: 40%;
-          margin-right: 40%;
+  }
+  .row-table {
+    padding-right: 1rem;
+    @import "../components/table.scss";
+  }
+  .total {
+    display: flex;
+    flex-direction: column;
+    background: $footer-color;
+    padding: 0.7rem;
+    padding-left: 1rem;
+    width: 70vh;
+    min-width: 8rem;
+    margin: 1rem;
+    margin-left: 0;
+
+    span {
+      font-size: 1.2em;
+      display: flex;
+      justify-content: space-between;
+      b {
+        color: $color-secondary;
       }
     }
-    .row-text-center{
-        text-align: center;
+  }
+  .row-btn {
+    .btn {
+      margin-left: 40%;
+      margin-right: 40%;
     }
-    .row-text-right{
-        text-align: right;
-    }
+  }
+  .row-text-center {
+    text-align: center;
+  }
+  .row-text-right {
+    text-align: right;
+  }
 }

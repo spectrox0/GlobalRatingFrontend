@@ -6,59 +6,95 @@ import React,{useState , useEffect} from "react";
 import DarkFooter from "components/Footers/DarkFooter.js";
 import IndexNavbar from "components/Navbars/Navbar.js";
 import Routes from './views/helpers/Routes';
-import client from './views/helpers/graphqlEndpoint'
-import CountryContext from './context/region.js'
 
-import { ApolloProvider } from '@apollo/react-hooks'; 
 import axios from 'axios'
 import {useQuery} from '@apollo/react-hooks'; 
 import {QUERY_PAISES} from './views/helpers/graphql/querys'; 
+import Loading from './views/Loading'; 
 export default function App () { 
 
     const [country, setCountry] = useState(null); 
-  const changeCountry =(region)=> {
-    setCountry(region);
+
+  const changeCountry =(value,img,nombre)=> {
+   
+  localStorage.setItem("country",value); 
+  setCountry({ value:value, img:img, nombre:nombre} ); 
+ 
   } 
   const {data , loading , error} = useQuery(QUERY_PAISES); 
+  
+  const getGeoInfo =  async  () => {
+  try {
+    let res =  await axios.get('https://ipapi.co/json/'); 
+   res = res.data.country.toLowerCase();
 
-  const getGeoInfo = () => {
-    axios.get('https://ipapi.co/json/').then((response) => {
-        let data = response.data;
-        data = data.country.toLowerCase();
-        if(data.country ==="pa") { 
-              localStorage.setItem("country",data); 
-              setCountry(data);
-           } else {
-              setCountry("ve");
-              localStorage.setItem("country","ve"); 
-           }
-         
-    }).catch((error) => {
-      setCountry("ve");
+    const newRes =  await data.paisesActivos.find(element => element.abreviatura===res);
+    if(newRes){
+     localStorage.setItem("country",newRes.abreviatura); 
+     return setCountry({ value: newRes.abreviatura, nombre:newRes.nombre, img:newRes.bandera }); 
+    
+    } else {
+  
+     localStorage.setItem("country","ve"); 
+     return setCountry({ value: "ve", nombre:"venezuela"} )
+ 
+    } } catch(err) {
       localStorage.setItem("country","ve"); 
-    });
+      return setCountry({ value: "ve", nombre:"venezuela"});
+  }
+  
   };
-
-  useEffect(()=> {
-     setCountry(localStorage.getItem("country")); 
-     if(country) {
-         setCountry(country)
-         return; 
+ React.useEffect( ()=> {
+   if( (data && !loading ) || error ) {
+     if(error) {
+      localStorage.setItem("country","ve"); 
+      return setCountry({ value: "ve", nombre:"venezuela"} )
      }
-    getGeoInfo(); 
+      else
+     if(data.paisesActivos.length>1)
+     getCountry(); 
+     else { 
+       localStorage.setItem("country","ve"); 
+       return setCountry({ value: "ve", nombre:"venezuela"} )
+       }
+   }
+ }, [data,loading,error])
 
-  },[]); 
+  const getCountry= async () => {
+    var res = await localStorage.getItem("country");
+    if(res) {
+      
+      const newRes =  data.paisesActivos.find(element => element.abreviatura===res); 
+      if(newRes) {
+      localStorage.setItem("country",newRes.abreviatura); 
+      return setCountry({ value: newRes.abreviatura, nombre:newRes.nombre, img:newRes.bandera }); 
+      }else {
+        localStorage.setItem("country","ve"); 
+       return setCountry({ value: "ve", nombre:"venezuela"} )
+      } }
+      else  {
+        getGeoInfo(); 
+       
+       }
+       
 
+  }
  
     return ( 
     <BrowserRouter>
-          <CountryContext.Provider 
-          value={{ country:country , changeCountry: changeCountry}} >
-            {data && <IndexNavbar countrys={data.paises} curentCountry={{country }} />}
-          
-          <Routes />
-          <DarkFooter/>
-          </CountryContext.Provider>
+         
+            {( ((data && !loading ) || error) && country ) &&
+            <IndexNavbar
+            countrys={data?data.paisesActivos:null} 
+            country={country}
+            changeCountry={changeCountry}
+             />}
+           {country?  <>  <Routes country={country.value} />  <DarkFooter/> </> : 
+           <Loading/>
+            }
+        
+         
+      
        
         </BrowserRouter>) 
 }

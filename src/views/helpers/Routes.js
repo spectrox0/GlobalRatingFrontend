@@ -15,11 +15,10 @@ import LeyNormativa from "views/LeyNormativa.js";
 import PerfilCliente from "views/PerfilCliente.js"
 import Providencia from "views/Providencia.js";
 import Prospecto from "views/Prospecto.js"
-import CountryContext from "../../context/region"
 import {animateScroll as scroll} from  'react-scroll'; 
-export default function Routes() {
+export default function Routes({country}) {
    
-  const {country} = useContext(CountryContext); 
+
 
   const handlingRender = ( props, Component) => {
     scroll.scrollToTop({duration:500})
@@ -45,13 +44,14 @@ export default function Routes() {
  <Route path="/contactanos/:countryName" render={ (props) =>   handlingRender(props,Contactanos) } />
  <Route path="/clientes/:countryName" render = { (props)=>  handlingRender(props,Clientes)  } />
   <Route path="/:countryName/leynormativa"  render = { props => handlingRender(props,LeyNormativa)} />
+ 
    {country && (  <>
    <Redirect exact from="/" to={ {
     pathname:`/index/${country}` }
    } /> 
    } /> 
-   </> )}
-   <Route path="*" render = { props=> <Loading {...props} /> }/>
+</> ) }
+  
    
   
      

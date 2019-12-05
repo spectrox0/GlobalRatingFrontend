@@ -18,15 +18,14 @@ import {
 } from 'react-share'
 
 
-export default function ShareFriend({socialNetworks}) {
+export default function ShareFriend({socialNetworks,subject, message,messageSocialNetworks }) {
     const url = window.location.href; 
-    const title = "Visita la página web de Global Ratings en el siguiente enlace: "
     return <> 
       <MDBContainer className="rowCompartir"> 
      
       <EmailShareButton 
-       subject="Visita Global Ratings!!! "
-       body=" Alguien ha compartido el siguiente link contigo "
+       subject={subject}
+       body={message}
        url={window.location.href}
        openWindow
        > 
@@ -38,14 +37,14 @@ export default function ShareFriend({socialNetworks}) {
       <>
       <FacebookShareButton 
       url={window.location.href}
-      quote={title}
+      quote={messageSocialNetworks}
       >
     <MDBBtn >
             <MDBIcon fab icon="facebook-f" size="2x" />
           </MDBBtn> 
       </FacebookShareButton> 
       <TwitterShareButton
-       title={title}
+       title={messageSocialNetworks}
       url={window.location.href}> 
         <MDBBtn >
             <MDBIcon fab icon="twitter" size="2x" />
@@ -54,7 +53,7 @@ export default function ShareFriend({socialNetworks}) {
       <WhatsappShareButton 
       url={window.location.href}
       separator=":: "
-      title={title}>
+      title={messageSocialNetworks}>
  <MDBBtn >
             <MDBIcon fab icon="whatsapp" size="2x" />
           </MDBBtn> 
