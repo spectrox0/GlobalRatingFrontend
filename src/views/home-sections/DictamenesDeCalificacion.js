@@ -24,7 +24,7 @@ export default function DictamenesDeCaificacion({ dictamenes, country }) {
     <div className="dictamenes">
       <MDBContainer>
         <MDBRow className="title">
-          <h2>Dictámenes de Calificación</h2>
+          <h1>Dictámenes de Calificación</h1>
         </MDBRow>
 
         {!dictamenes ? (
