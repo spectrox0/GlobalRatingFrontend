@@ -18,7 +18,7 @@ const CarouselPage = () => {
       length={3}
       showControls={false}
       showIndicators={false}
-      className="z-depth-1 carrouselHeader"
+      className="z-depth-1"
     >
       <MDBCarouselInner>
         <MDBCarouselItem itemId="1">
