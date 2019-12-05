@@ -209,7 +209,7 @@ export default function Calificacion() {
                   eventuales cambios en el emisor, en el sector o área a que
                   éste pertenece, o en la economía.
                 </p>
-                <ul>
+                <ul className="space">
                   <li>
                     <b>Sub-Categoría B1:</b> Se trata de instrumentos que
                     presentan un bajo riesgo para la inversión. Tienen una buena
@@ -249,7 +249,7 @@ export default function Calificacion() {
                   área a que éste pertenece o en la economía, lo que podría
                   producir retardo en el pago o pérdida de intereses.
                 </p>
-                <ul>
+                <ul className="space">
                   <li>
                     <b>Sub-Categoría C1:</b> Se trata de instrumentos que
                     presentan riesgo moderado para la inversión. Cuentan con una
