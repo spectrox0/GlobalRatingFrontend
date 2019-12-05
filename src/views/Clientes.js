@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { initGA } from "./helpers/initGA.js";
 import {
-  QUERY_EMISORES,
   QUERY_CLIENTES_BY_ALPHABETIC,
   QUERY_CLIENTES_BY_TIME,
   NUMBER_OF_EMISORES

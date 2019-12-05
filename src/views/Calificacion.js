@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Header from "../components/Headers/headersViews/Header";
 import ImgHeader from "../assets/img/headers/Header Calificación.png";
 import { initGA } from "./helpers/initGA.js";
-import { Link } from "react-router-dom";
 import ShareFriend from "./../components/Others/shareFriends";
 import {
   MDBRow,
