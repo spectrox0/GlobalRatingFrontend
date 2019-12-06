@@ -8,6 +8,12 @@
       }
     }
   }
+  .miniCarousel {
+    position: absolute;
+    bottom: 0;
+    background: red;
+    z-index: 5000;
+  }
   .container-title {
     width: 100%;
     padding: 0.7rem;

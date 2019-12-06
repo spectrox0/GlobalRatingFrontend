@@ -45,7 +45,7 @@ export default function CardEmision({
           {idDictamen.length > 0 && (
             <Link
               to={{
-                pathname: "/dictamen",
+                pathname: "/dictamen/ve",
                 search: `?id=${idDictamen}`
               }}
             >
@@ -59,7 +59,7 @@ export default function CardEmision({
           {idProspecto.length > 0 && (
             <Link
               to={{
-                pathname: "/prospecto",
+                pathname: "/prospecto/ve",
                 search: `?id=${idProspecto}`
               }}
             >
@@ -72,7 +72,7 @@ export default function CardEmision({
           {idProvidencia.length > 0 && (
             <Link
               to={{
-                pathname: "/providencia",
+                pathname: "/providencia/ve",
                 search: `?id=${idProvidencia}`
               }}
             >

@@ -110,7 +110,7 @@ export default function LeyNormativa({ location }) {
                   className="btn-color-primary"
                   tag={Link}
                   to={{
-                    pathname: "/ve/leynormativa/ve",
+                    pathname: "/leynormativa/ve",
                     search: `?id=${Next.data.leyesNormativasNext}`
                   }}
                 >

@@ -173,7 +173,7 @@ export default function PerfilCliente({ location }) {
                   size="lg"
                   tag={Link}
                   to={{
-                    pathname: "/clientes/${country}"
+                    pathname: "/clientes/ve"
                   }}
                 >
                   Emisores
