@@ -45,30 +45,30 @@ export default function Calificacion() {
           </MDBRow>
           <MDBRow>
             <p>
-              Proporciona una opinión independiente sobre la posibilidad que
+              Proporciona una opinión independiente sobre la probabilidad que
               tiene una empresa de pagar oportunamente, según las condiciones
-              pactadas, la totalidad del capital e intereses generados de una
-              obligación específica. En ningún caso implica una recomendación
-              para comprar, vender o mantener un título valor, ni una garantía
-              de su pago, y debe ser vista como otro de los insumos necesarios
-              que cualquier inversionista debe tomar en consideración a la hora
-              de tomar una decisión.
+              pactadas, la totalidad del capital e intereses generados de un
+              título de deuda específico. En ningún caso implica una
+              recomendación para comprar, vender o mantener un título valor, ni
+              una garantía de su pago, y debe ser vista como uno de los insumos
+              necesarios, pero no el único, que cualquier inversionista debe
+              considerar a la hora de tomar una decisión.
             </p>
 
             <p>
-              Para el emisor, la calificación de riesgo le permite contar con
-              una opinión independiente sobre la salud financiera de la empresa,
-              con la cual podrá detectar dificultades y aplicar correctivos
+              La calificación de riesgo le permite al emisor contar con una
+              opinión independiente sobre la salud financiera de su empresa, con
+              la cual podrá detectar dificultades y aplicar correctivos
               adecuados para solventarlas.
             </p>
 
             <p>
               Pueden ser calificados entre otros: Papeles Comerciales,
               Obligaciones, Bonos, Titularizaciones, Proyectos, Acciones o
-              Empresas (Holdings, Servicios, Comercios, Industrias, Bancos,
-              Seguros, Casas de Bolsa, etcétera), además se pretende que la
-              calificación sea comparable sin importar a qué sector económico
-              pertenece la compañía.
+              Pagarés Bursátiles de Empresas (Holdings, Servicios, Comercios,
+              Industrias, Bancos, Seguros y Casas de Bolsa, entre otros). La
+              Calificación debe ser comparable sin importar a qué sector
+              económico pertenece la compañía.
             </p>
 
             <p>
@@ -84,7 +84,7 @@ export default function Calificacion() {
 
             <p>
               La evaluación se realiza sobre información pública de la compañía
-              y del sector al que pertenece, así como información interna
+              y del sector al que pertenece, así como datos internos
               suministrada voluntariamente por el emisor bajo un convenio de
               confidencialidad con la calificadora, y se complementa con
               reuniones que se realizan con distintos departamentos de la
@@ -319,8 +319,8 @@ export default function Calificacion() {
                 <li>
                   Lista de Recaudos:{" "}
                   <span>
-                    Se solicita al emisor una lista inicial con la información
-                    mínima que debe suministrar para iniciar la evaluación.
+                    Se suministra al emisor una lista inicial con la información
+                    mínima requerida para iniciar la evaluación.
                   </span>
                 </li>
                 <li>
@@ -336,25 +336,24 @@ export default function Calificacion() {
                   </span>
                 </li>
                 <li>
-                  Levantamiento de Información:
+                  Levantamiento de Información:{" "}
                   <span>
                     Según el tipo de empresa y de acuerdo a su estructura
                     organizativa, se pueden realizar entrevistas en áreas tales
                     como: Mercadeo, Finanzas, Tesorería, Planificación, Planta
-                    (en caso que sea una industria), Contraloría y Riesgo (en
+                    (en caso que sea una industria) o Contraloría y Riesgo (en
                     caso de una institución financiera), entre otras.
                   </span>
                 </li>
                 <li>
                   Elaboración del dictamen de calificación:{" "}
                   <span>
-                    Con base en la información consignada por la empresa, se
-                    elabora el dictamen que describe los factores de importancia
-                    que inciden en la calificación: Perfil del Emisor,
-                    descripción general de la emisión, entorno económico,
-                    desempeño financiero, factores críticos de riesgo,
-                    proyecciones, susceptibilidad de la calificación y
-                    fundamentos de la calificación. Luego este es enviado sin
+                    Con base en la información recabada, se elabora el dictamen
+                    que describe los factores de importancia que inciden en la
+                    calificación: Perfil del Emisor, descripción general de la
+                    emisión, entorno económico, desempeño financiero, factores
+                    críticos de riesgo, proyecciones, susceptibilidad y
+                    fundamentos de la calificación. Luego es enviado sin
                     calificación para su revisión y el emisor da su opinión al
                     respecto y aprueba o desaprueba su contenido por si incluye
                     información de carácter estratégico que no desee divulgar.
@@ -364,23 +363,22 @@ export default function Calificacion() {
                   Determinación de la Calificación Metodológica:{" "}
                   <span>
                     Se evalúan las diferentes variables económicas - financieras
-                    que influyen en la determinación de la calificación, se
-                    alimentan nuestros modelos con toda la data recabada, se
-                    realizan los análisis financieros y complementarios
-                    (sectoriales, propiedad, gerencia, etc.); se informa al
-                    emisor, y si está de acuerdo con su calificación, pero no
-                    desea hacerla pública, el proceso finaliza en esta etapa.
-                    (En caso de tratarse de una evaluación privada se concluye
-                    con la remisión del informe definitivo al emisor con las
-                    firmas del equipo técnico).
+                    que influyen en la calificación de riesgo; se alimentan
+                    nuestros modelos con toda la data recabada, se realizan los
+                    análisis financieros y complementarios (sectoriales,
+                    propiedad y gerencia, entre otros); se informa al emisor
+                    quedando en espera de su aprobación para continuar con el
+                    proceso. En caso de tratarse de una evaluación privada se
+                    concluye con la remisión del informe definitivo al emisor
+                    con las firmas del equipo técnico.
                   </span>
                 </li>
                 <li>
                   Junta Calificadora:{" "}
                   <span>
-                    En caso que el emisor apruebe su calificación, se somete a
+                    Si el emisor acepta su calificación, se somete a
                     consideración de nuestra Junta Calificadora, quien discute
-                    el caso y emite un Dictamen de Riesgo.
+                    el caso y emite un Dictamen definitivo.
                   </span>
                 </li>
                 <li>

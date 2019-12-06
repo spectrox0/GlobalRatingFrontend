@@ -27,26 +27,26 @@ export default function() {
             </MDBCol>
             <MDBCol sm="7">
               <p>
-                <b>Global Ratings Sociedad Calificadora de Riesgo,</b> inicia
-                sus operaciones en el año 1994 y se convierte en la primera
-                Sociedad Calificadora de Riesgo autorizada por la Comisión
-                Nacional de Valores de Venezuela (actualmente Superintendencia
-                Nacional de Valores), según Resolución Nº 057-94 de fecha 08 de
-                Marzo del mismo año. Durante más de 25 años han sido calificadas
-                emisiones de Papeles Comerciales, Obligaciones Quirografarias,
-                Títulos de Participación y Acciones Preferidas de un número
-                importante de empresas públicas y privadas de diferentes
-                sectores de la economía (Industrias, Servicio, Comercio, Bancos,
-                Casas de Bolsa y Sucursales de Bancos Extranjeros, entre otros).
+                En <b>Global Ratings Sociedad Calificadora de Riesgo,</b>{" "}
+                iniciamos operaciones en el año 1994, convirtiéndonos en la
+                primera Sociedad Calificadora de Riesgo autorizada por la
+                Comisión Nacional de Valores de Venezuela (actualmente
+                Superintendencia Nacional de Valores), según Resolución Nº
+                057-94 de fecha 08 de Marzo del mismo año. Durante más de 25
+                años hemos calificado emisiones de Papeles Comerciales,
+                Obligaciones Quirografarias, Títulos de Participación y Acciones
+                Preferidas de un número importante de empresas públicas y
+                privadas de diferentes sectores de la economía (Industrias,
+                Servicios, Comercios, Bancos, Casas de Bolsa y Sucursales de
+                Bancos Extranjeros, entre otros).
               </p>
 
               <p>
-                En Global Ratings SCR contamos con profesionales con experiencia
-                en análisis económico-financiero para evaluar, sustentar y
-                calificar la capacidad de pago de emisiones de títulos de deuda,
-                de acuerdo a la normativa respectiva y a la metodología de
-                calificación debidamente autorizada por la Superintendencia
-                Nacional de Valores.
+                Contamos con profesionales experimentados en el análisis
+                económico-financiero para evaluar y calificar la capacidad de
+                pago de emisiones de títulos de deuda, de acuerdo a la normativa
+                establecida y a la metodología de calificación debidamente
+                autorizada por la Superintendencia Nacional de Valores.
               </p>
             </MDBCol>
           </MDBRow>
@@ -86,38 +86,37 @@ export default function() {
                 <ul>
                   <li>
                     <p>
-                      <b>Calidad e integridad del proceso de calificación:</b>
-                      Nos esforzamos para que nuestras opiniones ayuden a
-                      reducir las asimetrías de información de los participantes
-                      en el mercado de capitales. Nuestra metodología es
-                      rigurosa, sistemática y es validada continuamente con base
-                      a nuestra experiencia histórica.
+                      <b>Calidad e integridad del proceso de calificación: </b>
+                      Nos esforzamos para que nuestras opiniones reduzcan las
+                      asimetrías de información de los participantes en el
+                      Mercado de Capitales. Nuestra metodología es rigurosa,
+                      sistemática y es validada continuamente con base a nuestra
+                      experiencia.
                     </p>
                   </li>
                   <li>
                     <p>
-                      <b>Independencia y objetividad:</b>
-                      Nuestras calificaciones son independientes de presiones
-                      políticas, económicas, y conflictos de interés de sus
-                      propietarios, o intereses financieros de sus empleados,
-                      evitando así sesgos que puedan afectar la imparcialidad y
-                      equilibrio en nuestros análisis.
+                      <b>Independencia y objetividad: </b>
+                      Emitimos opiniones libres de presiones políticas y
+                      económicas, así como de posibles conflictos de interés de
+                      nuestros propietarios y empleados, evitando así sesgos que
+                      puedan afectar la imparcialidad y equilibrio en los
+                      análisis realizados.
                     </p>
                   </li>
                   <li>
                     <p>
-                      <b>Transparencia y puntualidad en la calificación:</b>
-                      Nuestro proceso de calificación es accesible, puntual y
-                      oportuno de acuerdo a los requerimientos del emisor, de
-                      tal forma que no se convierta en un obstáculo para el
-                      proceso de autorización ante la Superintendencia Nacional
-                      de Valores.
+                      <b>Transparencia y puntualidad en la calificación: </b>
+                      Nuestro proceso de calificación es accesible y oportuno de
+                      acuerdo a los requerimientos del emisor, de tal forma que
+                      no se convierta en un obstáculo para el proceso de
+                      autorización ante la Superintendencia Nacional de Valores.
                     </p>
                   </li>
 
                   <li>
                     <p>
-                      <b>Confidencialidad:</b>
+                      <b>Confidencialidad: </b>
                       Resguardamos la información no pública suministrada por el
                       emisor, bajo los términos de un acuerdo que la proteja. En
                       ese sentido, sólo es utilizada para el proceso de
