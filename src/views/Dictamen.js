@@ -114,7 +114,7 @@ export default function Dictamen({ location }) {
               </MDBRow>{" "}
               <MDBRow>
                 <MDBCol sm="6" className="col-content">
-                  <span className="space">
+                  <span className="date">
                     {" "}
                     {date.month + " " + date.day + ", " + date.year}{" "}
                   </span>
@@ -188,8 +188,8 @@ export default function Dictamen({ location }) {
           <ShareFriend
             socialNetworks
             subject={`${dictamen.title}`}
-            message={`Leer el ${dictamen.title} elaborado por Global Ratings Sociedad Calificadora de Riesgo, entrando al siguiente enlace:`}
-            messageSocialNetworks={`Leer el ${dictamen.title} elaborado por Global Ratings Sociedad Calificadora de Riesgo, entrando al siguiente enlace:`}
+            message={`Consulte: "${dictamen.title}" elaborado por Global Ratings Sociedad Calificadora de Riesgo, entrando al siguiente enlace:`}
+            messageSocialNetworks={`Consulte: "${dictamen.title}" elaborado por Global Ratings Sociedad Calificadora de Riesgo, entrando al siguiente enlace:`}
           />
         )}{" "}
       </section>{" "}

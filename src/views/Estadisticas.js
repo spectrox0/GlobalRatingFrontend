@@ -303,8 +303,8 @@ export default function Estadisticas() {
           <ShareFriend
             socialNetworks
             subject={`Estadística de las Emisiones de Títulos de deuda autorizados por la SUNAVAL en el año ${yearFilter}`}
-            message={`Revise las Estadísticas de las Emisiones de Títulos de deuda autorizados por la Superintendencia Nacional de Valores (SUNAVAL) en el año ${yearFilter}`}
-            messageSocialNetworks={`Revise las Estadísticas de las Emisiones de Títulos de deuda autorizados por la Superintendencia Nacional de Valores (SUNAVAL) en el año ${yearFilter}`}
+            message={`Consulte las Estadísticas de las Emisiones de Títulos de deuda autorizados por la Superintendencia Nacional de Valores (SUNAVAL) en el año ${yearFilter}`}
+            messageSocialNetworks={`Consulte las Estadísticas de las Emisiones de Títulos de deuda autorizados por la Superintendencia Nacional de Valores (SUNAVAL) en el año ${yearFilter}`}
           />
         }
       </div>

@@ -121,7 +121,7 @@ export default function Dictamen({ location }) {
                       backgroundSize: "cover"
                     }}
                   />
-                  <span>
+                  <span className="date">
                     {" "}
                     {date.month + " " + date.day + ", " + date.year}{" "}
                   </span>
@@ -189,8 +189,8 @@ export default function Dictamen({ location }) {
           <ShareFriend
             socialNetworks
             subject={`${dictamen.title}`}
-            message={`Leer la ${dictamen.title} entrando al siguiente enlace:`}
-            messageSocialNetworks={`Leer el ${dictamen.title} entrando al siguiente enlace:`}
+            message={`Consulte: "${dictamen.title}" entrando al siguiente enlace:`}
+            messageSocialNetworks={`Consulte: "${dictamen.title}" entrando al siguiente enlace:`}
           />
         )}
       </section>

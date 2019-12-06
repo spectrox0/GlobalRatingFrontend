@@ -91,7 +91,7 @@ export default function Dictamen({ location }) {
                       backgroundSize: "cover"
                     }}
                   />
-                  <span> {" " + date} </span>
+                  <span className="date"> {" " + date} </span>
                   <div
                     className="contentHtml"
                     dangerouslySetInnerHTML={{ __html: content }}
@@ -156,8 +156,8 @@ export default function Dictamen({ location }) {
           <ShareFriend
             socialNetworks
             subject={`${dictamen.title}`}
-            message={`Leer el ${dictamen.title} entrando al siguiente enlace:`}
-            messageSocialNetworks={`Leer el ${dictamen.title} entrando al siguiente enlace:`}
+            message={`Consulte: "${dictamen.title}" entrando al siguiente enlace:`}
+            messageSocialNetworks={`Consulte: "${dictamen.title}" entrando al siguiente enlace:`}
           />
         )}
       </section>

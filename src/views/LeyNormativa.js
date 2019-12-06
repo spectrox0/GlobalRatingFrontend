@@ -125,8 +125,8 @@ export default function LeyNormativa({ location }) {
           <ShareFriend
             socialNetworks
             subject={`Consulte ${data.leyesNormativasID.titulo}`}
-            message={`Leer más información sobre  ${data.leyesNormativasID.titulo} entrando al siguiente enlace:`}
-            messageSocialNetworks={`Leer más información sobre  ${data.leyesNormativasID.titulo} entrando al siguiente enlace:`}
+            message={`Consulte más información sobre: "${data.leyesNormativasID.titulo}" entrando al siguiente enlace:`}
+            messageSocialNetworks={`Consulte más información sobre: "${data.leyesNormativasID.titulo}" entrando al siguiente enlace:`}
           />
         )}
       </section>
