@@ -115,9 +115,7 @@ export default function Estadisticas() {
             {emision.tipoTitulo === "PAGARE_BURSATILES" && "PB"}
             {emision.tipoTitulo === "ACCIONES_PREFERIDAS" && "AP"}
           </td>
-          <td className="row-text-right">
-            {(emision.monto / 1000).toLocaleString()}
-          </td>
+          <td className="row-text-right">{emision.monto.toLocaleString()}</td>
           <td className="row-text-center">
             {new Date(emision.fechaAprovacion)
               .toLocaleDateString("es-VE", options)
@@ -231,9 +229,7 @@ export default function Estadisticas() {
                       <td> </td>
                       <td className="row-text-right">
                         {totalEmision.data &&
-                          (
-                            totalEmision.data.totalForYear / 1000
-                          ).toLocaleString()}{" "}
+                          totalEmision.data.totalForYear.toLocaleString()}{" "}
                       </td>
                     </tr>
                   </>
