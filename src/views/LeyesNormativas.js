@@ -70,7 +70,7 @@ export default function LeyesNormativas() {
 
         <ShareFriend
           subject={`Información sobre las Leyes y Normativas`}
-          message="Leer más información sobre las Leyes y Normativas entrando al siguiente enlace:"
+          message="Consulte más información sobre las Leyes y Normativas entrando al siguiente enlace:"
         />
       </div>
     </>

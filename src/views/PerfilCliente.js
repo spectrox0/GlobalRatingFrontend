@@ -183,7 +183,7 @@ export default function PerfilCliente({ location }) {
             {data && (
               <ShareFriend
                 subject={`Emisiones de Títulos de ${data.emisorID.nombre} calificadas por Global Ratings, SCR`}
-                message={`Leer más información sobre las emisiones de Títulos de Deuda de ${data.emisorID.nombre} calificadas por Global Ratings Sociedad Calificadora de Riesgo, entrando al siguiente enlace:`}
+                message={`Consulte más información sobre las emisiones de Títulos de Deuda de ${data.emisorID.nombre} calificadas por Global Ratings Sociedad Calificadora de Riesgo, entrando al siguiente enlace:`}
               />
             )}
           </>
