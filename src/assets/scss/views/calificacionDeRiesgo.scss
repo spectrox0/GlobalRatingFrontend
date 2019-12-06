@@ -3,7 +3,7 @@
   flex-direction: column;
   min-height: 100vh;
   padding: 0.8rem;
-  padding-top: 1.8rem;
+  padding-top: 4rem;
   background: $color-background;
 
   .space {
@@ -11,8 +11,6 @@
   }
 
   .container {
-    margin-top: 2rem;
-
     p {
       text-align: justify;
     }

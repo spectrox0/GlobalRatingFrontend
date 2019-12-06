@@ -1,7 +1,7 @@
 .clientesContainer {
   min-height: 100vh;
   padding: 0.8rem;
-  padding-top: 1.8rem;
+  padding-top: 4rem;
   background: $color-background;
   .container {
     .title {
@@ -11,7 +11,7 @@
       max-width: 100%;
       .filter {
         display: flex;
-        margin-top: 2rem;
+
         span,
         label {
           margin-right: 0.3rem;
