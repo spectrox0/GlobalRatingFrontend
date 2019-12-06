@@ -16,7 +16,7 @@ export default function Dictamen({ location }) {
   const [scribd, setScribd] = useState();
   const id = new URLSearchParams(location.search).get("id");
 
-  const { data, loading, error } = useQuery(QUERY_DICTAMEN, {
+  const { data } = useQuery(QUERY_DICTAMEN, {
     variables: {
       postId: id
     },
