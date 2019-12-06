@@ -148,7 +148,7 @@ export default function PerfilCliente({ location }) {
             </MDBContainer>
 
             <MDBContainer className="emisionesContainer">
-              <section className="emisiones">
+              <section id="emisor" className="emisiones">
                 <h3> Emisiones </h3>
                 {Query_emisiones.data && (
                   <Emisiones
@@ -164,6 +164,7 @@ export default function PerfilCliente({ location }) {
                       totalElements={
                         nroEmisiones.data.nroCalificacionesByEmisor
                       }
+                      id="emisor"
                     />
                   )}
                 </MDBRow>

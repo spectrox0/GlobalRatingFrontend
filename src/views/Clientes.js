@@ -56,7 +56,7 @@ export default function Clientes() {
   return (
     <>
       <Header urlImage={ImgHeader} />
-      <section className="clientesContainer">
+      <section id="clientes" className="clientesContainer">
         <MDBContainer>
           <MDBRow className="title">
             <h1>Emisores</h1>
@@ -99,6 +99,7 @@ export default function Clientes() {
               <MDBRow className="row-pagination">
                 {NroEmisores.data && (
                   <Pagination
+                    id="clientes"
                     paginate={Paginate}
                     currentPage={currentPage}
                     elementsPerPage={clientesPerPage}

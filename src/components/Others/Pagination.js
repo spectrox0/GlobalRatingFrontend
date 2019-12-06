@@ -22,8 +22,13 @@ export default function Pagination({
               <MDBPageNav
                 className="page-link"
                 aria-label="Previous"
+                tag={Link}
+                to={id}
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={1000}
                 onClick={e => {
-                  scroll.scrollTo(650);
                   e.preventDefault();
                   paginate(currentPage - 1);
                 }}
@@ -39,8 +44,13 @@ export default function Pagination({
               active={number === currentPage}
             >
               <MDBPageNav
+                tag={Link}
+                to={id}
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={1000}
                 onClick={e => {
-                  scroll.scrollTo(650);
                   e.preventDefault();
                   paginate(number);
                 }}
@@ -54,8 +64,13 @@ export default function Pagination({
               <MDBPageNav
                 className="page-link"
                 aria-label="Previous"
+                tag={Link}
+                to={id}
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={1000}
                 onClick={e => {
-                  scroll.scrollTo(650);
                   e.preventDefault();
                   paginate(currentPage + 1);
                 }}
