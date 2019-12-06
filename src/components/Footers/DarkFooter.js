@@ -57,7 +57,7 @@ export default function DarkFooter() {
               <div className="finanzasDigital" />
             </a>
 
-            <a href="http://glscope.com/" target="_blank">
+            <a href="http://www.glscope.com/" target="_blank">
               <div className="globalScope" />
             </a>
           </MDBCol>
