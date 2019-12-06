@@ -98,7 +98,7 @@ export default function Estadisticas() {
             <td>
               <Link
                 to={{
-                  pathname: "/perfilCliente",
+                  pathname: "/perfilCliente/ve",
                   search: `?id=${emision.emisor._id}`
                 }}
               >
@@ -129,7 +129,7 @@ export default function Estadisticas() {
                   <MDBBtn
                     className="btn-estadistica"
                     to={{
-                      pathname: "/dictamen",
+                      pathname: "/dictamen/ve",
                       search: `?id=${emision.idDictamen}`
                     }}
                     tag={Link}
@@ -141,7 +141,7 @@ export default function Estadisticas() {
                   <MDBBtn
                     className="btn-estadistica"
                     to={{
-                      pathname: "/providencia",
+                      pathname: "/providencia/ve",
                       search: `?id=${emision.idProvidencia}`
                     }}
                     tag={Link}
@@ -153,7 +153,7 @@ export default function Estadisticas() {
                   <MDBBtn
                     className="btn-estadistica"
                     to={{
-                      pathname: "/prospecto",
+                      pathname: "/prospecto/ve",
                       search: `?id=${emision.idProspecto}`
                     }}
                     tag={Link}

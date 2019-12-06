@@ -14,7 +14,7 @@
       content: "";
       height: $height-underline;
       background: $color-primary;
-      width: 110%;
+      width: calc(100% + 5rem);
     }
     @media screen and (max-width: 992px) {
       font-size: 1.5em;
