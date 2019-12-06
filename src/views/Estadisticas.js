@@ -115,7 +115,9 @@ export default function Estadisticas() {
             {emision.tipoTitulo === "PAGARE_BURSATILES" && "PB"}
             {emision.tipoTitulo === "ACCIONES_PREFERIDAS" && "AP"}
           </td>
-          <td className="row-text-right">{emision.monto.toLocaleString()}</td>
+          <td className="row-text-right">
+            {(emision.monto / 1000).toLocaleString()}
+          </td>
           <td className="row-text-center">
             {new Date(emision.fechaAprovacion)
               .toLocaleDateString("es-VE", options)
@@ -201,7 +203,10 @@ export default function Estadisticas() {
                   <th>Emisor</th>
                   <th className="row-text-center">Emisión</th>
                   <th className="row-text-right">
-                    Monto (<MDBIcon icon="asterisk" size="sm" />){" "}
+                    Monto{" "}
+                    <span className="parentesis">
+                      (<MDBIcon icon="asterisk" size="sm" />)
+                    </span>
                   </th>
                   <th className="row-text-center">Fecha</th>
                   <th className="row-text-center"># Providencia</th>
@@ -212,7 +217,26 @@ export default function Estadisticas() {
               </MDBTableHead>
               <MDBTableBody>
                 {data && !loading && !error && (
-                  <Emisiones emisiones={data.emisionesForYear} />
+                  <>
+                    <Emisiones emisiones={data.emisionesForYear} />
+                    <tr style={{ visibility: "hidden" }}>
+                      {" "}
+                      <td colSpan="8"></td>{" "}
+                    </tr>
+                    <tr>
+                      <td>
+                        {" "}
+                        <span className="total"> Total del año </span>
+                      </td>
+                      <td> </td>
+                      <td className="row-text-right">
+                        {totalEmision.data &&
+                          (
+                            totalEmision.data.totalForYear / 1000
+                          ).toLocaleString()}{" "}
+                      </td>
+                    </tr>
+                  </>
                 )}{" "}
                 {loading && (
                   <tr>
@@ -231,15 +255,7 @@ export default function Estadisticas() {
               </MDBTableBody>
             </MDBTable>
           </MDBRow>
-          <MDBRow>
-            <div className="total">
-              <span>
-                <b> Total del año </b>
-                {totalEmision.data &&
-                  totalEmision.data.totalForYear.toLocaleString()}
-              </span>
-            </div>
-          </MDBRow>
+          <MDBRow></MDBRow>
           <MDBRow>
             <div className="leyenda">
               <p>
@@ -279,8 +295,10 @@ export default function Estadisticas() {
           <MDBRow>
             <div className="leyenda">
               <p>
-                (<MDBIcon icon="asterisk" size="sm" />) Miles de bolivares
-                soberanos
+                <span className="parentesis">
+                  (<MDBIcon icon="asterisk" size="sm" />)
+                </span>{" "}
+                Miles de bolivares soberanos
               </p>
             </div>
           </MDBRow>
