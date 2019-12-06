@@ -289,7 +289,7 @@ export default function Calificacion() {
               </MDBTabPane>
               <MDBTabPane tabId="5">
                 <div className="letter"> E </div>
-                <p>
+                <p className="complete">
                   Corresponde a aquellos instrumentos cuyo emisor no posee
                   información suficiente o representativa.
                 </p>

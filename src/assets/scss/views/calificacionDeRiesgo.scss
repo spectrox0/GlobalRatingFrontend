@@ -12,9 +12,15 @@
 
   .container {
     margin-top: 2rem;
+
     p {
       text-align: justify;
     }
+
+    .complete {
+      width: auto;
+    }
+
     .row {
       margin-bottom: 1.5em;
       ul {
