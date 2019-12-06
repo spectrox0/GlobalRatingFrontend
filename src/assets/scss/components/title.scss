@@ -1,7 +1,7 @@
 .title {
   display: flex;
   margin-bottom: 1.8rem;
-  max-width: 60%;
+  max-width: 90%;
   h1,
   h2,
   h3 {
@@ -14,7 +14,7 @@
       content: "";
       height: $height-underline;
       background: $color-primary;
-      width: 150%;
+      width: 110%;
     }
     @media screen and (max-width: 992px) {
       font-size: 1.5em;
