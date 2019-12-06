@@ -97,7 +97,7 @@ export default function LeyNormativa({ location }) {
                   className="btn-color-primary"
                   tag={Link}
                   to={{
-                    pathname: "/ve/leynormativa",
+                    pathname: "/leynormativa/ve",
                     search: `?id=${Prev.data.leyesNormativasPrev}`
                   }}
                 >
@@ -110,7 +110,7 @@ export default function LeyNormativa({ location }) {
                   className="btn-color-primary"
                   tag={Link}
                   to={{
-                    pathname: "/ve/leynormativa",
+                    pathname: "/ve/leynormativa/ve",
                     search: `?id=${Next.data.leyesNormativasNext}`
                   }}
                 >
