@@ -343,7 +343,7 @@ export default function Contactanos() {
                             style={{ transform: "scale(.8)" }}
                           >
                             <Recaptcha
-                              sitekey="6LeFsrgUAAAAAJmjoOiqeDR2Kkv4jcJOWe4njhOt"
+                              sitekey="6LdzSsMUAAAAADVEN3LuZHfVsGASEGWiXu3Z38Kr"
                               render="explicit"
                               onloadCallback={RecaptchaLoad}
                               verifyCallback={verifyCallback}
