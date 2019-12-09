@@ -41,15 +41,15 @@ export default function DarkFooter() {
           </MDBCol>
           <MDBCol className="col-footer" md="3">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15692.183765877204!2d-66.8512303!3d10.4970447!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1758d7d0ec0a48c6!2sFinanzas%20Digital!5e0!3m2!1ses-419!2sve!4v1570817114346!5m2!1ses-419!2sve"
-              frameBorder="0"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15692.186785261487!2d-66.8511697!3d10.4969852!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x955dd7b53b79b743!2sGlobal%20Ratings%20Sociedad%20Calificadora%20de%20Riesgo%2C%20C.A.!5e0!3m2!1ses-419!2sve!4v1575923807660!5m2!1ses-419!2sve"
+              frameborder="0"
               style={{
                 width: "100%",
                 height: "8rem",
                 border: 0,
                 borderRadius: "10px"
               }}
-              allowFullScreen=""
+              allowfullscreen=""
             ></iframe>
           </MDBCol>
           <MDBCol md="3">
@@ -65,8 +65,8 @@ export default function DarkFooter() {
       </MDBContainer>
       <div className="footer-copyright text-center">
         <MDBContainer fluid>
-          GlobalRatings, C.A. RIF: J-123456789-0. Todos los derechos reservados
-          © {new Date().getFullYear()}.
+          GlobalRatings, C.A. RIF: J-30166873-1. Todos los derechos reservados ©{" "}
+          {new Date().getFullYear()}.
           <nav>
             <Link
               to={{
