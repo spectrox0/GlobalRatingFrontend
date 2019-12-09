@@ -27,11 +27,13 @@ export default function DictamenesDeCaificacion({ dictamenes, country }) {
         </MDBRow>
 
         {!dictamenes ? (
-          <div className="container-load-posts">
+          /*<div className="container-load-posts">
             <div className="spinner-grow text-primary" role="status">
               <span className="sr-only">Cargando...</span>
             </div>
-          </div>
+          </div> */ <>
+            {" "}
+          </>
         ) : (
           <MDBCardGroup>
             <MDBRow>
