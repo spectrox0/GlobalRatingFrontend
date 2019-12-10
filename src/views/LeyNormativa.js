@@ -54,23 +54,18 @@ export default function LeyNormativa({ location }) {
       <section className="page-ley-normativa">
         <MDBContainer>
           {!data ? (
-            <>
-              {" "}
-              {/* } (
             <div className="container-load-posts">
-              <div className="spinner-grow text-primary" role="status">
+              <div className="spinner-border" role="status">
                 <span className="sr-only"> Cargando... </span>{" "}
-            </div>{" "} 
-          </div>
-          */}
-            </>
+              </div>{" "}
+            </div>
           ) : (
             <>
               <MDBRow className="title">
                 <h1>{data.leyesNormativasID.titulo}</h1>{" "}
               </MDBRow>
 
-              <MDBRow>
+              <MDBRow className="date">
                 <p> {" " + date} </p>
               </MDBRow>
               <MDBRow>

@@ -29,7 +29,7 @@ export default function Dictamen({ location }) {
   });
   const getContent = async () => {
     let dataa;
-    console.log(data);
+
     dataa = await data.postBy.content.replace(/(?:\r\n|\r|\n)/g, "<br>");
 
     var Scribd = dataa.substring(dataa.lastIndexOf("<iframe"));
@@ -72,16 +72,11 @@ export default function Dictamen({ location }) {
       <section className="dictamen">
         <MDBContainer>
           {isLoading ? (
-            <>
-              {" "}
-              {/* } (
             <div className="container-load-posts">
-              <div className="spinner-grow text-primary" role="status">
+              <div className="spinner-border" role="status">
                 <span className="sr-only"> Cargando... </span>{" "}
-            </div>{" "} 
-          </div>
-          */}
-            </>
+              </div>{" "}
+            </div>
           ) : (
             <>
               <MDBRow className="title">

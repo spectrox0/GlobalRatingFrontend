@@ -149,12 +149,15 @@ export default function PerfilCliente({ location }) {
 
             <MDBContainer className="emisionesContainer">
               <section id="emisor" className="emisiones">
-                <h3> Emisiones </h3>
-                {Query_emisiones.data && (
-                  <Emisiones
-                    emisiones={Query_emisiones.data.calificacionesByEmisor}
-                  />
-                )}
+                {Query_emisiones.data &&
+                  Query_emisiones.data.calificacionesByEmisor.length > 0 && (
+                    <>
+                      <h3> Emisiones </h3>
+                      <Emisiones
+                        emisiones={Query_emisiones.data.calificacionesByEmisor}
+                      />{" "}
+                    </>
+                  )}
                 <MDBRow className="row-pagination">
                   {nroEmisiones.data && (
                     <Pagination
@@ -190,7 +193,7 @@ export default function PerfilCliente({ location }) {
           </>
         ) : (
           <div className="container-load-posts">
-            <div className="spinner-grow text-primary" role="status">
+            <div className="spinner-border" role="status">
               <span className="sr-only">Cargando...</span>
             </div>
           </div>

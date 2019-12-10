@@ -243,14 +243,11 @@ export default function Estadisticas() {
                 {loading && (
                   <tr>
                     <td colSpan="8">
-                      {/*} <div className="container-load-posts">
-                        <div
-                          className="spinner-grow text-primary"
-                          role="status"
-                        >
+                      <div className="container-load-posts">
+                        <div className="spinner-border" role="status">
                           <span className="sr-only">Cargando...</span>
-                </div> 
-                      </div>*/}
+                        </div>
+                      </div>
                     </td>
                   </tr>
                 )}
@@ -276,13 +273,13 @@ export default function Estadisticas() {
                 {titulosDeParticipacion && (
                   <>
                     {" "}
-                    TP: Titulos de Participacion <br />{" "}
+                    TP: Títulos de Participación <br />{" "}
                   </>
                 )}
                 {pagareBursatiles && (
                   <>
                     {" "}
-                    PB: Pagares Bursatiles <br />{" "}
+                    PB: Pagarés Bursátiles <br />{" "}
                   </>
                 )}
                 {accionesPreferidas && (

@@ -101,16 +101,11 @@ export default function Dictamen({ location }) {
         <MDBContainer>
           {" "}
           {isLoading ? (
-            <>
-              {" "}
-              {/* } (
             <div className="container-load-posts">
-              <div className="spinner-grow text-primary" role="status">
+              <div className="spinner-border" role="status">
                 <span className="sr-only"> Cargando... </span>{" "}
-            </div>{" "} 
-          </div>
-          */}
-            </>
+              </div>{" "}
+            </div>
           ) : (
             <>
               {" "}

@@ -15,11 +15,13 @@
     padding-top: 2rem;
     padding-bottom: 2rem;
     padding-right: 3rem;
-    .spinner-grow {
-      height: 15rem;
-      width: 15rem;
+    .spinner-border {
+      height: 2.5rem;
+      width: 2.5rem;
+
       position: relative;
       top: -9rem;
+      color: $color-primary;
 
       @media screen and (max-wdith: 992px) {
         height: 10rem;

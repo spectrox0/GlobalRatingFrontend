@@ -140,7 +140,7 @@ export default function Contactanos() {
                 validate={values => {
                   const errors = {};
                   if (!values.email) {
-                    errors.email = "email requerido";
+                    errors.email = "Campo requerido";
                   } else if (
                     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(
                       values.email
@@ -149,16 +149,16 @@ export default function Contactanos() {
                     errors.email = "Email Inválido";
                   }
                   if (!values.nombre) {
-                    errors.nombre = "Nombre Requerido";
+                    errors.nombre = "Campo Requerido";
                   }
                   if (!values.apellido) {
-                    errors.apellido = "Apellido Requerido";
+                    errors.apellido = "Campo Requerido";
                   }
                   if (!values.asunto) {
-                    errors.asunto = "Asunto Requerido";
+                    errors.asunto = "Campo Requerido";
                   }
                   if (!values.texto) {
-                    errors.texto = "Mensaje Requerido";
+                    errors.texto = "Campo Requerido";
                   }
                   return errors;
                 }}
@@ -199,7 +199,7 @@ export default function Contactanos() {
                   loading ? (
                     <div className="SpinerContain">
                       {" "}
-                      <div className="spinner-grow text-primary" role="status">
+                      <div className="spinner-border" role="status">
                         <span className="sr-only">Cargando...</span>
                       </div>
                     </div>
@@ -224,7 +224,7 @@ export default function Contactanos() {
                           onBlur={handleBlur}
                         />
                         <label for="nombre" class="animated-label">
-                          Nombre
+                          Nombres
                         </label>
                       </div>
                       {errors.nombre && touched.nombre && (
@@ -249,7 +249,7 @@ export default function Contactanos() {
                           onBlur={handleBlur}
                         />
                         <label for="apellido" class="animated-label">
-                          Apellido
+                          Apellidos
                         </label>
                       </div>
                       {errors.apellido && touched.apellido && (

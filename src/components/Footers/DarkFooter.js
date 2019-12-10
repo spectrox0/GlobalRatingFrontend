@@ -65,8 +65,8 @@ export default function DarkFooter() {
       </MDBContainer>
       <div className="footer-copyright text-center">
         <MDBContainer fluid>
-          GlobalRatings, C.A. RIF: J-30166873-1. Todos los derechos reservados ©{" "}
-          {new Date().getFullYear()}.
+          Global Ratings, C.A. RIF: J-30166873-1. Todos los derechos reservados
+          © {new Date().getFullYear()}.
           <nav>
             <Link
               to={{

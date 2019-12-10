@@ -3,7 +3,10 @@
   min-height: 100vh;
   padding-top: 4rem;
   background: $color-background;
-
+  .date {
+    position: relative;
+    bottom: 1.5rem;
+  }
   .title {
     h2 {
       font-size: 1.4em;

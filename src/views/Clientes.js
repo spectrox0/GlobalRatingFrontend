@@ -59,31 +59,35 @@ export default function Clientes() {
       <section id="clientes" className="clientesContainer">
         <MDBContainer>
           <MDBRow className="title">
-            <h1>Emisores</h1>
-            <div className="filter">
-              <span>Ordenar por: </span>
-              <label htmlFor="toggle-1">
-                {!filter ? (
-                  <strong> Alfabético</strong>
-                ) : (
-                  <span>Alfabético </span>
-                )}
-              </label>
-              <div className="switch">
-                <input
-                  type="checkbox"
-                  checked={filter}
-                  onClick={handlingSwitch}
-                  name="toggle"
-                  className="sw"
-                  id="toggle-1"
-                />
-                <label htmlFor="toggle-1"> </label>
+            <MDBCol size="8" sm="4">
+              <h1>Emisores</h1>
+            </MDBCol>
+            <MDBCol size="12" sm="4">
+              <div className="filter">
+                <span>Orden: </span>
+                <label htmlFor="toggle-1">
+                  {!filter ? (
+                    <strong> Alfabético</strong>
+                  ) : (
+                    <span>Alfabético </span>
+                  )}
+                </label>
+                <div className="switch">
+                  <input
+                    type="checkbox"
+                    checked={filter}
+                    onClick={handlingSwitch}
+                    name="toggle"
+                    className="sw"
+                    id="toggle-1"
+                  />
+                  <label htmlFor="toggle-1"> </label>
+                </div>
+                <label htmlFor="toggle-1">
+                  {filter ? <strong> Fecha </strong> : <span>Fecha </span>}
+                </label>
               </div>
-              <label htmlFor="toggle-1">
-                {filter ? <strong> Fecha </strong> : <span>Fecha </span>}
-              </label>
-            </div>
+            </MDBCol>
           </MDBRow>
           {data && !loading ? (
             <>
@@ -111,13 +115,11 @@ export default function Clientes() {
           ) : (
             <>
               {" "}
-              {/* } (
-            <div className="container-load-posts">
-              <div className="spinner-grow text-primary" role="status">
-                <span className="sr-only"> Cargando... </span>{" "}
-            </div>{" "} 
-          </div>
-          */}
+              <div className="container-load-posts">
+                <div className="spinner-border" role="status">
+                  <span className="sr-only"> Cargando... </span>{" "}
+                </div>{" "}
+              </div>
             </>
           )}
         </MDBContainer>

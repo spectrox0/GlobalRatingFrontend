@@ -85,14 +85,13 @@ export default function Calificacion() {
             <p>
               La evaluación se realiza sobre información pública de la compañía
               y del sector al que pertenece, así como datos internos
-              suministrada voluntariamente por el emisor bajo un convenio de
-              confidencialidad con la calificadora, y se complementa con
-              reuniones que se realizan con distintos departamentos de la
-              organización. Posteriormente, se alimentan nuestros modelos con
-              toda la data recabada, obteniéndose una calificación metodológica
-              que es discutida con el emisor. Por último, es sometida a
-              consideración de la Junta Calificadora, quien emite un dictamen
-              definitivo.
+              suministrados por el emisor bajo un convenio de confidencialidad
+              con la calificadora, y se complementa con reuniones que se
+              realizan con distintos departamentos de la organización.
+              Posteriormente, se alimentan nuestros modelos con toda la data
+              recabada, obteniéndose una calificación metodológica que es
+              discutida con el emisor. Por último, es sometida a consideración
+              de la Junta Calificadora, quien emite un dictamen definitivo.
             </p>
 
             <p>
@@ -169,7 +168,7 @@ export default function Calificacion() {
                 </p>
                 <ul>
                   <li>
-                    <b>Sub-Categoría A1:</b>Se trata de instrumentos con escaso
+                    <b>Sub-Categoría A1:</b> Se trata de instrumentos con escaso
                     riesgo de inversión, ya que muestran una excelente capacidad
                     de pago del capital y de los intereses, en las condiciones y
                     los plazos pactados. A criterio del calificador, se

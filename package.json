@@ -28,6 +28,7 @@
     "react-recaptcha": "^2.3.10",
     "react-router": "5.0.1",
     "react-router-dom": "5.0.1",
+    "react-router-sitemap": "^1.2.0",
     "react-scripts": "3.0.1",
     "react-scroll": "^1.7.14",
     "react-select": "^3.0.8",
@@ -43,7 +44,8 @@
     "compile-sass": "node-sass src/assets/scss/now-ui-kit.scss src/assets/css/now-ui-kit.css",
     "minify-sass": "node-sass src/assets/scss/now-ui-kit.scss src/assets/css/now-ui-kit.min.css --output-style compressed",
     "map-sass": "node-sass src/assets/scss/now-ui-kit.scss src/assets/css/now-ui-kit.css --source-map true",
-    "precommit": "pretty-quick --staged"
+    "precommit": "pretty-quick --staged",
+    "sitemap": "babel-node src/siteMapGenerator.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -64,6 +66,10 @@
     "typescript": "3.5.3"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-prettier": "^3.1.1",
     "husky": "^3.1.0",

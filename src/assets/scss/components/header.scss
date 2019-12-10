@@ -8,23 +8,18 @@
       }
     }
   }
-  .miniCarousel {
-    position: absolute;
-    bottom: 0;
-    background: red;
-    z-index: 5000;
-  }
-  .container-title {
-    width: 100%;
-    padding: 0.7rem;
-    margin: 0;
-    font-family: "Ovo", serif;
 
-    h6 {
-      font-family: "Ovo", serif;
-      font-size: 1rem;
+  @keyframes animation1 {
+    0% {
+      transform: translate(10rem, 2rem);
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
     }
   }
+
   .page-header-mini-carousel {
     display: flex;
     height: auto;
@@ -34,8 +29,15 @@
     top: 40vh;
     left: 10%;
     z-index: 200;
+    overflow: hidden;
     width: 90%;
     max-width: 30rem;
+    animation: animation1 3s ease;
+    .container-title {
+      display: flex;
+      min-width: 90%;
+      margin: 5%;
+    }
     .h3-responsive {
       text-transform: uppercase;
       text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
