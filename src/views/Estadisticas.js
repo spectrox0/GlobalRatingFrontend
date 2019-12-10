@@ -16,7 +16,8 @@ import { useQuery } from "@apollo/react-hooks";
 import {
   EMISIONES_FOR_YEAR,
   TOTAL_FOR_YEAR,
-  RANGE_YEAR
+  RANGE_YEAR,
+  QUERY_LEYENDA
 } from "./helpers/graphql/querys";
 import { Link } from "react-router-dom";
 import { set } from "react-ga";
@@ -35,6 +36,11 @@ export default function Estadisticas() {
 
   var options = { timeZone: "UTC", month: "short", day: "numeric" };
   const { data, loading, error, refetch } = useQuery(EMISIONES_FOR_YEAR, {
+    variables: {
+      year: yearFilter
+    }
+  });
+  const { data: leyenda, loading: loadingLeyenda } = useQuery(QUERY_LEYENDA, {
     variables: {
       year: yearFilter
     }
@@ -294,7 +300,7 @@ export default function Estadisticas() {
                 <span className="parentesis">
                   (<MDBIcon icon="asterisk" size="sm" />)
                 </span>{" "}
-                Miles de bolivares soberanos
+                {leyenda && leyenda.monedaByYear.nombre}
               </p>
             </div>
           </MDBRow>
