@@ -237,14 +237,14 @@ export default function Estadisticas() {
                 {loading && (
                   <tr>
                     <td colSpan="8">
-                      <div className="container-load-posts">
+                      {/*} <div className="container-load-posts">
                         <div
                           className="spinner-grow text-primary"
                           role="status"
                         >
                           <span className="sr-only">Cargando...</span>
-                        </div>
-                      </div>
+                </div> 
+                      </div>*/}
                     </td>
                   </tr>
                 )}

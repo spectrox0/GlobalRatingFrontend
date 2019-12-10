@@ -72,11 +72,16 @@ export default function Dictamen({ location }) {
       <section className="dictamen">
         <MDBContainer>
           {isLoading ? (
+            <>
+              {" "}
+              {/* } (
             <div className="container-load-posts">
               <div className="spinner-grow text-primary" role="status">
-                <span className="sr-only">Cargando...</span>
-              </div>
-            </div>
+                <span className="sr-only"> Cargando... </span>{" "}
+            </div>{" "} 
+          </div>
+          */}
+            </>
           ) : (
             <>
               <MDBRow className="title">

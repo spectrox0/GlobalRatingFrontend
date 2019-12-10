@@ -56,19 +56,6 @@ export default function CardEmision({
               </MDBTooltip>
             </Link>
           )}
-          {idProspecto.length > 0 && (
-            <Link
-              to={{
-                pathname: "/prospecto/ve",
-                search: `?id=${idProspecto}`
-              }}
-            >
-              <MDBTooltip placement="top">
-                <MDBBtn className="btn-estadistica " />
-                <div> Prospecto </div>
-              </MDBTooltip>
-            </Link>
-          )}{" "}
           {idProvidencia.length > 0 && (
             <Link
               to={{
@@ -82,6 +69,19 @@ export default function CardEmision({
               </MDBTooltip>
             </Link>
           )}
+          {idProspecto.length > 0 && (
+            <Link
+              to={{
+                pathname: "/prospecto/ve",
+                search: `?id=${idProspecto}`
+              }}
+            >
+              <MDBTooltip placement="top">
+                <MDBBtn className="btn-estadistica " />
+                <div> Prospecto </div>
+              </MDBTooltip>
+            </Link>
+          )}{" "}
         </div>
       </MDBCardBody>
       <MDBCardFooter>

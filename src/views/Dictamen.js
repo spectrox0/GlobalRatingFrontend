@@ -101,11 +101,16 @@ export default function Dictamen({ location }) {
         <MDBContainer>
           {" "}
           {isLoading ? (
+            <>
+              {" "}
+              {/* } (
             <div className="container-load-posts">
               <div className="spinner-grow text-primary" role="status">
                 <span className="sr-only"> Cargando... </span>{" "}
-              </div>{" "}
-            </div>
+            </div>{" "} 
+          </div>
+          */}
+            </>
           ) : (
             <>
               {" "}
@@ -176,7 +181,7 @@ export default function Dictamen({ location }) {
                         search: `?id=${emision.data.emisionByDictamen.idProspecto}`
                       }}
                     >
-                      > Prospecto{" "}
+                      Prospecto{" "}
                     </MDBBtn>
                   )}{" "}
                 </div>{" "}
