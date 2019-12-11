@@ -5,7 +5,11 @@
   box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.1),
     1px 1px 1px rgba(0, 0, 0, 0.3);
   @include transition(0.5s, ease-in-out);
-
+  &:hover {
+    .img-fluid {
+      transform: scale(1.05);
+    }
+  }
   &:hover {
     text-decoration: none;
     box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.1),
@@ -18,6 +22,7 @@
   .img-fluid {
     height: auto;
     width: 100%;
+    @include transition(0.3s, ease-in-out);
     object-fit: fill;
   }
   .hidden {

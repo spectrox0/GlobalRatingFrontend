@@ -8,6 +8,7 @@ import { initGA } from "./helpers/initGA.js";
 import Header from "../components/Headers/headersViews/Header";
 import ImgHeader from "../assets/img/headers/Header Contacto.png";
 import { Formik } from "formik";
+import Alert from "../components/Others/Alert";
 
 import {
   MDBRow,
@@ -124,9 +125,7 @@ export default function Contactanos() {
             <MDBCol sm="12" md="6">
               <h3> Escríbenos </h3>
               {message && (
-                <MDBAlert color={message.isError ? "danger" : "info"}>
-                  {message.message}
-                </MDBAlert>
+                <Alert isError={message.isError} message={message.message} />
               )}
 
               <Formik
@@ -228,7 +227,7 @@ export default function Contactanos() {
                         </label>
                       </div>
                       {errors.nombre && touched.nombre && (
-                        <MDBAlert color={"danger"}>{errors.nombre}</MDBAlert>
+                        <Alert isError message={errors.nombre} />
                       )}
                       <div
                         className={
@@ -253,7 +252,7 @@ export default function Contactanos() {
                         </label>
                       </div>
                       {errors.apellido && touched.apellido && (
-                        <MDBAlert color={"danger"}>{errors.apellido}</MDBAlert>
+                        <Alert isError message={errors.apellido} />
                       )}
                       <div
                         className={
@@ -278,7 +277,7 @@ export default function Contactanos() {
                         </label>
                       </div>
                       {errors.email && touched.email && (
-                        <MDBAlert color={"danger"}>{errors.email}</MDBAlert>
+                        <Alert isError message={errors.email} />
                       )}
                       <div
                         className={
@@ -303,7 +302,7 @@ export default function Contactanos() {
                         </label>
                       </div>
                       {errors.asunto && touched.asunto && (
-                        <MDBAlert color={"danger"}>{errors.asunto}</MDBAlert>
+                        <Alert isError message={errors.asunto} />
                       )}
                       <div
                         className={
@@ -328,7 +327,7 @@ export default function Contactanos() {
                         </label>
                       </div>
                       {errors.texto && touched.texto && (
-                        <MDBAlert color={"danger"}>{errors.texto}</MDBAlert>
+                        <Alert isError message={errors.texto} />
                       )}
 
                       <MDBRow

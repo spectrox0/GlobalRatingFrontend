@@ -1,5 +1,12 @@
 import React from "react";
-
+import {
+  MDBCarousel,
+  MDBCarouselCaption,
+  MDBCarouselInner,
+  MDBCarouselItem,
+  MDBView,
+  MDBMask
+} from "mdbreact";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 const responsive = {
@@ -24,49 +31,69 @@ const responsive = {
 
 const CarouselPage = () => {
   return (
-    <Carousel
-      swipeable={false}
-      draggable={false}
-      showDots={false}
-      additionalTransfrom={0}
-      responsive={responsive}
-      ssr={true} // means to render carousel on server-side.
-      infinite={true}
-      autoPlay={true}
-      autoPlaySpeed={2000}
-      keyBoardControl={false}
-      arrows={false}
-      focusOnSelect={false}
-      transitionDuration={2000}
-      containerClass="carousel-container"
-      deviceType={"desktop"}
-      dotListClass="items"
-      itemClass="carousel-item-padding-40-px"
+    <MDBCarousel
+      activeItem={1}
+      length={7}
+      showControls={false}
+      showIndicators={false}
+      className="z-depth-2"
+      interval={2000}
+      onHoverStop={false}
     >
-      <div className="container-title">
-        <h3 className="h3-responsive">Evaluación de Riesgo</h3>
-      </div>
-      <div className="container-title">
-        <h3 className="h3-responsive">Papeles Comerciales</h3>
-      </div>
-      <div className="container-title">
-        <h3 className="h3-responsive">Obligaciones Quirografarias</h3>
-      </div>
-      <div className="container-title">
-        <h3 className="h3-responsive">Títulos de Participación</h3>
-      </div>
-      <div className="container-title">
-        <h3 className="h3-responsive">Pagarés Bursátiles</h3>
-      </div>
-      <div className="container-title">
-        <h3 className="h3-responsive">
-          Riesgo Bancario y de Empresas de Seguro
-        </h3>
-      </div>
-      <div className="container-title">
-        <h3 className="h3-responsive">Acciones Preferidas</h3>
-      </div>
-    </Carousel>
+      <MDBCarouselInner>
+        <MDBCarouselItem itemId="1">
+          <MDBView>
+            <div className="d-block w-100">
+              <h3 className="h3-responsive">Evaluación de Riesgo</h3>
+            </div>
+          </MDBView>
+        </MDBCarouselItem>
+        <MDBCarouselItem itemId="2">
+          <MDBView>
+            <div className="d-block w-100">
+              <h3 className="h3-responsive">Papeles Comerciales</h3>
+            </div>
+          </MDBView>
+        </MDBCarouselItem>
+        <MDBCarouselItem itemId="3">
+          <MDBView>
+            <div className="d-block w-100">
+              <h3 className="h3-responsive">Obligaciones Quirografarias</h3>
+            </div>
+          </MDBView>
+        </MDBCarouselItem>
+        <MDBCarouselItem itemId="4">
+          <MDBView>
+            <div className="d-block w-100">
+              <h3 className="h3-responsive">Títulos de Participación</h3>
+            </div>
+          </MDBView>
+        </MDBCarouselItem>
+        <MDBCarouselItem itemId="5">
+          <MDBView>
+            <div className="d-block w-100">
+              <h3 className="h3-responsive">Pagarés Bursátiles</h3>
+            </div>
+          </MDBView>
+        </MDBCarouselItem>
+        <MDBCarouselItem itemId="6">
+          <MDBView>
+            <div className="d-block w-100">
+              <h3 className="h3-responsive">
+                Riesgo Bancario y de Empresas de Seguro
+              </h3>
+            </div>
+          </MDBView>
+        </MDBCarouselItem>
+        <MDBCarouselItem itemId="7">
+          <MDBView>
+            <div className="d-block w-100">
+              <h3 className="h3-responsive">Acciones Preferidas</h3>
+            </div>
+          </MDBView>
+        </MDBCarouselItem>
+      </MDBCarouselInner>
+    </MDBCarousel>
   );
 };
 

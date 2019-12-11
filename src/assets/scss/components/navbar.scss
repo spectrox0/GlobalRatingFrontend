@@ -4,14 +4,15 @@
   width: 100%;
   background: $navbar-color;
   transition: background 0.3s ease-in-out;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  padding: 0;
   padding-top: $navbar-padding-base;
   padding-bottom: $navbar-padding-base;
   min-height: 53px;
   margin-bottom: 20px;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
-
+  .container {
+    padding: 0;
+  }
   .GlobalRatingLogo {
     width: $width-logo;
     @include transition(0.2s, ease-in-out);

@@ -6,6 +6,11 @@
   border: none;
   cursor: pointer;
   @include transition(0.4s, ease-in-out);
+  &:hover {
+    .img-fluid {
+      transform: scale(1.1);
+    }
+  }
 
   .date {
     text-align: right;
@@ -34,10 +39,14 @@
     color: rgb(70, 70, 70);
   }
   .img-fluid {
-    width: auto;
     height: 9rem;
     width: 100%;
-    object-fit: fill;
+
+    @include transition(0.4s, ease-in-out);
+  }
+  .view,
+  .overlay {
+    box-shadow: 0 0 3px black;
   }
   .card-footer {
     @include transition(0.5s, ease-in-out);

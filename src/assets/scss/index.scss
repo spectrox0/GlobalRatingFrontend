@@ -2,7 +2,6 @@
 @import "./mixins/index.scss";
 
 body {
-  margin: 0;
   font-family: $font-primary;
   color: $font-color-primary;
   -webkit-font-smoothing: antialiased;
@@ -29,6 +28,7 @@ body {
 @import "./components/pagination.scss";
 @import "./components/pill.scss";
 @import "./components/title.scss";
+@import "./components/alert.scss";
 
 @import "./views/dictamenes.scss";
 @import "./views//noticias.scss";

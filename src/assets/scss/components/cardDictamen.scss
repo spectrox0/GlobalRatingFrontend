@@ -1,119 +1,113 @@
 .card-dictamen {
-    margin:.5rem;
-     height: 14rem;
-    min-width:17rem;
-    border: solid 20px rgb(245, 245, 245);
-    box-shadow: 0 0 3px rgba(0,0,0,0.2);
-    cursor: pointer;
+  margin: 0.5rem;
+  height: 14rem;
+  min-width: 17rem;
+  border: solid 20px rgb(245, 245, 245);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 
-
-    .card-body {
-        @include transition(.5s , ease-in-out);
-       visibility: hidden;
-       color: #FFFFFF;
-       p{
-           
-        font-size: .9em;
+  .card-body {
+    @include transition(0.5s, ease-in-out);
+    visibility: hidden;
+    color: #ffffff;
+    p {
+      font-size: 0.9em;
     }
-    }
-    .card-footer {
-        @include transition(.5s , ease-in-out);
-        border: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        vertical-align: center;
-        padding:0;
-        text-align: center;
+  }
 
-        .card-title {
-      
-            margin:0;
-            padding:.4rem;
+  .card-footer {
+    @include transition(0.5s, ease-in-out);
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    vertical-align: center;
+    padding: 0;
+    text-align: center;
 
-            font-size: .75em;
-            color:rgb(253, 253, 253);
-        }
-        background: rgba($color-primary, 0.7);
+    .card-title {
+      margin: 0;
+      padding: 0.4rem;
+
+      font-size: 0.75em;
+      color: rgb(253, 253, 253);
     }
-   
-      
+    background: rgba($color-primary, 0.7);
+  }
 }
 
 .card-dictamen:hover {
-    text-decoration: none;
-    .card-body {
-        background: rgba($color-primary, 0.7);
-        visibility:visible;
-    } 
-    .card-footer .card-title{
-        visibility:hidden;
-        
-    }
-
+  text-decoration: none;
+  .card-body {
+    background: rgba($color-primary, 0.7);
+    visibility: visible;
+  }
+  .card-footer .card-title {
+    visibility: hidden;
+  }
 }
 
 .card-dictamen2 {
-    margin:.5rem;
-    min-width:15rem;
-    background:transparent;
-   
-   border:none;
-    cursor: pointer;
-    
-    
-    .card-body {  
-        padding:0; 
-        .card-title {
-            margin:0;
-            padding:0; 
-            padding-top: .8rem;
-            padding-bottom: .3rem; 
-            font-weight: 600;
-            font-size: .9em;
-            color:rgb(70, 70, 70);
-            overflow: hidden;
-            text-overflow: ellipsis;
-            -webkit-line-clamp: 6;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-        }
-        @include transition(.5s , ease-in-out);
-       color: rgb(70, 70, 70);
-      
-    }
-    .img-fluid{
-        width: auto;
-        height: 13rem;
-        width:100%;
-        object-fit:fill; 
-    }
-    .card-footer {
-        @include transition(.5s , ease-in-out);
-        border: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        vertical-align: center;
-        padding:0;
-        text-align: center;
+  margin: 0.5rem;
+  min-width: 15rem;
+  background: transparent;
 
-       
-        background: rgba($color-primary, 0.8);
+  border: none;
+  cursor: pointer;
+  .view,
+  .overlay {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.306);
+  }
+
+  .card-body {
+    padding: 0;
+    .card-title {
+      margin: 0;
+      padding: 0;
+      padding-top: 0.8rem;
+      padding-bottom: 0.3rem;
+      font-weight: 600;
+      font-size: 0.9em;
+      color: rgb(70, 70, 70);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 6;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
     }
-    &:hover {
-        text-decoration: none;
-       
-    
+    @include transition(0.5s, ease-in-out);
+    color: rgb(70, 70, 70);
+  }
+
+  .img-fluid {
+    width: auto;
+    height: 13rem;
+    width: 100%;
+    @include transition(0.4s, ease-in-out);
+  }
+  &:hover {
+    .img-fluid {
+      transform: scale(1.1);
     }
-    &:focus {
-        outline: none;
-    }
-      
+  }
+  .card-footer {
+    @include transition(0.5s, ease-in-out);
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    vertical-align: center;
+    padding: 0;
+    text-align: center;
+
+    background: rgba($color-primary, 0.8);
+  }
+  &:hover {
+    text-decoration: none;
+  }
+  &:focus {
+    outline: none;
+  }
 }
-
-
-
-

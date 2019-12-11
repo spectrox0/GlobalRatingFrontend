@@ -90,7 +90,7 @@ export default function PerfilCliente({ location }) {
                           )}/`}
                           className="webSocial"
                         >
-                          <MDBIcon fab icon="instagram" size="lg" />
+                          <MDBIcon fab icon="instagram" size="sm" />
                         </MDBBtn>
                         <div>Instagram</div>
                       </MDBTooltip>
@@ -105,7 +105,7 @@ export default function PerfilCliente({ location }) {
                           )}/`}
                           className="webSocial"
                         >
-                          <MDBIcon fab icon="twitter" size="lg" />
+                          <MDBIcon fab icon="twitter" size="sm" />
                         </MDBBtn>
                         <div> Twitter </div>
                       </MDBTooltip>
@@ -120,7 +120,7 @@ export default function PerfilCliente({ location }) {
                           )}/`}
                           className="webSocial"
                         >
-                          <MDBIcon fab icon="facebook-f" size="lg" />{" "}
+                          <MDBIcon fab icon="facebook-f" size="sm" />{" "}
                         </MDBBtn>
                         <div> Facebook</div>
                       </MDBTooltip>
@@ -132,7 +132,7 @@ export default function PerfilCliente({ location }) {
                           href={data.emisorID.urlWeb}
                           className="webSocial"
                         >
-                          <i className="fa fa-home fa-lg "></i>{" "}
+                          <i className="fa fa-home fa-sm "></i>{" "}
                         </MDBBtn>
                         <div> Website </div>
                       </MDBTooltip>
@@ -174,7 +174,7 @@ export default function PerfilCliente({ location }) {
 
                 <MDBBtn
                   className="btn-color-primary margin"
-                  size="lg"
+                  size="sm"
                   tag={Link}
                   to={{
                     pathname: "/clientes/ve"

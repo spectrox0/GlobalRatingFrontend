@@ -1,57 +1,80 @@
 .btn-round {
-    border-radius: 500px;
+  border-radius: 500px;
 }
 .btn-color-primary {
+  background: $color-primary;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  &:hover {
+    color: #ffffff;
+    text-shadow: 0 0 1px #ffffff;
     background: $color-primary;
-    color: #FFFFFF;
-    outline: none;
-    border: none;
-    text-decoration: none;
-    &:hover {
-        color: #FFFFFF;
-        text-shadow: 0 0 1px  #FFFFFF;
-        background:$color-primary;
-        opacity: .9;
-
-    }
+    opacity: 0.9;
+  }
 }
 
-.btn-invisible{
-    padding:0; 
-    margin: 0; 
-    display: flex;
-    justify-content: flex-end;
-    
-    &:focus {
-        outline: none;
-        box-shadow: none;
-        
+.btn-invisible {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  i {
+    color: $color-primary;
+    font-size: 3em;
+    &:focus,
+    &:hover {
+      opacity: 0.9;
     }
-   i {
-       color: $color-primary; 
-       font-size: 3em; 
-       &:focus, &:hover {
-           opacity: .9;
-       }
-   }
+  }
 }
 .btn-estadistica {
-    padding:0; 
-    margin: 0; 
-    height: 1.5rem;
-    width: 1.5rem;
-    border-radius: 50%;
-    background: url("./../img/btn/btn_estadisticas.svg") center no-repeat;
-    background-size: cover;
-    transition: all .2s ease-in-out;
-    &:focus {
-        outline: none;
-        opacity: .8;
-        box-shadow: 0 1px .5px rgba(0, 0, 0, 0.383);
-    }
-    &:hover {
-        opacity: .8;
-        box-shadow: 0 1px .5px rgba(0, 0, 0, 0.383); 
-       
-    }
+  padding: 0;
+  margin: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  background: url("./../img/btn/btn_estadisticas.svg") center no-repeat;
+  background-size: cover;
+  transition: all 0.2s ease-in-out;
+  &:focus {
+    outline: none;
+    opacity: 0.8;
+    box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.383);
+  }
+  &:hover {
+    opacity: 0.8;
+    box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.383);
+  }
+}
+.btn-modal {
+  padding: 0.4rem;
+  margin: 1rem;
+  padding-bottom: 0.4rem;
+  padding-top: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 1px $color-primary;
+  color: $color-primary;
+  transition: 0.2s linear all;
+  background: linear-gradient(
+    rgba($color-primary, 0.05),
+    rgba($color-primary, 0.1)
+  );
+  &:focus {
+    color: $color-primary;
+    text-shadow: 0 0 0.2px $color-primary;
+    box-shadow: 0 0 2px $color-primary;
+  }
+  &:hover {
+    color: $color-primary;
+    text-shadow: 0 0 0.2px $color-primary;
+  }
 }

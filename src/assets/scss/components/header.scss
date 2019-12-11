@@ -11,7 +11,18 @@
 
   @keyframes animation1 {
     0% {
-      transform: translate(10rem, 2rem);
+      transform: translate(100%, 4rem);
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes animation2 {
+    0% {
+      transform: translate(-100%, -4rem);
       opacity: 0;
     }
 
@@ -22,38 +33,90 @@
 
   .page-header-mini-carousel {
     display: flex;
-    height: auto;
     color: $color-letter-header;
     position: absolute;
     z-index: 50;
-    top: 40vh;
-    left: 10%;
+    top: 35vh;
+    left: 5%;
     z-index: 200;
-    overflow: hidden;
-    width: 90%;
-    max-width: 30rem;
-    animation: animation1 3s ease;
-    .container-title {
+    max-width: 95vw;
+    .carousel-item {
       display: flex;
-      min-width: 90%;
-      margin: 5%;
+      align-items: center;
+      width: 40rem;
+      max-width: 90vw;
+      padding: 0.5rem;
+
+      &.active {
+        animation: animation1 1s linear;
+        .h3-responsive {
+          &:after {
+            width: 0;
+            opacity: 1;
+          }
+        }
+      }
     }
+    @keyframes innerCarousel {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+    .carousel-inner {
+      background: linear-gradient(
+        rgba($color-primary, 0.3),
+        rgba($color-primary, 0.8)
+      );
+      box-shadow: 0 0 1px $color-primary;
+      height: auto;
+      display: flex;
+      align-items: center;
+    }
+    .carousel-item:nth-child(even) {
+      &.active {
+        animation: animation2 1s linear;
+      }
+    }
+
     .h3-responsive {
-      text-transform: uppercase;
-      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0.5rem;
+      margin: 0;
+      width: 100%;
+      font-weight: 900;
+      color: rgb(255, 255, 255);
+      text-shadow: 0 0 1px rgb(255, 255, 255);
+      &:after {
+        content: "";
+        opacity: 0;
+        height: $height-underline;
+        background: #ffffff;
+        box-shadow: 0 0 3px #ffffff;
+        width: 100%;
+        transition: 0.5s ease-in-out all;
+      }
     }
+
     top: 20vw;
     @media screen and(min-width:992px) {
       top: 50vh;
     }
     @media screen and(max-width:768px) {
       .h3-responsive {
-        font-size: 1.2em;
+        font-size: 1.2rem;
       }
     }
     @media screen and(max-width:576px) {
       .h3-responsive {
-        font-size: 1em;
+        font-size: 1rem;
       }
     }
   }
@@ -62,14 +125,14 @@
 @media screen and (max-width: 991px) {
   .page-header-mini-carousel {
     .h3-responsive {
-      font-size: 1.6em;
+      font-size: 1.6rem;
     }
   }
 }
 @media screen and (min-width: 992px) {
   .page-header-mini-carousel {
     .h3-responsive {
-      font-size: 1.825em;
+      font-size: 1.825rem;
     }
   }
 }

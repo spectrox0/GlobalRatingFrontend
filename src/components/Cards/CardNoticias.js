@@ -115,13 +115,13 @@ export default function CardNoticias({
           </div>
         </MDBModalBody>
         <MDBModalFooter>
-          <MDBBtn className="btn-invisible color" onClick={toggle}>
+          <MDBBtn className="btn-modal" onClick={toggle}>
             Cerrar
           </MDBBtn>
           <MDBBtn
             href={"https://www.finanzasdigital.com/?p=" + postId}
             target="_blank"
-            className="btn-invisible color"
+            className="btn-modal"
             onClick={toggle}
           >
             Leer más en Finanzas Digital

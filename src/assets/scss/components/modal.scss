@@ -20,9 +20,7 @@
     padding: 1rem;
 
     .close {
-      margin: 0;
-      padding: 0;
-      color: red;
+      display: none;
     }
   }
   .close {
@@ -42,5 +40,8 @@
 
   .color {
     color: $color-primary;
+  }
+  .btn {
+    margin: 0.5rem;
   }
 }
