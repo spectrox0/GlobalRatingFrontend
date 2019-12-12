@@ -152,7 +152,7 @@ export default function Dictamen({ location }) {
             )}
           </MDBRow>
         </MDBContainer>
-        {dictamen && emision.data.emisionByDictamen && (
+        {dictamen && emision.data.emisionByProspecto && (
           <ShareFriend
             socialNetworks
             subject={`${dictamen.title}`}

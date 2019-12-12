@@ -64,7 +64,6 @@ export default function Clientes() {
             </MDBCol>
             <MDBCol size="12" sm="4">
               <div className="filter">
-                <span>Orden: </span>
                 <label htmlFor="toggle-1">
                   {!filter ? (
                     <strong> Alfabético</strong>
