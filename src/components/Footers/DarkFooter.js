@@ -9,7 +9,7 @@ import { MDBCol, MDBContainer, MDBRow, MDBFooter, MDBNavLink } from "mdbreact";
 export default function DarkFooter() {
   return (
     <MDBFooter>
-      <MDBContainer fluid>
+      <MDBContainer>
         <MDBRow>
           <MDBCol className="col-footer" md="3">
             <h4> Global Ratings </h4>

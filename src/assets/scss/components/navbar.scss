@@ -4,16 +4,20 @@
   width: 100%;
   background: $navbar-color;
   transition: background 0.3s ease-in-out;
-  padding: 0;
   padding-top: $navbar-padding-base;
   padding-bottom: $navbar-padding-base;
-  min-height: 53px;
-  margin-bottom: 20px;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
   .container {
     padding: 0;
   }
+  .navbar-brand {
+    padding: 0;
+    margin: 0;
+    margin-right: 4rem;
+  }
+
   .GlobalRatingLogo {
+    margin: 0;
     width: $width-logo;
     @include transition(0.2s, ease-in-out);
     @media screen and (max-width: 991px) {
@@ -23,10 +27,9 @@
 
   a {
     outline: none;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 600;
     vertical-align: middle;
-    text-transform: uppercase;
     color: $font-color-primary;
     transition: color 0.2s ease-in-out;
   }
@@ -60,12 +63,5 @@
 @media screen and (min-width: 992px) {
   .navbar-collapse {
     display: none;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  .navbar {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
   }
 }

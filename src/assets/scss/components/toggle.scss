@@ -1,29 +1,29 @@
 .toggle {
-    display: none; 
+  display: none;
+  margin-right: 1rem;
 }
-@media screen and (max-width:992px) {
-.toggle {
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    transition: all 300ms linear; 
-    cursor:pointer;
+@media screen and (max-width: 992px) {
+  .toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 300ms linear;
+    cursor: pointer;
     span {
-       height: 2px;
-       width: 1.4rem;
-       background: #2CA8FF;
-       box-shadow: 0 0 2px rgba(0,0,0,0.5); 
-       margin:.2rem;
-       transition: margin .3s ease-in-out;
-   }
-     &:hover {
-         .line1 {
-             margin-bottom: .35rem;
-         }
-         .line3 {
-             margin-top: .35rem;
-         }
-     }
-   }
+      height: 2px;
+      width: 1.4rem;
+      background: #2ca8ff;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+      margin: 0.2rem;
+      transition: margin 0.3s ease-in-out;
+    }
+    &:hover {
+      .line1 {
+        margin-bottom: 0.35rem;
+      }
+      .line3 {
+        margin-top: 0.35rem;
+      }
+    }
+  }
 }
-

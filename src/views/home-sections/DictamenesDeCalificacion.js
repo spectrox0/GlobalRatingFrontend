@@ -15,15 +15,18 @@ import { Link } from "react-router-dom";
 export default function DictamenesDeCaificacion({ dictamenes, country }) {
   const Dictamenes = () =>
     dictamenes.posts.nodes.map(dictamen => (
-      <MDBCol key={dictamen.postId} sm="6" md="4" lg="4">
+      <MDBCol key={dictamen.postId} sm="6" md="6" lg="4">
         <CardDictamen {...dictamen} />
       </MDBCol>
     ));
   return (
     <div className="dictamenes">
       <MDBContainer>
-        <MDBRow className="title">
-          <h1>Dictámenes de Calificación</h1>
+        <MDBRow>
+          <MDBCol className="title">
+            {" "}
+            <h1>Dictámenes de Calificación</h1>
+          </MDBCol>
         </MDBRow>
 
         {!dictamenes ? (

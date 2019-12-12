@@ -11,18 +11,7 @@
 
   @keyframes animation1 {
     0% {
-      transform: translate(100%, 4rem);
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes animation2 {
-    0% {
-      transform: translate(-100%, -4rem);
+      transform: translateX(100%);
       opacity: 0;
     }
 
@@ -37,7 +26,7 @@
     position: absolute;
     z-index: 50;
     top: 35vh;
-    left: 5%;
+    padding-left: calc((100% - 1280px) / 2);
     z-index: 200;
     max-width: 95vw;
     .carousel-item {
@@ -49,23 +38,9 @@
 
       &.active {
         animation: animation1 1s linear;
-        .h3-responsive {
-          &:after {
-            width: 0;
-            opacity: 1;
-          }
-        }
       }
     }
-    @keyframes innerCarousel {
-      0% {
-        opacity: 0;
-      }
 
-      100% {
-        opacity: 1;
-      }
-    }
     .carousel-inner {
       background: linear-gradient(
         rgba($color-primary, 0.3),
@@ -75,11 +50,6 @@
       height: auto;
       display: flex;
       align-items: center;
-    }
-    .carousel-item:nth-child(even) {
-      &.active {
-        animation: animation2 1s linear;
-      }
     }
 
     .h3-responsive {
@@ -94,15 +64,6 @@
       font-weight: 900;
       color: rgb(255, 255, 255);
       text-shadow: 0 0 1px rgb(255, 255, 255);
-      &:after {
-        content: "";
-        opacity: 0;
-        height: $height-underline;
-        background: #ffffff;
-        box-shadow: 0 0 3px #ffffff;
-        width: 100%;
-        transition: 0.5s ease-in-out all;
-      }
     }
 
     top: 20vw;

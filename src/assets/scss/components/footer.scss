@@ -2,10 +2,7 @@
   padding-top: 3rem;
 
   background: $footer-color;
-  @media screen and (min-width: $max-width) {
-    padding-left: calc(((100%) - $max-width) / 2);
-    padding-right: calc(((100%) - $max-width) / 2);
-  }
+
   .row .col-footer {
     @media screen and (min-width: 992px) {
       border-right: 0.2rem solid rgba($footer-color-copyrigth, 0.1);

@@ -107,17 +107,6 @@ export default function NavbarGlobal({ countrys, country, changeCountry }) {
             <MDBNavItem>
               <MDBNavLink
                 to={{
-                  pathname: `/clientes/${country.value}`
-                }}
-                tag={Link}
-                onClick={() => setCollapseOpen(false)}
-              >
-                Emisores
-              </MDBNavLink>
-            </MDBNavItem>
-            <MDBNavItem>
-              <MDBNavLink
-                to={{
                   pathname: `/calificacion/${country.value}`
                 }}
                 tag={Link}
@@ -126,7 +115,17 @@ export default function NavbarGlobal({ countrys, country, changeCountry }) {
                 Calificación
               </MDBNavLink>
             </MDBNavItem>
-
+            <MDBNavItem>
+              <MDBNavLink
+                to={{
+                  pathname: `/clientes/${country.value}`
+                }}
+                tag={Link}
+                onClick={() => setCollapseOpen(false)}
+              >
+                Emisores
+              </MDBNavLink>
+            </MDBNavItem>
             <MDBNavItem>
               <MDBNavLink
                 to={{
@@ -159,7 +158,7 @@ export default function NavbarGlobal({ countrys, country, changeCountry }) {
                 tag={Link}
                 onClick={() => setCollapseOpen(false)}
               >
-                contáctanos
+                Contáctanos
               </MDBNavLink>
             </MDBNavItem>
           </MDBNavbarNav>
