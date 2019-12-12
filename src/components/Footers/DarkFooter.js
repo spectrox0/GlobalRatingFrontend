@@ -20,7 +20,7 @@ export default function DarkFooter() {
                 justifyContent: "flex-start"
               }}
             >
-              <p style={{ textAlign: "justify" }}>
+              <p>
                 Sociedad Calificadora de Riesgo autorizada por la
                 Superintendencia Nacional de Valores (SUNAVAL) desde el año 1994
                 para emitir una opinión independiente sobre la capacidad de pago
