@@ -51,9 +51,9 @@ export default function() {
             </MDBCol>
           </MDBRow>
           <MDBRow>
-            <MDBCol sm="3">
+            <MDBCol sm="4">
               <MDBRow>
-                <div className="title">
+                <div className="title subTitle">
                   <h3> Misión </h3>
                 </div>
                 <p>
@@ -67,7 +67,7 @@ export default function() {
                 </p>
               </MDBRow>
               <MDBRow>
-                <div className="title">
+                <div className="title subTitle">
                   <h3> Visión </h3>
                 </div>
 
@@ -78,9 +78,9 @@ export default function() {
               </MDBRow>
             </MDBCol>
 
-            <MDBCol sm="9" className="col-nosotros">
+            <MDBCol sm="8" className="col-nosotros">
               <MDBRow>
-                <div className="title">
+                <div className="title subTitle">
                   <h3> Valores </h3>
                 </div>
                 <ul>

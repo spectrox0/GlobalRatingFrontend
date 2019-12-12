@@ -29,10 +29,13 @@
     min-height: 100%;
 
     box-shadow: 0 0 0.7px rgba(#000000, 0.5);
+    @media screen and (max-width: 576px) {
+      height: 20rem;
+    }
   }
 
   .options {
-    margin-top: 1rem;
+    margin-top: 0;
     display: flex;
     justify-content: space-between;
 

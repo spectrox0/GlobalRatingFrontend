@@ -171,9 +171,10 @@ export default function PerfilCliente({ location }) {
                     />
                   )}
                 </MDBRow>
-
+              </section>
+              <MDBRow className="row-btn">
                 <MDBBtn
-                  className="btn-color-primary margin"
+                  className="btn-color-primary"
                   size="sm"
                   tag={Link}
                   to={{
@@ -182,8 +183,9 @@ export default function PerfilCliente({ location }) {
                 >
                   Emisores
                 </MDBBtn>
-              </section>
+              </MDBRow>
             </MDBContainer>
+
             {data && (
               <ShareFriend
                 subject={`Emisiones de Títulos de ${data.emisorID.nombre} calificadas por Global Ratings, SCR`}

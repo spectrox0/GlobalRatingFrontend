@@ -20,7 +20,7 @@ export default function Pagination({
           {currentPage !== 1 && (
             <MDBPageItem>
               <MDBPageNav
-                className="page-link"
+                className="page-link next-prev"
                 aria-label="Previous"
                 tag={Link}
                 to={id}
@@ -62,7 +62,7 @@ export default function Pagination({
           {currentPage !== pageNumbers.length && (
             <MDBPageItem>
               <MDBPageNav
-                className="page-link"
+                className="page-link next-prev"
                 aria-label="Previous"
                 tag={Link}
                 to={id}

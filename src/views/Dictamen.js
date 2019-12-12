@@ -142,7 +142,7 @@ export default function Dictamen({ location }) {
               <>
                 <MDBBtn
                   className="btn-color-primary"
-                  size="lg"
+                  size="sm"
                   tag={Link}
                   to={{
                     pathname: "/perfilCliente/ve",
@@ -156,7 +156,7 @@ export default function Dictamen({ location }) {
                   {emision.data.emisionByDictamen.idProvidencia.length > 0 && (
                     <MDBBtn
                       className="btn-color-primary"
-                      size="lg"
+                      size="sm"
                       tag={Link}
                       to={{
                         pathname: "/providencia/ve",
@@ -169,7 +169,7 @@ export default function Dictamen({ location }) {
                   {emision.data.emisionByDictamen.idProspecto.length > 0 && (
                     <MDBBtn
                       className="btn-color-primary"
-                      size="lg"
+                      size="sm"
                       tag={Link}
                       to={{
                         pathname: "/prospecto/ve",
